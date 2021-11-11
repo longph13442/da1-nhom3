@@ -1,13 +1,4 @@
 
-<?php 
-   include "head.php";
-?>
-
-<?php 
-   
-   include "footer.php";
-?>
-=======
 <!DOCTYPE html>
 <html lang="en">
 
