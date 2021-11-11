@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+:root{
+    --bgr: #fff;
+--black: #000;
+--white: #fff;
+}
+.address{
+    background-color: var(--bgr);
+    border: 2px solid #B8B5B5;
+    max-width: 870px;
+    min-height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.title-address p{
+color:#696969;
+font-family: 'Arimo', sans-serif;
+font-size: 15px;
+}
+.title-address h4{
+    color: var(--black);
+font-family: 'Arimo', sans-serif;
+font-weight: 700;
+}
+.dt-address{
+    border: 2px dashed #505050;
+    background: #F3F3F3;
+    padding-left: 20px;
+    max-width: 840px;
+}
+.dt-address p{
+    color: #212121;
+    font-family: 'Arimo', sans-serif;
+    font-size: 15px;
+}
+.btn-edit{
+    background: #000;
+    color: var(--white);
+    padding: 8px 25px;
+    font-family: 'Arimo', sans-serif;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    border: 2px solid #505050;
+    cursor: pointer;
+}
+.btn-edit:hover{
+     opacity: 0.7;
+     transition: 0.5s;
+}
