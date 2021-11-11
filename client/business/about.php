@@ -1,5 +1,5 @@
 <?php 
 function about(){
-    echo "đây là giới thiệu !";
+    echo "đây là giới thiệu abc!";
 }
 ?>
