@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root{
+    --white: #fff;
+    --blue: #0009DE;
+}
+.details-cart{
+    background-color: var(--white);
+    border: 1px solid #BBB4B4;
+ max-width: 815px;
+}
+.title-cart{
+    margin-left: 45px;
+    width: 89%;
+    border-bottom: 1px solid #BBB4B4;
+}
+.title-cart h3{
+    font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+    color: #000;
+}
+.title-cart p{
+    font-family: 'Arimo', sans-serif;
+    font-size: 17px;
+    color: #000;
+    font-weight: 700;
+}
+.table-cart{
+    margin-top: -80px;
+    width: 90%;
+    margin-left: 5%;
+}
+.cart td p{
+    color: var(--blue);
+    width: 70%;
+   font-weight: 100;
+}
+
+.cart tr td{
+    font-family: 'Arimo-light', sans-serif;
+    font-size: 15px;
+   width: 80%;
+   padding-left: 20px;
+   padding-bottom: 15px;
+   padding-top: 20px;
+   padding-right: 20px;
+   border-bottom: 1.5px solid #BBB4B4;
+ align-items: center;
+ justify-content: center;
+}
+.cart tr td:last-child{
+    font-size: 15px;
+    color: #000;
+    font-weight: 700;
+  }
+.title-customerdt{
+    padding-left: 40px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 13px;
+}
+.customer{
+  margin-top: -20px;
+
+}
+.customer tr td{
+  font-family: 'Arimo', sans-serif;
+  padding-left: 60px;
+  padding-bottom: 20px;
+  max-width: 80%;
+}
+.customer tr td:last-child{
+  font-size: 15px;
+  color: #000;
+  font-weight: 700;
+}
+.dt-pay{
+margin: 40px;
+margin-top: -20px;
+
+}
+.title-pay h4{
+    font-family: 'Arimo-light', sans-serif;
+}
+.dt-address{
+    background: #F2F0F0;
+border: 1px dashed #000000;
+max-width: 730px;
+}
+.dt-address p{
+    padding-left: 20px;
+  font-family: 'Arimo', sans-serif;
+}
