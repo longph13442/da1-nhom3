@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/detailscart.css">
+<link rel="stylesheet" href="./css/detailscart.css">
 <div class="details-cart">
     <div class="title-cart">
         <h3>Chi Tiết Đơn Hàng</h3>

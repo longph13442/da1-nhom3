@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/editaddress.css">
+<link rel="stylesheet" href="./css/editaddress.css">
 <div class="editaddress">
     <div class="title-address">
         <h3>Địa Chỉ Thanh Toán</h3>

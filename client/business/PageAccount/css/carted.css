@@ -1,0 +1,56 @@
+:root{
+    --white: #fff;
+    --black: #000;
+}
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+.carted{
+    max-width: 915px;
+    background-color: var(--white);
+
+}
+.cart-tabel{
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #cac8c8;
+
+}
+.cart-tabel tr,th, td{
+}
+.cart-tabel tr,th,td:last-child{
+    border-bottom: 1px solid #cac8c8;
+}
+.cart-tabel th, td{
+    padding: 20px;
+    font-family: 'Arimo', sans-serif;
+  
+    font-size: 15px;
+}
+.cart-tabel tr td{
+    color: var(--black);
+    font-weight: 500;
+}
+.tb-header{
+    font-family: 'Arimo', sans-serif;
+}
+.tb-tbody{
+    font-family: 'Arimo', sans-serif;
+    font-size: 14px;
+}
+.btnview{
+    border: 1px solid #cac8c8;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.btnview:hover{
+    background-color: #000000;
+    color: var(--white);
+    transition: 0.5s;
+    
+}

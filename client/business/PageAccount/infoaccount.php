@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/infoaccount.css">
+<link rel="stylesheet" href="./css/infoaccount.css">
 <div class="profile">
     <div class="title-profile">
         <h3>Hồ Sơ Của Tôi</h3>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/carted.css">
+<link rel="stylesheet" href="./css/carted.css">
 <div class="carted">
     <table class="cart-tabel">
         <thead>

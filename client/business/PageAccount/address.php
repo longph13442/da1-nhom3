@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/address.css">
+<link rel="stylesheet" href="./css/address.css">
 <div class="address">
     <div class="title-address">
         <p>Các địa chỉ bên dưới mặc định sẽ được sử dụng ở trang thanh toán sản phẩm.

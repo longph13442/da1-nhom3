@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../Css/resetpass.css">
+<link rel="stylesheet" href="./css/resetpass.css">
 <div class="resestpass">
     <div class="title-pass">
         <h4>Đổi Mật Khẩu</h4>
