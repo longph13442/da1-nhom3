@@ -26,7 +26,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="./css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./style.css">
 
     <script src="https://kit.fontawesome.com/5873c71494.js" crossorigin="anonymous"></script>
 </head>
