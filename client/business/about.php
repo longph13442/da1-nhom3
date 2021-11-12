@@ -6,7 +6,7 @@
 <div class="introduce">
     <div class="intro_header">
         <div class="intro_header_img">
-            <img src="../../Image/image 1.png" alt="">
+            <img src="./Image/image 1.png" alt="">
         </div>
         <div class="intro_header_text">
             <div class="intro_header_title">
