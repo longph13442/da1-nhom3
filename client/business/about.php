@@ -2,7 +2,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 <!--link css-->
-<link rel="stylesheet" href="../../Css/Gioithieu.css">
+<link rel="stylesheet" href="./Css/Gioithieu.css">
 <div class="introduce">
     <div class="intro_header">
         <div class="intro_header_img">
@@ -23,7 +23,7 @@
     <div class="main_introduce">
         <div class="main_introduce_story">
             <div class="main_introduce_img">
-                <img src="../../Image/image 6.png" alt="">
+                <img src="./Image/image 6.png" alt="">
             </div>
             <div class="main_introduce_text">
                 <div class="main_introduce_title">
@@ -44,7 +44,7 @@
         <div class="main_introduce_info">
             <div class="address info-flex">
                 <div class="address_img">
-                    <img src="../../Image/image 2.png" alt="">
+                    <img src="./Image/image 2.png" alt="">
                 </div>
                 <div class="address_text info-text">
                     <h3>Địa Chỉ</h3>
@@ -60,7 +60,7 @@
             </div>
             <div class="contact info-flex">
                 <div class="img_contact">
-                    <img src="../../Image/image 3.png" alt="">
+                    <img src="./Image/image 3.png" alt="">
                 </div>
                 <div class="contact_text info-text">
                     <h3>Liên Hệ</h3>
@@ -79,7 +79,7 @@
             </div>
             <div class=" openhour info-flex">
                 <div class="openhour_img">
-                    <img src="../../Image/image 4.png" alt="">
+                    <img src="./Image/image 4.png" alt="">
                 </div>
                 <div class="openhour_contact info-text">
                     <h3>Giờ Mở Cửa</h3>
@@ -100,7 +100,7 @@
             </div>
             <div class="image-slider">
                 <div class="it_product_img">
-                    <img src="../../Image/image 9.png" alt="">
+                    <img src="./Image/image 9.png" alt="">
                 </div>
                 <div class="it_product_img">
                     <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29zbWV0aWNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
@@ -109,10 +109,10 @@
                     <img src="https://images.unsplash.com/photo-1573575155376-b5010099301b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvc21ldGljc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
                 </div>
                 <div class="it_product_img">
-                    <img src="../../Image/image 11.png" alt="">
+                    <img src="./Image/image 11.png" alt="">
                 </div>
                 <div class="it_product_img">
-                    <img src="../../Image/image 12.png" alt="">
+                    <img src="./Image/image 12.png" alt="">
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
             <div class="discoverif">
                 <div class="discover_more">
                     <div class="discover_img">
-                        <img src="../../Image/image 7.png" alt="">
+                        <img src="./Image/image 7.png" alt="">
                     </div>
                     <div class="discover_text">
                         <p><a href="">Tìm 1 cửa hàng</a></p>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="discover_more">
                     <div class="discover_img">
-                        <img src="../../Image/image 8.png" alt="">
+                        <img src="./Image/image 8.png" alt="">
                     </div>
                     <div class="discover_text">
                         <p><a href="">Thông tin thêm</a></p>
