@@ -53,7 +53,7 @@
                             Số 1 Trịnh Văn Bô,Nam Từ Liêm, Hà Nội
                         </p>
                         <p>
-                            Số 5 Trịnh Văn Bô,Nam Từ Liêm, Hà Nội
+                            Số 5 Trịnh Văn Bô,Nam Từ Liêm, Hà Nội 
                         </p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             Thứ 2 - thứ 6: 08:30 - 20:00
                         </p>
                         <p>
-                            Thứ 7 & Chủ nhật: 09:30 - 21:30
+                            Thứ 6 & Chủ nhật: 09:30 - 21:30
                         </p>
                     </div>
                 </div>
