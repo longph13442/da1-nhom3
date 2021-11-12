@@ -6,7 +6,7 @@
 <div class="introduce">
     <div class="intro_header">
         <div class="intro_header_img">
-            <img src="../../Image/image 1.png" alt="">
+            <img src="./Image/image 1.png" alt="">
         </div>
         <div class="intro_header_text">
             <div class="intro_header_title">
@@ -153,4 +153,4 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="../../JS/slickslide.js"></script>
+<script src="./JS/slickslide.js"></script>
