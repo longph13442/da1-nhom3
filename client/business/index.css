@@ -160,12 +160,19 @@ html,body{
   }
 
 @media (max-width: 991.98px) { 
-    
+    .carousel-item img{
+        max-width: 100%;
+    }
+    img{
+        width: 90%;
+    }
  }
 
 
 @media (max-width: 1199.98px) { 
-    
+    .carousel-item img{
+        max-width: 100%;
+    }
  }
 
 
