@@ -16,6 +16,9 @@ html,body{
     font-family:'Arimo' ;
     text-shadow: 5px 5px 15px #fff;
 }
+.material-icons-outlined{
+    font-size: 30px !important;
+}
 .row{
     margin: 30px 0;
 }
