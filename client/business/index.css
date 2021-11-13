@@ -109,7 +109,9 @@ html,body{
 .box-bigb{
     margin:50px 100px 0 100px   ;
 }
-
+.material-icons-outlined{
+    font-size: 35px !important;
+}
 
 @media (max-width: 575.98px) { 
     body{
