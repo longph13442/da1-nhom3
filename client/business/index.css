@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Arimo';
+    font-size: 16px;
+}
+
+.carousel-caption{
+    position: absolute;
+    bottom: 30%;
+    right: 50%;
+}
+.carousel-caption h1 {
+    margin: 30px 0;
+    font-family:'Arimo' ;
+    text-shadow: 5px 5px 15px #fff;
+}
+.row{
+    margin: 30px 0;
+}
+.center{
+    margin:  100px 0 0 0;
+}
+.btn-dark:hover{
+    background-color: #fff;
+    color: black;
+    border:white ;
+}
+/* .title{
+    margin:50px 0 5px 50px;
+} */
+/* .hr{
+    color: #fcc100;
+} */
+.star{
+    text-align: center;
+    color: rgb(143, 0, 0);
+}
+/* .fas-star{
+    color: red !important;
+} */
+.view-all{
+    top: 10%;
+    left: 50%;
+}
+.double{
+    padding: 10px 0;
+}
+.double img{
+    width: 100%;
+}
+
+/* .slides{
+    height: 500px !important;
+} */
+
+.title3{
+    font-size: 20px;
+    margin: 80px 0 0 0;
+}
+.blogs{
+    margin: 0 auto;
+}
+.cmt{
+    margin: 20px 40%;
+}
+.comment{
+    margin: 50px 0;
+}
+.trip{
+    position: relative;
+    width:180px;
+    height:220px ;
+    overflow: hidden;
+    
+}
+.info{
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    transform:translateY(400px) ;
+    transition:  ease-in-out 1s;
+    animation-name:moveout;
+    animation-duration:1s ;
+    
+}
+.trip:hover .info{
+    transform:translateY(0) ;
+    transition: ease-in-out 1s ;
+    animation-name:movein;
+    animation-duration:1s ;
+}
+.info{
+    text-align: center;
+}
+.box-big{
+    margin:0 100px ;
+}
+.slick-next , .slick-prev{
+    display: none !important;
+}
+.story{
+    margin: 40px 0 0 0;
+}
+.box-bigb{
+    margin:50px 100px 0 100px   ;
+}
+
+
+@media (max-width: 575.98px) { 
+    body{
+        max-width: 100%;
+       
+    }
+    .carousel-caption{
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+    }
+    .carousel-caption h1{
+        font-size: 10px;
+    }
+    .carousel-caption h3{
+        font-size: 9pt;
+    }
+    .carousel-caption .btn{
+        font-size: 9px;
+    }
+ }
+
+
+@media (max-width: 767.98px) {
+    body{
+        max-width: 720px;
+       
+    }
+    .slides{
+        height: 90% !important;
+    }
+    .carousel-caption{
+        position: absolute;
+        bottom: 0;
+        right: 40%;
+    }
+    .carousel-caption h1{
+        font-size: 24pt;
+    }
+    .carousel-caption h3{
+        font-size: 16pt;
+    }
+    .carousel-caption .btn{
+        font-size: 10px;
+    }
+    
+    
+  }
+
+@media (max-width: 991.98px) { 
+    
+ }
+
+
+@media (max-width: 1199.98px) { 
+    
+ }
+
+
+@media (max-width: 1399.98px) { 
+    body{
+        max-width: 1320px;
+    }
+    
+ }
+

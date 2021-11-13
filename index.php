@@ -9,16 +9,14 @@ switch ($url) {
         include "./client/business/product.php";
         break;
     case 'about':
-        require_once "./client/business/about.php";
-        about();
+        include "./client/business/about.php";
+        
         break;
     case 'blog':
-        require_once "./client/business/blog.php";
-        blog();
+        include "./client/business/blog.php";        
         break;
     case 'dashboard':
-        require_once "./admin/dashboard/dashboard.php";
-        dashboard();
+        include "./client/dashboard/product.php";
         break;
     default:
         # code...
