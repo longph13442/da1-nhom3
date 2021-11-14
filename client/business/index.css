@@ -101,8 +101,9 @@ html,body{
 .story{
     margin: 40px 0 0 0;
 }
+
 .box-bigb{
-    margin:50px 100px 0 100px   ;
+    margin:50px 100px 0 100px  !important ;
 }
 .material-icons-outlined{
     font-size: 35px !important;
