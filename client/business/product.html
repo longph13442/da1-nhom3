@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- https://material.io/resources/icons/?style=baseline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=outline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=round -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=sharp -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=twotone -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+        
+
+        .img-item {
+            margin-top: 15px;
+        }
+
+        .input{
+            position: absolute;
+        }
+        .title-item{
+            font-family: Marcellus;
+        }
+        
+    
+
+    </style>
+</head>
+
+<body>
+    <header class="p-3 m-2 row border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="./image/logo.png" alt="" height="50">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Giới thiệu</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-6 mb-3 mb-lg-0 me-lg-5">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="col-auto me-3 ">
+                    <span class="material-icons-outlined my-2">
+                        shopping_bag
+                    </span>
+                </div>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container" style="padding-top: 50px;">
+            <div class="row">
+                <div class="col-2">
+                    <div class="list-group ">
+                        <a href="#" class="list-group-item list-group-item-action  border border-0">DANH SÁCH SẢN
+                            PHẨM</a>
+                        <a href="#" class="list-group-item list-group-item-action  border border-0"> Nước Hoa</a>
+                        <a href="#" class="list-group-item list-group-item-action  border border-0"> Sữa Rửa Mặt</a>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary dropdown-toggle bg-light text-dark border border-0" href="#"
+                                role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                Trang Điểm
+                            </a>
+                            <ul class="dropdown-menu border border-0" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Kẻ mắt</a></li>
+                                <li><a class="dropdown-item" href="#">Dầu gội đầu</a></li>
+                                <li><a class="dropdown-item" href="#">Son môi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="price" style="margin-top: 50px; margin-right: 25px;" >
+                        <label for="customRange1" class="form-label" style="margin-left: 40px;">Giá</label>
+                        <input type="range" class="form-range" id="customRange1">
+                        <p style="margin-left: 20px;">Giá 10$-200$</p>
+                    </div>
+                    
+                    <div class="list-group pt-5">
+                        
+                        <button type="button" class="list-group-item list-group-item-action border border-0 "
+                            aria-current="true">
+                            DUNG TÍCH
+                        </button>
+                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">30
+                            mL</button>
+                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">40
+                            mL</button>
+                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">50
+                            mL</button>
+
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-4 d-flex justify-content-center">
+
+                            <img width="30" height="30" class="img-item" src="/client/business/image/item1.jpg" alt="">
+                            <p class="p-3">Nước Hoa</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <img width="30" height="30" class="img-item" src="/client/business/image/item2.jpg" alt="">
+                            <p class="p-3">Trang Điểm</p>
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <img width="30" height="30" class="img-item" src="/client/business/image/item3.jpg" alt="">
+                            <p class="p-3">Rửa Mặt</p>
+                        </div>
+                    </div>
+                    <div class="text-item d-flex justify-content-between">
+                        <div class="text-left" style="margin-left: 50px;">
+                            <p>HIỂN THỊ 1–12 CỦA 21 SẢN PHẨM</p>
+                        </div>
+                        <div class="text-right" style="margin-right: 100px;">
+                            <p>HIỂN THỊ 1–12 CỦA 21 SẢN PHẨM</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp1.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center title-item">A I R B R U S H <br> M A T T E</p>
+                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp2.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center title-item"> B R I G H T E N I N G <br> C O R R E C T O R</p>
+                            <p class="text-center">Tông màu toàn diện</p> <br>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp3.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center title-item">B O D I F Y I N G <br> S H A M P O O</p>
+                            <p class="text-center">Dầu gội tẩy rửa nhẹ nhàng nhưng <br> triệt để không gây hư hại cho tóc.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp4.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">E X T R A L I P <br> T I N T</p>
+                            
+                            <p class="text-center">Son màu tăng cường <br> mang lại làn môi đẹp nhất.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp5.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">E Y E L I N E R <br> P A C K</p>
+                            <p class="text-center">Kẻ mắt dạng lỏng, siêu bão <br> hòa, chống nước.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp6.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">F A C E & B O D Y <br> F O U N D A T I O N </p>
+                            <p class="text-center">Kem nền cho mặt và toàn <br> thân.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp7.jpg" alt="" class="img-fluid" height="50">
+                            
+                            <p class="text-center">F L O W E R B O M B</p>
+                            <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp8.jpg" alt="" class="img-fluid" height="50">
+                            
+                            <p class="text-center">H A I R <br> C O L O R I N G</p>
+                            <p class="text-center">Nhuộm màu tóc vĩnh viễn với <br> độ dưỡng sâu.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp9.jpg" alt="" class="img-fluid" height="50">
+                            
+                            <p class="text-center">I N S T A N T <br> R E T O U C H <br> P R I M E R</p>
+                            <p class="text-center">Lên màu ngay lập tức</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp10.jpg" alt="" class="img-fluid" height="50">
+                            
+                            <p class="text-center">L A C T I C A C I D <br> T R E A T M E N T</p>
+                            <p class="text-center">Một phương pháp điều trị AHA <br> tất cả trong một.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp11.jpg" alt="" class="img-fluid" height="50">
+                            
+                            <p class="text-center">L O N G L A S H <br> S E R U M</p>
+                            <p class="text-center">Đây là một sản phẩm <br> bên ngoài.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/sp12.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">M I D N I G H T <br> M U S K</p>
+                            <p class="text-center">Đất & Gỗ.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pagi d-flex justify-content-center">
+                        <nav class="text-center" aria-label="Page navigation example">
+                            <ul class="pagination ">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <footer class="py-5 bg-secondary">
+        <div class="row">
+            <div class="col-2 ms-5">
+                <h5>Về chúng tôi !</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Địa chỉ</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Liên hệ</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Cơ sở</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Công ty</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pháp luật</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Từ khóa</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Son môi</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Sửa rửa mặt</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Phấn má</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Kem nền</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Dưỡng ẩm</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col-4 offset-1">
+                <form>
+                    <h5 class="text-light">ĐĂNG KÍ VIÊN CỦA SUNFLOWER</h5>
+                    <p class="text-light">Nhận ưu đãi chưa từng có.</p>
+                    <div class="d-flex w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Nhập email...</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-warning" type="button">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p class="ms-5">© 2021 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- end head -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
