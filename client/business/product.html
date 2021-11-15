@@ -51,7 +51,9 @@
         .title-item{
             font-family: Marcellus;
         }
-        
+        .list-group-item:hover{
+            background-color: rgb(255, 255, 255) !important;
+        }
     
 
     </style>
@@ -59,14 +61,14 @@
 
 <body>
     <header class="p-3 m-2 row border-bottom">
-        <div class="container">
+        <div class="container" >
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                     <img src="./image/logo.png" alt="" height="50">
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                    <li><a href="./homepage.html" class="nav-link px-2 link-secondary">Trang chủ</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Giới thiệu</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
@@ -99,76 +101,62 @@
         </div>
     </header>
     <main>
-        <div class="container" style="padding-top: 50px;">
+        <div class="container " >
             <div class="row">
-                <div class="col-2 ">
+                <div class="col-3 bg-light py-5"style="height: 90%;">
                     <div class="list-group ">
-                        <a href="#" class="list-group-item list-group-item-action  border border-0">DANH SÁCH SẢN
-                            PHẨM</a>
-                        <a href="#" class="list-group-item list-group-item-action  border border-0"> Nước Hoa</a>
-                        <a href="#" class="list-group-item list-group-item-action  border border-0"> Sữa Rửa Mặt</a>
-                        <div class="dropdown">
-                            <a class="btn btn-secondary dropdown-toggle bg-light text-dark border border-0" href="#"
-                                role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                Trang Điểm
-                            </a>
-                            <ul class="dropdown-menu border border-0" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Kẻ mắt</a></li>
-                                <li><a class="dropdown-item" href="#">Dầu gội đầu</a></li>
-                                <li><a class="dropdown-item" href="#">Son môi</a></li>
-                            </ul>
-                        </div>
+                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
+                        <a href="#" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Trang điểm</a>
+                        <a href="#" class="list-group-item list-group-item-action  border border-0  text-center py-3 bg-light">Dưỡng mặt</a>
+                        <a href="#" class="list-group-item list-group-item-action  border border-0  text-center py-3 bg-light"> Dưỡng body</a>
+                        
                     </div>
 
-                    <div class="price" style="margin-top: 50px; margin-right: 25px;" >
-                        <label for="customRange1" class="form-label" style="margin-left: 40px;">Giá</label>
+                    <div class="price text-center"  >
+                        <label for="customRange1" class="form-label  pw-bold py-3" >Giá</label>
                         <input type="range" class="form-range" id="customRange1">
-                        <p style="margin-left: 20px;">Giá 10$-200$</p>
+                        <p class="text-center py-3">Giá 10$-200$</p>
                     </div>
                     
-                    <div class="list-group pt-5">
+                    <div class="list-group pt-3 text-center">
                         
-                        <button type="button" class="list-group-item list-group-item-action border border-0 "
+                        <button type="button" class="list-group-item list-group-item-action border border-0 bg-light"
                             aria-current="true">
                             DUNG TÍCH
                         </button>
-                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">30
+                        <button type="button" class="list-group-item  border border-0 bg-light" >30
                             mL</button>
-                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">40
+                        <button type="button" class="list-group-item  border border-0 bg-light" >40
                             mL</button>
-                        <button type="button" class="list-group-item  border border-0" style="margin-right: 60px;">50
+                        <button type="button" class="list-group-item  border border-0 bg-light" >50
                             mL</button>
 
                     </div>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
+                   <h4 class="mx-3 my-3">Tất cả các sản phẩm</h4>
+                    
                     <div class="row">
-                        <div class="col-4 d-flex justify-content-center">
-
-                            <img width="30" height="30" class="img-item" src="/client/business/image/item1.jpg" alt="">
-                            <p class="p-3">Nước Hoa</p>
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img1.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
                         </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <img width="30" height="30" class="img-item" src="/client/business/image/item2.jpg" alt="">
-                            <p class="p-3">Trang Điểm</p>
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img3.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                            <div class="star mb-md-4">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i>
+                            </div>
                         </div>
-                        <div class="col-4 d-flex justify-content-center">
-                            <img width="30" height="30" class="img-item" src="/client/business/image/item3.jpg" alt="">
-                            <p class="p-3">Rửa Mặt</p>
-                        </div>
-                    </div>
-                    <div class="text-item d-flex justify-content-between">
-                        <div class="text-left" style="margin-left: 50px;">
-                            <p>HIỂN THỊ 1–12 CỦA 21 SẢN PHẨM</p>
-                        </div>
-                        <div class="text-right" style="margin-right: 100px;">
-                            <p>HIỂN THỊ 1–12 CỦA 21 SẢN PHẨM</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp1.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center title-item">A I R B R U S H <br> M A T T E</p>
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img4.jpg" alt="" class="img-fluid" height="50">
                             <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                             <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                             <div class="star mb-md-4">
@@ -177,74 +165,12 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp2.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center title-item"> B R I G H T E N I N G <br> C O R R E C T O R</p>
-                            <p class="text-center">Tông màu toàn diện</p> <br>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp3.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center title-item">B O D I F Y I N G <br> S H A M P O O</p>
-                            <p class="text-center">Dầu gội tẩy rửa nhẹ nhàng nhưng <br> triệt để không gây hư hại cho tóc.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
                     </div>
                     <div class="row">
 
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp4.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">E X T R A L I P <br> T I N T</p>
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img13.jpg" alt="" class="img-fluid" height="50">
                             
-                            <p class="text-center">Son màu tăng cường <br> mang lại làn môi đẹp nhất.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp5.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">E Y E L I N E R <br> P A C K</p>
-                            <p class="text-center">Kẻ mắt dạng lỏng, siêu bão <br> hòa, chống nước.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp6.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">F A C E & B O D Y <br> F O U N D A T I O N </p>
-                            <p class="text-center">Kem nền cho mặt và toàn <br> thân.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp7.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">F L O W E R B O M B</p>
                             <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
                             <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                             <div class="star mb-md-4">
@@ -252,85 +178,40 @@
                                     class="fas fa-star"></i>
                             </div>
                         </div>
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp8.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">H A I R <br> C O L O R I N G</p>
-                            <p class="text-center">Nhuộm màu tóc vĩnh viễn với <br> độ dưỡng sâu.</p>
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img14.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                             <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                             <div class="star mb-md-4">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i>
                             </div>
                         </div>
-
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp9.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">I N S T A N T <br> R E T O U C H <br> P R I M E R</p>
-                            <p class="text-center">Lên màu ngay lập tức</p>
+                        
+                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
+                            <img src="./image/img15.jpg" alt="" class="img-fluid" height="50">
+                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                             <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                             <div class="star mb-md-4">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i>
                             </div>
                         </div>
-
                     </div>
-                    <div class="row">
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp10.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">L A C T I C A C I D <br> T R E A T M E N T</p>
-                            <p class="text-center">Một phương pháp điều trị AHA <br> tất cả trong một.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp11.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">L O N G L A S H <br> S E R U M</p>
-                            <p class="text-center">Đây là một sản phẩm <br> bên ngoài.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-
-                        <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                            <img src="./image/sp12.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">M I D N I G H T <br> M U S K</p>
-                            <p class="text-center">Đất & Gỗ.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-
-                    </div>
+                    
                     <div class="pagi d-flex justify-content-center">
                         <nav class="text-center" aria-label="Page navigation example">
                             <ul class="pagination ">
                                 <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
+                                    <a class="page-link text-dark" href="#" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
+                                <li class="page-item "><a class="page-link text-dark" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                                <li class="page-item "><a class="page-link text-dark" href="#">3</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link text-dark" href="#" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>
@@ -340,6 +221,106 @@
                 </div>
                 
             </div>
+            <!-- end row -->
+            <h4 class="text-center my-5">NHỮNG ƯU ĐÃI DÀNH RIÊNG CHO BẠN</h4>
+            <div class="row mx-5">
+                <div class="col-4 text-center">
+                    <img src="./image/pr1.png" alt="" height="400" width="100%">
+                </div>
+                <div class="col-4 text-center">
+                    <img src="./image/pr2.png" alt="" height="400" width="100%">
+
+                </div>
+                <div class="col-4 text-center">
+                    <img src="./image/pr1.png" alt="" height="400" width="100%">
+                </div>
+            </div>
+            <!-- end row -->
+            <h4 class="my-5">NHỮNG SẢN PHẨM ƯU ĐÃI</h4>
+            <div class="row">
+
+                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                    <img src="./image/img13.jpg" alt="" class="img-fluid" height="50">
+                    
+                    <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                    <img src="./image/img14.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
+                    <img src="./image/img15.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
+                    <img src="./image/img12.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            <div class="row">
+
+                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                    <img src="./image/img1.jpg" alt="" class="img-fluid" height="50">
+                    
+                    <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                    <img src="./image/img2.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
+                    <img src="./image/img3.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
+                    <img src="./image/img4.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
         </div>
     </main>
     <footer class="py-5 bg-secondary">
