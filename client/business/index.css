@@ -176,13 +176,8 @@ html,body{
         max-width: 960px;
         margin: 0 auto;
     }
-    .carousel-item img{
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    img{
-        width: 90%;
-    }
+   
+    
  }
 
 
@@ -191,10 +186,7 @@ html,body{
         max-width: 1140px;
         margin: 0 auto;
     }
-    .carousel-item img{
-        max-width: 100%;
-        margin: 0 auto;
-    }
+    
  }
 
 
