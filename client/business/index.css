@@ -107,7 +107,9 @@ html,body{
 }
 .material-icons-outlined{
     font-size: 35px !important;
+    /* color: rgb(0, 0, 0) !important; */
 }
+
 
 @media (max-width: 575.98px) { 
     body{
