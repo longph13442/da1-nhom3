@@ -12,12 +12,12 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-        
+
         .container {
-            width: 80%; 
+            width: 100%;
         }
 
-        ul li {
+        /* ul li {
             display: block;
             padding-bottom: 20px;
         }
@@ -61,17 +61,34 @@
         label {
             font-family: roboto;
             margin-bottom: 5px;
+        } */
+
+        /* long css */
+        .list-group-item:hover{
+            background-color: rgb(245, 245, 245);
         }
     </style>
 </head>
 
 <body>
-  
-    <div class="container" style="margin-top: 100px;">
+
+    <div class="container mt-3">
+        <div class="row text-center mb-3">
+            <div class="col-12 ">
+                <img src="./image/logo.png" alt="" height="70">
+            </div>
+        </div>
         <div class="row">
-            <div class="col-3" style="margin-top: 50px;">
+            <div class="col-3"></div>
+            <div class="col-8">
+                <h3>Hồ Sơ Của Tôi</h3>
+                <hr class="mb-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
                 <ul class="list-group">
-                    <li class="list-group-item p-3"> <i class="fas fa-user p-3"></i>User</li>
+                    <li class="list-group-item p-3 bg-light text-dark "> <i class="fas fa-user p-3"></i>User</li>
                     <li class="list-group-item p-3"><i class="fas fa-map-marker-alt p-3"></i>Map</li>
                     <li class="list-group-item p-3"><i class="fas fa-file-invoice p-3"></i>Bill</li>
                     <li class="list-group-item p-3"><i class="fas fa-unlock-alt p-3"></i>Password</li>
@@ -79,51 +96,47 @@
                 </ul>
             </div>
             <div class="col-8">
-                <h3>Hồ Sơ Của Tôi</h3>
-                <hr />
+
                 <div class="row">
-                    <div class="col-8">
-                        <form action="">
-                            <div class="form">
-                                <ul>
-                                    <li>
-                                        <label for=""> Tên Đăng Nhập</label>
-                                        <input required type="text" class="d-flex justify-content-end">
-                                    </li>
-                                    <li>
-                                        <label for=""> Họ Và Tên</label>
-                                        <input type="text" class="d-flex justify-content-end">
-                                    </li>
-                                    <li>
-                                        <label for=""> Email</label>
-                                        <input type="text" class="d-flex justify-content-end">
-                                    </li>
-                                    <li>
-                                        <label for=""> Số Điện Thoại</label>
-                                        <input type="text" class="d-flex justify-content-end">
-                                    </li>
-                                    <li class="gioitinh">
-                                        <label for=""> Giới Tính</label>
-                                        <input type="radio">Nam
-                                        <input type="radio">Nữ
-                                        <input type="radio">Khác
-                                    </li>
-                                    <li>
-                                        <label for=""> Ngày Sinh</label>
-                                        <input type="text" class="d-flex justify-content-end">
-                                    </li>
-                                </ul>
+                    <div class="col-9  " style="height: 80%;">
+                        <form class="form-signin mt-3" style="width: 100%;">
+
+                            <div class="form-label-group">
+                                <label for="inputEmail mb-5">Email hoặc Tên</label>
+                                <input type="email" id="inputEmail" class="form-control my-2 bg-light" placeholder=""
+                                    required="" autofocus="">
 
                             </div>
-                            <button type="button" class="btn btn-secondary" style="margin-left: 30px;">Lưu Thay
-                                Đổi</button>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword ">Mật khẩu</label>
+                                <input type="password" id="inputPassword" class="form-control my-2 bg-light"
+                                    placeholder="" required="">
+
+                            </div>
+                            <div class="form-label-group">
+                                <label for="inputEmail mb-5">Email hoặc Tên</label>
+                                <input type="email" id="inputEmail" class="form-control my-2 bg-light" placeholder=""
+                                    required="" autofocus="">
+
+                            </div>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword ">Mật khẩu</label>
+                                <input type="password" id="inputPassword" class="form-control my-2 bg-light"
+                                    placeholder="" required="">
+
+                            </div>
+
+                            <button class="btn  btn-warning btn-md my-4" type="submit">Đăng nhập</button>
+                            <p class="mt-5 mb-3 text-muted text-center">© SunFlower - Store - nhom3</p>
                         </form>
                     </div>
-                    <div class="col-4 text-center ">
-                        <div class="img">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <button type="button" class="btn btn-secondary" style="margin-top: 15px;">Chọn Ảnh</button>
+                    <div class="col-3 text-center mt-3 ">
+                        <img src="./image/acc.jpg" class="boder rounded-circle" alt="..." height="70">
+                        <br>
+                        <button type="button" class="btn btn-outline-warning btn-sm" style="margin-top: 15px;">Chọn
+                            Ảnh</button>
                     </div>
                 </div>
             </div>
