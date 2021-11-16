@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!-- https://material.io/resources/icons/?style=baseline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=outline -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=round -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=sharp -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+
+    <!-- https://material.io/resources/icons/?style=twotone -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Marcellus&display=swap');
+
+
+        .img-item {
+            margin-top: 15px;
+        }
+
+        .input {
+            position: absolute;
+        }
+
+        .title-item {
+            font-size: 1.3vw;
+            font-family: Marcellus;
+        }
+        .btn_price{
+            font-family: inter;
+            font-size: 0.8vw;
+        }
+        .product_fa{
+            font-size: 0.8vw;
+            margin-top: 10px;
+            font-family: inter;
+            
+        }
+        .details{
+            font-size: 0.9vw;
+        }
+        .details_product{
+            padding-top: 70px;
+            font-family: inter;
+            font-size: 0.7vw;
+        }
+
+        
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        .title-item{
+            padding-top: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p-3 m-2 row border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img src="./image/logo.png" alt="" height="50">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Giới thiệu</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
+                </ul>
+
+                <form class="col-12 col-lg-6 mb-3 mb-lg-0 me-lg-5">
+                    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+                <div class="col-auto me-3 ">
+                    <span class="material-icons-outlined my-2">
+                        shopping_bag
+                    </span>
+                </div>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="row" style="margin-left: 100px;">
+            <div class="col-6 d-flex justify-content-end">
+                <div class="container">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                        <img src="image/sp1.jpg" style="width:70%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 6</div>
+                        <img src="image/sp2.jpg" style="width:70%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 6</div>
+                        <img src="./image/sp3.jpg" style="width:70%">
+                    </div>
+  
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 6</div>
+                        <img src="./image/sp4.jpg" style="width:70%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src="./image/sp1.jpg" style="width:70%" onclick="currentSlide(1)"
+                                alt="The Woods">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="./image/sp2.jpg" style="width:70%" onclick="currentSlide(2)"
+                                alt="Cinque Terre">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="./image/sp3.jpg" style="width:70%"
+                                onclick="currentSlide(3)" alt="Mountains and fjords">
+                        </div>
+                        <div class="column">
+                            <img class="demo cursor" src="./image/sp4.jpg" style="width:70%" onclick="currentSlide(4)"
+                                alt="Northern Lights">
+                        </div>
+                        <!-- END SLIDER -->
+                        <div class="content" style="margin-top: 20px;">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                  <a class="nav-link active" aria-current="page" href="#">MÔ TẢ</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">THÔNG TIN THÊM</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="#">ĐÁNH GIÁ</a>
+                                </li>
+                              </ul>
+                              <div class="content">
+                                <p class="btn_price">Son kem lì Dreamy Late Night Mellow Tint là son kem lì thuộc dòng Mellow tint của thương hiệu Merzy  trở lại với một "vỏ ngoài" mới mẻ mang đậm cá tính của riêng bạn, chất son mịn mượt nhẹ tênh cùng độ bền màu cao và bảng màu mang sắc màu của màng đêm êm dịu, tạo hiệu ứng giúp đôi môi bạn luôn rạng rỡ căng đầy và bền màu kể cả giữa màn đêm mơ màng </p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                
+                <div class="col-12 col-sm-12">
+                    <p class="text-center title-item ">A I R B R U S H &nbsp; M A T T E </p>
+                    <p class="text-center details">Bộ trang điểm hoàn hảo cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                     <div class="btn" style="margin-left: 80px;">
+                        <button type="button" class="btn btn-dark btn_price">Thêm vào giỏ hàng</button> 
+                     </div>
+                     <div class="details_product">
+                        <p class="product_fa"><b>THÊM VÀO SẢN PHẨM YÊU THÍCH</b></p>
+                        <p>ID:6549845321</p>
+                        <p>DANH MỤC: TRANG ĐIỂM</p>
+                        <p>TỪ KHÓA: AIRBRUSH,MATTE,SKIN</p>
+                        <b>CHIA SẺ</b>
+                     </div>
+                     
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="similar" style="text-align: center; font-size: 1.5vw;">
+                <b>SẢN PHẨM TƯƠNG TỰ</b>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                    <img src="./image/sp1.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center title-item">A I R B R U S H <br> M A T T E</p>
+                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                    <img src="./image/sp2.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center title-item"> B R I G H T E N I N G <br> C O R R E C T O R</p>
+                    <p class="text-center">Tông màu toàn diện</p> <br>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                    <img src="./image/sp3.jpg" alt="" class="img-fluid" height="50">
+                    <p class="text-center title-item">B O D I F Y I N G <br> S H A M P O O</p>
+                    <p class="text-center">Dầu gội tẩy rửa nhẹ nhàng nhưng <br> triệt để không gây hư hại cho tóc.</p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                    <div class="star mb-md-4">
+                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <footer class="py-5 bg-secondary">
+        <div class="row">
+            <div class="col-2 ms-5">
+                <h5>Về chúng tôi !</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Địa chỉ</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Liên hệ</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Cơ sở</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Công ty</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pháp luật</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Từ khóa</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Son môi</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Sửa rửa mặt</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Phấn má</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Kem nền</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#Dưỡng ẩm</a></li>
+                </ul>
+            </div>
+
+            <div class="col-2">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col-4 offset-1">
+                <form>
+                    <h5 class="text-light">ĐĂNG KÍ VIÊN CỦA SUNFLOWER</h5>
+                    <p class="text-light">Nhận ưu đãi chưa từng có.</p>
+                    <div class="d-flex w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Nhập email...</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-warning" type="button">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p class="ms-5">© 2021 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="link-light" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- end head -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</body>
+
+</html>
