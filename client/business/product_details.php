@@ -103,8 +103,11 @@
         </div>
 
 
-        <div class="quantity mb-4">Số lượng :
-
+        <div class="quantity mb-4 d-flex">
+           <label for="" class="fw-bold">Số lượng :</label> 
+          <input type="button" onclick="decrementValue()" value="-"  class="btn btn-dark mx-2" style="width:7%;"/>
+          <input type="text" name="quantity" value="1" maxlength="2"  size="1" id="number" class="form-control " style="width:40px;"/>
+          <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;"/>
         </div>
 
         <button type="submit" class="btn btn-dark bg-dark border-0 px-5 py-3 d-inline-block "> <span class="material-icons text-light p-1 ">add_shopping_cart</span> <span class="fw-bold text-light text-uppercase p-1 ">Thêm vào giỏ hàng</span> </button>
@@ -251,6 +254,25 @@
       next = next.nextElementSibling
     }
   })
+
+  function incrementValue() {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value < 10) {
+      value++;
+      document.getElementById('number').value = value;
+    }
+  }
+
+  function decrementValue() {
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value > 1) {
+      value--;
+      document.getElementById('number').value = value;
+    }
+
+  }
 </script>
 
 </html>
