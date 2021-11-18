@@ -184,28 +184,50 @@
       <!-- sản phẩm liên quan -->
       <div class="related_products mt-5 container text-center my-3">
         <h4 class='my-3'> SẢN PHẨM LIÊN QUAN </h4>
+
         <div class="row mx-auto my-auto justify-content-center">
           <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" role="listbox">
-              <?php foreach ($info2 as $item) : ?>
-                <div class="carousel-item ">
-                  <div class="col-md-3">
+              <div class="carousel-item active border-0">
+                <div class="col-md-3 border-0">
+                  <div class="card border-0">
                     <div class="card-img">
-                      <img src="./image/<?php echo $item['anh_sp'] ?>" class="">
+                      <img src="./image/<?php echo $info['anh_sp'] ?>" alt="" width="70%">
+                    </div>
+                    <div class="name_product">
+                      <p><?php echo $info['ten_sp'] ?></p>
                     </div>
                     <div class="price mt-2">
-                      <div class="new_price"><?php echo $item['giamgia'] ?></div>
-                      <div class="old_price"><?php echo $item['giatien'] ?></div>
+                      <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
+                      <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($info['giatien'])  ?> đ</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php foreach ($info2 as $item) : ?>
+                <div class="carousel-item border-0">
+                  <div class="col-md-3 border-0">
+                    <div class="card border-0">
+                      <div class="card-img">
+                        <img src="./image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%">
+                      </div>
+                      <div class="name_product">
+                        <p><?php echo $item['ten_sp'] ?></p>
+                      </div>
+                      <div class="price mt-2 ">
+                        <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
+                        <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($item['giatien'])  ?> đ</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               <?php endforeach; ?>
             </div>
             <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
             </a>
             <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
             </a>
           </div>
         </div>

@@ -177,12 +177,12 @@ function binh_luan_select_by_hang_hoa(){
     $sql = "SELECT b.*, h.ten_hh FROM binhluan b  JOIN hanghoa h ON h.ma_hh=b.ma_hh WHERE b.ma_hh=? ORDER BY ngay_bl DESC ";
     return pdo_query($sql);
 }
-// load binh luan 
+
 function binh_luan_load($ma_sp){
-    $sql = " SELECT * FROM binhluan WHERE ma_hh='".$ma_hh."' order by ma_bl desc";
+    $sql = " SELECT * FROM binhluan WHERE ma_hh='".$ma_sp."' order by ma_bl desc";
     return pdo_query($sql);
 }
-// dem so binh luan
+
 function binh_luan_dem(){
     $sql = "SELECT count(*) FROM binhluan ";
     return pdo_query_value($sql) > 0;
