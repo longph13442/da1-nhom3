@@ -21,7 +21,7 @@ function save_file($file, $dir_path)
 }
 function client_Render($view, $data = [])
 {
-                         extract($data);
+    extract($data);
     $view = './client/views/' . $view;
     include_once "./client/views/layouts/main.php";
 }

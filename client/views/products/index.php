@@ -60,7 +60,7 @@ foreach ($dmsp as $d) {
                    <?php foreach($dssp as $p):?>
                     
              <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
-                  <a href="index.php?url=sanphamct&ma_hh=<?=$p['ma_sp']?>">  <img src="<?=homepase_ASSET?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+                  <a href="index.php?url=sanphamct&ma_hh=<?=$p['ma_sp']?>"><img src="<?=ADMIN_ASSET?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
                     <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
                     <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     <div class="star mb-md-4">
@@ -71,38 +71,6 @@ foreach ($dmsp as $d) {
 
   <?php endforeach ?>
         </div>
-                    <!-- <div class="row">
-
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
-                            <img src="<?=homepase_ASSET?>image/img13.jpg" alt="" class="img-fluid" height="50">
-                            
-                            <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
-                            <img src="<?=homepase_ASSET?>image/img14.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="col-6 col-sm-6 col-lg-4 col-xl-4 text-center  ">
-                            <img src="<?=homepase_ASSET?>image/img15.jpg" alt="" class="img-fluid" height="50">
-                            <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                            <div class="star mb-md-4">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div> -->
                     
                     <div class="pagi d-flex justify-content-center">
                         <nav class="text-center" aria-label="Page navigation example">
