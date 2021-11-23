@@ -119,6 +119,7 @@
 
         <!-- end title -->
 
+      
         <div class="box">
             <div class="row product-fist mb-lg-5">
                 <ul class="slider">
@@ -137,105 +138,8 @@
                     </li>
 
   <?php endforeach ?>
-                    <!-- <li>
-                        <div class=" ">
-                            <img src="<?=homepase_ASSET?>image/img1.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class=" ">
-                            <img src="<?=homepase_ASSET?>image/img2.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="  ">
-                            <img src="<?=homepase_ASSET?>image/img3.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="  ">
-                            <img src="<?=homepase_ASSET?>image/img4.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class=" ">
-                            <img src="<?=homepase_ASSET?>image/img5.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class=" ">
-                            <img src="<?=homepase_ASSET?>image/img6.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li>
-                        <div class="  ">
-                            <img src="<?=homepase_ASSET?>image/img7.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="  ">
-                            <img src="<?=homepase_ASSET?>image/img3.jpg" alt="" class="img-fluid" height="50">
-                            <p class=" display-8 text-center fw-bold text-secondary my-2">350.000 VND - 400.00 VND</p>
-                            <p class="text-center">Kem Dưỡng ẩm</p>
-                            <div class="star">
-                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i>
-                            </div>
-
-                        </div>
-                    </li> -->
+  
+               
                 </ul>
             </div>
             <!-- end product-fist -->
