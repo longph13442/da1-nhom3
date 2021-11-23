@@ -24,8 +24,8 @@ function loadon_sp()
   
     $dssp = loadonsp($kyw, $iddm);
     $dmsp = loadall_dm();
-    $tendm=load_ten_dm($iddm);
-    client_render('products/index.php', compact('dssp','dmsp','tendm'));
+
+    client_render('products/index.php', compact('dssp','dmsp'));
 
 }
 

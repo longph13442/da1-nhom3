@@ -1,12 +1,12 @@
 <?php
 const ROOT_URL = "http://localhost/da1-nhom3/";
-const ADMIN_ASSET = ROOT_URL .  'public/admin-asesst/';
+const ADMIN_ASSET = ROOT_URL . 'public/admin-asesst/';
 const CLIENT_ASSET = ROOT_URL . 'public/client_asesst/';
 const homepase_ASSET = ROOT_URL . 'public/admin-assets';
 const ADMIN_URL = ROOT_URL . 'admin/';
 const Account = ROOT_URL . 'account/';
 const IMG = 'public/img/';
-const css= ROOT_URL . 'client/views/layouts/' ;
+const css = ROOT_URL . 'client/views/layouts/';
 
 // Đường dẫn thư mục
 $IMAGE_URL = "/du1-nhom3/public/img/";
@@ -21,7 +21,7 @@ function save_file($file, $dir_path)
 }
 function client_Render($view, $data = [])
 {
-    extract($data);
+                         extract($data);
     $view = './client/views/' . $view;
     include_once "./client/views/layouts/main.php";
 }
@@ -49,7 +49,7 @@ function admin_render($view, $data = [], $tongpage = [])
 function avatar()
 {
 
-    $sql = "SELECT khachhang.hinh_anh as hinh_anh FROM khachhang where ten_dang_nhap='" . $_SESSION['ten_dang_nhap'] .  "'";
+    $sql = "SELECT khachhang.hinh_anh as hinh_anh FROM khachhang where ten_dang_nhap='" . $_SESSION['ten_dang_nhap'] . "'";
     $anh = execute_query($sql);
     return $anh['hinh_anh'];
 }

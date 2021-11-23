@@ -12,8 +12,8 @@
                 <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
             </ul>
 
-            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 ">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 " action='danh-muc' >
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <div class="col-auto me-3  ">
                 <span class="material-icons-outlined  my-2">
