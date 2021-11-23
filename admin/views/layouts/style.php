@@ -16,7 +16,8 @@
 <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
 <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
-<link rel="stylesheet" href="<?= ADMIN_ASSET ?>sweetalert2-theme-bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="<?= ADMIN_ASSET ?>dist/sweetalert2-theme-bootstrap-4/bootstrap-4.css">
+
 <!-- https://material.io/resources/icons/?style=baseline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
