@@ -48,7 +48,6 @@ function login()
         'ten_dang_nhap' => '',
         'mat_khau' => '',
     ];
-    $check = false;
     if (isset($_POST['signin'])) {
         extract($_POST);
         if (isset($_POST['remember'])) {
@@ -73,9 +72,7 @@ function login()
                     unset($login['mat_khau']);
                     $_SESSION['ten_dang_nhap'] = $login['ten_dang_nhap'];
                     $msg = "Đăng nhập thành công";
-
-                    exit();
-
+                    header("location: " . ROOT_URL);
                     die;
                 } else {
                     $error['mat_khau'] = "<span style='color:red'>Mật khẩu không đúng</span>";
@@ -98,7 +95,7 @@ function login()
         $mat_khau =  $_COOKIE['mat_khau'];
         $check = true;
     }
-    client_Render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
+    login_render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
 }
 function profile()
 {
