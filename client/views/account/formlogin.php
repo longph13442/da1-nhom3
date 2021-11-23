@@ -7,7 +7,7 @@
             <div class="modal-body">
                 <form class="form-signin mx-auto" method="POST" action="" style=" width: 500px;">
                     <div class="text-center my-4">
-                        <img class="mb-4" src="<?= IMG ?>logo.png" alt="" width="72" height="72">
+                        <img class="mb-4" src="<?= ADMIN_ASSET ?>image/logo.png" alt="" width="72" height="72">
                         <h1 class="h3 mb-3 font-weight-normal">ĐĂNG NHẬP TÀI KHOẢN</h1>
                     </div>
                     <div class="form-label-group">
