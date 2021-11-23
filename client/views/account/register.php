@@ -2,7 +2,7 @@
     <div class="container">
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="../image/logo.png" alt="" height="100">
+                <img class="d-block mx-auto mb-4" src="<?=ADMIN_ASSET?>image/logo.png" alt="" height="100">
                 <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
                 <p class="lead">Trở thành thành viên của SunFlower để nhận ưu đãi ngay lần mua hàng đầu tiền.</p>
             </div>
