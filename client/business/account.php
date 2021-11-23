@@ -72,7 +72,7 @@ function login()
                     unset($login['mat_khau']);
                     $_SESSION['ten_dang_nhap'] = $login['ten_dang_nhap'];
                     $msg = "Đăng nhập thành công";
-                    header("location: " . ROOT_URL);
+                    header("location: " . ROOT_URL . '?msg=' . $msg);
                     die;
                 } else {
                     $error['mat_khau'] = "<span style='color:red'>Mật khẩu không đúng</span>";

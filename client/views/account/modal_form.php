@@ -13,7 +13,7 @@
 <?php if (isset($_GET['msg'])) : ?>
     <div class="alert alert-warning alert-dismissible fade show mx-3" role="alert">
         <?php echo $_GET['msg']; ?>
-        <button type="button" onclick="notice_login()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
 <?php if (isset($error['ten_dang_nhap'])) : ?>
