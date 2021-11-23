@@ -1,24 +1,47 @@
 <?php
-$url = isset($_GET["url"]) ? $_GET["url"] : "/";
+session_start();
+$url = isset($_GET['url']) ? $_GET['url'] : "/";
+
+require_once './commons/utils.php';
 
 switch ($url) {
     case '/':
-        include "./client/business/homepage.php";
+        require_once './client/business/homepage.php';
+      sp_trangchu();
+       
         break;
-    case 'product':
-        include "./client/business/product.php";
-        break;
-    case 'about':
-        include "./client/business/about.php";
+    case 'trang-chu':
+        require_once './client/business/homepage.php';
+
+            sp_trangchu();
         
+  
+ 
         break;
-    case 'blog':
-        include "./client/business/blog.php";        
+        
+
+    case 'danh-muc':
+        require_once './client/business/products.php';
+            loadon_sp();
+          
+
         break;
-    case 'dashboard':
-        include "./client/dashboard/product.php";
+
+    case 'sanphamct':
+    
+     
+
+
         break;
+
+    case 'cp-admin':
+        require_once './admin/business/dashboard.php';
+        dashboard_index();
+        break;
+
     default:
         # code...
         break;
 }
+
+?>
