@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Mở kết nối đến CSDL sử dụng PDO
  */
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=duan1-nhom3;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=duan1_nhom3;charset=utf8";
     $username = 'root';
     $password = '';
 
@@ -25,11 +26,9 @@ function pdo_execute($sql)
         $conn = pdo_get_connection();
         $stmt = $conn->prepare($sql);
         $stmt->execute($sql_args);
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally {
+    } finally {
         unset($conn);
     }
 }
@@ -49,11 +48,9 @@ function pdo_query($sql)
         $stmt->execute($sql_args);
         $rows = $stmt->fetchAll();
         return $rows;
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally {
+    } finally {
         unset($conn);
     }
 }
@@ -73,11 +70,9 @@ function pdo_query_one($sql)
         $stmt->execute($sql_args);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row;
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally {
+    } finally {
         unset($conn);
     }
 }
@@ -97,11 +92,21 @@ function pdo_query_value($sql)
         $stmt->execute($sql_args);
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return array_values($row)[0];
-    }
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         throw $e;
-    }
-    finally {
+    } finally {
         unset($conn);
     }
+}
+function execute_query($sql, $getAll = false)
+{
+
+    $connect = pdo_get_connection();
+    $stmt = $connect->prepare($sql);
+    $stmt->execute();
+    if ($getAll) {
+        return $stmt->fetchAll();
+    }
+
+    return $stmt->fetch();
 }

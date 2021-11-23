@@ -1,74 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
-
-  <?php include_once './admin/views/layouts/style.php'; ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Dashboard Template · Bootstrap v5.1</title>
+    <!-- Style-->
+    <?php include_once "style.php"; ?>
+    <!--End style-->
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?= ADMIN_ASSET ?>dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
 
-  <!-- Navbar -->
-  <?php include_once './admin/views/layouts/header.php'; ?>
-  <!-- /.navbar -->
 
-  <!-- Main Sidebar Container -->
-  <?php include_once './admin/views/layouts/sidebar.php'; ?>
+<!-- Custom styles for this template -->
+<link href="dashboard.css" rel="stylesheet">
+<style type="text/css">
+    /* Chart.js */
+    @keyframes chartjs-render-animation {
+        from {
+            opacity: .99
+        }
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard v1</li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+        to {
+            opacity: 1
+        }
+    }
+
+    .chartjs-render-monitor {
+        animation: chartjs-render-animation 1ms
+    }
+
+    .chartjs-size-monitor,
+    .chartjs-size-monitor-expand,
+    .chartjs-size-monitor-shrink {
+        position: absolute;
+        direction: ltr;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        z-index: -1
+    }
+
+    .chartjs-size-monitor-expand>div {
+        position: absolute;
+        width: 1000000px;
+        height: 1000000px;
+        left: 0;
+        top: 0
+    }
+
+    .chartjs-size-monitor-shrink>div {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        left: 0;
+        top: 0
+    }
+
+    .nav-item:hover {
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+</head>
+
+<body>
+    <?php
+    include_once "head.php";
+    ?>
+    <div class="container-fluid">
+        <div class="row">
+            <!--Nav Bar-->
+            <?php include_once "navbar.php" ?>
+            <!--End Bar-->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!--Task Bar-->
+                <?php include_once "taskbar.php" ?>
+                <!--End Task-->
+                <!-- Content--->
+                <?php include_once $view; ?>
+                <!-- EndContent--->
+            </main>
+
+        </div>
     </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <?php include_once $view; ?>
-        <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<?php include_once './admin/views/layouts/script.php'; ?>
+    <!-- Script-->
+    <?php require "script.php"; ?>
+    <!--End Script-->
 </body>
+
 </html>
