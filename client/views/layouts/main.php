@@ -23,6 +23,7 @@
     <?php include_once "./client/views/layouts/footer.php" ?>
     <!-- End Footer -->
     <?php include_once "./client/views/layouts/script.php" ?>
+    
 </body>
 
 </html>
