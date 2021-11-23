@@ -25,14 +25,12 @@ function client_Render($view, $data = [])
     $view = './client/views/' . $view;
     include_once "./client/views/layouts/main.php";
 }
-// function login_render($view_login, $data = [])
-// {
-//     extract($data);
-
-
-//     $view_login = './client/views/' . $view_login;
-//     include_once "./client/views/account/model.php";
-// }
+function login_render($view_login, $data = [])
+{
+    extract($data);
+    $view_login = './client/views/' . $view_login;
+    include_once "./client/views/account/modal_form.php";
+}
 function info_render($view_info, $data = [])
 {
     extract($data);

@@ -26,6 +26,7 @@
         </div>
     </div>
 </header>
+
 <!-- Form -->
-<?php include_once "./client/views/account/formlogin.php" ?>
+<?php login(); ?>
 <!-- End Form -->

@@ -10,7 +10,6 @@ switch ($url) {
     case '/':
         require_once './client/business/homepage.php';
         sp_trangchu();
-        login();
         break;
     case 'account':
         profile();
