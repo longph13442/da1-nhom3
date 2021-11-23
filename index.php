@@ -5,12 +5,9 @@ $url = isset($_GET['url']) ? $_GET['url'] : "/";
 
 require_once './commons/utils.php';
 require_once './client/business/account.php';
+
 switch ($url) {
     case '/':
-        require_once './client/business/homepage.php';
-        sp_trangchu();
-        break;
-    case 'trang-chu':
         require_once './client/business/homepage.php';
         sp_trangchu();
         break;
