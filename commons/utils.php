@@ -9,7 +9,7 @@ const IMG = 'public/img/';
 const css = ROOT_URL . 'client/views/layouts/';
 
 // Đường dẫn thư mục
-$IMAGE_URL = "/du1-nhom3/public/img/";
+$IMAGE_URL = "/da1-nhom3/public/admin-asesst/Image";
 $PATH_IMG = $_SERVER['DOCUMENT_ROOT'] . $IMAGE_URL;
 function save_file($file, $dir_path)
 {
