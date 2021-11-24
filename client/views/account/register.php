@@ -2,7 +2,7 @@
     <div class="container">
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="<?=ADMIN_ASSET?>image/logo.png" alt="" height="100">
+                <img class="d-block mx-auto mb-4" src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="100">
                 <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
                 <p class="lead">Trở thành thành viên của SunFlower để nhận ưu đãi ngay lần mua hàng đầu tiền.</p>
             </div>
@@ -18,7 +18,7 @@
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
-                                <div class="error1" id="error1"></div>
+                                <div class="text-danger error1" id="error1"></div>
                             </div>
                             <div class="col-12">
                                 <label for="address" class="form-label">Địa chỉ</label>
@@ -26,13 +26,13 @@
                                 <div class="invalid-feedback">
                                     Please enter your shipping address.
                                 </div>
-                                <div class="error4" id="error4"></div>
+                                <div class="text-danger error4" id="error4"></div>
 
                             </div>
                             <div class="col-12">
                                 <label for="address2" class="form-label">Số điện thoại<span class="text-muted"></span></label>
                                 <input type="text" name="sdt" class="form-control" id="phone" placeholder="">
-                                <div class="error5" id="error5"></div>
+                                <div class="text-danger error5" id="error5"></div>
                                 <?php if (isset($error['sdt'])) : ?>
                                     <span> <?php echo $error['sdt']; ?></span>
                                 <?php endif; ?>
@@ -47,7 +47,7 @@
                                 <?php if (isset($error['email'])) : ?>
                                     <span> <?php echo $error['email']; ?></span>
                                 <?php endif; ?>
-                                <div class="error3" id="error3"></div>
+                                <div class="text-danger error3" id="error3"></div>
 
                             </div>
                             <div class="col-12">
@@ -59,7 +59,7 @@
                                 <?php if (isset($error['ten_dang_nhap'])) : ?>
                                     <span> <?php echo $error['ten_dang_nhap']; ?></span>
                                 <?php endif; ?>
-                                <div class="error2" id="error2"></div>
+                                <div class="text-danger error2" id="error2"></div>
 
                             </div>
 
@@ -68,13 +68,13 @@
                             <div class="col-12">
                                 <label for="" class="form-label">Mật Khẩu</label>
                                 <input type="password" name="mat_khau" class="form-control" id="password">
-                                <div class="error6" id="error6"></div>
+                                <div class="text-danger error6" id="error6"></div>
                             </div>
                             <div class="col-12">
                                 <label for="" class="form-label">Nhập Lại Mật Khẩu Mật Khẩu</label>
                                 <input type="password" name="mat_khau_2" class="form-control" id="password2">
                             </div>
-                            <div class="error6" id="error_mk"></div>
+                            <div class="text-danger error6" id="error_mk"></div>
 
                             <div class="col-md-4">
                                 <label for="state" class="form-label">Giới tính</label>
@@ -92,7 +92,7 @@
                             <div class="col-md-3">
                                 <label for="zip" class="form-label">Ngày Sinh</label>
                                 <input type="date" name="ngay_sinh" class="form-control" id="date" placeholder="" required="">
-                                <div class="error7" id="error7"></div>
+                                <div class="text-danger error7" id="error7"></div>
                             </div>
                         </div>
                         <hr class="my-4">
@@ -100,7 +100,7 @@
                             <input type="checkbox" class="form-check-input" name="checkdk" id="check">
                             <label class="form-check-label" for="same-address">Đồng ý với các điều khoản và chính sách của SunFlower</label>
                         </div>
-                        <div id="error10"></div>
+                        <div id="text-danger error10"></div>
                         <hr class="my-4">
 
                         <button class="w-100 btn btn-warning btn-lg" name="register" type="submit">Đăng kí ngay</button>
