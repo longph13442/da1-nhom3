@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -41,7 +40,7 @@ switch ($url) {
         loadon_sp();
         break;
     case 'sanphamct':
-        require_once './client/views/product_details/index.php';
+        require_once './client/business/product-details.php';
         san_pham_chi_tiet();
 
         break;
