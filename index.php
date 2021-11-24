@@ -41,7 +41,7 @@ switch ($url) {
         loadon_sp();
         break;
     case 'sanphamct':
-        require_once './client/business/product-details.php';
+        require_once './client/views/product_details/index.php';
         san_pham_chi_tiet();
 
         break;
