@@ -42,7 +42,6 @@ switch ($url) {
     case 'sanphamct':
         require_once './client/business/product-details.php';
         san_pham_chi_tiet();
-
         break;
     case 'admin':
         require_once './admin/business/dashboard.php';
