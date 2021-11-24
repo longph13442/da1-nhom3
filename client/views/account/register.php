@@ -1,15 +1,15 @@
 <body class="bg-light">
     <div class="container">
         <main>
-            <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="<?=ADMIN_ASSET?>image/logo.png" alt="" height="100">
+            <div class=" text-center">
+                <img class="d-block mx-auto mb-4 mt-0" src="<?=ADMIN_ASSET?>image/logo.png" alt="" height="100">
                 <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
-                <p class="lead">Trở thành thành viên của SunFlower để nhận ưu đãi ngay lần mua hàng đầu tiền.</p>
+                <p class="lead my-3">Trở thành thành viên của SunFlower để nhận ưu đãi ngay lần mua hàng đầu tiền.</p>
             </div>
 
-            <div class="row g-5">
+            <div class="row ">
                 <div class="col-md-7 col-lg-8 mx-auto">
-                    <h4 class="mb-3">Nhập thông tin của bạn.</h4>
+                    <h4 class="my-3">Nhập thông tin của bạn.</h4>
                     <form class="" method="POST" onsubmit="return checkregister()" novalidate="">
                         <div class="row g-3">
                             <div class="col-12">

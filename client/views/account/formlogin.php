@@ -1,6 +1,6 @@
 <form class="form-signin mx-auto" method="POST" action="" style=" width: 500px;">
     <div class="text-center my-4">
-        <img class="mb-4" src="<?= IMG ?>logo.png" alt="" width="72" height="72">
+        <img class="mb-4" src="<?=homepase_ASSET?>image/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">ĐĂNG NHẬP TÀI KHOẢN</h1>
     </div>
     <div class="form-label-group">
@@ -20,12 +20,12 @@
             <input type="checkbox" <?php echo $check ? "checked" : ""  ?> name="remember" value="1"> Remember me
         </label>
         <label class="col-4">
-            <a class="text-decoration-none" href="<?= Account ?>send">Quên mật khẩu ?</a>
+            <a class="text-decoration-none text-dark" href="<?= Account ?>send">Quên mật khẩu ?</a>
         </label>
         <label class="col-4">
-            <a class="text-decoration-none" href="<?= Account ?>register">Chưa có tài khoản ?</a>
+            <a class="text-decoration-none text-dark" href="<?= Account ?>register">Chưa có tài khoản</a>
         </label>
     </div>
-    <button onclick="" class="btn btn-lg btn-warning btn-block" name="signin" type="submit">Sign in</button>
+    <button onclick="" class="btn btn-md btn-warning btn-block" name="signin" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted text-center">© SunFlower - Store</p>
 </form>
