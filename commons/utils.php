@@ -2,7 +2,7 @@
 const ROOT_URL = "http://localhost/da1-nhom3/";
 const ADMIN_ASSET = ROOT_URL . 'public/admin-asesst/';
 const CLIENT_ASSET = ROOT_URL . 'public/client_asesst/';
-const homepase_ASSET = ROOT_URL . 'public/admin-assets';
+const homepase_ASSET = ROOT_URL . 'public/admin-asesst';
 const ADMIN_URL = ROOT_URL . 'admin/';
 const Account = ROOT_URL . 'account/';
 const IMG = 'public/img/';
