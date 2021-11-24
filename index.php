@@ -1,34 +1,77 @@
 <?php
 session_start();
-$url = isset($_GET["url"]) ? $_GET["url"] : "/";
-include "./dao/pdo.php";
+
+$url = isset($_GET['url']) ? $_GET['url'] : "/";
+
+require_once './commons/utils.php';
+require_once './client/business/account.php';
+
 switch ($url) {
     case '/':
-        include "./client/business/homepage.php";
+        require_once './client/business/homepage.php';
+        sp_trangchu();
         break;
-    case 'product':
-        include "./client/business/product.php";
+    case 'account':
+        profile();
         break;
-    
-    case 'about':
-        include "./client/business/about.php";
-        
+    case 'account/login':
+        login();
         break;
-    case 'blog':
-        include "./client/business/blog.php";        
+    case 'account/register':
+        register();
         break;
-    case 'dashboard':
-        include "./client/dashboard/product.php";
+    case 'account/send':
+        send_email();
         break;
-    case 'product_detail':
-        if (isset($_GET['ma_sp']) && ($_GET['ma_sp'] > 0)) {
-            $info = san_pham_select_by_id($_GET['ma_sp']);
-            extract($info);
-            $info2 = san_pham_select_by_loai_chitiet($ma_loai, $_GET['ma_sp']);
-            include "./client/business/product_details.php";
-        } 
-        // include "./client/business/product_details.php";
+    case 'account/forgot':
+        forgot();
         break;
+    case 'account/logout':
+        logout();
+        break;
+    case 'account/reset':
+        account_reset();
+        break;
+    case 'profile':
+        profile();
+        break;
+    case 'danh-muc':
+        require_once './client/business/products.php';
+        loadon_sp();
+        break;
+    case 'sanphamct':
+        break;
+    case 'admin':
+        require_once './admin/business/dashboard.php';
+        dashboard_index();
+        break;
+    case 'admin/user':
+        include_once "./admin/business/user.php";
+        user_list();
+        break;
+    case 'admin/user/add':
+        include_once "./admin/business/user.php";
+        adduser();
+        break;
+    case 'admin/user/delete':
+        include_once "./admin/business/user.php";
+        user_delete();
+        break;
+    case 'admin/user/lock':
+        include_once "./admin/business/user.php";
+        user_lock();
+        break;
+    case 'admin/user/unlock':
+        include_once "./admin/business/user.php";
+        user_unlock();
+        break;
+    case 'admin/user/edit':
+        include_once "./admin/business/user.php";
+        user_edit();
+        break;
+    case 'admin/logout':
+        include "./admin/business/user.php";
+        user_logout();
     default:
         # code...
         break;
