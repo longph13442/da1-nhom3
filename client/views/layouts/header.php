@@ -6,13 +6,13 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="<?= ROOT_URL?>" class="nav-link px-2 link-secondary">Trang chủ</a></li>
+                <li><a href="<?= ROOT_URL ?>" class="nav-link px-2 link-secondary">Trang chủ</a></li>
                 <li><a href="index.php?url=danh-muc" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Giới thiệu</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
             </ul>
 
-            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 " action='danh-muc' method="post" >
+            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 " action='danh-muc' method="post">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <div class="col-auto me-3  ">
@@ -26,7 +26,9 @@
         </div>
     </div>
 </header>
-
-<!-- Form -->
-<?php login(); ?>
-<!-- End Form -->
+<?php if (isset($_GET['msg'])) : ?>
+    <div class="alert alert-warning alert-dismissible fade show mx-3" role="alert">
+        <?php echo $_GET['msg']; ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>

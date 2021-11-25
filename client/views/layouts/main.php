@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <?php include_once "./client/views/layouts/style.php"?>
+    <?php include_once "./client/views/layouts/style.php" ?>
 </head>
 
 <body>
     <!-- Header -->
     <?php include_once "./client/views/layouts/header.php" ?>
+    <?php include_once "./client/views/layouts/login.php"; ?>
     <!-- End Header -->
 
     <!-- Main -->
@@ -23,7 +24,7 @@
     <?php include_once "./client/views/layouts/footer.php" ?>
     <!-- End Footer -->
     <?php include_once "./client/views/layouts/script.php" ?>
-    
+
 </body>
 
 </html>

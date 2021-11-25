@@ -95,7 +95,7 @@ function login()
         $mat_khau =  $_COOKIE['mat_khau'];
         $check = true;
     }
-    login_render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
+    login_render('account/modal_form.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
 }
 function profile()
 {
