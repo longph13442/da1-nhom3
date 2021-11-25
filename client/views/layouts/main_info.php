@@ -24,7 +24,6 @@
 <body>
     <?php
     require "./client/views/layouts/header.php";
-
     ?>
     <div class="container mt-3">
         <div class="row text-center mb-3">

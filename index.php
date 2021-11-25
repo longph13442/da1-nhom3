@@ -2,10 +2,9 @@
 session_start();
 
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
-
 require_once './commons/utils.php';
 require_once './client/business/account.php';
-
+login();
 switch ($url) {
     case '/':
         require_once './client/business/homepage.php';
@@ -13,9 +12,6 @@ switch ($url) {
         break;
     case 'account':
         profile();
-        break;
-    case 'account/login':
-        login();
         break;
     case 'account/register':
         register();
