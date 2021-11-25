@@ -33,14 +33,14 @@ function load_ten_dm($iddm)
     }
 }
 
-function san_pham_select_by_id($ma_sp){
-    $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";
-    return pdo_query_one($sql,$ma_sp);
-}
-function san_pham_select_by_loai_chitiet($ma_loai,$ma_sp)
+function san_pham_select_by_id($ma_sp)
 {
-    $sql = "SELECT * FROM sanpham WHERE ma_loai=".$ma_loai." AND ma_sp <> ".$ma_sp;
+    $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";
+    return pdo_query_one($sql, $ma_sp);
+}
+function san_pham_select_by_loai_chitiet($ma_loai, $ma_sp)
+{
+    $sql = "SELECT * FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
     return pdo_query($sql);
 }
 ?>
-

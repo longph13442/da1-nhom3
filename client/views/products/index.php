@@ -43,19 +43,13 @@
                </div>
                <div class="col-9">
 
-                   <h4 class="mx-3 my-3">Tất cả các sản phẩm </h4>';
-
-
-
-
-
-
+                   <h4 class="mx-3 my-3">Tất cả các sản phẩm </h4>
 
                    <div class="row ">
 
                        <?php foreach ($dssp as $p) : ?>
 
-                           <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
+                           <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
                                <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
