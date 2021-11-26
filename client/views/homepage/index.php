@@ -1,5 +1,5 @@
 <!-- end form -->
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="<?= ADMIN_ASSET ?>image/banner.jpg" class="d-block w-100 " alt="...">
@@ -27,9 +27,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
-</div>
+</div> -->
 <!-- end banner -->
-
+<video autoplay loop style="width: 100%; height: 650px; left: 0px; top: 0px;" controls src="<?= ADMIN_ASSET ?>image/video.mp4"></video>
 <!-- <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
@@ -92,17 +92,17 @@
             </div>
         </div>
         <!-- end box-bog -->
-        <div class="box-big">
-            <h3 class="text-center  fw-bold">More to Discover and products</h3>
+        <div class="">
+            <h3 class="text-center  fw-bold my-5">More to Discover and products</h3>
             <div class="row double">
                 <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 baner2 mt-md-4  text-center ">
-                    <img src="<?= ADMIN_ASSET ?>image/baner7.png" alt="" width="90%">
+                    <img src="<?= ADMIN_ASSET ?>image/baner7.jpg" alt="" width="100%">
                 </div>
                 <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-md-4 mt-4 text-center">
-                    <img src="<?= ADMIN_ASSET ?>image/baner8.png" alt="" width="90%">
+                    <img src="<?= ADMIN_ASSET ?>image/baner8.jpg" alt="" width="100%">
                 </div>
                 <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xl-4 mt-md-4 mt-4 text-center">
-                    <img src="<?= ADMIN_ASSET ?>image/baner9.png" alt="" width="90%">
+                    <img src="<?= ADMIN_ASSET ?>image/baner9.jpg" alt="" width="100%">
                 </div>
             </div>
             <!-- end banner double -->
@@ -137,46 +137,26 @@
                 </ul>
             </div>
             <!-- end product-fist -->
-            <div id="carouselExampleSlidesOnly" class="carousel slide banner2" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide banner2 my-5" data-bs-ride="carousel">
                 <div class="carousel-inner slides">
                     <div class="carousel-item active">
-                        <img src="<?= ADMIN_ASSET ?>image/slide.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h1 class="display-4 text-dark">Cửa Hàng mỹ phẩm</h1>
-                            <h3 class="text-dark">Chuyên cung cấp mỹ phẩm chính hãng</h3>
-                            <button type="button" class="btn btn-outline-light btn-md  mx-2">Mua Ngay</button>
-                            <button type="button" class="btn btn-warning btn-md">Đăng Kí</button>
+                        <img src="<?= ADMIN_ASSET ?>image/slide2.jpg" class="d-block w-100" alt="...">
 
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="<?= ADMIN_ASSET ?>image/slide.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h1 class="display-4 text-dark">Cửa Hàng mỹ phẩm</h1>
-                            <h3 class="text-dark">Chuyên cung cấp mỹ phẩm chính hãng</h3>
-                            <button type="button" class="btn btn-outline-light btn-md  mx-2">Mua Ngay</button>
-                            <button type="button" class="btn btn-warning btn-md">Đăng Kí</button>
 
-
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="<?= ADMIN_ASSET ?>image/slide.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">
-                            <h1 class="display-4 text-dark">Cửa Hàng mỹ phẩm</h1>
-                            <h3 class="text-dark">Chuyên cung cấp mỹ phẩm chính hãng</h3>
-                            <button type="button" class="btn btn-outline-light btn-md  mx-2">Mua Ngay</button>
-                            <button type="button" class="btn btn-warning btn-md">Đăng Kí</button>
 
-
-                        </div>
                     </div>
                 </div>
             </div>
             <!-- end banner2 -->
-            <div class=" row box-bigb">
+            <div class=" row ">
                 <div class="col-12 col-sm-12 col-lg-6 col-xl-6 text-center">
-                    <img src="<?= ADMIN_ASSET ?>image/img11.jpg" alt="" width="90%">
+                    <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" alt="" width="90%">
                 </div>
                 <div class="col-12 col-sm-12 col-lg-6 col-xl-6">
                     <h3 class="text-center mt-5 mt-lg-0 mt-xl-5 mb-2 ">BẠN XỨNG ĐÁNG ĐƯỢC ĐỐI XỬ TỐT HƠN</h3>
@@ -197,12 +177,12 @@
                 </div>
             </div>
             <!-- end box-big -->
-            <div class="box-big">
-                <h4 class="title3 text-center fw-bold"> NHỮNG BÀI VIẾT ĐANG ĐƯỢC QUAN TÂM</h4>
+            <div class="">
+                <h4 class="title3 text-center fw-bold my-5"> NHỮNG BÀI VIẾT ĐANG ĐƯỢC QUAN TÂM</h4>
                 <div class="row row-cols-1 row-cols-md-3 g-3  ">
                     <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/blog7.png" class="card-img-top" alt="..." height="350">
+                            <img src="<?= ADMIN_ASSET ?>image/bl1.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">
                                 <h5 class="card-title">Những người yêu cái đẹp</h5>
                                 <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
@@ -217,7 +197,7 @@
                     </div>
                     <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/blog6.png" class="card-img-top" alt="..." height="350">
+                            <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">
                                 <h5 class="card-title ">Làn da của thiên thần</h5>
                                 <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
@@ -232,7 +212,7 @@
                     </div>
                     <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/blog8.png" class="card-img-top" alt="..." height="350">
+                            <img src="<?= ADMIN_ASSET ?>image/bl3.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">
                                 <h5 class="card-title">Không gì là không thể</h5>
                                 <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
@@ -248,69 +228,45 @@
 
                 </div>
                 <!-- end blog -->
-                <div class="row">
+                <div class="row my-5">
                     <div class="col-12 text-center ">
                         <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button>
                     </div>
                 </div>
                 <!-- end button -->
                 <hr class="my-5">
-                <div class="row comment py-5">
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 ">
-                        <i class="far fa-comment-alt fa-4x cmt"></i>
-                        <h3 class="text-center">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h3>
+                <h2 class="text-center fw-bold">NHẬT KÍ SUNFLOWE</h2>
+                <!-- <i class="far fa-comment-alt fa-4x cmt"></i> -->
+                <h4 class="text-center my-4 ">Chia sẽ những khoảnh khắc tỏa sáng của bạn</h4>
+
+                <div class="row comment py-2">
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                        <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
                     </div>
 
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 ">
-                        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Thế Tâm <div class="star">
-                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-warning">Son dưỡng môi</h5>
-                                <p class="card-text">Sản phẩm ngừa mụn sáng da tốt lắm ạ. Giao hàng nhanh, tư vấn nhiệt
-                                    tình
-                                    ạ.
-                                </p>
-                            </div>
-                        </div>
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                        <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
+
                     </div>
                     <!-- 1 -->
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 ">
-                        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Huy Trung <div class="star">
-                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="card-body ">
-                                <h5 class="card-title text-warning">Kem dưỡng ẩm</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                            </div>
-                        </div>
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                        <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
+
                     </div>
                     <!-- 2 -->
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 ">
-                        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Huy <div class="star">
-                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title text-warning">Sửa rửa mặt</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk
-                                    of
-                                    the
-                                    card's content.</p>
-                            </div>
-                        </div>
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                    <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
                     </div>
                     <!-- 3 -->
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                    <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
+                    </div>
+                    <!-- 4 -->
+                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
+                    <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
+                    </div>
+                    <!-- 4 -->
+
                 </div>
                 <!-- end instagram -->
             </div>

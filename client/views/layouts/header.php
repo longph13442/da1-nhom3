@@ -1,5 +1,5 @@
-<header class="p-3 m-2 row ">
-    <div class="container ">
+<header class=" mt-3 row mx-3">
+    <div class="container border-bottom pb-3">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="60">
@@ -45,6 +45,7 @@
             <?php endif; ?>
         </div>
     </div>
+
 </header>
 <?php if (isset($_GET['msg'])) : ?>
     <div class="alert alert-warning alert-dismissible fade show mx-3" role="alert">
