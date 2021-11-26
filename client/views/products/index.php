@@ -5,12 +5,15 @@
                    <div class="list-group ">
 
                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
-
+ <a href="index.php?url=danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
                        <?php
+                       
                         foreach ($dmsp as $d) {
                             extract($d);
                             $linkdm = "index.php?url=danh-muc&ma_sp=" . $ma_loai;
                             echo ' 
+                              
+                            
            <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
                         ?>
