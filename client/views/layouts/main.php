@@ -12,7 +12,6 @@
 <body>
     <!-- Header -->
     <?php include_once "./client/views/layouts/header.php" ?>
-    <?php include_once "./client/views/layouts/list-category.php" ?>
     <?php include_once "./client/views/layouts/login.php"; ?>
     <!-- End Header -->
 
