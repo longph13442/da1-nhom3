@@ -30,6 +30,7 @@ function load_ten_dm($iddm)
     }
     else {
         return "";
+
     }
 }
 
