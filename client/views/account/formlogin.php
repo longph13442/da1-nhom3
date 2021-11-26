@@ -8,14 +8,14 @@
         <input type="text" id="tendangnhap" name="ten_dang_nhap" value="<?php if (isset($ten_dang_nhap)) {
                                                                             echo $ten_dang_nhap;
                                                                         } ?>" id="inputEmail" value="" class="form-control my-2" placeholder="Nhập Tên Đăng Nhập">
-        <div id="error1"></div>
+        <div id="errorname"></div>
     </div>
     <div class="form-label-group">
         <label for="inputPassword ">Password</label>
         <input type="password" id="matkhau" value="<?php if (isset($mat_khau)) {
                                                         echo $mat_khau;
                                                     } ?>" name="mat_khau" id="inputPassword" class="form-control my-2" placeholder="Nhập mật khẩu...">
-        <div id="error2"></div>
+        <div id="errormk"></div>
     </div>
     <div class=" row checkbox mb-3 my-4">
         <label class="col-4">

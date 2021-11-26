@@ -25,26 +25,6 @@ function checkregister() {
     } else {
         error1.innerHTML = "";
     }
-    if (ten_dang_nhap.value.length == '') {
-        error2.innerHTML = "Vui lòng nhập tên đăng nhập";
-        ten_dang_nhap.focus();
-        return false;
-    } else {
-        error2.innerHTML = "";
-    }
-    var re = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
-    if (email.value.length == 0) {
-        error3.innerHTML = "Vui lòng nhập email";
-        email.focus();
-        return false;
-    } else if (!re.test(email.value)) {
-        error3.innerHTML = "Email không hợp lệ";
-        email.focus();
-        return false;
-    } else {
-        error3.innerHTML = "";
-    }
-
     if (address.value.length == 0) {
         error4.innerHTML = "Vui lòng nhập địa chỉ";
         address.focus();
@@ -53,6 +33,7 @@ function checkregister() {
     else {
         error4.innerHTML = "";
     }
+
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
     if (sdt.value.length == 0) {
         error5.innerHTML = "Vui lòng nhập số điện thoại";
@@ -67,7 +48,25 @@ function checkregister() {
     else {
         error5.innerHTML = "";
     }
-
+    var re = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
+    if (email.value.length == 0) {
+        error3.innerHTML = "Vui lòng nhập email";
+        email.focus();
+        return false;
+    } else if (!re.test(email.value)) {
+        error3.innerHTML = "Email không hợp lệ";
+        email.focus();
+        return false;
+    } else {
+        error3.innerHTML = "";
+    }
+    if (ten_dang_nhap.value.length == '') {
+        error2.innerHTML = "Vui lòng nhập tên đăng nhập";
+        ten_dang_nhap.focus();
+        return false;
+    } else {
+        error2.innerHTML = "";
+    }
     if (password.value.length == 0) {
         error6.innerHTML = "Vui lòng nhập mật khẩu";
         return false;
