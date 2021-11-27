@@ -1,17 +1,17 @@
 <div class="row py-3">
-        <ul class="nav col-12  justify-content-center my-0">
-            <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
-            <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
-            <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
-            <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
-            <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
-            <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
-            <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
-            <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
-        </ul>
-    </div>
+    <ul class="nav col-12  justify-content-center my-0">
+        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
+        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
+        <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
+        <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
+        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
+        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
+        <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
+        <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
+    </ul>
+</div>
 
-    <!-- danh-muc -->
+<!-- danh-muc -->
 <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -42,7 +42,7 @@
     </button>
 </div> -->
 <!-- end banner -->
-<video  style="width: 100%; height: 650px; left: 0px; top: 0px;"  src="<?= ADMIN_ASSET ?>image/video.mp4" controls autoplay loop preload></video>
+<video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" controls autoplay loop preload></video>
 <!-- <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
@@ -89,9 +89,9 @@
             <?php foreach ($sanpham as $p) : ?>
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
                     <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                    <div class="star mb-md-4">
+                    <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
                 </div>
@@ -150,6 +150,49 @@
                 </ul>
             </div>
             <!-- end product-fist -->
+            <div class="display-4  mt-5 mt-lg-5 mt-md-5 ms-3 ">
+                <h3 class="fw-bold "> PRODUCTS COMBO</h3>
+            </div>
+
+            <!-- end title -->
+            <div class="combo">
+                <div class="row my-5">
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center ">
+                        <img src="<?= ADMIN_ASSET ?>image/cm1.jpg" alt="" width="100%">
+                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
+                        <div class="d-flex text-center">
+                            <p class=" mx-2 ">650.000 VND </p>
+                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                        <img src="<?= ADMIN_ASSET ?>image/cm2.jpg" alt="" width="100%">
+                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
+                        <div class="d-flex text-center">
+                            <p class=" mx-2 ">650.000 VND </p>
+                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                        <img src="<?= ADMIN_ASSET ?>image/cm3.jpg" alt="" width="100%">
+                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
+                        <div class="d-flex text-center">
+                            <p class=" mx-2">650.000 VND </p>
+                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                        <img src="<?= ADMIN_ASSET ?>image/cm4.jpg" alt="" width="100%">
+                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
+                        <div class="d-flex text-center">
+                            <p class=" mx-2 ">650.000 VND </p>
+                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end combo -->
             <div id="carouselExampleSlidesOnly" class="carousel slide banner2 my-5" data-bs-ride="carousel">
                 <div class="carousel-inner slides">
                     <div class="carousel-item active">
@@ -161,7 +204,7 @@
 
                     </div>
                     <div class="carousel-item">
-                        <img src="<?= ADMIN_ASSET ?>image/slide.jpg" class="d-block w-100" alt="...">
+                        <img src="<?= ADMIN_ASSET ?>image/slide3.jpg" class="d-block w-100" alt="...">
 
                     </div>
                 </div>
@@ -268,15 +311,15 @@
                     </div>
                     <!-- 2 -->
                     <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                    <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
+                        <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
                     </div>
                     <!-- 3 -->
                     <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                    <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
+                        <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
                     </div>
                     <!-- 4 -->
                     <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                    <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
+                        <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
                     </div>
                     <!-- 4 -->
 
