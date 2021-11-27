@@ -11,10 +11,4 @@ function loadall_topsp_tt(){
      $sanpham2 = pdo_query($sql);
     return $sanpham2;
 }
-
-
-
-
-
-
 ?>

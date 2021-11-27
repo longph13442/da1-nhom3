@@ -1,16 +1,19 @@
    <main>
-       <div class="container ">
+       <div class="container my-5">
            <div class="row">
                <div class="col-3 bg-light py-5" style="height: 90%;">
                    <div class="list-group ">
 
                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
-
+ <a href="index.php?url=danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
                        <?php
+                       
                         foreach ($dmsp as $d) {
                             extract($d);
                             $linkdm = "index.php?url=danh-muc&ma_sp=" . $ma_loai;
                             echo ' 
+                              
+                            
            <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
                         ?>
@@ -87,14 +90,14 @@
            <h4 class="text-center my-5">NHỮNG ƯU ĐÃI DÀNH RIÊNG CHO BẠN</h4>
            <div class="row mx-5">
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/pr1.png" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner7.jpg" alt="" height="400" width="100%">
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/pr2.png" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner8.jpg" alt="" height="400" width="100%">
 
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/pr1.png" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner9.jpg" alt="" height="400" width="100%">
                </div>
            </div>
            <!-- end row -->

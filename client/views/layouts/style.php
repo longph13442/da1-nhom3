@@ -4,7 +4,7 @@
 <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
 <link href="./css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="<?= ADMIN_ASSET ?>./index.css">
+
 <link rel="stylesheet" href="<?= ADMIN_ASSET ?>./index.css">
 <!-- boostrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
