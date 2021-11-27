@@ -77,6 +77,15 @@ switch ($url) {
     case 'admin/logout':
         include "./admin/business/user.php";
         user_logout();
+        break;
+    case 'about':
+        require_once './client/business/about.php';
+        about();
+        break;
+    case 'blog':
+        require_once './client/business/blog.php';
+        blog();
+        break;
     default:
         # code...
         break;
