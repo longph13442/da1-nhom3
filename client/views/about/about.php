@@ -1,12 +1,12 @@
 <div class="blog " style="margin:0 100px;">
-        <div class="row ">
-            <div class="text-center mt-3">
+        <div class="row my-5">
+            <div class="text-center ">
                 <img src="<?=ADMIN_ASSET?>Image/flower.png" alt="" width="10%">
             </div>
             <!-- img -->
-            <h4 class="text-center fw-bold">VỀ SUNFLOWER - SHOP MỸ PHẨM CỦA CHÚNG TÔI </h4>
+            <h4 class="text-center fw-bold my-3">VỀ SUNFLOWER - SHOP MỸ PHẨM CỦA CHÚNG TÔI </h4>
             <!-- title -->
-            <p class="mx-auto my-3 " style="width: 90%;"> Chúng tôi cam kết luôn mang lại những sản phẩm chính hãng với
+            <p class="mx-auto  " style="width: 90%;"> Chúng tôi cam kết luôn mang lại những sản phẩm chính hãng với
                 giá tốt nhất cho khách hàng. Những sản phẩm bán trên Kosmebox đều được bảo đảm cung cấp bởi những thương
                 hiệu, nhà cung cấp uy tín mà chúng tôi đã cẩn trọng đánh giá, dựa trên các tiêu chí của khu vực về an
                 toàn sản phẩm, điều kiện sản xuất và lưu trữ bảo quản. </p>
