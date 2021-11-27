@@ -8,7 +8,7 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="<?= ROOT_URL ?>" class="nav-link px-2 link-secondary">Trang chủ</a></li>
                 <li><a href="index.php?url=danh-muc" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Giới thiệu</a></li>
+                <li><a href="<?= ROOT_URL ?>about" class="nav-link px-2 link-dark">Giới thiệu</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
             </ul>
 

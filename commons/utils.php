@@ -53,3 +53,4 @@ function avatar()
     $anh = execute_query($sql);
     return $anh['hinh_anh'];
 }
+
