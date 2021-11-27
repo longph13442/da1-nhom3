@@ -74,42 +74,69 @@
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class="comment">
             <div class="row d-flex justify-content-center">
-
               <div class="col-md-12">
-                <div class="headings d-flex justify-content-between align-items-center mb-3">
-                  <p class="mt-3">Số bình luận (1)</p>
+                <div class="headings d-flex justify-content-between align-items-center mb-1">
+
                 </div>
-                <div class="card p-3 mt-2">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Loving your work and profile! </small></span> </div> <small> <span class="material-icons">star_rate</span> 3 ngày trước</small>
-                  </div>
-                  <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    <div class="reply px-4"> <small>Xóa</small> <span class="dots"></span> <small>Trả lời</small>
-                      <span class="dots"></span>
+                <?php foreach ($info3 as $bl) : ?>
+                  <div class="card p-3 mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2">
+                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ma_tai_khoan']; ?>: </small>
+                          <small class="font-weight-bold"><?php echo $bl['noi_dung']; ?> </small>
+                        </span>
+                      </div>
+                      <small></small>
+                      <small class="d-flex">
+                        <div class="mx-3">
+                          <?php for ($i = 0; $i < $bl['danh_gia']; $i++) : ?>
+                            <?php if ($i != '') : ?>
+                              <i class="fas fa-star"></i>
+                            <?php endif; ?>
+                          <?php endfor; ?>
+                         
+                        </div>
+                        <div class=""><?php echo $bl['ngay_tao']; ?></div>
+                      </small>
                     </div>
-                    <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
-                  </div>
-                </div>
-                .
-              </div>
-              <div class="col-md-12">
+                    <div class="action d-flex justify-content-between mt-2 align-items-center mx-3">
 
+                      <div class="reply px-4">
+                        <form action="" method="post"> <button type="submit" name="xoa_bl" onclick="return confirm('bạn có chắc muốn xóa không!')" style="border: none; background: none;"><small>Xóa</small></button> </form>
+                      </div>
+                      <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+              <?php  ?>
+              <div class="col-md-12">
+                <form action="" method="post">
+                  <div class="border rounded p-2 mt-4">
+                    <div class="rating m-3 ms-5">
+                      <label for="" class="mx-3">Đánh giá sản phẩm : </label>
+                      <input type="radio" name="danh_gia" value="5" id="start1"><label for="start1">
+                      </label>
+                      <input type="radio" name="danh_gia" value="4" id="start2"><label for="start2">
+                      </label>
+                      <input type="radio" name="danh_gia" value="3" id="start3"><label for="start3">
+                      </label>
+                      <input type="radio" name="danh_gia" value="2" id="start4"><label for="start4">
+                      </label>
+                      <input type="radio" name="danh_gia" value="1" id="start5"><label for="start5">
+                      </label>
+                    </div>
+                    <input type="hidden" name="ma_sp" value="<?php echo $ma_sp ?>">
+                    <div class="d-flex flex-row align-items-start"><img class="rounded-circle px-2" src="https://i.imgur.com/RpzrMR2.jpg" width="60"><textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea></div>
+                    <div class="mt-2 text-right float-end">
+                      <input type="submit" value="Gửi bình luận" name="gui_bl" class="btn btn-primary btn-sm shadow-none mx-2">
+                      <!-- <button class="btn btn-primary btn-sm shadow-none mx-2" type="submit" name="gui_bl" >Gửi bình luận</button> -->
+                      <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="reset">Hủy</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
-
-            <!-- <div class="row d-flex justify-content-center">
-                <div class="col-md-12">
-                  <div class="headings d-flex justify-content-between align-items-center mb-3">
-                    <p class="mt-3">Số bình luận (1)</p>
-                  </div>
-                  <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php if (isset($_SESSION['check'])) { ?>
-                    <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php } else {
-                    echo "Đăng nhập để bình luận!";
-                  }    ?>
-                </div>
-              </div> -->
           </div>
         </div>
       </div>
