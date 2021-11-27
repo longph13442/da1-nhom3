@@ -94,7 +94,7 @@
                               <i class="fas fa-star"></i>
                             <?php endif; ?>
                           <?php endfor; ?>
-                         
+
                         </div>
                         <div class=""><?php echo $bl['ngay_tao']; ?></div>
                       </small>
@@ -111,30 +111,34 @@
               </div>
               <?php  ?>
               <div class="col-md-12">
-                <form action="" method="post">
-                  <div class="border rounded p-2 mt-4">
-                    <div class="rating m-3 ms-5">
-                      <label for="" class="mx-3">Đánh giá sản phẩm : </label>
-                      <input type="radio" name="danh_gia" value="5" id="start1"><label for="start1">
-                      </label>
-                      <input type="radio" name="danh_gia" value="4" id="start2"><label for="start2">
-                      </label>
-                      <input type="radio" name="danh_gia" value="3" id="start3"><label for="start3">
-                      </label>
-                      <input type="radio" name="danh_gia" value="2" id="start4"><label for="start4">
-                      </label>
-                      <input type="radio" name="danh_gia" value="1" id="start5"><label for="start5">
-                      </label>
+                <?php if (isset($_SESSION['ten_dang_nhap'])) { ?>
+                  <form action="" method="post">
+                    <div class="border rounded p-2 mt-4">
+                      <div class="rating m-3 ms-5">
+                        <label for="" class="mx-3">Đánh giá sản phẩm : </label>
+                        <input type="radio" name="danh_gia" value="5" id="start1"><label for="start1">
+                        </label>
+                        <input type="radio" name="danh_gia" value="4" id="start2"><label for="start2">
+                        </label>
+                        <input type="radio" name="danh_gia" value="3" id="start3"><label for="start3">
+                        </label>
+                        <input type="radio" name="danh_gia" value="2" id="start4"><label for="start4">
+                        </label>
+                        <input type="radio" name="danh_gia" value="1" id="start5"><label for="start5">
+                        </label>
+                      </div>
+                      <input type="hidden" name="ma_sp" value="<?php echo $ma_sp ?>">
+                      <div class="d-flex flex-row align-items-start"><img class="rounded-circle px-2" src="https://i.imgur.com/RpzrMR2.jpg" width="60"><textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea></div>
+                      <div class="mt-2 text-right float-end">
+                        <input type="submit" value="Gửi bình luận" name="gui_bl" class="btn btn-primary btn-sm shadow-none mx-2">
+                        <!-- <button class="btn btn-primary btn-sm shadow-none mx-2" type="submit" name="gui_bl" >Gửi bình luận</button> -->
+                        <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="reset">Hủy</button>
+                      </div>
                     </div>
-                    <input type="hidden" name="ma_sp" value="<?php echo $ma_sp ?>">
-                    <div class="d-flex flex-row align-items-start"><img class="rounded-circle px-2" src="https://i.imgur.com/RpzrMR2.jpg" width="60"><textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea></div>
-                    <div class="mt-2 text-right float-end">
-                      <input type="submit" value="Gửi bình luận" name="gui_bl" class="btn btn-primary btn-sm shadow-none mx-2">
-                      <!-- <button class="btn btn-primary btn-sm shadow-none mx-2" type="submit" name="gui_bl" >Gửi bình luận</button> -->
-                      <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="reset">Hủy</button>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                <?php } else {
+                  echo "Đăng nhập để bình luận!";
+                }    ?>
               </div>
             </div>
           </div>

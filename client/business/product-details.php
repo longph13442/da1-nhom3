@@ -29,5 +29,3 @@ function bl_insert(){
     header("location: " . $_SERVER['HTTP_REFERER']);
     }
 }
-
-?>
