@@ -9,7 +9,6 @@ switch ($url) {
     case '/':
         require_once './client/business/homepage.php';
         sp_trangchu();
-
         break;
     case 'account':
         profile();
@@ -29,9 +28,16 @@ switch ($url) {
     case 'account/reset':
         account_reset();
         break;
+    case 'account/cart':
+        listcart();
+        break;
+    case 'account/cart/details':
+        cart_dt();
+        break;
     case 'profile':
         profile();
         break;
+
     case 'danh-muc':
         require_once './client/business/products.php';
         loadon_sp();

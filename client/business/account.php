@@ -156,7 +156,6 @@ function profile()
     }
 
     info_render('account/profile.php', compact('khachhang', 'error'));
-    info_render('layouts/nav_info.php', compact('khachhang', 'error'));
 }
 function account_reset()
 {
@@ -197,7 +196,10 @@ function account_reset()
         die;
     }
     info_render('account/resetpass.php', compact('khachhang', 'error'));
-    info_render('layout/nav_info.php', compact('khachhang', 'error'));
+}
+function cart_dt()
+{
+    info_render('account/cart_dt.php');
 }
 function send_email()
 {
@@ -213,4 +215,9 @@ function logout()
     session_destroy();
     header("location: " . ROOT_URL);
     die;
+}
+function listcart()
+{
+
+    info_render('account/list_cart.php');
 }
