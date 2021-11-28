@@ -4,10 +4,7 @@ const ADMIN_ASSET = ROOT_URL . 'public/admin-asesst/';
 const CLIENT_ASSET = ROOT_URL . 'public/client_asesst/';
 const homepase_ASSET = ROOT_URL . 'public/admin-asesst/';
 const ADMIN_URL = ROOT_URL . 'admin/';
-<<<<<<< HEAD
 const CLIENT_URL = ROOT_URL . 'client/';
-=======
->>>>>>> huybtph14352
 const Account = ROOT_URL . 'account/';
 const IMG = 'public/admin-asesst/Image/';
 const css = ROOT_URL . 'client/views/layouts/';

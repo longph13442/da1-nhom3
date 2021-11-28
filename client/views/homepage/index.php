@@ -42,7 +42,7 @@
     </button>
 </div> -->
 <!-- end banner -->
-<video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" controls autoplay loop preload></video>
+<video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video>
 <!-- <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
