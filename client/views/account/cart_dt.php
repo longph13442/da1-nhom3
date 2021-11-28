@@ -4,6 +4,7 @@
     </div>
     <div class="row">
         <div class="">
+            <input type="hidden" name="id_hoadon" value="<?= $hddt['id_hoadon'] ?>">
             <table class="table border" style="width: 100%">
                 <tr class="">
                     <th>Sản Phẩm</th>
@@ -12,30 +13,32 @@
                 <tr>
                     <td>
                         <p class="text-product">
-                            Sữa Chống Nắng La Roche-Posay
-                            Anthelios Invisible Fluid (Shaka Fluid)
-                            SPF 50+ Không Nhờn Rít – 50ML × 1
+                            <?= $hddt['ten_sp']; ?> x <span class="text-danger"><?= $hddt['soluong'] ?></span>
                         </p>
                     </td>
                     <td>
-                        <b>445.500đ</b>
+                        <b><?= $hddt['giatien'] ?></b>
                     </td>
                 </tr>
                 <tr>
                     <td>Tổng Cộng</td>
-                    <td><b>445.500đ</b></td>
+                    <td><b><?= $hddt['tongtien'] ?></b></td>
                 </tr>
                 <tr>
                     <td>Phí vận chuyển</td>
-                    <td><b>0đ qua giao hàng</b></td>
+                    <td><b><?= $hddt['phivanchuyen'] ?> qua giao hàng</b></td>
                 </tr>
                 <tr>
                     <td>Phương thức thanh toán</td>
-                    <td><b>COD 445.500đ</b></td>
+                    <td><b><?php if ($hddt['ppthanhtoan'] == 0) {
+                                echo "Thanh toán khi nhận hàng";
+                            } else {
+                                echo "Thanh toán online";
+                            } ?></b></td>
                 </tr>
                 <tr>
                     <td>Tổng Tiền</td>
-                    <td><b>445.500đ</b></td>
+                    <td><b><?= $hddt['tongtien'] ?></b></td>
                 </tr>
                 <tr>
                     <th>Chi Tiết Khách Hàng</th>
@@ -43,11 +46,11 @@
                 </tr>
                 <tr>
                     <td>Email</td>
-                    <td>nhom3@gmail.com</td>
+                    <td><?= $hddt['email'] ?></td>
                 </tr>
                 <tr>
                     <td>Số điện thoại</td>
-                    <td>0338898903</td>
+                    <td><?= $hddt['sdt'] ?></td>
                 </tr>
             </table>
             <table class="table border">
@@ -57,16 +60,15 @@
                 </tr>
                 <tr>
                     <td>Họ Tên</td>
-                    <td>Bùi Tiến Huy</td>
+                    <td><?= $hddt['ho_ten'] ?></td>
                 </tr>
                 <tr>
                     <td>Địa chỉ cụ thể</td>
-                    <td>Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
-
-                        (024) 7300 1955</td>
+                    <td><?= $hddt['dia_chi'] ?></td>
                 </tr>
 
             </table>
+
         </div>
     </div>
 

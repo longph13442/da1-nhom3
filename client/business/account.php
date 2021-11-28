@@ -1,6 +1,12 @@
 <?php
 require_once './dao/system_dao.php';
 require_once './dao/taikhoan.php';
+require_once "./dao/cart.php";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 function register()
 {
 
@@ -197,18 +203,55 @@ function account_reset()
     }
     info_render('account/resetpass.php', compact('khachhang', 'error'));
 }
-function cart_dt()
-{
-    info_render('account/cart_dt.php');
-}
-function send_email()
-{
 
-    client_Render('account/get_password.php');
-}
 function forgot()
 {
+    $content = 'Mã xác nhận của bạn là: ';
+    $receiver = $_POST['receiver'];
+    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower ';
+    $_SESSION['receiver'] = $receiver;
+    if (!isset($_SESSION['receiver'])) {
+        header("location:   " . ROOT_URL);
+        die();
+    }
+    $mail = new PHPMailer(true);
+    try {
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'sunflowernhom3@gmail.com';
+        $mail->Password   = '123456bi';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
+
+        //Recipients
+        $mail->setFrom('sunflowernhom3@gmail.com', 'Sunflower');
+        $arrEmail = explode(',', $receiver);
+        foreach ($arrEmail as $em) {
+            $mail->addAddress(trim($em));
+        }
+
+        $mail->addReplyTo('sunflowernhom3@gmail.com', 'Sunflower');
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $title;
+        $mail->Body    = $content;
+        $mail->AltBody = $content;
+        $mail->send();
+        echo "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
     client_Render('account/change_pw.php');
+}
+
+function send_email()
+{
+    client_Render('account/get_password.php');
 }
 function logout()
 {
@@ -218,6 +261,13 @@ function logout()
 }
 function listcart()
 {
+    $hoadon = cart_list($_SESSION['ten_dang_nhap']);
+    info_render('account/list_cart.php', compact('hoadon'));
+}
 
-    info_render('account/list_cart.php');
+function cart_detail()
+{
+    $id_hoadon = $_GET['id_hoadon'];
+    $hddt = cart_dts($id_hoadon);
+    info_render('account/cart_dt.php', compact('hddt'));
 }

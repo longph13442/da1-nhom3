@@ -3,6 +3,9 @@ session_start();
 
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
+require_once './vendor/phpmailer/phpmailer/src/Exception.php';
+require_once './vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require_once './vendor/phpmailer/phpmailer/src/SMTP.php';
 require_once './client/business/account.php';
 login();
 switch ($url) {
@@ -32,7 +35,7 @@ switch ($url) {
         listcart();
         break;
     case 'account/cart/details':
-        cart_dt();
+        cart_detail();
         break;
     case 'profile':
         profile();

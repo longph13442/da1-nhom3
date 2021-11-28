@@ -17,12 +17,13 @@ function checkregister() {
     var error7 = document.getElementById('error7');
     var error9 = document.getElementById('error9');
     var error_mk = document.getElementById('error_mk');
-    var error_10 = document.getElementById('error_10');
+    var error10 = document.getElementById('error10');
     if (name.value.length == 0) {
         error1.innerHTML = "Vui lòng nhập họ tên";
         name.focus();
         return false;
-    } else {
+    }
+    else {
         error1.innerHTML = "";
     }
     if (address.value.length == 0) {

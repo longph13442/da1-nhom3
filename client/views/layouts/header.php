@@ -20,6 +20,7 @@
                     shopping_bag
                 </span>
             </div>
+
             <?php
             if (isset($_SESSION['ten_dang_nhap'])) : ?>
                 <div class="dropdown text-end">
@@ -33,7 +34,7 @@
                                 <?php endif; ?>
                             </a>
                             <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>profile">Profile</a>
+                                <a class="text-decoration-none dropdown-item t" href="<?= ROOT_URL ?>profile">Profile</a>
                             </div>
                         </li>
                     </ul>

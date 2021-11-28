@@ -15,15 +15,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php for ($i = 1; $i < 10; $i++) : ?>
+                    <?php foreach ($hoadon as $hd) : ?>
                         <tr>
-                            <td scope="row">P</td>
-                            <td>11:34 Sáng 06/11/2021</td>
-                            <td>Đang xử lý</td>
-                            <td>0đ</td>
-                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details">Xem</a></td>
+                            <td scope="row"><?= $hd['ten_sp'] ?></td>
+                            <td><?= $hd['ngay_tao'] ?></td>
+                            <td><?php
+                                if ($hd['tinhtrang'] == 0) {
+                                    echo "Đang Xử lý";
+                                } else if ($hd['tinhtrang'] == 1) {
+                                    echo "Đang chuẩn bị";
+                                } else if ($hd['tinhtrang'] == 2) {
+                                    echo "Đang giao hàng";
+                                } else if ($hd['tinhtrang'] == 3) {
+                                    echo "Giao hàng thành công";
+                                } else {
+                                    echo "Đã bị hủy";
+                                }
+                                ?></td>
+                            <td><?= $hd['tongtien'] ?></td>
+                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details?id_hoadon=<?= $hd['id_hoadon']; ?>">Xem</a></td>
                         </tr>
-                    <?php endfor; ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
