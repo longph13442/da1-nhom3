@@ -147,6 +147,15 @@ switch ($url) {
         require_once './admin/business/statistical.php';
         statistica();
         break;
+    case 'dathang':
+        require_once './client/business/dathang.php';
+        dat_hang_tt();
+        break;
+
+    case 'xoadh':
+        require_once './client/business/dathang.php';
+        xoa_gio_hang();
+        break;
   
     default:
         # code...
