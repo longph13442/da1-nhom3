@@ -93,6 +93,51 @@ switch ($url) {
         require_once './admin/business/category.php';
         category_list();
         break;
+    case 'category/add':
+        require_once './admin/business/category.php';
+        category_add_form();
+        break;
+    case 'category/save-add';
+        require_once './admin/business/category.php';
+        category_save_add();
+    case 'category/delete':
+        require_once './admin/business/category.php';
+        category_delete();
+        break;
+    case 'category/edit':
+        require_once './admin/business/category.php';
+        category_edit_form();
+        break;
+    case 'category/save-edit':
+        require_once './admin/business/category.php';
+        category_save_edit();
+        break;
+ 
+    case 'comments':
+        require_once './admin/business/comments.php';
+        comments_list();
+        break;
+    case 'comments/delete':
+        require_once './admin/business/comments.php';
+        comments_delete();
+        break;
+    case 'slide':
+        require_once './admin/business/slide.php';
+        slide_list();
+        break;
+    case 'slide/delete':
+        require_once './admin/business/slide.php';
+        slide_delete();
+        break;
+    case 'slide/update':
+        require_once './admin/business/slide.php';
+        slide_update_form();
+        break;
+    case 'statistical':
+        require_once './admin/business/statistical.php';
+        statistica();
+        break;
+  
     default:
         # code...
         break;
