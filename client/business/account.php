@@ -7,6 +7,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+ob_start();
+
 function register()
 {
 
@@ -78,7 +80,7 @@ function login()
                     unset($login['mat_khau']);
                     $_SESSION['ten_dang_nhap'] = $login['ten_dang_nhap'];
                     $msg = "Đăng nhập thành công";
-                    header("location: " . ROOT_URL . '?msg=' . $msg);
+                    header("location: " . ROOT_URL  . '?msg=' . $msg);
                     die;
                 } else {
                     $error['mat_khau'] = "<span style='color:red'>Mật khẩu không đúng</span>";
@@ -101,7 +103,7 @@ function login()
         $mat_khau =  $_COOKIE['mat_khau'];
         $check = true;
     }
-    login_render('account/modal_form.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
+    login_render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
 }
 function profile()
 {
@@ -270,4 +272,7 @@ function cart_detail()
     $id_hoadon = $_GET['id_hoadon'];
     $hddt = cart_dts($id_hoadon);
     info_render('account/cart_dt.php', compact('hddt'));
+}
+function account_address()
+{
 }
