@@ -49,6 +49,15 @@ switch ($url) {
         require_once './client/business/product-details.php';
         san_pham_chi_tiet();
         break;
+
+    case 'binh-luan/delete':
+        require_once './client/business/product-details.php';
+        bl_deleted();
+        break;
+    case 'binh-luan/insert':
+        require_once './client/business/product-details.php';
+        bl_insert();
+        break;
     case 'admin':
         require_once './admin/business/dashboard.php';
         dashboard_index();
