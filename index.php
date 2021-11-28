@@ -7,11 +7,14 @@ require_once './vendor/phpmailer/phpmailer/src/Exception.php';
 require_once './vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require_once './vendor/phpmailer/phpmailer/src/SMTP.php';
 require_once './client/business/account.php';
-login();
+
 switch ($url) {
     case '/':
         require_once './client/business/homepage.php';
         sp_trangchu();
+        break;
+    case 'login':
+        login();
         break;
     case 'account':
         profile();
@@ -36,6 +39,9 @@ switch ($url) {
         break;
     case 'account/cart/details':
         cart_detail();
+        break;
+    case 'account/address':
+        account_address();
         break;
     case 'profile':
         profile();

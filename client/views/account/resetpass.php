@@ -12,17 +12,17 @@
                         <?php if (isset($error['mat_khau_cu'])) : ?>
                             <span class="text-danger"><?php echo $error['mat_khau_cu'] ?></span>
                         <?php endif; ?>
-                        <div id="error1"></div>
+                        <div id="error1" class="text-danger"></div>
                     </div>
                     <div class="form-group">
                         <label for="" class="form-label">Mật Khẩu Mới</label>
                         <input type="password" name="new_mat_khau" id="new_mat_khau" class="form-control" placeholder="Nhập Mật khẩu Mới......">
-                        <div id="error2"></div>
+                        <div id="error2" class="text-danger"></div>
                     </div>
                     <div class="form-group">
                         <label for="" class="form-label">Nhập Lại Mật Khẩu</label>
                         <input type="password" name="new_mat_khau_2" id="new_mat_khau_2" class="form-control" placeholder="Nhập Lại Mật khẩu......">
-                        <div id="error3"></div>
+                        <div id="error3" class="text-danger"></div>
 
                     </div>
                     <br>

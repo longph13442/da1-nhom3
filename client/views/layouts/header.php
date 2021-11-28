@@ -1,7 +1,7 @@
 <header class=" mt-3 row mx-3">
     <div class="container border-bottom pb-3">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="60">
             </a>
 
@@ -23,31 +23,37 @@
 
             <?php
             if (isset($_SESSION['ten_dang_nhap'])) : ?>
-                <div class="dropdown text-end">
+                <div class="dropdown">
                     <ul class="proflie-dropdown navbar-nav">
                         <li class="nav-item d-inline">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="text-decoration-none dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php if (avatar() == '') : ?>
                                     <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
                                 <?php else : ?>
                                     <img src="<?= ROOT_URL . IMG  ?><?= avatar(); ?>" alt="mdo" width="32" height="32" class="rounded-circle">
                                 <?php endif; ?>
                             </a>
-                            <div class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="text-decoration-none dropdown-item t" href="<?= ROOT_URL ?>profile">Profile</a>
+                            <div style="transform: translate3d(-93px, 46px, 0px);" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
+                                <?php if (!isset($_SESSION['vai_tro']) != 1) : ?>
+                                    <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
+                                <?php endif; ?>
+                                <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             <?php else : ?>
-                <button type="button" name="" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a href="login" class=" btn btn-outline-warning" data-bs-toggle="modal" data-bs-target=" #exampleModal">
                     Tài Khoản
-                </button>
+                </a>
             <?php endif; ?>
         </div>
     </div>
-
 </header>
+<?php
+login();
+?>
 <?php if (isset($_GET['msg'])) : ?>
     <div class="alert alert-warning alert-dismissible fade show mx-3" role="alert">
         <?php echo $_GET['msg']; ?>

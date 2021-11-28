@@ -24,11 +24,17 @@
                                     <span class="input-group-text">@</span>
                                     <input type="text" class="form-control" value="<?= $user['ten_dang_nhap']; ?>" name="ten_dang_nhap" id="username" placeholder="Username" required="">
                                 </div>
+                                <?php if (isset($error['ten_dang_nhap'])) : ?>
+                                    <span class="text-danger"> <?php echo $error['ten_dang_nhap']; ?></span>
+                                <?php endif; ?>
                                 <div class="error2" id="error2"></div>
                             </div>
                             <div class="col-12">
                                 <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
                                 <input type="email" name="email" value="<?= $user['email'] ?>" class="form-control" id="email" placeholder="..@gmail.com">
+                                <?php if (isset($error['email'])) : ?>
+                                    <span class="text-danger"> <?php echo $error['email']; ?></span>
+                                <?php endif; ?>
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
                                 </div>
@@ -49,6 +55,9 @@
                             <div class="col-12">
                                 <label for="address2" class="form-label">Số điện thoại<span class="text-muted"></span></label>
                                 <input type="text" name="sdt" value="<?= $user['sdt'] ?>" class="form-control" id="phone" placeholder="">
+                                <?php if (isset($error['sdt'])) : ?>
+                                    <span class="text-danger"> <?php echo $error['sdt']; ?></span>
+                                <?php endif; ?>
                                 <div class="error5" id="error5"></div>
                             </div>
                             <div class="col-12">
