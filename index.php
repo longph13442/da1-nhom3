@@ -51,6 +51,10 @@ switch ($url) {
         require_once './client/business/products.php';
         loadon_sp();
         break;
+    case 'tim-kiem':
+        require_once './client/business/products.php';
+     loadall_sp_timkiem();
+        break;
     case 'sanphamct':
         require_once './client/business/product-details.php';
         san_pham_chi_tiet();
