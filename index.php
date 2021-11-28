@@ -79,6 +79,10 @@ switch ($url) {
         require_once './client/business/blog.php';
         blog();
         break;
+    case 'category':
+        require_once './admin/business/category.php';
+        category_list();
+        break;
     default:
         # code...
         break;
