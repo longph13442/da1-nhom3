@@ -100,7 +100,7 @@ function user_edit()
         }
         if (!array_filter($error)) {
             global $PATH_IMG;
-            if ($hinh_anh > 0) {
+            if (isset($hinh_anh) > 0) {
                 $hinh_anh = save_file('hinh_anh', $PATH_IMG);
             } else {
                 $hinh_anh = $_POST['thumhinh'];

@@ -28,7 +28,7 @@
                     <td scope="row"><?= $index + 1  ?></td>
                     <td><?= $us['ho_ten'] ?></td>
                     <td><?= $us['sdt'] ?></td>
-                    <td><?= $us['dia_chi'] ?></td>
+                    <td class="col-3"><?= $us['dia_chi'] ?></td>
                     <td><?= $us['vai_tro'] == 1 ? 'Quản Trị Viên' : 'Khách Hàng' ?></td>
                     <td class="mx-3">
                         <?php if ($us['vai_tro'] != 1) : ?>
