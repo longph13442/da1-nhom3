@@ -1,4 +1,4 @@
-<?php require_once './dao/taikhoan.php'; ?>
+
 <div class="container my-5 ">
 
   <div class="top row">

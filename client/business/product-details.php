@@ -37,7 +37,6 @@ function san_pham_chi_tiet()
         if(isset($_POST['xoa_bl'])){
             bl_delete();
             header("location: " . $_SERVER['HTTP_REFERER']);
-           
         }
         else{
             client_Render('product_details/index.php', compact('info', 'info2','info3'));
