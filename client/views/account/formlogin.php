@@ -1,19 +1,21 @@
-<form class="form-signin mx-auto" method="POST" action="" style=" width: 500px;">
+<form class="form-signin mx-auto" method="POST" onsubmit="return login_check();" action="" style=" width: 500px;">
     <div class="text-center my-4">
-        <img class="mb-4" src="<?=homepase_ASSET?>image/logo.png" alt="" width="72" height="72">
+        <img class="mb-4" src="<?= homepase_ASSET ?>image/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">ĐĂNG NHẬP TÀI KHOẢN</h1>
     </div>
     <div class="form-label-group">
         <label for="inputEmail mb-5">Tên Đăng Nhập</label>
-        <input type="text" name="ten_dang_nhap" value="<?php if (isset($ten_dang_nhap)) {
-                                                            echo $ten_dang_nhap;
-                                                        } ?>" id="inputEmail" value="" class="form-control my-2" placeholder="Nhập Tên Đăng Nhập">
+        <input type="text" id="tendangnhap" name="ten_dang_nhap" value="<?php if (isset($ten_dang_nhap)) {
+                                                                            echo $ten_dang_nhap;
+                                                                        } ?>" id="inputEmail" value="" class="form-control my-2" placeholder="Nhập Tên Đăng Nhập">
+        <div id="errorname"></div>
     </div>
     <div class="form-label-group">
         <label for="inputPassword ">Password</label>
-        <input type="password" value="<?php if (isset($mat_khau)) {
-                                            echo $mat_khau;
-                                        } ?>" name="mat_khau" id="inputPassword" class="form-control my-2" placeholder="Nhập mật khẩu...">
+        <input type="password" id="matkhau" value="<?php if (isset($mat_khau)) {
+                                                        echo $mat_khau;
+                                                    } ?>" name="mat_khau" id="inputPassword" class="form-control my-2" placeholder="Nhập mật khẩu...">
+        <div id="errormk"></div>
     </div>
     <div class=" row checkbox mb-3 my-4">
         <label class="col-4">

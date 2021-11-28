@@ -2,7 +2,7 @@
     <div class="container">
         <main>
             <div class=" text-center">
-                <img class="d-block mx-auto mb-4 mt-0" src="<?=ADMIN_ASSET?>image/logo.png" alt="" height="100">
+                <img class="d-block mx-auto mb-4 mt-0" src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="100">
                 <h2>ĐĂNG KÍ THÀNH VIÊN</h2>
                 <p class="lead my-3">Trở thành thành viên của SunFlower để nhận ưu đãi ngay lần mua hàng đầu tiền.</p>
             </div>
@@ -100,7 +100,7 @@
                             <input type="checkbox" class="form-check-input" name="checkdk" id="check">
                             <label class="form-check-label" for="same-address">Đồng ý với các điều khoản và chính sách của SunFlower</label>
                         </div>
-                        <div id="text-danger error10"></div>
+                        <div class="text-danger" id="error10"></div>
                         <hr class="my-4">
 
                         <button class="w-100 btn btn-warning btn-lg" name="register" type="submit">Đăng kí ngay</button>
@@ -111,8 +111,8 @@
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <ul class="list-inline">
-                <li class="list-inline-item"><a class="text-decoration-none" href="/du1-NHOM3">Trang Chủ</a></li>
-                <li class="list-inline-item"><a href="../../../../da1-nhom3/client/business/login/?change">Bạn Quên Mật Khẩu ?</a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="<?= ROOT_URL ?>">Trang Chủ</a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="<?= Account ?>send">Bạn Quên Mật Khẩu ?</a></li>
             </ul>
             <p class="mb-1">© 2021-2022 Sunflower store nhom3</p>
 

@@ -21,7 +21,7 @@
 
 <!-- https://material.io/resources/icons/?style=sharp -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
-
+<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/cart_dt.css">
 <!-- https://material.io/resources/icons/?style=twotone -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
 <style>
