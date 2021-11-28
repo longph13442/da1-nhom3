@@ -64,7 +64,9 @@
                 </tr>
                 <tr>
                     <td>Địa chỉ cụ thể</td>
-                    <td><?= $hddt['dia_chi'] ?></td>
+                    <td>
+                        <textarea disabled style="border:none" name="" id="" cols="50" rows="5"> <?= $hddt['dia_chi'] ?></textarea>
+                    </td>
                 </tr>
 
             </table>

@@ -83,3 +83,8 @@ function taikhoan_unlock($ma_tai_khoan)
     $sql = "UPDATE khachhang set trang_thai = 0 where ma_tai_khoan = ?";
     pdo_execute($sql, $ma_tai_khoan);
 }
+function taikhoan_upaddress($dia_chi, $ma_tai_khoan)
+{
+    $sql = "UPDATE khachhang set dia_chi = ? where ma_tai_khoan = ?";
+    pdo_execute($sql, $dia_chi, $ma_tai_khoan);
+}

@@ -40,6 +40,9 @@ switch ($url) {
     case 'account/cart/details':
         cart_detail();
         break;
+    case 'account/address':
+        account_address();
+        break;
     case 'profile':
         profile();
         break;

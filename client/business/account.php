@@ -275,4 +275,31 @@ function cart_detail()
 }
 function account_address()
 {
+    $error = [
+        'dia_chi' => ''
+    ];
+    if (isset($_POST['subdiachi'])) {
+        extract($_REQUEST);
+        if (isset($_GET['ma_tai_khoan'])) {
+            $ma_tai_khoan = $_GET['ma_tai_khoan'];
+        }
+        if (strlen($dia_chi) < 10) {
+            $error['dia_chi'] = "Địa chỉ không hợp lệ !";
+        }
+        if (strlen($dia_chi) > 100) {
+            $error['dia_chi'] = "Bạn không được viết quá 100 kí tự";
+        }
+        if (!array_filter($error)) {
+            taikhoan_upaddress($dia_chi, $ma_tai_khoan);
+        }
+    }
+    $sql = "SELECT * FROM khachhang where ten_dang_nhap = '" . $_SESSION['ten_dang_nhap'] . "'";
+    $khachhang = execute_query($sql);
+    $ma_tai_khoan = $khachhang['ma_tai_khoan'];
+    if ($khachhang['trang_thai'] == 1) {
+        session_destroy();
+        header("location: " . ROOT_URL);
+        die;
+    }
+    info_render('account/address.php', compact('khachhang', 'error'));
 }
