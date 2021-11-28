@@ -70,6 +70,10 @@ switch ($url) {
     case 'admin/logout':
         include "./admin/business/user.php";
         user_logout();
+
+    case 'category':
+        include "./admin/business/category.php";
+        category_list();
     default:
         # code...
         break;
