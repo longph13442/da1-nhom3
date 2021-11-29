@@ -104,11 +104,11 @@
                     <div class="action d-flex justify-content-between mt-2 align-items-center mx-3">
 
                       <div class="reply px-4">
-                        <form action="" method="post">
+                        <!-- <form action="" method="post">
                           <input type="hidden" name="ma_bl" value="<?php echo $bl['ma_binh_luan']; ?>">
 
                           <button type="submit" name="xoa_bl" onclick="return confirm('bạn có chắc muốn xóa không!')" style="border: none; background: none;"><small>Xóa</small></button>
-                        </form>
+                        </form> -->
                       </div>
                       <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                     </div>
