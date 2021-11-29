@@ -2,6 +2,7 @@
 require_once './dao/produc.php';
 require_once './dao/comments.php';
 require_once './dao/taikhoan.php';
+
 function bl_delete(){
    
     $ma_bl=$_GET['ma_bl'];
@@ -28,7 +29,8 @@ function san_pham_chi_tiet()
         extract($info);
         $info2 = san_pham_select_by_loai_chitiet($ma_loai, $_GET['ma_sp']);
         $info3 = binh_luan_load($ma_sp);
-        $ma_tk = get_ma_tai_khoan($_SESSION['ten_dang_nhap']);
+        $ten_dang_nhap = isset($_SESSION['ten_dang_nhap'])? $_SESSION['ten_dang_nhap'] : "";
+        $ma_tk = get_ma_tai_khoan($ten_dang_nhap);
        
         if(isset($_POST['gui_bl'])){
             bl_insert();

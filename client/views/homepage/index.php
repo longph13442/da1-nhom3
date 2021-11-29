@@ -10,36 +10,38 @@
         <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
     </ul>
 </div>
-
 <!-- danh-muc -->
-<!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="<?= ADMIN_ASSET ?>image/banner.jpg" class="d-block w-100 " alt="...">
-            <div class="carousel-caption">
-                <h1 class="display-4 text-dark">Cửa Hàng mỹ phẩm</h1>
-                <h3 class="text-dark">Chuyên cung cấp mỹ phẩm chính hãng</h3>
-                <button type="button" class="btn btn-outline-light btn-md  mx-2">Mua Ngay</button>
-                <button type="button" class="btn btn-warning btn-md">Đăng Kí</button>
+<!-- <div class="row">
+    <div class="col-9 " >
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="<?= ADMIN_ASSET ?>image/baner5.jpg" class="d-block w-100 " alt="...">
+                   
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= ADMIN_ASSET ?>image/baner4.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= ADMIN_ASSET ?>image/baner4.jpg" class="d-block w-100" alt="...">
 
+                </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden ">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="carousel-item">
-            <img src="<?= ADMIN_ASSET ?>image/banner2.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="<?= ADMIN_ASSET ?>image/banner3.png" class="d-block w-100" alt="...">
-
-        </div>
+        
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    <div class="col-3">
+        <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
+        <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0">
+    </div>
 </div> -->
 <!-- end banner -->
 <video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video>
@@ -47,19 +49,19 @@
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
 
-<!-- end title -->
+
 
 <div class="box">
     <div class="box-bigb row m-auto  my-5">
         <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a1.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
+            <img src="<?= ADMIN_ASSET ?>image/a4.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
 
             <h2 class="my-3">Dưỡng mặt</h2>
             <p> Những sản phẩm đến từ các thương hiệu hàng đầu nước pháp, chúng tôi tin rằng sẽ mang đến cho bạn những niềm hạnh phúc cho bản thân bạn !</p>
             <p><a class="btn btn-outline-warning" href="#">Xem tất cả »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a2.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
+            <img src="<?= ADMIN_ASSET ?>image/a6.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
 
 
             <h2 class="my-3">Dưỡng body</h2>
@@ -67,7 +69,7 @@
             <p><a class="btn btn-outline-warning" href="#">Xem tất cả »</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a3.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
+            <img src="<?= ADMIN_ASSET ?>image/a4.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
 
 
             <h2 class="my-3">Trang điểm</h2>
