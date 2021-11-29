@@ -34,6 +34,7 @@ function load_ten_dm($iddm)
     }
 }
 
+
 function san_pham_select_by_id($ma_sp)
 {
     $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";

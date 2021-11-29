@@ -48,17 +48,31 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="">
 
-                <td> <img src="../../../public/admin-asesst/Image/img1.jpg" style="width: 7%;" alt="">Kem dưỡng ẩm</td>
-                <td>270.000 vnd</td>
+
+                         <?php foreach ($hienthi as $ht) : ?>
+
+
+
+
+                   <tr class="">
+
+                <td> <img src="<?= ADMIN_ASSET ?>image//<?= $ht['anh_sp'] ?>" style="width: 7%;" alt=""><?= $ht['ten_sp'] ?></td>
+                <td><?= $ht['giatien'] ?></td>
                 <td>
-                    <input type="number" value="1" maxlength="2" size="1" id="number" class="form-control "
+                    <input type="number" value="<?= $ht['so_luong'] ?>" maxlength="2" size="1"  id="number" class="form-control "
                         style="width:70px;" />
                 </td>
-                <td>Xóa</td>
+               <td> <a href="index.php?url=xoadh&ma_don_hang=<?= $ht['ma_don_hang'] ?>"><button>Xóa</button></a></td>
             </tr>
-            <tr>
+
+
+                    <?php endforeach ?>
+
+
+
+      
+            <!-- <tr>
 
                 <td> <img src="../../../public/admin-asesst/Image/img2.jpg" style="width: 7%;" alt="">Kem dưỡng ẩm</td>
                 <td>270.000 vnd</td>
@@ -67,8 +81,8 @@
                         style="width:70px;" />
                 </td>
                 <td>Xóa</td>
-            </tr>
-            <tr>
+            </tr> -->
+            <!-- <tr>
 
                 <td> <img src="../../../public/admin-asesst/Image/img3.jpg" style="width: 7%;" alt="">Kem dưỡng ẩm</td>
                 <td>270.000 vnd</td>
@@ -77,7 +91,7 @@
                         style="width:70px;" />
                 </td>
                 <td>Xóa</td>
-            </tr>
+            </tr> -->
             <tr>
                 <th colspan="2" class="border-0"><button class="btn btn-warning mt-5"> Quay lại Shop </button></th>
                 <td class="border-0 ">

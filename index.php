@@ -51,6 +51,10 @@ switch ($url) {
         require_once './client/business/products.php';
         loadon_sp();
         break;
+    case 'tim-kiem':
+        require_once './client/business/products.php';
+     loadall_sp_timkiem();
+        break;
     case 'sanphamct':
         require_once './client/business/product-details.php';
         san_pham_chi_tiet();
@@ -142,6 +146,15 @@ switch ($url) {
     case 'statistical':
         require_once './admin/business/statistical.php';
         statistica();
+        break;
+    case 'dathang':
+        require_once './client/business/dathang.php';
+        dat_hang_tt();
+        break;
+
+    case 'xoadh':
+        require_once './client/business/dathang.php';
+        xoa_gio_hang();
         break;
   
     default:

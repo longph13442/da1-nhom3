@@ -137,7 +137,8 @@
                     <?php foreach ($sanpham2 as $item) : ?>
                         <li>
                             <div class=" ">
-                                <img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50">
+                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50"></a>
+
                                 <p class=" display-8 text-center fw-bold text-secondary my-2"><?= $item['giatien'] ?></p>
                                 <p class="text-center"><?= $item['ten_sp'] ?></p>
                                 <div class="star">
