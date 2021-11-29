@@ -132,6 +132,7 @@ switch ($url) {
         comments_delete();
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
         // case 'slide':
         //     require_once './admin/business/slide.php';
         //     slide_list();
@@ -144,6 +145,20 @@ switch ($url) {
         // require_once './admin/business/slide.php';
         // slide_update_form();
         // break;
+=======
+    case 'slide':
+        require_once './admin/business/slide.php';
+        slide_list();
+        break;
+    case 'slide/delete':
+        require_once './admin/business/slide.php';
+        slide_delete();
+        break;
+    case 'slide/update':
+        require_once './admin/business/slide.php';
+        slide_update_form();
+        break;
+>>>>>>> parent of 2aefa73 (Merge branch 'trung-dashboard')
     case 'statistical':
         require_once './admin/business/statistical.php';
         statistica();
@@ -158,6 +173,7 @@ switch ($url) {
         xoa_gio_hang();
         break;
   
+<<<<<<< HEAD
 
     case 'products':
         require_once './admin/business/products.php';
@@ -181,6 +197,8 @@ switch ($url) {
         statistica();
         break;
   
+=======
+>>>>>>> parent of 2aefa73 (Merge branch 'trung-dashboard')
     default:
         # code...
         break;
