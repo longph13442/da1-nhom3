@@ -11,9 +11,22 @@ function thong_ke_sp(){
     GROUP BY lo.ma_loai, lo.ten_loai";
     return pdo_query($sql);
 }
+function thong_ke_bl(){
+    $sql = "SELECT sp.ma_sp, sp.ten_sp,
+    COUNT(*) soluong,
+    MIN(bl.ngay_tao) cu_nhat,
+    MAX(bl.ngay_tao) moi_nhat
+    FROM binhluan bl
+    JOIN sanpham sp ON sp.ma_sp=bl.ma_sp
+    GROUP BY sp.ma_sp, sp.ten_sp
+    HAVING soluong > 0";
+    return pdo_query($sql);
+
+}
 function statistica(){
     $tk = thong_ke_sp();
-    
-    admin_render('statistical/statistical.php',compact('tk'));
+    $bl = thong_ke_bl();
+    admin_render('statistical/statistical.php',compact('tk','bl'));
 }
+
 ?>
