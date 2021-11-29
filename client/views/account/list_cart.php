@@ -1,4 +1,4 @@
-<div class="col-8">
+<div class="col-8 my-b">
     <div class="title">
         <h3>Danh Sách hóa đơn</h3>
     </div>

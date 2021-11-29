@@ -1,8 +1,8 @@
-<div class="col-8">
+<div class="col-8 mb-5 mt-3">
     <div class="title">
         <h4>Chi Tiết Đơn Hàng</h4>
     </div>
-    <div class="row">
+    <div class="row ">
         <div class="">
             <input type="hidden" name="id_hoadon" value="<?= $hddt['id_hoadon'] ?>">
             <table class="table border" style="width: 100%">
