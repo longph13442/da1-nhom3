@@ -26,7 +26,6 @@ function dat_hang_tt()
 
 
 }
-
 function xoa_gio_hang()
 {
     if (isset($_GET['ma_don_hang']) && ($_GET['ma_don_hang'] > 0)) {

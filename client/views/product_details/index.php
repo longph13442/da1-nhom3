@@ -87,13 +87,38 @@
                 <div class="headings d-flex justify-content-between align-items-center mb-3">
                   <p class="mt-3">Số bình luận (1)</p>
                 </div>
-                <div class="card p-3 mt-2">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">olan_sams</small> <small class="font-weight-bold">Loving your work and profile! </small></span> </div> <small> <span class="material-icons">star_rate</span> 3 ngày trước</small>
-                  </div>
-                  <div class="action d-flex justify-content-between mt-2 align-items-center">
-                    <div class="reply px-4"> <small>Xóa</small> <span class="dots"></span> <small>Trả lời</small>
-                      <span class="dots"></span>
+                <?php foreach ($info3 as $bl) : ?>
+
+                  <div class="card p-3 mt-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2">
+                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ma_tai_khoan'] ?> </small>
+                          <small class="font-weight-bold"><?php echo $bl['noi_dung']; ?> </small>
+                        </span>
+                      </div>
+                      <small></small>
+                      <small class="d-flex">
+                        <div class="mx-3">
+                          <?php for ($i = 0; $i < $bl['danh_gia']; $i++) : ?>
+                            <?php if ($i != '') : ?>
+                              <i class="fas fa-star " style="color: red;"></i>
+                            <?php endif; ?>
+                          <?php endfor; ?>
+
+                        </div>
+                        <div class=""><?php echo $bl['ngay_tao']; ?></div>
+                      </small>
+                    </div>
+                    <div class="action d-flex justify-content-between mt-2 align-items-center mx-3">
+
+                      <div class="reply px-4">
+                        <!-- <form action="" method="post">
+                          <input type="hidden" name="ma_bl" value="<?php echo $bl['ma_binh_luan']; ?>">
+
+                          <button type="submit" name="xoa_bl" onclick="return confirm('bạn có chắc muốn xóa không!')" style="border: none; background: none;"><small>Xóa</small></button>
+                        </form> -->
+                      </div>
+                      <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                     </div>
                     <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                   </div>
