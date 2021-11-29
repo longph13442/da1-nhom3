@@ -156,7 +156,9 @@ switch ($url) {
         require_once './client/business/dathang.php';
         xoa_gio_hang();
         break;
-  
+    case 'cart' :
+        require_once "./client/business/cart.php";
+        cart();
     default:
         # code...
         break;
