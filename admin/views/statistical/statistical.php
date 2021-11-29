@@ -55,7 +55,7 @@
                         <?php endforeach ?>
                     </tbody>
                 </table>
-                <a href="bieuchartdo.php"><input type="button" value="xem biểu đồ" class="btn btn-primary my-4"></a>
+                <a href="chart/sanpham"><input type="button" value="xem biểu đồ" class="btn btn-primary my-4"></a>
             </div>
         </div>
     </div>
@@ -72,52 +72,48 @@
                     <thead>
                         <tr>
                             <th>
-                                Mã loại hàng
+                                Mã sản phẩm
                             </th>
                             <th>
-                                Tên loại hàng
+                                Tên sản phẩm
                             </th>
                             <th>
-                                Số lượng
+                                Số lượng bình luận
                             </th>
                             <th>
-                                Giá cao nhất
+                                Bình luận cũ nhất 
                             </th>
                             <th>
-                                Giá thấp nhất
+                                Bình luận mới nhất
                             </th>
-                            <th>
-                                Giá trung bình
-                            </th>
+                            
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($tk as $item) : ?>
+                        <?php foreach ($bl as $item) : ?>
                             <?php extract($item) ?>
                             <tr>
                                 <td>
-                                    <?php echo $ma_loai?>
+                                    <?php echo $ma_sp?>
                                 </td>
                                 <td>
-                                    <?php echo $ten_loai ?>
+                                    <?php echo $ten_sp ?>
                                 </td>
                                 <td>
                                     <?php echo $soluong ?>
                                 </td>
                                 <td>
-                                    <?php echo number_format($gia_max);?> đ
+                                    <?php echo $cu_nhat?>
                                 </td>
                                 <td>
-                                    <?php echo number_format($gia_min);?> đ
+                                    <?php echo $moi_nhat?>
                                 </td>
-                                <td>
-                                    <?php echo number_format($gia_avg);?> đ
-                                </td>
+                                
                             </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>
-                <a href="bieuchartdo.php"><input type="button" value="xem biểu đồ" class="btn btn-primary my-4"></a>
+                <a href="chart/binhluan"><input type="button" value="xem biểu đồ" class="btn btn-primary my-4"></a>
             </div>
         </div>
     </div>
