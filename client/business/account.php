@@ -113,9 +113,11 @@ function profile()
         die();
     }
     $error = [
-        'hinh_anh' => '',
         'sdt' => '',
         'email' => ''
+    ];
+    $errorimg = [
+        'hinh_anh' => ''
     ];
     $ext_img = ['jpg', 'jpeg', 'png', 'svg', 'Webp'];
 
@@ -126,34 +128,35 @@ function profile()
         if (isset($_GET['ma_tai_khoan'])) {
             $ma_tai_khoan = $_GET['ma_tai_khoan'];
         }
+        if ($file['size'] > 0 && $file['size'] < 500000) {
+            $hinh_anh = $file['name'];
+            $ext = pathinfo($hinh_anh, PATHINFO_EXTENSION);
+            if (!in_array($ext, $ext_img)) {
+                $errorimg['hinh_anh'] = "Bạn vui lòng nhập file ảnh và nhỏ hơn 5Mb";
+            }
+        }
         $checkemail = taikhoan_checkmail($email);
         $checksdt = taikhoan_checksdt($sdt);
-        if (isset($hinh_anh) > 0) {
-            global $PATH_IMG;
-            $hinh_anh = save_file('hinh_anh', $PATH_IMG);
-        } else {
-            $hinh_anh = $_POST['anhcu'];
-        }
         if ($checkemail) {
             $error['email'] = "<span class = 'text-danger'>Email đã được sử dụng </span>";
         }
         if ($checksdt) {
             $error['sdt'] = "<span class= 'text-danger'>Số điện thoại đã được sử dụng</span>";
         }
-        if ($file['size'] > 0 && $file['size'] < 500000) {
-            $hinh_anh = $file['name'];
-            $ext = pathinfo($hinh_anh, PATHINFO_EXTENSION);
-            if (!in_array($ext, $ext_img)) {
-                $error['hinh_anh'] = "Bạn vui lòng nhập file ảnh và nhỏ hơn 5Mb";
-            }
-        }
 
         if (!array_filter($error)) {
-
             taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,  $hinh_anh, $ma_tai_khoan);
         }
+        if (!array_filter($errorimg)) {
+            if ($file['size'] > 0) {
+                global $PATH_IMG;
+                $hinh_anh = save_file('hinh_anh', $PATH_IMG);
+            } else {
+                $hinh_anh = $_POST['anhcu'];
+            }
+            taikhoan_update_web_img($hinh_anh, $ma_tai_khoan);
+        }
     }
-
     $sql = "SELECT * FROM khachhang where ten_dang_nhap = '" . $_SESSION['ten_dang_nhap'] . "'";
     $khachhang = execute_query($sql);
     $ma_tai_khoan = $khachhang['ma_tai_khoan'];

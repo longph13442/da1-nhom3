@@ -15,10 +15,15 @@ function taikhoan_update($ho_ten, $dia_chi, $sdt, $email, $ngay_sinh, $hinh_anh,
     $sql = "UPDATE khachhang SET ho_ten= ?, dia_chi=?,sdt=?, email=?,ngay_sinh=?,hinh_anh=?,ten_dang_nhap=?,gioitinh=?,trang_thai=?,vai_tro= ? WHERE ma_tai_khoan = ?";
     pdo_execute($sql, $ho_ten, $dia_chi, $sdt, $email, $ngay_sinh, $hinh_anh, $ten_dang_nhap, $gioitinh,  $trang_thai, $vai_tro, $ma_tai_khoan);
 }
-function taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,  $hinh_anh,  $ma_tai_khoan)
+function taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,   $ma_tai_khoan)
 {
-    $sql = "UPDATE khachhang SET ho_ten= ?,sdt=?, email=?,ngay_sinh=?,hinh_anh=? WHERE ma_tai_khoan = ?";
-    pdo_execute($sql, $ho_ten, $sdt, $email, $ngay_sinh,  $hinh_anh,  $ma_tai_khoan);
+    $sql = "UPDATE khachhang SET ho_ten= ?,sdt=?, email=?,ngay_sinh=? WHERE ma_tai_khoan = ?";
+    pdo_execute($sql, $ho_ten, $sdt, $email, $ngay_sinh,   $ma_tai_khoan);
+}
+function taikhoan_update_web_img($hinh_anh,  $ma_tai_khoan)
+{
+    $sql = "UPDATE khachhang SET hinh_anh=? WHERE ma_tai_khoan = ?";
+    pdo_execute($sql, $hinh_anh,  $ma_tai_khoan);
 }
 function taikhoan_delete($ma_tai_khoan)
 {
