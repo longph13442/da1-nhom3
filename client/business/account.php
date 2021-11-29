@@ -266,18 +266,33 @@ function logout()
 }
 function listcart()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $hoadon = cart_list($_SESSION['ten_dang_nhap']);
     info_render('account/list_cart.php', compact('hoadon'));
 }
 
 function cart_detail()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $id_hoadon = $_GET['id_hoadon'];
     $hddt = cart_dts($id_hoadon);
     info_render('account/cart_dt.php', compact('hddt'));
 }
 function account_address()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $error = [
         'dia_chi' => ''
     ];
