@@ -34,7 +34,6 @@ function load_ten_dm($iddm)
     }
 }
 
-
 function san_pham_select_by_id($ma_sp)
 {
     $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";
@@ -45,4 +44,10 @@ function san_pham_select_by_loai_chitiet($ma_loai, $ma_sp)
     $sql = "SELECT * FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
     return pdo_query($sql);
 }
+function hang_hoa_tang_so_luot_xem($ma_sp)
+{
+    $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE ma_sp='$ma_sp'";
+    return pdo_query_one($sql);
+}
+
 ?>
