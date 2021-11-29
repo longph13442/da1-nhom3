@@ -49,7 +49,6 @@
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
 
-<video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video>
 
 
 <div class="box">
