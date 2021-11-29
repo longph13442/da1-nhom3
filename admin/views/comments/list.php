@@ -26,12 +26,14 @@
                     <td><?php echo $ma_binh_luan ?></td>
                     <td><?php echo $ma_sp ?></td>
                     <td><?php echo $ma_tai_khoan ?></td>
-                    <td><?php echo $noi_dung ?></td>
+                    <td style="width:100px; overflow: hidden; text-overflow:ellipsis ;"><?php echo $noi_dung ?></td>
                     <td> <?php for ($i = 0; $i < $danh_gia; $i++) : ?>
                             <?php if ($i != '') : ?>
                               <i class="fas fa-star " style="color: brown;"></i>
                             <?php endif; ?>
                           <?php endfor; ?></td>
+
+                    <td><?php echo $ngay_tao ?></td>
                     <td>
                         <!-- <a href="comments/edit?ma_loai=<?php echo $ma_loai?>" class="btn btn-outline-danger"><i class="far fa-edit"></i></a> -->
                         <a href="comments/delete?ma_binh_luan=<?php echo $ma_binh_luan?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></a>
