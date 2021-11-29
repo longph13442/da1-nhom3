@@ -34,10 +34,13 @@ function checkregister() {
 
     if (email.value.length == 0) {
         error3.innerHTML = "Vui lòng nhập email";
+        email.focus();
+
         return false;
     }
     if (!re.test(email.value) == true) {
         error3.innerHTML = "  Email Phải Chứa Đuôi (example..@gmail.com)";
+        email.focus();
         return false
     }
     else {
@@ -45,9 +48,11 @@ function checkregister() {
     }
     if (address.value.length == 0) {
         error4.innerHTML = "Vui lòng nhập địa chỉ";
+        address.focus();
         return false;
     } else if (address.value.length < 10) {
         error4.innerHTML = "Địa chỉ phải lớn hơn 10 ký tự";
+        address.focus();
         return false;
     } else {
         error4.innerHTML = "";
@@ -69,16 +74,19 @@ function checkregister() {
 
     if (password.value.length == 0) {
         error6.innerHTML = "Vui lòng nhập mật khẩu";
+        password.focus();
         return false;
 
     }
     if (password.value.length < 6) {
         error6.innerHTML = "Mật khẩu phải có ít nhất 6 ký tự";
+        password.focus();
         return false;
 
     }
     if (password.value != password2.value) {
         error_mk.innerHTML = "Mật khẩu không trùng khớp";
+        password2.focus();
         return false;
     }
     else {
@@ -92,10 +100,7 @@ function checkregister() {
     else {
         error7.innerHTML = "";
     }
-    if (document.getElementById('checkbox').checked == false) {
-        error9.innerHTML = "Vui lòng đồng ý điều khoản";
-        return false;
-    }
+
     if (state[0].checked !== true & state[1].checked !== true) {
         error10.innerHTML = "Bạn phải chọn giới tính!";
         return false;
@@ -111,4 +116,5 @@ function checkregister() {
     else {
         error7.innerHTML = "";
     }
+
 }

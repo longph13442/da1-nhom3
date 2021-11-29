@@ -7,6 +7,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+ob_start();
+
 function register()
 {
 
@@ -78,7 +80,7 @@ function login()
                     unset($login['mat_khau']);
                     $_SESSION['ten_dang_nhap'] = $login['ten_dang_nhap'];
                     $msg = "Đăng nhập thành công";
-                    header("location: " . ROOT_URL . '?msg=' . $msg);
+                    header("location: " . ROOT_URL  . '?msg=' . $msg);
                     die;
                 } else {
                     $error['mat_khau'] = "<span style='color:red'>Mật khẩu không đúng</span>";
@@ -101,7 +103,7 @@ function login()
         $mat_khau =  $_COOKIE['mat_khau'];
         $check = true;
     }
-    login_render('account/modal_form.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
+    login_render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
 }
 function profile()
 {
@@ -270,4 +272,34 @@ function cart_detail()
     $id_hoadon = $_GET['id_hoadon'];
     $hddt = cart_dts($id_hoadon);
     info_render('account/cart_dt.php', compact('hddt'));
+}
+function account_address()
+{
+    $error = [
+        'dia_chi' => ''
+    ];
+    if (isset($_POST['subdiachi'])) {
+        extract($_REQUEST);
+        if (isset($_GET['ma_tai_khoan'])) {
+            $ma_tai_khoan = $_GET['ma_tai_khoan'];
+        }
+        if (strlen($dia_chi) < 10) {
+            $error['dia_chi'] = "Địa chỉ không hợp lệ !";
+        }
+        if (strlen($dia_chi) > 100) {
+            $error['dia_chi'] = "Bạn không được viết quá 100 kí tự";
+        }
+        if (!array_filter($error)) {
+            taikhoan_upaddress($dia_chi, $ma_tai_khoan);
+        }
+    }
+    $sql = "SELECT * FROM khachhang where ten_dang_nhap = '" . $_SESSION['ten_dang_nhap'] . "'";
+    $khachhang = execute_query($sql);
+    $ma_tai_khoan = $khachhang['ma_tai_khoan'];
+    if ($khachhang['trang_thai'] == 1) {
+        session_destroy();
+        header("location: " . ROOT_URL);
+        die;
+    }
+    info_render('account/address.php', compact('khachhang', 'error'));
 }

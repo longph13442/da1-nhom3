@@ -14,7 +14,7 @@ function user_list()
     }
     $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
     $pagesize = 10;
-    $result = pdo_query_value("SELECT count(*) FROM khachhang");
+    $result  = (int)pdo_query_value("SELECT count(*) FROM khachhang");
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $user = taikhoan_sellectAll($keyw, $offset, $pagesize);
@@ -85,21 +85,22 @@ function user_edit()
             }
         }
         $ma_tai_khoan = $_GET['ma_tai_khoan'];
-        // $checkemail = taikhoan_checkmail($email);
-        // $checktdn = taikhoan_checktdn($ten_dang_nhap);
-        // $checksdt = taikhoan_checksdt($sdt);
-        // if ($checkemail) {
-        //     $error['email'] = "Email đã được sử dụng";
-        // }
-        // if ($checksdt) {
-        //     $error['sdt'] = "Số điện thoại đã được sử dụng";
-        // }
-        // if ($checktdn) {
-        //     $error['ten_dang_nhap'] = "Tên đăng nhập đã được sử dụng";
-        // }
+
+        $checkemail = taikhoan_checkmail($email);
+        $checktdn = taikhoan_checktdn($ten_dang_nhap);
+        $checksdt = taikhoan_checksdt($sdt);
+        if ($checkemail == $email) {
+            $error['email'] = "Email đã được sử dụng";
+        }
+        if ($checksdt == $sdt) {
+            $error['sdt'] = "Số điện thoại đã được sử dụng";
+        }
+        if ($checktdn == $ten_dang_nhap) {
+            $error['ten_dang_nhap'] = "Tên đăng nhập đã được sử dụng";
+        }
         if (!array_filter($error)) {
             global $PATH_IMG;
-            if ($hinh_anh > 0) {
+            if (isset($hinh_anh) > 0) {
                 $hinh_anh = save_file('hinh_anh', $PATH_IMG);
             } else {
                 $hinh_anh = $_POST['thumhinh'];
@@ -114,7 +115,7 @@ function user_edit()
     }
 
     $user = taikhoan_selectbyid($ma_tai_khoan);
-    admin_render('User/edituser.php', compact('user'));
+    admin_render('User/edituser.php', compact('user', 'error'));
 }
 
 function user_delete()

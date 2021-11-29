@@ -5,7 +5,7 @@
                 <button type="button" class="btn-close" name="" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <?php include_once "./client/views/account/formlogin.php" ?>
+                <?= include_once $viewlogin; ?>
             </div>
         </div>
     </div>

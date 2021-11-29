@@ -30,12 +30,11 @@ function login_render($viewlogin, $data = [])
 {
     extract($data);
     $viewlogin = './client/views/' . $viewlogin;
-    include_once "./client/views/layouts/login.php";
+    include_once "./client/views/account/modal_form.php";
 }
 function info_render($view_info, $data = [])
 {
     extract($data);
-
     $view_info = './client/views/' . $view_info;
     include_once "./client/views/layouts/main_info.php";
 }
@@ -54,4 +53,3 @@ function avatar()
     $anh = execute_query($sql);
     return $anh['hinh_anh'];
 }
-

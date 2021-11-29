@@ -1,4 +1,4 @@
 <!-- Login -->
-<?php
+<!-- < ?php
 include_once $viewlogin;
-?>
+?> -->

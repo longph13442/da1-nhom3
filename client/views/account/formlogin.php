@@ -19,7 +19,7 @@
     </div>
     <div class=" row checkbox mb-3 my-4">
         <label class="col-4">
-            <input type="checkbox" <?php echo $check ? "checked" : ""  ?> name="remember" value="1"> Remember me
+            <input type="checkbox" <?php echo isset($_COOKIE['check']) ? "checked" : ""  ?> name="remember" value="1"> Remember me
         </label>
         <label class="col-4">
             <a class="text-decoration-none text-dark" href="<?= Account ?>send">Quên mật khẩu ?</a>
