@@ -37,14 +37,14 @@
                 </div>
                 <div class="col-2 text-center mt-3 ms-5 ">
                     <input type="hidden" name="anhcu" value="<?= $khachhang['hinh_anh'] ?>">
-                    <?php if ($khachhang['hinh_anh'] == '') : ?>
+                    <?php if ($khachhang['hinh_anh'] < 0) : ?>
                         <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="100" height="100" class="rounded-circle">
                     <?php else : ?>
                         <img src="<?= ROOT_URL . IMG ?><?= $khachhang['hinh_anh'] ?>" class="boder rounded-circle" alt="..." height="100" width="100">
                     <?php endif; ?>
                     <br>
-                    <?php if (isset($error['hinh_anh'])) : ?>
-                        <span><?php echo $error['hinh_anh'] ?></span>
+                    <?php if (isset($errorimg['hinh_anh'])) : ?>
+                        <span><?php echo $errorimg['hinh_anh'] ?></span>
                     <?php endif; ?>
                     <div class="upload-btn-wrapper">
                         <button class="custombtn">Chọn ảnh</button>
