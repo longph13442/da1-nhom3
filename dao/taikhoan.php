@@ -65,17 +65,17 @@ function taikhoan_reset_password($new_mat_khau, $ma_tai_khoan)
 // Check Tồn Tại
 function taikhoan_checkmail($email)
 {
-    $sql = "SELECT kh.email FROM khachhang kh where email =?";
+    $sql = "SELECT khachhang.email FROM khachhang where email =?";
     return pdo_query($sql, $email);
 }
 function taikhoan_checksdt($sdt)
 {
-    $sql = "SELECT kh.sdt FROM khachhang kh where sdt =?";
+    $sql = "SELECT khachhang.sdt FROM khachhang where sdt =?";
     return pdo_query($sql, $sdt);
 }
 function taikhoan_checktdn($ten_dang_nhap)
 {
-    $sql = "SELECT kh.ten_dang_nhap FROM khachhang kh where ten_dang_nhap =?";
+    $sql = "SELECT khachhang.ten_dang_nhap FROM khachhang where ten_dang_nhap =?";
     return pdo_query($sql, $ten_dang_nhap);
 }
 function taikhoan_lock($ma_tai_khoan)
@@ -92,4 +92,19 @@ function taikhoan_upaddress($dia_chi, $ma_tai_khoan)
 {
     $sql = "UPDATE khachhang set dia_chi = ? where ma_tai_khoan = ?";
     pdo_execute($sql, $dia_chi, $ma_tai_khoan);
+}
+function taikhoan_forgot($email, $code, $expire_time)
+{
+    $sql = "INSERT INTO forgot_pass(email,code,expire_time) VALUES(?,?,?)";
+    pdo_execute($sql, $email, $code, $expire_time);
+}
+function taikhoan_checkcode($email)
+{
+    $sql = "SELECT * FROM forgot_pass where email = ?";
+    return pdo_query_one($sql, $email);
+}
+function taikhoan_checkmk($email)
+{
+    $sql = "SELECT * FROM khachhang where email = ?";
+    return pdo_query_one($sql, $email);
 }

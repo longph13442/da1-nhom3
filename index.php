@@ -53,7 +53,7 @@ switch ($url) {
         break;
     case 'tim-kiem':
         require_once './client/business/products.php';
-     loadall_sp_timkiem();
+        loadall_sp_timkiem();
         break;
     case 'sanphamct':
         require_once './client/business/product-details.php';
@@ -122,7 +122,7 @@ switch ($url) {
         require_once './admin/business/category.php';
         category_save_edit();
         break;
- 
+
     case 'comments':
         require_once './admin/business/comments.php';
         comments_list();
@@ -156,9 +156,7 @@ switch ($url) {
         require_once './client/business/dathang.php';
         xoa_gio_hang();
         break;
-    case 'cart' :
-        require_once "./client/business/cart.php";
-        cart();
+
     default:
         # code...
         break;

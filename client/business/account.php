@@ -4,11 +4,9 @@ require_once './dao/taikhoan.php';
 require_once "./dao/cart.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 ob_start();
-
 function register()
 {
 
@@ -209,54 +207,84 @@ function account_reset()
     info_render('account/resetpass.php', compact('khachhang', 'error'));
 }
 
+function send_email()
+{
+    $error = [
+        'email' => ''
+    ];
+    $kt = '';
+    if (isset($_POST['submail'])) {
+        $receiver = $_POST['receiver'];
+        $checkemail = taikhoan_checkmail($receiver);
+        if (!$checkemail > 0) {
+            $error['email'] = 'Email của bạn không có trên hệ thống của chúng tôi';
+        } else if (!array_filter($error)) {
+            $kt =  Account . 'forgot';
+        }
+    }
+    client_Render('account/get_password.php', compact('error', 'kt'));
+}
 function forgot()
 {
-    $content = 'Mã xác nhận của bạn là: ';
+    $code = rand(100000, 999999);
+    $content = 'Mã xác nhận của bạn là: ' . '<b>' . $code . '</b>' . ' vui lòng không cung cấp cho bất kì ai,mã xác nhận có thời hạn 5 phút';
     $receiver = $_POST['receiver'];
     $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower ';
-    $_SESSION['receiver'] = $receiver;
-    if (!isset($_SESSION['receiver'])) {
-        header("location:   " . ROOT_URL);
-        die();
+    $second = date('i') + 5;
+    $five_i =  date("d/m/Y H:" . $second . ":s");
+    $expire_time = $five_i;
+    if (isset($_POST['submail'])) {
+        $receiver = $_POST['receiver'];
+        taikhoan_forgot($receiver, $code, $expire_time);
     }
+    $_SESSION['receiver'] = $receiver;
+    // if (!isset($_SESSION['receiver'])) {
+    //     header("location:   " . ROOT_URL);
+    //     die();
+    // }
     $mail = new PHPMailer(true);
     try {
+
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->SMTPDebug = 0;
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'sunflowernhom3@gmail.com';
         $mail->Password   = '123456bi';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = 465;
-
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
         //Recipients
         $mail->setFrom('sunflowernhom3@gmail.com', 'Sunflower');
         $arrEmail = explode(',', $receiver);
         foreach ($arrEmail as $em) {
             $mail->addAddress(trim($em));
         }
-
         $mail->addReplyTo('sunflowernhom3@gmail.com', 'Sunflower');
-
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $title;
         $mail->Body    = $content;
         $mail->AltBody = $content;
         $mail->send();
-        echo "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
+        $msg = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
-    client_Render('account/change_pw.php');
+    client_Render('account/change_pw.php', compact('msg'));
 }
-
-function send_email()
+function verify_mk()
 {
-    client_Render('account/get_password.php');
+    if (isset($_POST['verypass'])) {
+        $code = $_POST['code'];
+        $newpass = $_POST['newpass'];
+        $confirmpass = $_POST['confirmpass'];
+        $checkcode = taikhoan_checkcode($_SESSION['receiver']);
+        if ($checkcode) {
+            $errormail = "Mã xác nhận không đúng ! vui lòng kiểm tra lại";
+        }
+    }
 }
 function logout()
 {
