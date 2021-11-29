@@ -11,17 +11,14 @@ function bl_delete(){
 }
 function bl_insert(){
     // $ma_sp = $_GET['ma_sp'];
-    if(isset($_POST['gui_bl'])){
-        $ma_sp = $_POST['ma_sp'];
-        $noi_dung = $_POST['noi_dung'];
-        $ma_tk = get_ma_tai_khoan($_SESSION['ten_dang_nhap']);
-        $ma_tai_khoan = $ma_tk['ma_tai_khoan'];
-        $ngay_tao = date("y/m/d");
-        
-        $danh_gia = isset($_POST['danh_gia'])? $_POST['danh_gia'] : "0";
-        binh_luan_insert($ma_sp, $ma_tai_khoan, $noi_dung, $ngay_tao,$danh_gia);
-    }
- 
+    $ma_sp = $_POST['ma_sp'];
+    $noi_dung = $_POST['noi_dung'];
+    $ma_tk = get_ma_tai_khoan($_SESSION['ten_dang_nhap']);
+    $ma_tai_khoan = $ma_tk['ma_tai_khoan'];
+    $ngay_tao = date("y/m/d");
+    $danh_gia = $_POST['danh_gia'];
+    binh_luan_insert($ma_sp, $ma_tai_khoan, $noi_dung, $ngay_tao,$danh_gia);
+  
 }
 
 function san_pham_chi_tiet()

@@ -192,6 +192,9 @@ body {
         max-width: 960px;
         margin: 0 auto;
     }
+    .cart{
+        margin: 0 0;
+    }
 }
 
 @media (min-width: 1199.98px) {
@@ -202,6 +205,9 @@ body {
     .carousel{
         max-width: 100%;
     }
+    .cart{
+        margin: 0 0 100px 0;
+    }
 }
 
 @media (max-width: 1399.98px) {
@@ -211,5 +217,8 @@ body {
     }
     .carousel{
         max-width: 100%;
+    }
+    .cart{
+        margin: 0 0 100px 0;
     }
 }
