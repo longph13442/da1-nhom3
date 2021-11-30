@@ -296,10 +296,10 @@ function verify_mk()
     ];
     $token = isset($_GET['token']) ? $_GET['token'] : '';
     $now = date("Y-m-d H:i:s");
-    $sql = "SELECT forgot_pass.code  FROM forgot_pass where  and code ='" . $token . "'";
+    $sql = "SELECT *  FROM forgot_pass where code ='" . $token . "'and expire_time >= '" . $now . "'";
     $result = execute_query($sql);
-    if ($result == null) {
-        $notice['msg'] = "Đường dẫn của bạn không hợp lệ vui lòng kiểm tra lại !";
+    if (!$result) {
+        $notice['msg'] = "Đường dẫn của bạn không hợp lệ hoặc token đã hết hạn vui lòng kiểm tra lại !";
     }
     if (isset($_POST['verypass'])) {
         $newpass = $_POST['newpass'];
