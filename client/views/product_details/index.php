@@ -167,10 +167,10 @@
             <div class="col-md-3 border-0">
               <div class="card border-0">
                 <div class="card-img">
-                  <img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%">
+                  <a href="sanphamct&ma_sp=<?= $info['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%"></a>
                 </div>
                 <div class="name_product">
-                  <p><?php echo $info['ten_sp'] ?></p>
+                  <a href="sanphamct&ma_sp=<?= $info['ma_sp'] ?>" class="link-dark nav-link"><p><?php echo $info['ten_sp'] ?></p></a>
                 </div>
                 <div class="price mt-2">
                   <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
@@ -184,10 +184,11 @@
               <div class="col-md-3 border-0">
                 <div class="card border-0">
                   <div class="card-img">
-                    <img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%">
+                    <a href="sanphamct&ma_sp=<?= $item['ma_sp'] ?>" ><img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%"></a>
                   </div>
                   <div class="name_product">
-                    <p><?php echo $item['ten_sp'] ?></p>
+                    <a href="sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="link-dark nav-link"><p><?php echo $item['ten_sp'] ?></p></a>
+                    
                   </div>
                   <div class="price mt-2 ">
                     <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
