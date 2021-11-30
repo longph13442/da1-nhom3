@@ -125,15 +125,15 @@
                     <div class="bg-light rounded p-2 mt-4">
                       <div class="rating m-3 ms-5">
                         <label for="" class="mx-3">Đánh giá sản phẩm : </label>
-                        <input type="radio" name="danh_gia" value="5" id="start1"><label for="start1">
+                        <input type="radio" name="danh_gia" value="1" id="start1"><label for="start1">
                         </label>
-                        <input type="radio" name="danh_gia" value="4" id="start2"><label for="start2">
+                        <input type="radio" name="danh_gia" value="2" id="start2"><label for="start2">
                         </label>
                         <input type="radio" name="danh_gia" value="3" id="start3"><label for="start3">
                         </label>
-                        <input type="radio" name="danh_gia" value="2" id="start4"><label for="start4">
+                        <input type="radio" name="danh_gia" value="4" id="start4"><label for="start4">
                         </label>
-                        <input type="radio" name="danh_gia" value="1" id="start5"><label for="start5">
+                        <input type="radio" name="danh_gia" value="5" id="start5"><label for="start5">
                         </label>
                       </div>
                       <input type="hidden" name="ma_sp" value="<?php echo $info['ma_sp'] ?>">
