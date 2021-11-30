@@ -134,18 +134,18 @@ switch ($url) {
         require_once './admin/business/comments.php';
         comments_delete();
         break;
-    case 'slide':
-        require_once './admin/business/slide.php';
-        slide_list();
-        break;
-    case 'slide/delete':
-        require_once './admin/business/slide.php';
-        slide_delete();
-        break;
-    case 'slide/update':
-        require_once './admin/business/slide.php';
-        slide_update_form();
-        break;
+        // case 'slide':
+        //     require_once './admin/business/slide.php';
+        //     slide_list();
+        //     break;
+        // case 'slide/delete':
+        //     require_once './admin/business/slide.php';
+        //     slide_delete();
+        //     break;
+        // case 'slide/update':
+        // require_once './admin/business/slide.php';
+        // slide_update_form();
+        // break;
     case 'statistical':
         require_once './admin/business/statistical.php';
         statistica();
@@ -160,6 +160,30 @@ switch ($url) {
         xoa_gio_hang();
         break;
 
+    case 'products':
+        require_once './admin/business/products.php';
+        products_list();
+        break;
+    case 'products/add':
+        require_once './admin/business/products.php';
+        products_add_form();
+        break;
+    case 'products/save-add':
+        require_once './admin/business/products.php';
+        products_save_add();
+        break;
+    case 'products/delete':
+        require_once './admin/business/products.php';
+        products_delete();
+        break;
+    case 'products/update':
+        require_once './admin/business/products.php';
+        products_update_form();
+        break;
+    case 'products/save-update':
+        require_once './admin/business/products.php';
+        products_save_upadte();
+        break;
     default:
         # code...
         break;
