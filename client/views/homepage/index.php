@@ -92,7 +92,7 @@
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
                     <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
-                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">   <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -103,7 +103,7 @@
         <!-- end product-center -->
         <div class="row">
             <div class="col-12 text-center ">
-                <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button>
+              <a href="index.php?url=danh-muc">  <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
             </div>
         </div>
         <!-- end box-bog -->
@@ -139,7 +139,7 @@
                                  <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50"></a>
 
                                 <p class=" display-8 text-center fw-bold text-secondary my-2"><?= $item['giatien'] ?></p>
-                                <p class="text-center"><?= $item['ten_sp'] ?></p>
+                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">   <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
                                 <div class="star">
                                     <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
@@ -239,7 +239,16 @@
             <div class="">
                 <h4 class="title3 text-center fw-bold my-5"> NHỮNG BÀI VIẾT ĐANG ĐƯỢC QUAN TÂM</h4>
                 <div class="row row-cols-1 row-cols-md-3 g-3  ">
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
                             <img src="<?= ADMIN_ASSET ?>image/bl1.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">
@@ -283,13 +292,13 @@
                                 <small class="text-dark">Last updated 3 mins ago</small>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- end blog -->
                 <div class="row my-5">
                     <div class="col-12 text-center ">
-                        <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button>
+                       <a href="<?phpROOT_URL?>danh-muc"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
                     </div>
                 </div>
                 <!-- end button -->
