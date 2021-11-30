@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-</head>
-
-<body class="bg-light">
-
-    <div class="container">
+<?php $pay=(isset($_SESSION["cart"])) ? $_SESSION["cart"] : [] ?>
+    <div class="container gx-5 ">
         <main>
             <div class="text-center my-5">
-                <img class="mb-4" src="../../../public/admin-asesst/Image/logo.png" alt="" width="72" height="72">
-                <h1 class="h3 mb-3 font-weight-normal">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
+                <h1 class="h3 mb-3 fw-bold text-warning ">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
             </div>
 
             <div class="row g-5">
@@ -30,14 +12,16 @@
                         <span class="badge bg-warning rounded-pill">3</span>
                     </h4>
                     <ul class="list-group mb-3">
+                        <?php foreach($pay as $key) :?>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
-                                <h6 class="my-3">Dưỡng ẩm hazelen</h6>
+                                <h6 class="my-3"><?=$key["tensp"]?></h6>
                                 
                             </div>
-                            <span class="text-muted">$12</span>
+                            <span class="text-danger py-3"><?=$key["gia"]?> VND</span>
                         </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <?php endforeach?>
+                        <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-3">SDưỡng ẩm hazelen</h6>
                                 
@@ -61,13 +45,13 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Tổng tiền</span>
                             <strong>$20</strong>
-                        </li>
+                        </li> -->
                     </ul>
 
                     <form class="card p-2">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="mã giảm giá">
-                            <button type="submit" class="btn btn-secondary">Áp dụng</button>
+                            <button type="submit" class="btn btn-success">Áp dụng</button>
                         </div>
                     </form>
                 </div>
@@ -162,6 +146,3 @@
     <script src="form-validation.js"></script>
 
 
-</body>
-
-</html>
