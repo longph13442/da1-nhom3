@@ -120,23 +120,37 @@
 
             </div>
             <div class="col-md-12">
+                <?php if (isset($_SESSION['ten_dang_nhap'])) { ?>
+                  <form action="" method="post">
+                    <div class="bg-light rounded p-2 mt-4">
+                      <div class="rating m-3 ms-5">
+                        <label for="" class="mx-3">Đánh giá sản phẩm : </label>
+                        <input type="radio" name="danh_gia" value="1" id="start1"><label for="start1">
+                        </label>
+                        <input type="radio" name="danh_gia" value="2" id="start2"><label for="start2">
+                        </label>
+                        <input type="radio" name="danh_gia" value="3" id="start3"><label for="start3">
+                        </label>
+                        <input type="radio" name="danh_gia" value="4" id="start4"><label for="start4">
+                        </label>
+                        <input type="radio" name="danh_gia" value="5" id="start5"><label for="start5">
+                        </label>
+                      </div>
+                      <input type="hidden" name="ma_sp" value="<?php echo $info['ma_sp'] ?>">
 
-            </div>
+                      <div class="d-flex flex-row align-items-start"><img class="rounded-circle px-2" src="https://i.imgur.com/RpzrMR2.jpg" width="60"><textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea></div>
+                      <div class="mt-2 text-right ms-5 my-1">
+                        <input type="submit" value="Gửi bình luận" name="gui_bl" class="btn btn-primary btn-sm shadow-none mx-2">
+                        <!-- <button class="btn btn-primary btn-sm shadow-none mx-2" type="submit" name="gui_bl" >Gửi bình luận</button> -->
+                        <button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="reset">Hủy</button>
+                      </div>
+                    </div>
+                  </form>
+                <?php } else {
+                  echo "Đăng nhập để bình luận!";
+                }    ?>
+              </div>
           </div>
-
-          <!-- <div class="row d-flex justify-content-center">
-                <div class="col-md-12">
-                  <div class="headings d-flex justify-content-between align-items-center mb-3">
-                    <p class="mt-3">Số bình luận (1)</p>
-                  </div>
-                  <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php if (isset($_SESSION['check'])) { ?>
-                    <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php } else {
-                    echo "Đăng nhập để bình luận!";
-                  }    ?>
-                </div>
-              </div> -->
         </div>
       </div>
     </div>
@@ -153,10 +167,10 @@
             <div class="col-md-3 border-0">
               <div class="card border-0">
                 <div class="card-img">
-                  <img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%">
+                  <a href="sanphamct&ma_sp=<?= $info['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%"></a>
                 </div>
                 <div class="name_product">
-                  <p><?php echo $info['ten_sp'] ?></p>
+                  <a href="sanphamct&ma_sp=<?= $info['ma_sp'] ?>" class="link-dark nav-link"><p><?php echo $info['ten_sp'] ?></p></a>
                 </div>
                 <div class="price mt-2">
                   <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
@@ -170,10 +184,11 @@
               <div class="col-md-3 border-0">
                 <div class="card border-0">
                   <div class="card-img">
-                    <img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%">
+                    <a href="sanphamct&ma_sp=<?= $item['ma_sp'] ?>" ><img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%"></a>
                   </div>
                   <div class="name_product">
-                    <p><?php echo $item['ten_sp'] ?></p>
+                    <a href="sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="link-dark nav-link"><p><?php echo $item['ten_sp'] ?></p></a>
+                    
                   </div>
                   <div class="price mt-2 ">
                     <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
