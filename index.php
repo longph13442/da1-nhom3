@@ -193,6 +193,11 @@ switch ($url) {
         require_once "./client/business/delete_session.php";
         delete();
         break;
+    // thanh toans
+    case 'pay';
+        require_once "./client/business/pay_cart.php";
+        pay();
+        break;
     //
     default:
         # code...
