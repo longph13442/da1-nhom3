@@ -234,12 +234,12 @@ function notice()
     $token = uniqid();
     $_SESSION['token'] = $token;
     $code = Account . 'forgot?token=' . $token;
-    $content = 'Link liên kết đổi mật khẩu của bạn là :' . '<a href=``>' . $code . '</a>' . ' tuyệt đối không chia sẻ với bật kì ai';
+    $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
     $receiver = isset($_POST['receiver']);
-    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower ';
-    $second = date('i') + 5;
-    $five_i =  date("d/m/Y H:" . $second . ":s");
-    $expire_time = $five_i;
+    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower';
+    $startTime = date("Y-m-d H:i:s");
+    $cenverted = date('Y-m-d H:i:s', strtotime('+5 minute', strtotime($startTime)));
+    $expire_time = $cenverted;
     if (isset($_POST['submail'])) {
         $receiver = $_POST['receiver'];
         taikhoan_forgot($receiver, $token, $expire_time);
@@ -295,8 +295,8 @@ function verify_mk()
 
     ];
     $token = isset($_GET['token']) ? $_GET['token'] : '';
-    $now = date("d/m/Y H:i:s");
-    $sql = "SELECT forgot_pass.code  FROM forgot_pass where code ='" . $token . "'";
+    $now = date("Y-m-d H:i:s");
+    $sql = "SELECT forgot_pass.code  FROM forgot_pass where  and code ='" . $token . "'";
     $result = execute_query($sql);
     if ($result == null) {
         $notice['msg'] = "Đường dẫn của bạn không hợp lệ vui lòng kiểm tra lại !";

@@ -3,10 +3,8 @@
   <div class="top row">
     <!-- hiển thị chi tiết sản phẩm -->
     <div class="left col">
-
       <div class="main-image text-center" style=""><img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="ảnh chính" width="50%"></div>
       <div class="album"></div>
-
     </div>
     <div class="right col">
       <div class="name_product">
@@ -33,25 +31,20 @@
         <p><?php echo $info['mota'] ?></p>
       </div>
 
-<form action="index.php?url=dathang" method="post">
-      <div class="quantity mb-4 d-flex">
-        <label for="" class="fw-bold">Số lượng :</label>
-        <input type="button" onclick="decrementValue()" value="-" class="btn btn-dark mx-2" style="width:7%;" />
-        <input type="text" name="soluong" value="1" maxlength="2" size="1" id="number" class="form-control " style="width:40px;" />
-        <input type="button" onclick="incrementValue()"  value="+" class="btn btn-dark mx-2" style="width:7%;" />
-      </div>
+      <form action="index.php?url=dathang" method="post">
+        <div class="quantity mb-4 d-flex">
+          <label for="" class="fw-bold">Số lượng :</label>
+          <input type="button" onclick="decrementValue()" value="-" class="btn btn-dark mx-2" style="width:7%;" />
+          <input type="text" name="soluong" value="1" maxlength="2" size="1" id="number" class="form-control " style="width:40px;" />
+          <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;" />
+        </div>
 
-    <input type="submit"  name="addcart" value="Them san pham"  >
-   <input type="hidden" name="tensp" value="<?=$info['ten_sp']?>">
-     <input type="hidden" name="hinhanh" value="<?=$info['anh_sp']?>">
-       <input type="hidden" name="giatien" value="<?=$info['giatien']?>">
-           <input type="hidden" name="masp" value="<?=$info['ma_sp']?>">
-           
-         
-        
-
-       
-</form>
+        <input type="submit" name="addcart" value="Them san pham">
+        <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
+        <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
+        <input type="hidden" name="giatien" value="<?= $info['giatien'] ?>">
+        <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
+      </form>
 
     </div>
   </div>
@@ -122,15 +115,16 @@
                     </div>
                     <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                   </div>
-                </div>
-                .
+                <?php endforeach; ?>
               </div>
-              <div class="col-md-12">
 
-              </div>
             </div>
+            <div class="col-md-12">
 
-            <!-- <div class="row d-flex justify-content-center">
+            </div>
+          </div>
+
+          <!-- <div class="row d-flex justify-content-center">
                 <div class="col-md-12">
                   <div class="headings d-flex justify-content-between align-items-center mb-3">
                     <p class="mt-3">Số bình luận (1)</p>
@@ -143,61 +137,61 @@
                   }    ?>
                 </div>
               </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- sản phẩm liên quan -->
-    <div class="related_products mt-5 container text-center my-3 ">
-      <h4 class='my-3'> SẢN PHẨM LIÊN QUAN </h4>
-
-      <div class="row mx-auto my-auto justify-content-center">
-        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active border-0">
-              <div class="col-md-3 border-0">
-                <div class="card border-0">
-                  <div class="card-img">
-                    <img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%">
-                  </div>
-                  <div class="name_product">
-                    <p><?php echo $info['ten_sp'] ?></p>
-                  </div>
-                  <div class="price mt-2">
-                    <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
-                    <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($info['giatien'])  ?> đ</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <?php foreach ($info2 as $item) : ?>
-              <div class="carousel-item border-0">
-                <div class="col-md-3 border-0">
-                  <div class="card border-0">
-                    <div class="card-img">
-                      <img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%">
-                    </div>
-                    <div class="name_product">
-                      <p><?php echo $item['ten_sp'] ?></p>
-                    </div>
-                    <div class="price mt-2 ">
-                      <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
-                      <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($item['giatien'])  ?> đ</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-          <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
-          </a>
-          <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
-          </a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- sản phẩm liên quan -->
+  <div class="related_products mt-5 container text-center my-3 ">
+    <h4 class='my-3'> SẢN PHẨM LIÊN QUAN </h4>
+
+    <div class="row mx-auto my-auto justify-content-center">
+      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active border-0">
+            <div class="col-md-3 border-0">
+              <div class="card border-0">
+                <div class="card-img">
+                  <img src="<?= ADMIN_ASSET ?>/image/<?php echo $info['anh_sp'] ?>" alt="" width="70%">
+                </div>
+                <div class="name_product">
+                  <p><?php echo $info['ten_sp'] ?></p>
+                </div>
+                <div class="price mt-2">
+                  <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
+                  <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($info['giatien'])  ?> đ</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php foreach ($info2 as $item) : ?>
+            <div class="carousel-item border-0">
+              <div class="col-md-3 border-0">
+                <div class="card border-0">
+                  <div class="card-img">
+                    <img src="<?= ADMIN_ASSET ?>/image/<?php echo $item['anh_sp'] ?>" class="img-fluid" width="70%">
+                  </div>
+                  <div class="name_product">
+                    <p><?php echo $item['ten_sp'] ?></p>
+                  </div>
+                  <div class="price mt-2 ">
+                    <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
+                    <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($item['giatien'])  ?> đ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
