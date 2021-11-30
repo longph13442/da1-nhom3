@@ -147,7 +147,7 @@ function user_unlock()
 }
 function user_logout()
 {
-    session_unset();
+    session_destroy();
     header("location: " . ROOT_URL);
     die;
 }
