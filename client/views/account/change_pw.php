@@ -1,4 +1,4 @@
-<?php if ($result == null) : ?>
+<?php if (!$result) : ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <?php if (isset($notice['msg'])) : ?>
             <?php echo $notice['msg']; ?>
