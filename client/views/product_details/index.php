@@ -151,20 +151,6 @@
                 }    ?>
               </div>
           </div>
-
-          <!-- <div class="row d-flex justify-content-center">
-                <div class="col-md-12">
-                  <div class="headings d-flex justify-content-between align-items-center mb-3">
-                    <p class="mt-3">Số bình luận (1)</p>
-                  </div>
-                  <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php if (isset($_SESSION['check'])) { ?>
-                    <iframe src="http://localhost/da1-nhom3/client/business/comments.php?ma_sp=<?php echo $info4['ma_sp'] ?>" frameborder="0" width="100%" height="700px"></iframe>
-                  <?php } else {
-                    echo "Đăng nhập để bình luận!";
-                  }    ?>
-                </div>
-              </div> -->
         </div>
       </div>
     </div>
