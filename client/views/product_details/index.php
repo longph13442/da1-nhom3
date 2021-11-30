@@ -35,7 +35,7 @@
         <div class="quantity mb-4 d-flex">
           <label for="" class="fw-bold">Số lượng :</label>
           <input type="button" onclick="decrementValue()" value="-" class="btn btn-dark mx-2" style="width:7%;" />
-          <input type="text" name="soluong" value="1" id="number" class="form-control " style="width:40px;" />
+          <input type="text" name="soluong" value="1" id="number" class="form-control " style="width:40px;"  />
           <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;" />
         </div>
 
