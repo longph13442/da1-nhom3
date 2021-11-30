@@ -184,6 +184,16 @@ switch ($url) {
         require_once './admin/business/products.php';
         products_save_upadte();
         break;
+    // giỏ hàng
+    case 'cart':
+        require_once "./client/business/cart.php";
+        cart();
+        break;
+    case 'delete_session';
+        require_once "./client/business/delete_session.php";
+        delete();
+        break;
+    //
     default:
         # code...
         break;

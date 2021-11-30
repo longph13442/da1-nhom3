@@ -22,13 +22,14 @@ if (isset($_POST["add"])) {
     }
 }
 if (isset($_POST["update"])) {
-    $soluong = (isset($_POST["soluong"])) ? $_POST["soluong"] : 1;
-    $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
-    $id=$_POST["masp"];
+    $id=$_POST["id"];
     $_SESSION['cart'][$id]['soluong'] = $soluong;
+    
 }
-
-
+if (isset($_POST["delete"])) {
+    $id=$_POST["id"];
+    unset($_SESSION["cart"][$id]);
+}
 
 
 function cart()

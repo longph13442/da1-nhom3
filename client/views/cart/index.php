@@ -1,110 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : []; ?>
+<div class="cart">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- boostrap -->
-    <!-- font-icon -->
-    <!-- https://material.io/resources/icons/?style=baseline -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=outline -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=round -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=sharp -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
-
-    <!-- https://material.io/resources/icons/?style=twotone -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
-    <!-- icon -->
-    <link rel="stylesheet" href="index.css">
-</head>
-
-<body>
-    
-    <div class="text-center my-4">
-        <img class="mb-4" src="../../../public/admin-asesst/Image/logo.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
+    <div class="text-center my-5">
+        <h1 class="h3 mb-3 fw-bold text-warning">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
     </div>
-    
-    <table class="table mx-auto mt-5" style="width: 1000px;">
+
+    <table class="table mx-auto my-5" style="width: 1000px;">
         <thead>
-            <tr class="py-5">
+            <tr class="py-5 text-center">
+                <th>Ảnh</th>
                 <th scope="col">Tên sản phẩm</th>
-                <th scope="col">Giá</th>
+                <th scope="col">Đơn Giá</th>
                 <th scope="col">Số lượng</th>
+                <th scope="col">Thành tiền</th>
                 <th scope="col">Thao tác</th>
             </tr>
         </thead>
-        <tbody>
+        <form action="cart" method="POST">
+            <tbody>
+                <?php $sum = 0;
+                ?>
+                <?php foreach ($cart as $key) : ?>
+                    <?php $price = $key['soluong'] * $key['gia'];
+                    $sum += $price;
+                    ?>
+                    <tr class="text-center">
+                        <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>
+                        <td>
+                            <p class="my-4"><?= $key['tensp'] ?></p>
+                        </td>
+                        <td>
+                            <p class="my-4"><?= $key['gia'] ?></p>
+                        </td>
 
+                        <td>
+                            <input type="number" name="soluong" value="<?= $key['soluong'] ?>" maxlength="2" size="1" id="number" class=" my-4  " style="width:70px;" />
+                        </td>
+                        <td>
+                            <p class="my-4"><?= $price ?></p>
+                        </td>
 
-                         <?php foreach ($hienthi as $ht) : ?>
+                        <input type="hidden" name="id" id="" value="<?= $key['masp'] ?>">
+                        <td> <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button> <button class="my-4 btn btn-sm btn-danger " name="delete">Xóa</button></td>
 
+                    </tr>
 
+                <?php endforeach ?>
 
+            </tbody>
+        </form>
 
-                   <tr class="">
-
-                <td> <img src="<?= ADMIN_ASSET ?>image//<?= $ht['anh_sp'] ?>" style="width: 7%;" alt=""><?= $ht['ten_sp'] ?></td>
-                <td><?= $ht['giatien'] ?></td>
-                <td>
-                    <input type="number" value="<?= $ht['so_luong'] ?>" maxlength="2" size="1"  id="number" class="form-control "
-                        style="width:70px;" />
-                </td>
-               <td> <a href="index.php?url=xoadh&ma_don_hang=<?= $ht['ma_don_hang'] ?>"><button>Xóa</button></a></td>
-            </tr>
-
-
-                    <?php endforeach ?>
-
-
-
-      
-            <!-- <tr>
-
-                <td> <img src="../../../public/admin-asesst/Image/img2.jpg" style="width: 7%;" alt="">Kem dưỡng ẩm</td>
-                <td>270.000 vnd</td>
-                <td>
-                    <input type="number" value="1" maxlength="2" size="1" id="number" class="form-control "
-                        style="width:70px;" />
-                </td>
-                <td>Xóa</td>
-            </tr> -->
-            <!-- <tr>
-
-                <td> <img src="../../../public/admin-asesst/Image/img3.jpg" style="width: 7%;" alt="">Kem dưỡng ẩm</td>
-                <td>270.000 vnd</td>
-                <td>
-                    <input type="number" value="1" maxlength="2" size="1" id="number" class="form-control "
-                        style="width:70px;" />
-                </td>
-                <td>Xóa</td>
-            </tr> -->
+        <tfoot>
             <tr>
-                <th colspan="2" class="border-0"><button class="btn btn-warning mt-5"> Quay lại Shop </button></th>
-                <td class="border-0 ">
-                    <p class="mt-3 fw-bold">Tổng tiền : 810.000 vnd</h5>
+                <td class="border-0" colspan="2"><a href="danhmuc"><button class="btn btn-warning mt-4"> Quay lại Shop </button></a></th>
+                <td class="border-0 " colspan="3">
+                    <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : <?= $sum ?> VND</h5>
                     </p>
-                <th class="border-0"><button class="btn btn-danger mt-5"> Thanh toán </button></th>
-
+                <td class="border-0 text-center" colspan=""><button class="btn btn-success mt-4 text-center float-end"> Thanh toán </button></th>
             </tr>
-
-        </tbody>
+        </tfoot>
     </table>
 
-
-</body>
-
-</html>
+</div>
