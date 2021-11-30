@@ -26,7 +26,10 @@ switch ($url) {
         send_email();
         break;
     case 'account/forgot':
-        forgot();
+        verify_mk();
+        break;
+    case 'account/notice':
+        notice();
         break;
     case 'account/logout':
         logout();

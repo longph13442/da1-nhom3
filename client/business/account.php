@@ -217,34 +217,39 @@ function send_email()
         $receiver = $_POST['receiver'];
         $checkemail = taikhoan_checkmail($receiver);
         if (!$checkemail > 0) {
-            $error['email'] = 'Email của bạn không có trên hệ thống của chúng tôi';
-        } else if (!array_filter($error)) {
-            $kt =  Account . 'forgot';
+            $error['email'] = "<span class='text-danger'>Email của bạn không có trên hệ thống của chúng tôi</span>";
+        }
+        if (array_filter($checkemail)) {
+            $kt =  Account . 'notice';
         }
     }
     client_Render('account/get_password.php', compact('error', 'kt'));
 }
-function forgot()
+function notice()
 {
-    $code = rand(100000, 999999);
-    $content = 'Mã xác nhận của bạn là: ' . '<b>' . $code . '</b>' . ' vui lòng không cung cấp cho bất kì ai,mã xác nhận có thời hạn 5 phút';
-    $receiver = $_POST['receiver'];
+    if (!isset($_SESSION['receiver'])) {
+        header("location:   " . ROOT_URL);
+        die();
+    }
+    $token = uniqid();
+    $_SESSION['token'] = $token;
+    $code = Account . 'forgot?token=' . $token;
+    $content = 'Link liên kết đổi mật khẩu của bạn là :' . '<a href=``>' . $code . '</a>' . ' tuyệt đối không chia sẻ với bật kì ai';
+    $receiver = isset($_POST['receiver']);
     $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower ';
     $second = date('i') + 5;
     $five_i =  date("d/m/Y H:" . $second . ":s");
     $expire_time = $five_i;
     if (isset($_POST['submail'])) {
         $receiver = $_POST['receiver'];
-        taikhoan_forgot($receiver, $code, $expire_time);
+        taikhoan_forgot($receiver, $token, $expire_time);
     }
-    $_SESSION['receiver'] = $receiver;
-    // if (!isset($_SESSION['receiver'])) {
-    //     header("location:   " . ROOT_URL);
-    //     die();
-    // }
+    $forgot = [
+        'msg' => '',
+        'checkmail' => ''
+    ];
     $mail = new PHPMailer(true);
     try {
-
         //Server settings
         $mail->SMTPDebug = 0;
         $mail->CharSet = 'UTF-8';
@@ -268,23 +273,48 @@ function forgot()
         $mail->Body    = $content;
         $mail->AltBody = $content;
         $mail->send();
-        $msg = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
+        $forgot['msg'] = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $forgot['msg'] = "Không hợp lệ bạn vui lòng quay về trang trước <br>" . "<button class='btn btn-warning' onclick='back()'>Quay lại trang trước</button>";
     }
-    client_Render('account/change_pw.php', compact('msg'));
+    client_Render('account/notice.php', compact('forgot'));
 }
 function verify_mk()
 {
+    if (!isset($_SESSION['token'])) {
+        header("location:   " . Account . 'send');
+        die();
+    }
+
+    $notice = [
+        'msg' => ''
+    ];
+    $forgot = [
+        'newpass' => '',
+        'confirmpass' => ''
+
+    ];
+    $token = isset($_GET['token']) ? $_GET['token'] : '';
+    $now = date("d/m/Y H:i:s");
+    $sql = "SELECT forgot_pass.code  FROM forgot_pass where code ='" . $token . "'";
+    $result = execute_query($sql);
+    if ($result == null) {
+        $notice['msg'] = "Đường dẫn của bạn không hợp lệ vui lòng kiểm tra lại !";
+    }
     if (isset($_POST['verypass'])) {
-        $code = $_POST['code'];
         $newpass = $_POST['newpass'];
         $confirmpass = $_POST['confirmpass'];
-        $checkcode = taikhoan_checkcode($_SESSION['receiver']);
-        if ($checkcode) {
-            $errormail = "Mã xác nhận không đúng ! vui lòng kiểm tra lại";
+        $email = $_POST['email'];
+        if (!array_filter($forgot)) {
+            $newpass = password_hash($newpass, PASSWORD_DEFAULT);
+            taikhoan_reset_passcode($newpass, $email);
+            $msg = "Thay đổi mật khẩu thành công";
+            header("location: " . ROOT_URL . "?msg=" . $msg);
         }
     }
+    $sql = "SELECT forgot_pass.email  FROM forgot_pass where code ='" . $token . "'";
+    $email = execute_query($sql);
+    client_Render('account/change_pw.php', compact('forgot', 'notice', 'result', 'email'));
 }
 function logout()
 {

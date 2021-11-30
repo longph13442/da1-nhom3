@@ -62,6 +62,11 @@ function taikhoan_reset_password($new_mat_khau, $ma_tai_khoan)
     $sql = "UPDATE khachhang SET mat_khau = ? WHERE ma_tai_khoan = ?";
     pdo_execute($sql, $new_mat_khau, $ma_tai_khoan);
 }
+function taikhoan_reset_passcode($newpass, $email)
+{
+    $sql = "UPDATE khachhang SET mat_khau = ? WHERE email = ?";
+    pdo_execute($sql, $newpass, $email);
+}
 // Check Tồn Tại
 function taikhoan_checkmail($email)
 {
