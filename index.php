@@ -26,7 +26,10 @@ switch ($url) {
         send_email();
         break;
     case 'account/forgot':
-        forgot();
+        verify_mk();
+        break;
+    case 'account/notice':
+        notice();
         break;
     case 'account/logout':
         logout();
@@ -53,7 +56,7 @@ switch ($url) {
         break;
     case 'tim-kiem':
         require_once './client/business/products.php';
-     loadall_sp_timkiem();
+        loadall_sp_timkiem();
         break;
     case 'sanphamct':
         require_once './client/business/product-details.php';
@@ -156,7 +159,6 @@ switch ($url) {
         require_once './client/business/dathang.php';
         xoa_gio_hang();
         break;
-  
 
     case 'products':
         require_once './admin/business/products.php';

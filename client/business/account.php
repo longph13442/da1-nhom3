@@ -4,11 +4,9 @@ require_once './dao/taikhoan.php';
 require_once "./dao/cart.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 ob_start();
-
 function register()
 {
 
@@ -209,54 +207,114 @@ function account_reset()
     info_render('account/resetpass.php', compact('khachhang', 'error'));
 }
 
-function forgot()
+function send_email()
 {
-    $content = 'Mã xác nhận của bạn là: ';
-    $receiver = $_POST['receiver'];
-    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower ';
-    $_SESSION['receiver'] = $receiver;
+    $error = [
+        'email' => ''
+    ];
+    $kt = '';
+    if (isset($_POST['submail'])) {
+        $receiver = $_POST['receiver'];
+        $checkemail = taikhoan_checkmail($receiver);
+        if (!$checkemail > 0) {
+            $error['email'] = "<span class='text-danger'>Email của bạn không có trên hệ thống của chúng tôi</span>";
+        }
+        if (array_filter($checkemail)) {
+            $kt =  Account . 'notice';
+        }
+    }
+    client_Render('account/get_password.php', compact('error', 'kt'));
+}
+function notice()
+{
     if (!isset($_SESSION['receiver'])) {
         header("location:   " . ROOT_URL);
         die();
     }
+    $token = uniqid();
+    $_SESSION['token'] = $token;
+    $code = Account . 'forgot?token=' . $token;
+    $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
+    $receiver = isset($_POST['receiver']);
+    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower';
+    $startTime = date("Y-m-d H:i:s");
+    $cenverted = date('Y-m-d H:i:s', strtotime('+5 minute', strtotime($startTime)));
+    $expire_time = $cenverted;
+    if (isset($_POST['submail'])) {
+        $receiver = $_POST['receiver'];
+        taikhoan_forgot($receiver, $token, $expire_time);
+    }
+    $forgot = [
+        'msg' => '',
+        'checkmail' => ''
+    ];
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->SMTPDebug = 0;
         $mail->CharSet = 'UTF-8';
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = 'sunflowernhom3@gmail.com';
         $mail->Password   = '123456bi';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        $mail->Port       = 465;
-
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
         //Recipients
         $mail->setFrom('sunflowernhom3@gmail.com', 'Sunflower');
         $arrEmail = explode(',', $receiver);
         foreach ($arrEmail as $em) {
             $mail->addAddress(trim($em));
         }
-
         $mail->addReplyTo('sunflowernhom3@gmail.com', 'Sunflower');
-
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = $title;
         $mail->Body    = $content;
         $mail->AltBody = $content;
         $mail->send();
-        echo "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
+        $forgot['msg'] = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $forgot['msg'] = "Không hợp lệ bạn vui lòng quay về trang trước <br>" . "<button class='btn btn-warning' onclick='back()'>Quay lại trang trước</button>";
     }
-    client_Render('account/change_pw.php');
+    client_Render('account/notice.php', compact('forgot'));
 }
-
-function send_email()
+function verify_mk()
 {
-    client_Render('account/get_password.php');
+    if (!isset($_SESSION['token'])) {
+        header("location:   " . Account . 'send');
+        die();
+    }
+
+    $notice = [
+        'msg' => ''
+    ];
+    $forgot = [
+        'newpass' => '',
+        'confirmpass' => ''
+
+    ];
+    $token = isset($_GET['token']) ? $_GET['token'] : '';
+    $now = date("Y-m-d H:i:s");
+    $sql = "SELECT forgot_pass.code  FROM forgot_pass where  and code ='" . $token . "'";
+    $result = execute_query($sql);
+    if ($result == null) {
+        $notice['msg'] = "Đường dẫn của bạn không hợp lệ vui lòng kiểm tra lại !";
+    }
+    if (isset($_POST['verypass'])) {
+        $newpass = $_POST['newpass'];
+        $confirmpass = $_POST['confirmpass'];
+        $email = $_POST['email'];
+        if (!array_filter($forgot)) {
+            $newpass = password_hash($newpass, PASSWORD_DEFAULT);
+            taikhoan_reset_passcode($newpass, $email);
+            $msg = "Thay đổi mật khẩu thành công";
+            header("location: " . ROOT_URL . "?msg=" . $msg);
+        }
+    }
+    $sql = "SELECT forgot_pass.email  FROM forgot_pass where code ='" . $token . "'";
+    $email = execute_query($sql);
+    client_Render('account/change_pw.php', compact('forgot', 'notice', 'result', 'email'));
 }
 function logout()
 {
@@ -266,18 +324,33 @@ function logout()
 }
 function listcart()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $hoadon = cart_list($_SESSION['ten_dang_nhap']);
     info_render('account/list_cart.php', compact('hoadon'));
 }
 
 function cart_detail()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $id_hoadon = $_GET['id_hoadon'];
     $hddt = cart_dts($id_hoadon);
     info_render('account/cart_dt.php', compact('hddt'));
 }
 function account_address()
 {
+    if (!isset($_SESSION['ten_dang_nhap'])) {
+        header("location:   " . ROOT_URL);
+
+        die();
+    }
     $error = [
         'dia_chi' => ''
     ];
