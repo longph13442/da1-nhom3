@@ -94,7 +94,7 @@
                                 <label for="" class="form-label">Trạng Thái</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" value="" <?= $user['trang_thai'] == 0 ? 'checked' : '' ?> name="trang_thai" id="inlineRadio1">
+                                    <input class="form-check-input" type="radio" value="0" <?= $user['trang_thai'] == 0 ? 'checked' : '' ?> name="trang_thai" id="inlineRadio1">
                                     <label class="form-check-label" for="inlineRadio1">Hoạt Động</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -108,7 +108,7 @@
                                 </label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" <?= $user['vai_tro'] == 0 ? 'checked' : '' ?> value="" name="vai_tro" id="inlineRadio1">
+                                    <input class="form-check-input" type="radio" <?= $user['vai_tro'] == 0 ? 'checked' : '' ?> value="0" name="vai_tro" id="inlineRadio1">
                                     <label class="form-check-label" for="inlineRadio1">Khách Hàng</label>
                                 </div>
                                 <div class="form-check form-check-inline">

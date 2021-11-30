@@ -191,8 +191,8 @@ function account_reset()
         if (!array_filter($error)) {
             $new_mat_khau = password_hash($new_mat_khau, PASSWORD_DEFAULT);
             taikhoan_reset_password($new_mat_khau, $ma_tai_khoan);
-            // $msg = "Thay đổi mật khẩu thành công";
-            header("location: " . Account . "reset");
+            $msg = "Thay đổi mật khẩu thành công";
+            header("location: " . Account . "reset?msg=" . $msg);
             die;
         }
     }
@@ -227,10 +227,10 @@ function send_email()
 }
 function notice()
 {
-    if (!isset($_SESSION['receiver'])) {
-        header("location:   " . ROOT_URL);
-        die();
-    }
+    // if (!isset($_SESSION['receiver'])) {
+    //     header("location:   " . ROOT_URL);
+    //     die();
+    // }
     $token = uniqid();
     $_SESSION['token'] = $token;
     $code = Account . 'forgot?token=' . $token;

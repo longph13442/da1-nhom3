@@ -184,7 +184,7 @@ switch ($url) {
         require_once './admin/business/products.php';
         products_save_upadte();
         break;
-    // giỏ hàng
+        // giỏ hàng
     case 'cart':
         require_once "./client/business/cart.php";
         cart();
@@ -193,12 +193,12 @@ switch ($url) {
         require_once "./client/business/delete_session.php";
         delete();
         break;
-    // thanh toans
+        // thanh toans
     case 'pay';
         require_once "./client/business/pay_cart.php";
         pay();
         break;
-    //
+        //
     default:
         # code...
         break;

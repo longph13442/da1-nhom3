@@ -23,7 +23,6 @@
                         <label for="" class="form-label">Nhập Lại Mật Khẩu</label>
                         <input type="password" name="new_mat_khau_2" id="new_mat_khau_2" class="form-control" placeholder="Nhập Lại Mật khẩu......">
                         <div id="error3" class="text-danger"></div>
-
                     </div>
                     <br>
                     <div class="form-group">

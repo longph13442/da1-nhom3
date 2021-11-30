@@ -5,23 +5,16 @@
                    <div class="list-group ">
 
                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
- <a href="index.php?url=danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
+                       <a href="index.php?url=danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
                        <?php
-                       
+
                         foreach ($dmsp as $d) {
                             extract($d);
                             $linkdm = "index.php?url=danh-muc&ma_sp=" . $ma_loai;
-                            echo ' 
-                              
-                            
+                            echo '   
            <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
                         ?>
-
-                       <!-- <a href="#" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Trang điểm</a>
-                        <a href="#" class="list-group-item list-group-item-action  border border-0  text-center py-3 bg-light">Dưỡng mặt</a>
-                        <a href="#" class="list-group-item list-group-item-action  border border-0  text-center py-3 bg-light"> Dưỡng body</a> -->
-
                    </div>
 
                    <div class="price text-center">
@@ -46,7 +39,11 @@
                </div>
                <div class="col-9">
 
-                   <h4 class="mx-3 my-3">Tất cả các sản phẩm </h4>
+                   <h4 class="mx-3 my-3"><?php if (isset($key)) : ?>
+                           <?php echo $key; ?>
+                       <?php else : ?>
+                           Tất cả các sản phẩm
+                       <?php endif; ?></h4>
 
                    <div class="row ">
 
