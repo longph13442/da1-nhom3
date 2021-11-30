@@ -16,9 +16,10 @@
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <div class="col-auto me-3  ">
-                <span class="material-icons-outlined  my-2">
+                <a href="cart" class="nav-link"><span class="material-icons-outlined  my-2">
                     shopping_bag
-                </span>
+                </span></a>
+                
             </div>
 
             <?php
