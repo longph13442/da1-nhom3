@@ -33,25 +33,20 @@
         <p><?php echo $info['mota'] ?></p>
       </div>
 
-<form action="index.php?url=dathang" method="post">
-      <div class="quantity mb-4 d-flex">
-        <label for="" class="fw-bold">Số lượng :</label>
-        <input type="button" onclick="decrementValue()" value="-" class="btn btn-dark mx-2" style="width:7%;" />
-        <input type="text" name="soluong" value="1" maxlength="2" size="1" id="number" class="form-control " style="width:40px;" />
-        <input type="button" onclick="incrementValue()"  value="+" class="btn btn-dark mx-2" style="width:7%;" />
-      </div>
+      <form action="cart" method="post">
+        <div class="quantity mb-4 d-flex">
+          <label for="" class="fw-bold">Số lượng :</label>
+          <input type="button" onclick="decrementValue()" value="-" class="btn btn-dark mx-2" style="width:7%;" />
+          <input type="text" name="soluong" value="1" id="number" class="form-control " style="width:40px;"  />
+          <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;" />
+        </div>
 
-    <input type="submit"  name="addcart" value="Them san pham"  >
-   <input type="hidden" name="tensp" value="<?=$info['ten_sp']?>">
-     <input type="hidden" name="hinhanh" value="<?=$info['anh_sp']?>">
-       <input type="hidden" name="giatien" value="<?=$info['giatien']?>">
-           <input type="hidden" name="masp" value="<?=$info['ma_sp']?>">
-           
-         
-        
-
-       
-</form>
+        <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
+        <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
+        <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
+        <input type="hidden" name="giatien" value="<?= $info['giatien'] ?>">
+        <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
+      </form>
 
     </div>
   </div>
