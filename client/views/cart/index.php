@@ -40,8 +40,8 @@
                             <p class="my-4"><?= $price ?></p>
                         </td>
 
-                        <input type="hidden" name="masp" id="" value="<?= $key["masp"] ?>">
-                        <td> <button class="my-4 btn btn-sm btn-success " name="update">Cập nhật</button> <button class="my-4 btn btn-sm btn-danger ">Xóa</button></td>
+                        <input type="hidden" name="id" id="" value="<?= $key['masp'] ?>">
+                        <td> <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button> <button class="my-4 btn btn-sm btn-danger " name="delete">Xóa</button></td>
 
                     </tr>
 
