@@ -51,8 +51,9 @@
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <p class="text-center"> <?= $p['ten_sp'] ?> </p> </a>
                                <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
-                               <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                              
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                </div>
