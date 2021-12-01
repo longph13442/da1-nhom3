@@ -134,18 +134,7 @@ switch ($url) {
         require_once './admin/business/comments.php';
         comments_delete();
         break;
-        // case 'slide':
-        //     require_once './admin/business/slide.php';
-        //     slide_list();
-        //     break;
-        // case 'slide/delete':
-        //     require_once './admin/business/slide.php';
-        //     slide_delete();
-        //     break;
-        // case 'slide/update':
-        // require_once './admin/business/slide.php';
-        // slide_update_form();
-        // break;
+
     case 'statistical':
         require_once './admin/business/statistical.php';
         statistica();
@@ -199,6 +188,34 @@ switch ($url) {
         pay();
         break;
         //
+    case 'slide':
+        require_once './admin/business/slide.php';
+        slide_list();
+        break;
+    case 'slide/add':
+        require_once './admin/business/slide.php';
+        slide_add();
+        break;
+    case 'slide/save-add':
+        require_once './admin/business/slide.php';
+        slide_save_add();
+        break;
+    case 'slide/delete':
+        require_once './admin/business/slide.php';
+        slide_delete();
+        break;
+    case 'slide/update':
+        require_once './admin/business/slide.php';
+        slide_update_form();
+        break;
+    case 'order':
+        require_once './admin/business/order.php';
+        order_list();
+        break;
+    case 'order/delete':
+        require_once './admin/business/order.php';
+        order_delete();
+        break;
     default:
         # code...
         break;
