@@ -18,9 +18,6 @@ function loadon_sp()
         $iddm = 0;
     }
     $dssp = loadonsp($kyw, $iddm);
-
-
-
     $dmsp = loadall_dm();
 
     client_render('products/index.php', compact('dmsp', 'dssp'));
