@@ -1,4 +1,4 @@
-<?php $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : []; ?>
+
 <div class="cart">
 
     <div class="text-center my-5">
@@ -34,7 +34,7 @@
                         </td>
 
                         <td>
-                            <input type="number" name="soluong" value="<?= $key['soluong'] ?>" maxlength="2" size="1" id="number" class=" my-4  " style="width:70px;" />
+                            <input type="number" name="soluong" value="<?= $key['soluong'] ?>" min="1" size="1" id="number" class=" my-4  " style="width:70px;" />
                         </td>
                         <td>
                             <p class="my-4"><?= $price ?></p>
@@ -56,7 +56,7 @@
                 <td class="border-0 " colspan="3">
                     <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : <?= $sum ?> VND</h5>
                     </p>
-                <td class="border-0 text-center" colspan=""><button class="btn btn-success btn-sm mt-4 text-center float-end"><a href="pay" class="text-dark nav-link">Thanh Toán</a> </button></th>
+                <td class="border-0 text-center" colspan=""><button class="btn btn-success btn-sm mt-4 text-center float-end"><a href="<?=$link?>" class="text-dark nav-link">Thanh Toán</a> </button></th>
             </tr>
         </tfoot>
     </table>
