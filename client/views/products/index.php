@@ -10,7 +10,7 @@
 
                         foreach ($dmsp as $d) {
                             extract($d);
-                            $linkdm = ROOT_URL . "danh-muc&ma_sp=" . $ma_loai;
+                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
                             echo '   
            <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
@@ -76,6 +76,12 @@
                                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                                        <li class="page-item ">
                                            <a class="page-link" href="tim-kiem?pg=<?= $i ?>"><?= $i ?></a>
+                                       </li>
+                                   <?php endfor; ?>
+                               <?php elseif (isset($tendm['ten_loai'])) : ?>
+                                   <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
+                                       <li class="page-item ">
+                                           <a class="page-link" href="danh-muc&ma_loai=<?= $_GET['ma_loai'] ?>?pg=<?= $i ?>"><?= $i ?></a>
                                        </li>
                                    <?php endfor; ?>
                                <?php else : ?>
