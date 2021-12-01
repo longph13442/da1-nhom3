@@ -17,10 +17,20 @@ function loadon_sp()
     } else {
         $iddm = 0;
     }
-    $dssp = loadonsp($kyw, $iddm);
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
+    $pagesize = 10;
+    $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
+    $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
 
-    client_render('products/index.php', compact('dmsp', 'dssp'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage'));
 }
 function loadall_sp_timkiem()
 {
@@ -35,7 +45,17 @@ function loadall_sp_timkiem()
     } else {
         $iddm = 0;
     }
-    $dssp = loadonsp($kyw, $iddm);
+    $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $pagesize = 10;
+    $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
+    $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
     client_render('products/index.php', compact('dmsp', 'dssp', 'key'));
 }

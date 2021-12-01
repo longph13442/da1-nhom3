@@ -5,12 +5,12 @@
                    <div class="list-group ">
 
                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
-                       <a href="index.php?url=danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
+                       <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
                        <?php
 
                         foreach ($dmsp as $d) {
                             extract($d);
-                            $linkdm = "index.php?url=danh-muc&ma_sp=" . $ma_loai;
+                            $linkdm = ROOT_URL . "danh-muc&ma_sp=" . $ma_loai;
                             echo '   
            <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
@@ -50,7 +50,7 @@
                        <?php foreach ($dssp as $p) : ?>
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                               <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
                                <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                <div class="star mb-md-4">
@@ -69,13 +69,14 @@
                                        <span aria-hidden="true">&laquo;</span>
                                    </a>
                                </li>
-                               <li class="page-item "><a class="page-link text-dark" href="#">1</a></li>
-                               <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                               <li class="page-item "><a class="page-link text-dark" href="#">3</a></li>
-                               <li class="page-item ">
-                                   <a class="page-link text-dark" href="#" aria-label="Next">
-                                       <span aria-hidden="true">&raquo;</span>
-                                   </a>
+                               <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
+                                   <li class="page-item ">
+                                       <a class="page-link" href="danh-muc?pg=<?= $i ?>"><?= $i ?></a>
+                                   </li>
+                               <?php endfor; ?>
+                               <a class="page-link text-dark" href="#" aria-label="Next">
+                                   <span aria-hidden="true">&raquo;</span>
+                               </a>
                                </li>
                            </ul>
                        </nav>

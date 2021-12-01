@@ -2,7 +2,7 @@
 require_once './dao/system_dao.php';
 require_once './dao/danhmuc.php';
 
-function loadonsp($kyw = "", $iddm = 0)
+function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
 {
     $sql = "select * from sanpham where 1";
     if ($kyw != "") {
@@ -11,7 +11,7 @@ function loadonsp($kyw = "", $iddm = 0)
     if ($iddm > 0) {
         $sql .= " and ma_loai ='" . $iddm . "'";
     }
-    $sql .= " order by ma_sp ";
+    $sql .= " order by ma_sp DESC LIMIT $offset,$pagesize";
 
     $listsanpham = pdo_query($sql);
     return $listsanpham;
@@ -27,10 +27,8 @@ function load_ten_dm($iddm)
         $dm = pdo_query_one($sql);
         extract($dm);
         return $ten_loai;
-    }
-    else {
+    } else {
         return "";
-
     }
 }
 
@@ -49,5 +47,3 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
     $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE ma_sp='$ma_sp'";
     return pdo_query_one($sql);
 }
-
-?>
