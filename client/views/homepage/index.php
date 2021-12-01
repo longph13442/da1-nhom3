@@ -108,7 +108,7 @@
         </div>
         <!-- end box-bog -->
         <div class="">
-            <h3 class="text-center  fw-bold my-5">More to Discover and products</h3>
+            <h3 class="text-center  fw-bold mt-5 mt-lg-5 mt-md-5">More to Discover and products</h3>
             <div class="row double">
                 <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 baner2 mt-md-4  text-center ">
                     <img src="<?= ADMIN_ASSET ?>image/baner7.jpg" alt="" width="100%">
@@ -131,15 +131,20 @@
 
 
         <div class="box">
-            <div class="row product-fist mb-lg-5">
+            <div class="row product-fist mb-lg-5 mt-3">
                 <ul class="slider">
                     <?php foreach ($sanpham2 as $item) : ?>
                         <li>
                             <div class=" ">
-                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50"></a>
+                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50" width="90%"></a>
 
+<<<<<<< HEAD
                                 <p class=" display-8 text-center fw-bold text-secondary my-2"><?= $item['giatien'] ?></p>
                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">   <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
+=======
+                                <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
+                                <p class="text-center"><?= $item['ten_sp'] ?></p>
+>>>>>>> main
                                 <div class="star">
                                     <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>

@@ -59,4 +59,5 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
+ 
 </style>

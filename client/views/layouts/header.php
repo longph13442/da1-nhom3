@@ -26,8 +26,8 @@
 
             <?php
             if (isset($_SESSION['ten_dang_nhap'])) : ?>
-                <div class="dropdown">
-                    <ul class="proflie-dropdown navbar-nav">
+                <div class="dropdown" >
+                    <ul class="proflie-dropdown navbar-nav ">
                         <li class="nav-item d-inline">
                             <a class="text-decoration-none dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php if (avatar() < 0) : ?>
@@ -36,7 +36,7 @@
                                     <img src="<?= ROOT_URL . IMG  ?><?= avatar(); ?>" alt="mdo" width="32" height="32" class="rounded-circle">
                                 <?php endif; ?>
                             </a>
-                            <div style="transform: translate3d(-93px, 46px, 0px);" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div style="transform: translate3d(-93px, 46px, 0px); right:150px;" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
                                 <?php if (!isset($_SESSION['vai_tro']) != 1) : ?>
                                     <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
