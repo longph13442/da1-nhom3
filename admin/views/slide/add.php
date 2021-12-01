@@ -10,7 +10,7 @@
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Slide</label>
-        <input type="file" name="slide" id="">
+        <input type="file" name="slide" id=""class="form-control" >
        
       </div>
 
