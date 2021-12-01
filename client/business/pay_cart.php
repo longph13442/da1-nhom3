@@ -29,9 +29,9 @@
    if($_POST["paybox"]=""){
       $error["paybox"]="Không được để trống";
    }
-   if(array_filter($error)){
-      
-   }
+   // if(array_filter($error)){
+
+   // }
     client_Render("pay_cart/index.php");
  }
 ?>
