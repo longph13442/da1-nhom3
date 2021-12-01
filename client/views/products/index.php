@@ -39,11 +39,14 @@
                </div>
                <div class="col-9">
 
-                   <h4 class="mx-3 my-3"><?php if (isset($key)) : ?>
+                   <h3 class="mx-3 my-3">
+                       <?php if (isset($key)) : ?>
                            <?php echo $key; ?>
+                       <?php elseif (isset($tendm['ten_loai'])) : ?>
+                           <?php echo $tendm['ten_loai']; ?>
                        <?php else : ?>
                            Tất cả các sản phẩm
-                       <?php endif; ?></h4>
+                       <?php endif; ?></h3>
 
                    <div class="row ">
 
@@ -69,11 +72,19 @@
                                        <span aria-hidden="true">&laquo;</span>
                                    </a>
                                </li>
-                               <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
-                                   <li class="page-item ">
-                                       <a class="page-link" href="danh-muc?pg=<?= $i ?>"><?= $i ?></a>
-                                   </li>
-                               <?php endfor; ?>
+                               <?php if (isset($key)) : ?>
+                                   <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
+                                       <li class="page-item ">
+                                           <a class="page-link" href="tim-kiem?pg=<?= $i ?>"><?= $i ?></a>
+                                       </li>
+                                   <?php endfor; ?>
+                               <?php else : ?>
+                                   <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
+                                       <li class="page-item ">
+                                           <a class="page-link" href="danh-muc?pg=<?= $i ?>"><?= $i ?></a>
+                                       </li>
+                                   <?php endfor; ?>
+                               <?php endif; ?>
                                <a class="page-link text-dark" href="#" aria-label="Next">
                                    <span aria-hidden="true">&raquo;</span>
                                </a>

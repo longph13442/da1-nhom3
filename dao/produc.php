@@ -16,13 +16,9 @@ function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-
-
 function load_ten_dm($iddm)
 {
     if ($iddm > 0) {
-
-
         $sql = "select * from loaihang where ma_loai =" . $iddm;
         $dm = pdo_query_one($sql);
         extract($dm);
@@ -31,7 +27,12 @@ function load_ten_dm($iddm)
         return "";
     }
 }
-
+function sanpham_count_seach($kyw)
+{
+    $sql = "SELECT* FROM sanpham,loaihang WHERE sanpham.ma_loai = loaihang.ma_loai
+     and sanpham.ten_sp LIKE ? or loaihang.ten_loai LIKE ?";
+    return pdo_query($sql, '%' . $kyw . '%', '%' . $kyw . '%');
+}
 function san_pham_select_by_id($ma_sp)
 {
     $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";

@@ -29,14 +29,15 @@ function loadon_sp()
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-
-    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage'));
+    $tendm = danhmuc_byid($iddm);
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm'));
 }
 function loadall_sp_timkiem()
 {
+    $key = "Kết quả tìm kiếm";
+
     if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
         $kyw = $_POST['kyw'];
-        $key = "Kết quả tìm kiếm";
     } else {
         $kyw = "";
     }
@@ -51,11 +52,11 @@ function loadall_sp_timkiem()
     } else {
         $pg = $_GET['pg'];
     }
-    $pagesize = 10;
-    $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
+    $pagesize = 1;
+    $result  = (int)sanpham_count_seach($kyw);
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'key'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'key', 'tongpage'));
 }
