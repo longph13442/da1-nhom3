@@ -29,7 +29,7 @@
                 <tr>
                     <td><?php echo $ma_sp ?></td>
                     <td style="font-weight: 600;"><?php echo $ten_sp ?></td>
-                    <td style="width: 200px;"><img src="<?=IMG?><?php echo $anh_sp ?>" alt="" width="50%"></td>
+                    <td style="width: 200px;"><img src="<?=IMG?><?php echo $anh_sp ?>" alt="" width="30%"></td>
                     <td><?php echo number_format($giatien)  ?> VNĐ</td>
                     <td><?php echo $soluong ?></td>
                     <td><?php echo $dacbiet ?></td>
