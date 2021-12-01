@@ -91,8 +91,9 @@
             <?php foreach ($sanpham as $p) : ?>
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
-                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">   <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
+               
+                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">  <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
+                         <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -136,15 +137,10 @@
                     <?php foreach ($sanpham2 as $item) : ?>
                         <li>
                             <div class=" ">
-                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50" width="90%"></a>
-
-<<<<<<< HEAD
-                                <p class=" display-8 text-center fw-bold text-secondary my-2"><?= $item['giatien'] ?></p>
-                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">   <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
-=======
-                                <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
-                                <p class="text-center"><?= $item['ten_sp'] ?></p>
->>>>>>> main
+                      <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+               
+                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">  <p class="text-center"> <?= $p['ten_sp'] ?> </p></a>
+                                <p class=" display-8 text-center fw-bold text-secondary my-2"><?= $item['giatien'] ?></p>            
                                 <div class="star">
                                     <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
@@ -246,29 +242,25 @@
                 <div class="row row-cols-1 row-cols-md-3 g-3  ">
 
 
-
-
-
-
-
-
-
-                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
+ <?php foreach ($blog_tt as $blog) : ?>
+            
+      
+                    <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl1.jpg" class="card-img-top" alt="..." height="350">
+                            <a href="index?url=ctblog"><img src="<?= ADMIN_ASSET ?>image/<?=$blog['anh_minh_hoa']?>" class="card-img-top" alt="..." height="350"></a>
                             <div class="card-body">
-                                <h5 class="card-title">Những người yêu cái đẹp</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
+                               <a href="index?url=ctblog"> <h5 class="card-title"><?=$blog['tieu_de']?></h5></a>
+                                <p class="card-text"><?=$blog['noi_dung']?></p>
                             </div>
                             <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
+                                <small class="text-dark"><?=$blog['ngay_tao']?></small>
                             </div>
                         </div>
                     </div>
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
+
+                    <?php endforeach ?>
+
+                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
                             <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">

@@ -20,6 +20,22 @@ function slide_delete(){
     sl_delete($id);
     header("location: " . ROOT_URL . 'slide');
 }
+function slide_add(){
+    admin_render('slide/add.php');
+}
+function slide_insert($slide){
+    $sql = "INSERT INTO slide (slide) VALUES (?)";
+    pdo_execute($sql,$slide);
+}
+function slide_save_add(){
+    if(isset($_POST['submit'])){
+        extract($_POST);
+        $slide = $_FILES['slide']['name'];
+        slide_insert($slide);
+        header("location: " . ROOT_URL . 'slide');
+    }
+ 
+}
 function slide_update_form(){
     $id = $_GET['id'];
     $info = loaihang_select_by_id($id);
