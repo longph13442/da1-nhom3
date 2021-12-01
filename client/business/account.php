@@ -71,8 +71,10 @@ function login()
             $vaitro = execute_query($sql);
             if ($login) {
                 // Sử dụng Vai trò để phân quyền admin và user
-                if ($login['vai_tro'] == 1 || $login['vai_tro'] == 3) {
-                    $_SESSION['vai_tro'] = $login['vai_tro'];
+                if ($login['vai_tro'] == 1) {
+                    $_SESSION['admin'] = $login['vai_tro'];
+                } elseif ($login['vai_tro'] == 3) {
+                    $_SESSION['nhanvien'] = $login['vai_tro'];
                 }
                 if (password_verify($mat_khau, $login['mat_khau'])) {
                     unset($login['mat_khau']);

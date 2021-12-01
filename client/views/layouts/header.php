@@ -36,7 +36,7 @@
                             </a>
                             <div style="transform: translate3d(-93px, 46px, 0px);" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
-                                <?php if (!isset($_SESSION['vai_tro']) != 1) : ?>
+                                <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
                                     <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
                                 <?php endif; ?>
                                 <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>

@@ -1,7 +1,8 @@
 <?php
 require_once 'dao/system_dao.php';
 require_once 'dao/taikhoan.php';
-if (!isset($_SESSION['vai_tro'])) {
+
+if (!isset($_SESSION['nhanvien']) == 3 && !isset($_SESSION['admin']) == 1) {
     header("location: " . ROOT_URL);
     die;
 }
@@ -67,6 +68,10 @@ function adduser()
 }
 function user_edit()
 {
+    if (!isset($_SESSION['admin']) == 1) {
+        header("location: " . ROOT_URL . 'admin/user');
+        die;
+    }
     $error = [
         'email' => '',
         'sdt' => '',
@@ -120,6 +125,10 @@ function user_edit()
 
 function user_delete()
 {
+    if (!isset($_SESSION['admin']) == 1) {
+        header("location: " . ROOT_URL . 'admin/user');
+        die;
+    }
     if (isset($_GET['ma_tai_khoan'])) {
         taikhoan_delete($_GET['ma_tai_khoan']);
         header("location: " . ROOT_URL  . "admin/user");
@@ -129,6 +138,10 @@ function user_delete()
 }
 function user_lock()
 {
+    // if (!isset($_SESSION['admin']) == 1) {
+    //     header("location: " . ROOT_URL . 'admin/user');
+    //     die;
+    // }
     if (isset($_GET['ma_tai_khoan'])) {
         taikhoan_lock($_GET['ma_tai_khoan']);
         header("location: " . ROOT_URL  . "admin/user");
