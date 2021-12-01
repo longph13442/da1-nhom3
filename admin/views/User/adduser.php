@@ -112,9 +112,15 @@
                                         <input class="form-check-input" type="radio" name="vai_tro" checked id="inlineRadio1" value="">
                                         <label class="form-check-label" for="inlineRadio1">Khách Hàng</label>
                                     </div>
+
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" class="form-check-input" name="vai_tro" id="inlineRadio2" value="3">
+                                        <label class="form-check-label" for="inlineRadio2">Nhân Viên</label>
+
+                                    </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="vai_tro" id="inlineRadio2" value="1">
-                                        <label class="form-check-label" for="inlineRadio2">Nhân Viên</label>
+                                        <label class="form-check-label" for="inlineRadio2">Quản Trị viên</label>
                                     </div>
                                 </div>
                             </div>

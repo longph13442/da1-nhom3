@@ -112,8 +112,12 @@
                                     <label class="form-check-label" for="inlineRadio1">Khách Hàng</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" value="1" <?= $user['vai_tro'] ? 'checked' : '' ?> type="radio" name="vai_tro" id="inlineRadio2">
+                                    <input class="form-check-input" value="3" <?= $user['vai_tro'] ? 'checked' : '' ?> type="radio" name="vai_tro" id="inlineRadio2">
                                     <label class="form-check-label" for="inlineRadio2">Nhân Viên</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" <?= $user['vai_tro'] ? 'checked' : '' ?> name="vai_tro" id="inlineRadio2" value="1">
+                                    <label class="form-check-label" for="inlineRadio2">Quản Trị viên</label>
                                 </div>
                             </div>
                         </div>
