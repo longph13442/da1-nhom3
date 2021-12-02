@@ -9,6 +9,8 @@
 <!-- boostrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 <!-- slider -->
+<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/rating.css">
+
 <!-- font-icon -->
 <!-- https://material.io/resources/icons/?style=baseline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -59,5 +61,4 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
- 
 </style>

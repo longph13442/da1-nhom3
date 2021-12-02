@@ -12,9 +12,7 @@
                     <span class="badge bg-warning rounded-pill">3</span>
                 </h4>
                 <ul class="list-group mb-3">
-                    <?php $sum=0; ?>
                     <?php foreach ($pay as $key) : ?>
-                        <?php $sum+=$key["gia"];?>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div>
                                 <h6 class="my-3"><?= $key["tensp"] ?></h6>
@@ -24,11 +22,31 @@
                         </li>
                     <?php endforeach ?>
 
-                    <div class="d-flex py-3 ">
-                        <h6 class="text-dark ms-3 fw-bold">Tổng tiền : </h6>
-                        <h6 class=" text-danger fw-bold ms-3"><?=$sum?> VND</h6>
-                    </div>
-
+                    <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-3">SDưỡng ẩm hazelen</h6>
+                                
+                            </div>
+                            <span class="text-muted">$8</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div>
+                                <h6 class="my-3">Dưỡng ẩm hazelen</h6>
+                                
+                            </div>
+                            <span class="text-muted">$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between bg-light">
+                            <div class="text-success">
+                                <h6 class="my-3">Son môi elip</h6>
+                                <small>sale 40%</small>
+                            </div>
+                            <span class="text-success">−$5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Tổng tiền</span>
+                            <strong>$20</strong>
+                        </li> -->
                 </ul>
 
                 <form class="card p-2">
@@ -40,11 +58,11 @@
             </div>
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
-                <form class="needs-validation" novalidate="" method="POST" action="pay">
+                <form class="needs-validation" novalidate="">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>
-                            <input type="text" class="form-control" name="name" id="firstName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
@@ -52,25 +70,29 @@
 
                         <div class="col-12">
                             <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Số điện thoại<span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" name="call"  placeholder="+84">
-                            
+                            <input type="email" class="form-control" id="email" placeholder="+84">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
                         </div>
                         <div class="col-12">
                             <label for="address" class="form-label">Địa chỉ</label>
-                            <input type="text" class="form-control" name="ar" id="address" placeholder="1234 Main St" required="">
-                            
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
                         </div>
 
                         <div class="col-12">
                             <label for="address2" class="form-label">Ghi chú </label>
-                            <input type="text" class="form-control py-5" name="note" id="address2" placeholder="">
+                            <input type="text" class="form-control py-5" id="address2" placeholder="">
                         </div>
 
 
@@ -80,21 +102,18 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" name="paybox" class="form-check-input" checked="" required="">
-                                <label class="form-check-label"  for="credit">Thanh toán khi nhận hàng</label>
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                                <label class="form-check-label" for="credit">Thanh toán khi nhận hàng</label>
                             </div>
                             <div class="form-check">
-                                <input id="debit" name="paymentMethod"  name="paybox" type="radio" class="form-check-input" required="">
+                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
                                 <label class="form-check-label" for="debit">Chuyển khoản</label>
                             </div>
-                            <div class="form-check">
-                                <input id="paypal" name="paymentMethod"  name="paybox" type="radio" class="form-check-input" required="">
-                                <label class="form-check-label" for="paypal">PayPal</label>
-                            </div>
+
                         </div>
 
 
-                        <button class="w-50 btn btn-warning btn-lg mx-auto" type="submit" name="pay">Đặt hàng</button>
+                        <button class="w-50 btn btn-warning btn-lg mx-auto" type="submit">Đặt hàng</button>
                 </form>
             </div>
         </div>

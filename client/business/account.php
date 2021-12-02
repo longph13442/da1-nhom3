@@ -72,7 +72,9 @@ function login()
             if ($login) {
                 // Sử dụng Vai trò để phân quyền admin và user
                 if ($login['vai_tro'] == 1) {
-                    $_SESSION['vai_tro'] = $login['vai_tro'];
+                    $_SESSION['admin'] = $login['vai_tro'];
+                } elseif ($login['vai_tro'] == 3) {
+                    $_SESSION['nhanvien'] = $login['vai_tro'];
                 }
                 if (password_verify($mat_khau, $login['mat_khau'])) {
                     unset($login['mat_khau']);
@@ -329,15 +331,24 @@ function listcart()
 
         die();
     }
-    $hoadon = cart_list($_SESSION['ten_dang_nhap']);
-    info_render('account/list_cart.php', compact('hoadon'));
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
+    $pagesize = 10;
+    $result  = (int)pdo_query_value("SELECT count(*) FROM hoadon");
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
+    $hoadon = cart_list($_SESSION['ten_dang_nhap'], $offset, $pagesize);
+    info_render('account/list_cart.php', compact('hoadon', 'tongpage'));
 }
 
 function cart_detail()
 {
     if (!isset($_SESSION['ten_dang_nhap'])) {
         header("location:   " . ROOT_URL);
-
         die();
     }
     $id_hoadon = $_GET['id_hoadon'];

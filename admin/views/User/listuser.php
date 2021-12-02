@@ -29,20 +29,30 @@
                     <td><?= $us['ho_ten'] ?></td>
                     <td><?= $us['sdt'] ?></td>
                     <td class="col-3"><?= $us['dia_chi'] ?></td>
-                    <td><?= $us['vai_tro'] == 1 ? 'Quản Trị Viên' : 'Khách Hàng' ?></td>
+                    <td><?php
+                        if ($us['vai_tro'] == 0) {
+                            echo 'Khách Hàng';
+                        } elseif ($us['vai_tro'] == 1) {
+                            echo "Quản Trị Viên";
+                        } elseif ($us['vai_tro'] == 3) {
+                            echo "Nhân Viên";
+                        }
+                        ?></td>
                     <td class="mx-3">
-                        <?php if ($us['vai_tro'] != 1) : ?>
+                        <?php if ($us['vai_tro'] != 1 || $us['vai_tro'] == 0) : ?>
                             <?php if ($us['trang_thai'] == 0) : ?>
                                 <a onclick="confrim_lock('<?= ADMIN_URL ?>user/lock?ma_tai_khoan=<?= $us['ma_tai_khoan'] ?>','<?= $us['ho_ten'] ?>')" class="btn btn-outline-danger" href="javascript:;"><i class="fad fa-lock-open-alt"></i></a>
                             <?php else : ?>
                                 <a onclick="confrim_unlock('<?= ADMIN_URL ?>user/unlock?ma_tai_khoan=<?= $us['ma_tai_khoan'] ?>','<?= $us['ho_ten'] ?>')" href="javascript:;" class="btn btn-danger"><i class=" fas fa-lock"></i></a>
                             <?php endif; ?>
                         <?php endif; ?>
-
-                        <a class="btn btn-outline-warning" href="<?= ADMIN_URL ?>user/edit?ma_tai_khoan=<?= $us['ma_tai_khoan'] ?>"><i class="far fa-edit"></i></a>
-                        <?php if ($us['vai_tro'] != 1) : ?>
+                        <?php if (isset($_SESSION['admin']) == 1) : ?>
+                            <a class="btn btn-outline-warning" href="<?= ADMIN_URL ?>user/edit?ma_tai_khoan=<?= $us['ma_tai_khoan'] ?>"><i class="far fa-edit"></i></a>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['admin']) == 1 && $us['vai_tro'] != 1) : ?>
                             <a href="javascript:;" onclick="confrim_remove('<?= ADMIN_URL . 'user/delete?ma_tai_khoan=' . $us['ma_tai_khoan'] ?>', '<?= $us['ho_ten'] ?>')" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></a>
                         <?php endif; ?>
+
                     </td>
                 </tr>
             <?php endforeach; ?>

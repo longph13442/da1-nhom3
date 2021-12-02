@@ -38,4 +38,3 @@ function xoa_gio_hang()
 
 
 }
-?>
