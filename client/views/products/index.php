@@ -53,7 +53,7 @@
                        <?php foreach ($dssp as $p) : ?>
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
-                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
                                <a class="text-warning text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
@@ -109,14 +109,14 @@
            <h4 class="text-center my-5">NHỮNG ƯU ĐÃI DÀNH RIÊNG CHO BẠN</h4>
            <div class="row mx-5">
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/baner7.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>Image/baner7.jpg" alt="" height="400" width="100%">
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/baner8.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>Image/baner8.jpg" alt="" height="400" width="100%">
 
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>image/baner9.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>Image/baner9.jpg" alt="" height="400" width="100%">
                </div>
            </div>
            <!-- end row -->
@@ -124,7 +124,7 @@
            <div class="row">
 
                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img13.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img13.jpg" alt="" class="img-fluid" height="50">
 
                    <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
@@ -133,7 +133,7 @@
                    </div>
                </div>
                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img14.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img14.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">
@@ -142,7 +142,7 @@
                </div>
 
                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img15.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img15.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">
@@ -150,7 +150,7 @@
                    </div>
                </div>
                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img12.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img12.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">
@@ -162,7 +162,7 @@
            <div class="row">
 
                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img1.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img1.jpg" alt="" class="img-fluid" height="50">
 
                    <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
@@ -171,7 +171,7 @@
                    </div>
                </div>
                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img2.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img2.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">
@@ -180,7 +180,7 @@
                </div>
 
                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img3.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img3.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">
@@ -188,7 +188,7 @@
                    </div>
                </div>
                <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img4.jpg" alt="" class="img-fluid" height="50">
+                   <img src="<?= homepase_ASSET ?>Image/img4.jpg" alt="" class="img-fluid" height="50">
                    <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
                    <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
                    <div class="star mb-md-4">

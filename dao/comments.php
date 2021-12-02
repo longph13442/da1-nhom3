@@ -31,15 +31,18 @@ require_once './dao/system_dao.php';
 // }
 
 // ------------------------------------------------------------------------------------------------
-function get_ma_tai_khoan($ten_dang_nhap){
+function get_ma_tai_khoan($ten_dang_nhap)
+{
     $sql = "select * from khachhang where ten_dang_nhap = ?";
     return pdo_query_one($sql, $ten_dang_nhap);
 }
-function binh_luan_insert($ma_sp, $ma_tai_khoan, $noi_dung, $ngay_tao,$danh_gia){
+function binh_luan_insert($ma_sp, $ma_tai_khoan, $noi_dung, $ngay_tao, $danh_gia)
+{
     $sql = "INSERT INTO binhluan(ma_sp, ma_tai_khoan, noi_dung, ngay_tao,danh_gia) VALUES ('$ma_sp', '$ma_tai_khoan', '$noi_dung', '$ngay_tao','$danh_gia')";
-    pdo_execute($sql );
+    pdo_execute($sql);
 }
-function binh_luan_delete($ma_bl){
+function binh_luan_delete($ma_bl)
+{
     $sql = " DELETE FROM binhluan WHERE ma_binh_luan=?";
     if (is_array($ma_bl)) {
         foreach ($ma_bl as $ma) {
@@ -49,8 +52,9 @@ function binh_luan_delete($ma_bl){
         pdo_execute($sql, $ma_bl);
     }
 }
-function binh_luan_load($ma_sp){
-    $sql = " SELECT * FROM binhluan WHERE ma_sp='".$ma_sp."' order by ma_binh_luan desc";
+function binh_luan_load($ma_sp)
+{
+    $sql = " SELECT * FROM binhluan,khachhang,sanpham
+     WHERE binhluan.ma_sp= sanpham.ma_sp and khachhang.ma_tai_khoan = binhluan.ma_tai_khoan and  binhluan.ma_sp='" . $ma_sp . "' order by ma_binh_luan desc";
     return pdo_query($sql);
 }
-?>

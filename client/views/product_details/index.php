@@ -83,8 +83,14 @@
 
                   <div class="card p-3 mt-2">
                     <div class="d-flex justify-content-between align-items-center">
-                      <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/C4egmYM.jpg" width="30" class="user-img rounded-circle mr-2">
-                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ma_tai_khoan'] ?> </small>
+                      <div class="user d-flex flex-row align-items-center">
+                        <?php if ($bl['hinh_anh'] < 0) : ?>
+                          <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="60" height="60" class="rounded-circle">
+                        <?php else : ?>
+                          <img class="rounded-circle px-2" src="<?= ROOT_URL . IMG ?><?= $bl['hinh_anh'] ?>" width="60" height="60">
+
+                        <?php endif; ?>
+                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ho_ten'] ?> </small>
                           <small class="font-weight-bold"><?php echo $bl['noi_dung']; ?> </small>
                         </span>
                       </div>
@@ -140,7 +146,14 @@
                     </div>
                     <input type="hidden" name="ma_sp" value="<?php echo $info['ma_sp'] ?>">
 
-                    <div class="d-flex flex-row align-items-start"><img class="rounded-circle px-2" src="https://i.imgur.com/RpzrMR2.jpg" width="60"><textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea></div>
+                    <div class="d-flex flex-row align-items-start">
+                      <?php if (avatar() < 0) : ?>
+                        <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="60" height="60" class="rounded-circle">
+                      <?php else : ?>
+                        <img class="rounded-circle px-2" src="<?= ROOT_URL . IMG ?><?= avatar(); ?>" width="60" height="60">
+                      <?php endif; ?>
+                      <textarea class="form-control ml-1 shadow-none textarea" name="noi_dung"></textarea>
+                    </div>
                     <div class="mt-2 text-right ms-5 my-1">
                       <input type="submit" value="Gửi bình luận" name="gui_bl" class="btn btn-primary btn-sm shadow-none mx-2">
                       <!-- <button class="btn btn-primary btn-sm shadow-none mx-2" type="submit" name="gui_bl" >Gửi bình luận</button> -->
