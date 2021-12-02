@@ -74,7 +74,7 @@
 
 <div class="box">
 
-    <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
+    <div class="display-4 bg-success py-2  my-sm-0 my-md-4">
         <h4 class="fw-bold mx-5 my-2">SẢN PHẨM BÁN CHẠY</h4>
     </div>
     <div class="box-big">
