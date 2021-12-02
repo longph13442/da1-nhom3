@@ -97,7 +97,7 @@
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
-                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
                     <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
@@ -153,7 +153,7 @@
                         <div class=" ">
                             <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                 <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                             </a>
 
@@ -271,7 +271,7 @@
                             <div class="card h-100">
                                 <a href="index?url=ctblog"><img src="<?= ADMIN_ASSET ?>image/<?= $blog['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
                                 <div class="card-body">
-                                    <a href="index?url=ctblog">
+                                    <a href="index?url=ctblog" class="nav-link text-success">
                                         <h5 class="card-title"><?= $blog['tieu_de'] ?></h5>
                                     </a>
                                     <p class="card-text"><?= $blog['noi_dung'] ?></p>
@@ -335,37 +335,28 @@
                 </div>
                 <!-- end button -->
                 <hr class="my-5">
-                <h2 class="text-center fw-bold">NHẬT KÍ SUNFLOWE</h2>
+                <h2 class="text-center fw-bold text-success text-decoration-underline">Video</h2>
                 <!-- <i class="far fa-comment-alt fa-4x cmt"></i> -->
-                <h4 class="text-center my-4 ">Chia sẽ những khoảnh khắc tỏa sáng của bạn</h4>
+                <h4 class="text-center my-3">Chia sẽ những khoảnh khắc tỏa sáng của bạn</h4>
 
-                <div class="row comment py-2">
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
+                <div class="row comment ">
+                    <div class="col-2 col-sm-3 col-lg-3 col-xl-3 ">
+                        <iframe width="100%" height="288" src="https://www.youtube.com/embed/YTrQ4jn6ivQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
-
+                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                        <iframe width="100%" height="288" src="https://www.youtube.com/embed/AfwR2y8UHcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 1 -->
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
-
+                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                        <iframe width="100%" height="288" src="https://www.youtube.com/embed/61W1TxeyQ1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 2 -->
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/2.jpg" alt="" width="100%">
+                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                        <iframe width="100%" height="288" src="https://www.youtube.com/embed/OuNQjCKyHKg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 3 -->
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/3.jpg" alt="" width="100%">
-                    </div>
-                    <!-- 4 -->
-                    <div class="col-6 col-sm-6 col-lg-2 col-xl-2 ">
-                        <img src="<?= ADMIN_ASSET ?>image/1.jpg" alt="" width="100%">
-                    </div>
-                    <!-- 4 -->
+
 
                 </div>
                 <!-- end instagram -->
