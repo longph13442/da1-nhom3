@@ -47,7 +47,7 @@
                 <div class="form-group mb-2">
                     <label>Ảnh sản phẩm</label>
                     <input type="file" name="anh_sp" class="form-control" />
-
+                     <div class=""><img src="<?= IMG.$info['anh_sp'] ?>" alt="" width="100%">   </div>                                                            
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['anh_sp']) && ($error['anh_sp'] != "")) echo $error['anh_sp'] ?></span>
                 </div>
                 <div class="form-group mb-2">
