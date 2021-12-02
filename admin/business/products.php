@@ -43,7 +43,7 @@ function products_list()
     } else {
         $pg = $_GET['pg'];
     }
-    $pagesize = 5;
+    $pagesize = 15;
     $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
