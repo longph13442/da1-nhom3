@@ -1,6 +1,6 @@
 <!-- danh-muc -->
 <div class="row mx-3">
-    <div class="col-3 ">
+    <div class="col-12 col-lg-3 mb-3 mb-lg-0">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
             <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
@@ -33,7 +33,7 @@
         <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
         <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0"> -->
     </div>
-    <div class="col-9 ">
+    <div class="col-12 col-lg-9 mb-3 mb-lg-0">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -80,7 +80,7 @@
     <div class="box-big">
         <div class="row ">
             <?php foreach ($sanpham as $p) : ?>
-                <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
+                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
@@ -166,7 +166,7 @@
         <div class="combo">
             <div class="box-big">
                 <div class="row my-2">
-                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center ">
+                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0  ">
                         <img src="<?= ADMIN_ASSET ?>image/cm1.jpg" alt="" width="100%">
                         <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
                         <div class="d-flex text-center">
@@ -174,7 +174,7 @@
                             <p class="text-decoration-line-through text-secondary">740.000 VND</p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
                         <img src="<?= ADMIN_ASSET ?>image/cm2.jpg" alt="" width="100%">
                         <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
                         <div class="d-flex text-center">
@@ -182,7 +182,7 @@
                             <p class="text-decoration-line-through text-secondary">740.000 VND</p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
                         <img src="<?= ADMIN_ASSET ?>image/cm3.jpg" alt="" width="100%">
                         <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
                         <div class="d-flex text-center">
@@ -190,7 +190,7 @@
                             <p class="text-decoration-line-through text-secondary">740.000 VND</p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center">
+                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
                         <img src="<?= ADMIN_ASSET ?>image/cm4.jpg" alt="" width="100%">
                         <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
                         <div class="d-flex text-center">
@@ -326,19 +326,19 @@
                 <h4 class="text-center my-3">Chia sẽ những khoảnh khắc tỏa sáng của bạn</h4>
 
                 <div class="row comment ">
-                    <div class="col-2 col-sm-3 col-lg-3 col-xl-3 ">
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 ">
                         <iframe width="100%" height="288" src="https://www.youtube.com/embed/YTrQ4jn6ivQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
 
-                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 ">
                         <iframe width="100%" height="288" src="https://www.youtube.com/embed/AfwR2y8UHcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 1 -->
-                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 ">
                         <iframe width="100%" height="288" src="https://www.youtube.com/embed/61W1TxeyQ1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 2 -->
-                    <div class="col-3 col-sm-3 col-lg-3 col-xl-3 ">
+                    <div class="col-12 col-sm-12 col-lg-3 col-xl-3 ">
                         <iframe width="100%" height="288" src="https://www.youtube.com/embed/OuNQjCKyHKg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <!-- 3 -->
