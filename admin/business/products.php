@@ -92,9 +92,9 @@ function products_save_add()
         if (strlen($mota_dai) > 1000) {
             $error['mota_dai'] = 'tối đa 1000 kí tự !';
         }
-        if ($giamgia != '' ){
-            $giatien = ($giatien * $giamgia)/100;
-        }
+        // if ($giamgia != '' ){
+        //     $giatien = ($giatien * $giamgia)/100;
+        // }
         //----------------------------------------------------------------------
         if (isset($_FILES['anh_sp'])) {
 
@@ -129,8 +129,8 @@ function products_save_add()
             header("location: " . ROOT_URL . 'products');
         }
     }
-
-    admin_render('products/add.php', compact('error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai'));
+    $ct = category_select_all();
+    admin_render('products/add.php', compact('error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai','ct'));
 }
 function products_delete()
 {
