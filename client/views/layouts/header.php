@@ -1,5 +1,5 @@
-<header class=" mt-3 row mx-3">
-    <div class="container border-bottom pb-3">
+<header class=" row mx-3">
+    <div class="container border-bottom ">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="60">
@@ -15,7 +15,7 @@
             <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 " action="<?= ROOT_URL ?>tim-kiem" method="post">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
-            <div class=" cart col-auto pt-4">
+            <div class=" cart col-auto pt-4 me-2">
                 <ul>
                     <li class="nav-link"><a href="cart" ><span class="material-icons-outlined ">
                                 shopping_bag
