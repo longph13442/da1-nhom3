@@ -187,6 +187,11 @@ switch ($url) {
         require_once "./client/business/pay_cart.php";
         pay();
         break;
+                // gop y kien
+    case 'gop-y';
+        require_once "./client/business/gopy.php";
+        gopy();
+        break;
         //
     case 'slide':
         require_once './admin/business/slide.php';

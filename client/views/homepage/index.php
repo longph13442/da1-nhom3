@@ -3,16 +3,30 @@
     <div class="col-3 ">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
+
+  <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
+                       <?php
+
+                        foreach ($dmsp as $d) {
+                            extract($d);
+                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
+                            echo '   
+           <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+                  
+                </span>
+                <p class="mx-3 fs-6">' . $ten_loai . '</p>
+            </li></a>';
+                        }
+                        ?>
+
+
+<!-- 
             <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
                     spa
                 </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+                <p class="mx-3 fs-6"></p>
             </li>
-            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
-                    self_improvement
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
+     
             <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
                     sentiment_very_satisfied
                 </span>
@@ -27,7 +41,7 @@
                     card_giftcard
                 </span>
                 <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
+            </li> -->
 
         </ul>
         <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">

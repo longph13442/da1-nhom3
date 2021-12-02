@@ -151,27 +151,27 @@
                     <h3 class="text-center">Gửi ý kiến góp ý</h3>
                     <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
                 </div>
-                <form>
+                <form action="index.php?url=gop-y" method="post" enctype="multipart/form-data" >
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nội dung</label>
-                        <input type="email" class="form-control py-5" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="text" class="form-control py-5" id="exampleInputEmail1" name="noidung" >
                     </div>
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Họ tên</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1"  class="form-label">Họ tên</label>
+                                <input type="text" name="hoten" class="form-control" id="exampleInputPassword1">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1">
+                                <label for="exampleInputPassword1" class="form-label" >Email</label>
+                                <input type="email"  name="email" class="form-control" id="exampleInputPassword1">
                             </div>
                         </div>
                     </div>
                     <div class="text-center my-3">
-                        <button type="submit" class="btn btn-warning ">Gửi tới SunFlower</button>
+                        <button type="submit" class="btn btn-warning " name="submit">Gửi tới SunFlower</button>
                     </div>
                 </form>
 

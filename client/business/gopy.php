@@ -9,7 +9,6 @@ function gopy()
     pdo_execute($sql);
         client_render('blog/blog.php');
 
-
 }
 }
 

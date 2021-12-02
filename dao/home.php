@@ -2,7 +2,7 @@
 require_once './dao/system_dao.php';
 
 function  loadall_sp_tt(){
-    $sql = "select * from sanpham where 1 order by ma_sp desc limit 0,9 ";   
+    $sql = "select * from sanpham where 1 order by ma_sp desc limit 0,8 ";   
      $sanpham = pdo_query($sql);
     return $sanpham;
 }

@@ -9,6 +9,9 @@ function blog_tt(){
 
 }
 
-
+function goykien($noidung,$hoten,$email){
+    $sql = "insert into gopy(noi_dung,ho_ten,email) values('$noidung','$hoten','$email')";
+   pdo_execute($sql);
+}
 
 ?>
