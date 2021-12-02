@@ -6,7 +6,9 @@
             fingerprint
         </span>
     </div>
-
+    <div class="title">
+        <h5>Xin chào: <?= $_SESSION['ten_dang_nhap'] ?></h5>
+    </div>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <a class="nav-link text-dark px-3 text-dark" href="<?= ROOT_URL ?>admin/logout"> <i class="fx-10 fal fa-sign-out"></i></a>

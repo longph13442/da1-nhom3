@@ -91,8 +91,11 @@
             <?php foreach ($sanpham as $p) : ?>
                 <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center  ">
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+
+                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                        <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                    </a>
                     <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
-                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -108,7 +111,7 @@
         </div>
         <!-- end box-bog -->
         <div class="">
-            <h3 class="text-center  fw-bold mt-5 mt-lg-5 mt-md-5">More to Discover and products</h3>
+            <h3 class="text-center  fw-bold my-5">More to Discover and products</h3>
             <div class="row double">
                 <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 baner2 mt-md-4  text-center ">
                     <img src="<?= ADMIN_ASSET ?>image/baner7.jpg" alt="" width="100%">
@@ -131,15 +134,19 @@
 
 
         <div class="box">
-            <div class="row product-fist mb-lg-5 mt-3">
+            <div class="row product-fist mb-lg-5">
                 <ul class="slider">
                     <?php foreach ($sanpham2 as $item) : ?>
                         <li>
                             <div class=" ">
-                                 <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>" alt="" class="img-fluid" height="50" width="90%"></a>
+                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+
+                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                                </a>
 
                                 <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
-                                <p class="text-center"><?= $item['ten_sp'] ?></p>
+
                                 <div class="star">
                                     <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                 </div>
@@ -239,22 +246,40 @@
             <div class="">
                 <h4 class="title3 text-center fw-bold my-5"> NHỮNG BÀI VIẾT ĐANG ĐƯỢC QUAN TÂM</h4>
                 <div class="row row-cols-1 row-cols-md-3 g-3  ">
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
-                        <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl1.jpg" class="card-img-top" alt="..." height="350">
-                            <div class="card-body">
-                                <h5 class="card-title">Những người yêu cái đẹp</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
+
+
+                    <?php foreach ($blog_tt as $blog) : ?>
+
+
+                        <div class="col col-md-12 col-lg-4 col-xl-4">
+                            <div class="card h-100">
+                                <a href="index?url=ctblog"><img src="<?= ADMIN_ASSET ?>image/<?= $blog['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
+                                <div class="card-body">
+                                    <a href="index?url=ctblog">
+                                        <h5 class="card-title"><?= $blog['tieu_de'] ?></h5>
+                                    </a>
+                                    <p class="card-text"><?= $blog['noi_dung'] ?></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-dark"><?= $blog['ngay_tao'] ?></small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
+
+                    <?php endforeach ?>
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
                         <div class="card h-100">
                             <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" class="card-img-top" alt="..." height="350">
                             <div class="card-body">
@@ -283,7 +308,7 @@
                                 <small class="text-dark">Last updated 3 mins ago</small>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
                 <!-- end blog -->

@@ -1,0 +1,50 @@
+
+
+.ratings{
+    position: relative;
+    top: 50%;
+    left: -34.3333%;
+    transform: translate(-50%,-50%) rotateY(180deg);
+    display: flex;
+
+}
+.ratings input{
+display: none;
+}
+.ratings label{
+    display: block;
+    cursor: pointer;
+    width: 30px;
+
+}
+.ratings label:before{
+    content: '\f005';
+    font-family: FontAwesome;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    color: rgb(163, 122, 122);
+}
+.ratings label:after
+{
+    content: '\f005';   
+    font-family: FontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 20px;
+    color: red;
+    top: 0;
+ opacity: 0;
+ transition: 0.5s;
+text-shadow: 0 2px 2px rgba(255, 0, 0, 0.5);
+}
+.ratings label:hover:after,
+.ratings label:hover ~ label:after,
+.ratings input:checked ~ label:after
+{
+    opacity: 1;
+}
+.ratings i{
+    color: rgb(255, 255, 255);
+
+}

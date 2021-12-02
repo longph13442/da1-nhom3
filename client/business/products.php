@@ -12,24 +12,36 @@ function loadon_sp()
     } else {
         $kyw = "";
     }
-    if (isset($_GET['ma_sp']) && ($_GET['ma_sp'] > 0)) {
-        $iddm = $_GET['ma_sp'];
+    if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
+        $iddm = $_GET['ma_loai'];
     } else {
         $iddm = 0;
     }
-    $dssp = loadonsp($kyw, $iddm);
-
-
-
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $tendm = danhmuc_byid($iddm);
+    $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
+    $pagesize = 10;
+    if ($tendm) {
+        $result = (int)danhmuc_id_count($iddm);
+    } else {
+        $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
+    }
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
+    $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-
-    client_render('products/index.php', compact('dmsp', 'dssp'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm'));
 }
 function loadall_sp_timkiem()
 {
+    $key = "Kết quả tìm kiếm";
+
     if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
         $kyw = $_POST['kyw'];
-        $key = "Kết quả tìm kiếm";
     } else {
         $kyw = "";
     }
@@ -38,7 +50,17 @@ function loadall_sp_timkiem()
     } else {
         $iddm = 0;
     }
-    $dssp = loadonsp($kyw, $iddm);
+    $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $pagesize = 1;
+    $result  = (int)sanpham_count_seach($kyw);
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
+    $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'key'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'key', 'tongpage'));
 }
