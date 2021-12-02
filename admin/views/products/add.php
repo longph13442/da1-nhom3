@@ -6,17 +6,18 @@
             <form class="forms-sample" action="save-add" method="post" enctype="multipart/form-data" >
                 <div class="form-group mb-2">
                     <label for="exampleInputName1">Tên sản phẩm</label>
-                    <input type="text" name="ten_sp" class="form-control" id="" placeholder="Nhập tên sản phẩm..." required value="<?php echo $ten_sp?>">
+                    <input type="text" name="ten_sp" class="form-control" id="" placeholder="Nhập tên sản phẩm..." required value="<?php if(isset($ten_sp)) echo $ten_sp?>">
                     <span class="text-danger text-uppercase mt-2" ><?php if(isset($error['ten_sp'])&&($error['ten_sp']!="")) echo $error['ten_sp']?></span>
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleInputEmail3">Đơn giá</label>
-                    <input type="number" name="giatien" class="form-control" id="" placeholder="Nhập đơn giá..." required value="<?php echo $giatien?>">
+                    <input type="number" name="giatien" class="form-control" id="" placeholder="Nhập đơn giá..." required value="<?php if(isset($giatien)) echo $giatien;?>">
+                   
                     <span class="text-danger text-uppercase mt-2"><?php if(isset($error['giatien'])&&($error['giatien']!="")) echo $error['giatien']?></span>
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleInputPassword4">Giảm giá</label>
-                    <input type="number" name="giamgia" class="form-control" min="0" max="100"  id="" placeholder="Nhập giảm giá (0 - 100)%" value="<?php echo $giamgia?>">
+                    <input type="number" name="giamgia" class="form-control" min="0" max="100"  id="" placeholder="Nhập giảm giá (0 - 100)%" value="<?php if(isset($giamgia)) echo $giamgia;?>">
                     <span class="text-danger text-uppercase mt-2"><?php if(isset($error['giamgia'])&&($error['giamgia']!="")) echo $error['giamgia']?></span>
                 </div>
                 <div class="form-group mb-2">
@@ -25,7 +26,7 @@
                     <select class="form-control" name="ma_loai" id="exampleSelectGender">
                         <?php foreach($ct as $item): ?>
                             <?php extract($item);  ?>
-                        <option value="<?php  echo $ma_loai ?>"><?php echo $ten_loai ?></option>
+                        <option value="<?php  echo $ma_loai ?>"><?php echo $ten_loai ; ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -45,7 +46,7 @@
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleInputCity1">Số lượng</label>
-                    <input type="number" name="soluong" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $soluong?>">
+                    <input type="number" name="soluong" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php if(isset($soluong)) echo $soluong ?>">
                     <span class="text-danger text-uppercase mt-2"><?php if(isset($error['soluong'])&&($error['soluong']!="")) echo $error['soluong']?></span>
                 </div>
                 <div class="form-group mb-2">
