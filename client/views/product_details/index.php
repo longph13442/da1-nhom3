@@ -84,13 +84,13 @@
                   <div class="card p-3 mt-2">
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="user d-flex flex-row align-items-center">
-                        <?php if (avatar() < 0) : ?>
+                        <?php if ($bl['hinh_anh'] < 0) : ?>
                           <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="60" height="60" class="rounded-circle">
                         <?php else : ?>
-                          <img class="rounded-circle px-2" src="<?= ROOT_URL . IMG ?><?= avatar(); ?>" width="60" height="60">
+                          <img class="rounded-circle px-2" src="<?= ROOT_URL . IMG ?><?= $bl['hinh_anh'] ?>" width="60" height="60">
 
                         <?php endif; ?>
-                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ma_tai_khoan'] ?> </small>
+                        <span><small class="font-weight-bold text-primary mx-2"><?php echo $bl['ho_ten'] ?> </small>
                           <small class="font-weight-bold"><?php echo $bl['noi_dung']; ?> </small>
                         </span>
                       </div>
