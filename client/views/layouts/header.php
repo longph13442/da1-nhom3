@@ -36,18 +36,18 @@
                                     <span class="text-danger py-3">350.000 vnd</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 class="my-3">Tên</h6>
-
+                                    <div class="d-flex">
+                                        <img src="<?=ADMIN_ASSET?>image/img1.jpg" alt="" height="40">
+                                        <h6 class="my-3 mx-3">Dưỡng da</h6>
                                     </div>
-                                    <span class="text-danger py-3">Giá</span>
+                                    <span class="text-danger py-3">350.000 vnd</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div>
-                                        <h6 class="my-3">Tên</h6>
-
+                                    <div class="d-flex">
+                                        <img src="<?=ADMIN_ASSET?>image/img1.jpg" alt="" height="40">
+                                        <h6 class="my-3 mx-3">Dưỡng da</h6>
                                     </div>
-                                    <span class="text-danger py-3">Giá</span>
+                                    <span class="text-danger py-3">350.000 vnd</span>
                                 </li>
 
                                 <div class="d-flex py-3 ">
@@ -55,13 +55,12 @@
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
-                                        <button type="submit" class="btn btn-success text-center mx-auto" style="width: 90%;">Xem giỏ
-                                            hàng</button>
+                                        <button type="submit" class="btn btn-success text-center mx-auto" style="width: 90%;"><a href="cart" class="nav-link text-dark">Xem giỏ hàng</a></button>
                                     </div>
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
-                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;">Thanh toán</button>
+                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;"><a href="cart" class="nav-link text-dark">Thanh toán</a></button>
                                     </div>
                                 </div>
 
