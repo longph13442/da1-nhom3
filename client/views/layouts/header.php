@@ -34,7 +34,7 @@
                                     <img src="<?= ROOT_URL . IMG  ?><?= avatar(); ?>" alt="mdo" width="32" height="32" class="rounded-circle">
                                 <?php endif; ?>
                             </a>
-                            <div style="transform: translate3d(-93px, 46px, 0px);" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div style="transform: translate3d(-93px, 46px, 0px); right: 150px;" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
                                 <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
                                     <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
