@@ -6,7 +6,7 @@
             <form class="forms-sample" action="save-add" method="post" enctype="multipart/form-data" >
                 <div class="form-group mb-2">
                     <label for="exampleInputName1">Tên sản phẩm</label>
-                    <input type="text" name="ten_sp" class="form-control" id="" placeholder="Nhập tên sản phẩm..." required value="<?php if(isset($error['ten_sp'])&&($error['ten_sp']!="")) echo $ten_sp?>">
+                    <input type="text" name="ten_sp" class="form-control" id="" placeholder="Nhập tên sản phẩm..." required value="<?php echo $ten_sp?>">
                     <span class="text-danger text-uppercase mt-2" ><?php if(isset($error['ten_sp'])&&($error['ten_sp']!="")) echo $error['ten_sp']?></span>
                 </div>
                 <div class="form-group mb-2">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleInputPassword4">Giảm giá</label>
-                    <input type="number" name="giamgia" class="form-control" id="" placeholder="Nhập giảm giá..." value="<?php echo $giamgia?>">
+                    <input type="number" name="giamgia" class="form-control" min="0" max="100"  id="" placeholder="Nhập giảm giá (0 - 100)%" value="<?php echo $giamgia?>">
                     <span class="text-danger text-uppercase mt-2"><?php if(isset($error['giamgia'])&&($error['giamgia']!="")) echo $error['giamgia']?></span>
                 </div>
                 <div class="form-group mb-2">

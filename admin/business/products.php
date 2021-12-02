@@ -92,6 +92,9 @@ function products_save_add()
         if (strlen($mota_dai) > 1000) {
             $error['mota_dai'] = 'tối đa 1000 kí tự !';
         }
+        if ($giamgia != '' ){
+            $giatien = ($giatien * $giamgia)/100;
+        }
         //----------------------------------------------------------------------
         if (isset($_FILES['anh_sp'])) {
 
