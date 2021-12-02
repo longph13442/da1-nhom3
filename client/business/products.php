@@ -24,7 +24,7 @@ function loadon_sp()
     }
     $tendm = danhmuc_byid($iddm);
     $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
-    $pagesize = 10;
+    $pagesize = 4;
     if ($tendm) {
         $result = (int)danhmuc_id_count($iddm);
     } else {
