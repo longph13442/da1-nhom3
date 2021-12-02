@@ -161,6 +161,8 @@ function user_unlock()
 function user_logout()
 {
     session_destroy();
+    unset($_SESSION['nhanvien']);
+    unset($_SESSION['admin']);
     header("location: " . ROOT_URL);
     die;
 }
