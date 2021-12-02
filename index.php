@@ -208,6 +208,10 @@ switch ($url) {
         require_once './admin/business/slide.php';
         slide_update_form();
         break;
+    case 'slide/save-update':
+        require_once './admin/business/slide.php';
+        slide_save_update();
+        break;
     case 'order':
         require_once './admin/business/order.php';
         order_list();

@@ -13,6 +13,7 @@
 <script src="<?= CLIENT_ASSET ?>dist/js/checklogin.js"></script>
 <script src="<?= CLIENT_ASSET ?>dist/js/back.js"></script>
 <script src="<?= CLIENT_ASSET ?>/dist/js/checkchangepw.js"></script>
+<script src="<?= CLIENT_ASSET ?>dist/js/bootstrap-rating.js"></script>
 
 <script>
     var myModal = document.getElementById('myModal')

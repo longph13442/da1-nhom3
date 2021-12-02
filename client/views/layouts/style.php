@@ -9,6 +9,8 @@
 <!-- boostrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
 <!-- slider -->
+<link rel="stylesheet" href="<?= CLIENT_ASSET ?>dist/css/rating.css">
+
 <!-- font-icon -->
 <!-- https://material.io/resources/icons/?style=baseline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -59,5 +61,104 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
- 
+
+    nav {
+        width: 100%;
+        background: #fff;
+        font-size: 12pt;
+    }
+
+    nav ul {
+        list-style: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: rgb(83, 83, 83);
+    }
+
+    nav ul li a,
+    nav ul li a:after,
+    nav ul li a:before {
+        transition: all .5s;
+    }
+
+    nav ul li a:hover {
+        color: rgb(27, 27, 27);
+    }
+
+
+    /* stroke */
+    nav.stroke ul li a,
+    nav.fill ul li a {
+        position: relative;
+    }
+
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #fcc100;
+        height: 2px;
+    }
+
+    nav.stroke ul li a:hover:after {
+        width: 100%;
+    }
+
+    nav.fill ul li a {
+        transition: all 2s;
+    }
+
+    nav.fill ul li a:after {
+        text-align: left;
+        content: '.';
+        margin: 0;
+        opacity: 0;
+    }
+
+    nav.fill ul li a:hover {
+        color: rgb(255, 1, 1);
+        z-index: 1;
+    }
+
+    nav.fill ul li a:hover:after {
+        z-index: -10;
+        animation: fill 1s forwards;
+        -webkit-animation: fill 1s forwards;
+        -moz-animation: fill 1s forwards;
+        opacity: 1;
+    }
+
+    .viewcart {
+        position: absolute !important;
+        display: none;
+        right: 20px;
+        width: 350px;
+    }
+    .cart li:hover ul.viewcart{
+        display: block !important;
+    }
+    .list-group-item:hover{
+        background-color: #fcc100;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .material-icons-outlined{
+        color: black;
+    }
 </style>

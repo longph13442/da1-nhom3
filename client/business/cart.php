@@ -1,4 +1,6 @@
 <?php
+
+
 function cart()
 {
     if (isset($_POST["masp"]) ? $_POST["masp"] : "") {
@@ -31,12 +33,13 @@ function cart()
         $id = $_POST["id"];
         unset($_SESSION["cart"][$id]);
     }
-    if (isset($_SESSION["ten_dang_nhap"])) {
-        $link = ' pay';
-    } else {
-        $link = 'account/register';
+    $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : []; 
+    if(isset($_SESSION["ten_dang_nhap"])){
+       $link='pay';
+    }else{
+        $link='account/register';
     }
-    $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
+    
+    client_Render("cart/index.php",compact('cart','link')); // 
 
-    client_Render("cart/index.php", compact('cart', 'link')); //
 }

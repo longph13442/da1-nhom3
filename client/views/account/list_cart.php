@@ -39,12 +39,17 @@
                 </tbody>
             </table>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-            </ul>
-        </nav>
+        <div class="paging">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
+                        <li class="page-item">
+                            <a class="page-link" href="user?pg=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php endfor; ?>
+
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
