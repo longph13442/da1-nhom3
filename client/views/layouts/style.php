@@ -141,4 +141,24 @@
         -moz-animation: fill 1s forwards;
         opacity: 1;
     }
+
+    .viewcart {
+        position: absolute !important;
+        display: none;
+        right: 20px;
+        width: 350px;
+    }
+    .cart li:hover ul.viewcart{
+        display: block !important;
+    }
+    .list-group-item:hover{
+        background-color: #fcc100;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .material-icons-outlined{
+        color: black;
+    }
 </style>

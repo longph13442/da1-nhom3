@@ -1,5 +1,5 @@
-<body class="bg-light">
-    <div class="container">
+
+    <div class="container bg-light py-4">
         <main>
             <div class=" text-center">
                 <img class="d-block mx-auto mb-4 mt-0" src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="100">
@@ -119,4 +119,3 @@
         </footer>
     </div>
     <script src="<?= CLIENT_ASSET ?>/dist/js/checkregister.js"></script>
-</body>
