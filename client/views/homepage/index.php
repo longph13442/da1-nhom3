@@ -1,50 +1,71 @@
-<div class="row py-3">
-    <ul class="nav col-12  justify-content-center my-0">
-        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
-        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
-        <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
-        <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
-        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng ẩm</a></li>
-        <li><a href="" class=" px-2 link-dark mx-2">Dưỡng body</a></li>
-        <li><a href="#" class=" px-2 link-dark mx-2">Kẻ mắt</a></li>
-        <li><a href="#" class=" px-2 link-dark mx-2">Son môi</a></li>
-    </ul>
-</div>
 <!-- danh-muc -->
-<!-- <div class="row">
-    <div class="col-9 " >
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="row mx-3">
+    <div class="col-3 ">
+        <ul class="list-group">
+            <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
+            <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
+                    spa
+                </span>
+                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+            </li>
+            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+                    self_improvement
+                </span>
+                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+            </li>
+            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
+                    sentiment_very_satisfied
+                </span>
+                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+            </li>
+            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+                    flutter_dash
+                </span>
+                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+            </li>
+            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
+                    card_giftcard
+                </span>
+                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+            </li>
+
+        </ul>
+        <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
+        <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0"> -->
+    </div>
+    <div class="col-9 ">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= ADMIN_ASSET ?>image/baner5.jpg" class="d-block w-100 " alt="...">
-                   
+                    <img src="<?= ADMIN_ASSET ?>image/baner1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>image/baner4.jpg" class="d-block w-100" alt="...">
+                    <img src="<?= ADMIN_ASSET ?>image/baner6.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>image/baner4.jpg" class="d-block w-100" alt="...">
-
+                    <img src="<?= ADMIN_ASSET ?>image/baner1.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden ">Previous</span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        
+
     </div>
-    <div class="col-3">
-        <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
-        <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0">
-    </div>
-</div> -->
+
+</div>
 <!-- end banner -->
-<video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video>
+<!-- <video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video> -->
 <!-- <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
         <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
     </div> -->
@@ -52,39 +73,9 @@
 
 
 <div class="box">
-    <div class="box-bigb row m-auto  my-5">
-        <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a4.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
 
-            <h2 class="my-3">Dưỡng mặt</h2>
-            <p> Những sản phẩm đến từ các thương hiệu hàng đầu nước pháp, chúng tôi tin rằng sẽ mang đến cho bạn những niềm hạnh phúc cho bản thân bạn !</p>
-            <p><a class="btn btn-outline-warning" href="#">Xem tất cả »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a6.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
-
-
-            <h2 class="my-3">Dưỡng body</h2>
-            <p> Những sản phẩm đến từ các thương hiệu hàng đầu nước pháp, chúng tôi tin rằng sẽ mang đến cho bạn những niềm hạnh phúc cho bản thân bạn !</p>
-            <p><a class="btn btn-outline-warning" href="#">Xem tất cả »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4 text-center">
-            <img src="<?= ADMIN_ASSET ?>image/a4.jpg" alt="" class="bd-placeholder-img rounded-circle" height="160" width="160">
-
-
-            <h2 class="my-3">Trang điểm</h2>
-            <p> Những sản phẩm đến từ các thương hiệu hàng đầu nước pháp, chúng tôi tin rằng sẽ mang đến cho bạn những niềm hạnh phúc cho bản thân bạn !</p>
-            <p><a class="btn btn-outline-warning" href="#">Xem tất cả »</a></p>
-        </div><!-- /.col-lg-4 -->
-    </div>
-
-    <div class="row">
-
-    </div>
-    <!-- end button -->
-
-    <div class="display-4  ">
-        <h4 class="fw-bold mx-5 mt-3">SẢN PHẨM BÁN CHẠY</h4>
+    <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
+        <h4 class="fw-bold mx-5 my-2">SẢN PHẨM BÁN CHẠY</h4>
     </div>
     <div class="box-big">
         <div class="row ">
@@ -110,63 +101,71 @@
             </div>
         </div>
         <!-- end box-bog -->
-        <div class="">
-            <h3 class="text-center  fw-bold my-5">More to Discover and products</h3>
+    </div>
+    <!-- end box-bog -->
+    <div class="">
+        <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
+            <h4 class="fw-bold mx-5 my-2">ƯU ĐÃI THÁNG 12</h4>
+        </div>
+        <div class="box-big">
             <div class="row double">
-                <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 baner2 mt-md-4  text-center ">
+                <div class="col-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 baner2   text-center ">
                     <img src="<?= ADMIN_ASSET ?>image/baner7.jpg" alt="" width="100%">
                 </div>
-                <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xxl-4 mt-md-4 mt-4 text-center">
+                <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xxl-4  text-center">
                     <img src="<?= ADMIN_ASSET ?>image/baner8.jpg" alt="" width="100%">
                 </div>
-                <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xl-4 mt-md-4 mt-4 text-center">
+                <div class="col-12  col-md-12 col-lg-4 col-xl-4 col-xl-4  text-center">
                     <img src="<?= ADMIN_ASSET ?>image/baner9.jpg" alt="" width="100%">
                 </div>
             </div>
             <!-- end banner double -->
         </div>
         <!-- end box-big -->
-        <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
-            <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
+    </div>
+
+    <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
+        <h4 class="fw-bold mx-5 my-2">SẢN PHẨM ĐANG SALE</h4>
+    </div>
+
+    <!-- end title -->
+
+
+    <div class="box">
+        <div class="row product-fist mb-lg-5">
+            <ul class="slider">
+                <?php foreach ($sanpham2 as $item) : ?>
+                    <li>
+                        <div class=" ">
+                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
+
+                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            </a>
+
+                            <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
+
+                            <div class="star">
+                                <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+
+                        </div>
+                    </li>
+
+                <?php endforeach ?>
+
+
+            </ul>
+        </div>
+        <!-- end product-fist -->
+        <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
+            <h4 class="fw-bold mx-5 my-2">SẢN PHẨM YÊU THÍCH</h4>
         </div>
 
         <!-- end title -->
-
-
-        <div class="box">
-            <div class="row product-fist mb-lg-5">
-                <ul class="slider">
-                    <?php foreach ($sanpham2 as $item) : ?>
-                        <li>
-                            <div class=" ">
-                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-
-                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
-                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                                </a>
-
-                                <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
-
-                                <div class="star">
-                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                </div>
-
-                            </div>
-                        </li>
-
-                    <?php endforeach ?>
-
-
-                </ul>
-            </div>
-            <!-- end product-fist -->
-            <div class="display-4  mt-5 mt-lg-5 mt-md-5 ms-3 ">
-                <h3 class="fw-bold "> PRODUCTS COMBO</h3>
-            </div>
-
-            <!-- end title -->
-            <div class="combo">
-                <div class="row my-5">
+        <div class="combo">
+            <div class="box-big">
+                <div class="row my-2">
                     <div class="col-12 col-sm-12 col-lg-3 col-xl-3 text-center ">
                         <img src="<?= ADMIN_ASSET ?>image/cm1.jpg" alt="" width="100%">
                         <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
@@ -200,9 +199,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <!-- end combo -->
+            <!-- end box-big -->
+
+        </div>
+        <!-- end combo -->
+        <div class="box-big">
             <div id="carouselExampleSlidesOnly" class="carousel slide banner2 my-5" data-bs-ride="carousel">
                 <div class="carousel-inner slides">
                     <div class="carousel-item active">
@@ -355,3 +357,6 @@
                 <!-- end instagram -->
             </div>
         </div>
+        <!-- end box-big -->
+    </div>
+</div>
