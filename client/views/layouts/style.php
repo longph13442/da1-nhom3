@@ -161,4 +161,7 @@
     .material-icons-outlined{
         color: black;
     }
+    .cart{
+        z-index:2 ;
+    }
 </style>
