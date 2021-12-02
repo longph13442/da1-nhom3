@@ -234,7 +234,7 @@ function notice()
     //     die();
     // }
     $token = uniqid();
-    $_SESSION['token'] = $_GET['token'];
+
     $code = Account . 'forgot?token=' . $token;
     $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
     $receiver = isset($_POST['receiver']);
