@@ -20,7 +20,7 @@
                     <li class="nav-link"><a href="cart" ><span class="material-icons-outlined ">
                                 shopping_bag
                             </span></a>
-                        <ul class=" viewcart order-md-last mx-auto bg-light py-3 px-4">
+                        <ul class=" viewcart order-md-last mx-auto bg-success py-3 px-4">
 
                             <li class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-danger">Giỏ hàng của bạn</span>
