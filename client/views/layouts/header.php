@@ -23,7 +23,7 @@
                         <ul class=" viewcart order-md-last mx-auto bg-success py-3 px-4">
 
                             <li class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="text-danger">Giỏ hàng của bạn</span>
+                                <span class="text-warning fw-bold">Giỏ hàng của bạn</span>
                                 <span class="badge bg-warning rounded-pill">3</span>
                             </li>
                             <ul class="list-group mb-3">
