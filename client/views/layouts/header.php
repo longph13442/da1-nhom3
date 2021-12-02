@@ -2,7 +2,7 @@
     <div class="container border-bottom ">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="60">
+                <img src="<?= ADMIN_ASSET ?>Image/logo.png" alt="" height="60">
             </a>
             <nav class=" stroke nav col-12 col-lg-auto me-lg-auto justify-content-center">
                 <ul class=" mb-md-0">
@@ -17,7 +17,7 @@
             </form>
             <div class=" cart col-auto pt-4 me-2">
                 <ul>
-                    <li class="nav-link"><a href="cart" ><span class="material-icons-outlined ">
+                    <li class="nav-link"><a href="cart"><span class="material-icons-outlined ">
                                 shopping_bag
                             </span></a>
                         <ul class=" viewcart order-md-last mx-auto bg-success py-3 px-4">
@@ -30,21 +30,21 @@
 
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
                                     <div class="d-flex">
-                                        <img src="<?=ADMIN_ASSET?>image/img1.jpg" alt="" height="40">
+                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
                                         <h6 class="my-3 mx-3">Dưỡng da</h6>
                                     </div>
                                     <span class="text-danger py-3">350.000 vnd</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
                                     <div class="d-flex">
-                                        <img src="<?=ADMIN_ASSET?>image/img1.jpg" alt="" height="40">
+                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
                                         <h6 class="my-3 mx-3">Dưỡng da</h6>
                                     </div>
                                     <span class="text-danger py-3">350.000 vnd</span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between lh-sm">
                                     <div class="d-flex">
-                                        <img src="<?=ADMIN_ASSET?>image/img1.jpg" alt="" height="40">
+                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
                                         <h6 class="my-3 mx-3">Dưỡng da</h6>
                                     </div>
                                     <span class="text-danger py-3">350.000 vnd</span>
@@ -115,7 +115,7 @@
 
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                     <div class="d-flex">
-                        <img src="./image/anh1.jpg" alt="" height="40">
+                        <img src="./Image/anh1.jpg" alt="" height="40">
                         <h6 class="my-3 mx-3">Tên</h6>
                     </div>
                     <span class="text-danger py-3">Giá</span>

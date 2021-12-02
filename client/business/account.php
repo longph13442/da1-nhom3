@@ -145,7 +145,7 @@ function profile()
         }
 
         if (!array_filter($error)) {
-            taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,  $hinh_anh, $ma_tai_khoan);
+            taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,  isset($hinh_anh), $ma_tai_khoan);
         }
         if (!array_filter($errorimg)) {
             if ($file['size'] > 0) {
@@ -234,7 +234,7 @@ function notice()
     //     die();
     // }
     $token = uniqid();
-    $_SESSION['token'] = $token;
+    $_SESSION['token'] = $_GET['token'];
     $code = Account . 'forgot?token=' . $token;
     $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
     $receiver = isset($_POST['receiver']);
@@ -283,10 +283,10 @@ function notice()
 }
 function verify_mk()
 {
-    if (!isset($_SESSION['token'])) {
-        header("location:   " . Account . 'send');
-        die();
-    }
+    // if (!isset($_SESSION['token'])) {
+    //     header("location:   " . Account . 'send');
+    //     die();
+    // }
 
     $notice = [
         'msg' => ''
