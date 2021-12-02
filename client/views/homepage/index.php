@@ -104,7 +104,7 @@
     </div>
     <!-- end box-bog -->
     <div class="">
-        <div class="display-4 bg-success py-2  my-sm-0 my-md-4">
+        <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
             <h4 class="fw-bold mx-5 my-2">ƯU ĐÃI THÁNG 12</h4>
         </div>
         <div class="box-big">
@@ -124,7 +124,7 @@
         <!-- end box-big -->
     </div>
 
-    <div class="display-4 bg-success py-2  my-sm-0 my-md-4">
+    <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
         <h4 class="fw-bold mx-5 my-2">SẢN PHẨM ĐANG SALE</h4>
     </div>
 
@@ -158,7 +158,7 @@
             </ul>
         </div>
         <!-- end product-fist -->
-        <div class="display-4 bg-success py-2  my-sm-0 my-md-4">
+        <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
             <h4 class="fw-bold mx-5 my-2">SẢN PHẨM YÊU THÍCH</h4>
         </div>
 
