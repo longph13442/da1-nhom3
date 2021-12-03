@@ -1,67 +1,9 @@
-<main class="container my-5">
-    <div>
-        <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide2.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide3.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="row mb-2">
-         <?php foreach ($blog as $b) : ?>
-
-
-
-        <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden d-flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-warning">Người đăng : <?= $b['ten_dang_nhap']?></strong>
-                    <h3 class="mb-0"></h3>
-                    <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao']?></div>
-                    <p class="card-text mb-auto fw-bold"><?= $b['tieu_de']?>
-                    </p>
-                    <a href="#" class="stretched-link text-warning">Xem thêm</a>
-                </div>
-                <div class="col-5 d-none d-lg-block">
-                    <img src="<?= ADMIN_ASSET ?>Image/<?= $b['anh_minh_hoa']?>" alt="" width="100%" height="100%">
-
-                </div>
-            </div>
-        </div>
-
-                    <?php endforeach ?>
-
-
-        <!-- <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden d-flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-warning">Longtv</strong>
-                    <h3 class="mb-0"></h3>
-                    <div class="mb-1 text-muted">Ngày 27/11/2021</div>
-                    <p class="card-text mb-auto fw-bold">CÁC SẢN PHẨM MAKEUP 2 TRONG 1 ĐA ZI NĂNG CHO NÀNG
-                    </p>
-                    <a href="#" class="stretched-link text-warning">Xem thêm</a>
-                </div>
-                <div class="col-5 d-none d-lg-block">
-                    <img src="<?= ADMIN_ASSET ?>Image/2.webp" alt="" width="100%" height="100%">
-
-                </div>
-            </div>
-
-        </div> -->
-
         <div class="row g-5">
-            <div class="col-md-9">
-                <h3 class="pb-4 mb-4  border-bottom">
-                    CÁC SẢN PHẨM MAKEUP 2 TRONG 1 ĐA ZI NĂNG CHO NÀNG
+            <div class="col-md-9" class="blog-post-title">>
+                <h3 class="text-center" >
+               Kem Chống Nắng Và Lót Trang Điểm Vacosi Natural 1
                 </h3>
 
                 <article class="blog-post">
@@ -195,15 +137,10 @@
 
                     <div class="p-4">
                         <h4 class="fst-italic">Bài viết bạn quan tâm</h4>
-                                 <?php foreach ($blogct as $b) : ?>
-
-         <ol class="list-unstyled mb-0">
+                        <ol class="list-unstyled mb-0">
                             <li><a href="#" class="text-warning"><?= $b['tieu_de']?></a></li>
              
                         </ol>
-
-                    <?php endforeach ?>
-               
                     </div>
 
                     <div class="p-4">

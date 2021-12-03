@@ -57,3 +57,12 @@ function loc_gia_Sp($start, $end)
 //     $sql = "SELECT count(*) FROM sanpham WHERE sanpham.giatien >= ? and sanpham.giatien < ?";
 //     return pdo_query($sql, $start, $end);
 // }
+
+function loadall_spkm()
+{
+
+        $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
+        $sanpham22 = pdo_query($sql);
+        return $sanpham22;  
+    
+    }

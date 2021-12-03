@@ -50,7 +50,6 @@ function category_add_form()
 }
 function category_save_add()
 {
-
     if (isset($_POST['submit'])) {
         extract($_POST);
         $check = category_check($ten_loai);

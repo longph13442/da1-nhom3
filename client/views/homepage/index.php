@@ -3,16 +3,30 @@
     <div class="col-12 col-lg-3 mb-3 mb-lg-0">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
+
+  <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
+                       <?php
+
+                        foreach ($dmsp as $d) {
+                            extract($d);
+                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
+                            echo '   
+           <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+                  
+                </span>
+                <p class="mx-3 fs-6">' . $ten_loai . '</p>
+            </li></a>';
+                        }
+                        ?>
+
+
+<!-- 
             <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
                     spa
                 </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
+                <p class="mx-3 fs-6"></p>
             </li>
-            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
-                    self_improvement
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
+     
             <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
                     sentiment_very_satisfied
                 </span>
@@ -27,7 +41,7 @@
                     card_giftcard
                 </span>
                 <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
+            </li> -->
 
         </ul>
         <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
@@ -97,7 +111,7 @@
         <!-- end product-center -->
         <div class="row">
             <div class="col-12 text-center ">
-                <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button>
+              <a href="index.php?url=danh-muc">  <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
             </div>
         </div>
         <!-- end box-bog -->
@@ -269,54 +283,11 @@
                         </div>
 
                     <?php endforeach ?>
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
-                        <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" class="card-img-top" alt="..." height="350">
-                            <div class="card-body">
-                                <h5 class="card-title ">Làn da của thiên thần</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
-                        <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl3.jpg" class="card-img-top" alt="..." height="350">
-                            <div class="card-body">
-                                <h5 class="card-title">Không gì là không thể</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
                 <!-- end blog -->
                 <div class="row my-5">
                     <div class="col-12 text-center ">
-                        <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button>
+                       <a href="<?=ROOT_URL?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
                     </div>
                 </div>
                 <!-- end button -->

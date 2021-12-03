@@ -35,7 +35,8 @@ function loadon_sp()
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm'));
+   $dskm = loadall_spkm();
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm','dskm'));
 }
 function loadall_sp_timkiem()
 {
