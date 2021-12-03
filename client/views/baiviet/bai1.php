@@ -1,27 +1,22 @@
 
     <div class="row mb-2">
         <div class="row g-5">
-            <div class="col-md-9" class="blog-post-title">>
-                <h3 class="text-center" >
-               Kem Chống Nắng Và Lót Trang Điểm Vacosi Natural 1
+            <div class="col-md-9" class="blog-post-title">
+        <div class="row g-5">
+            <div class="col-md-9">
+                <h3 class="pb-4 mb-4  border-bottom text-center my-3">
+                     Tiêu đề bài viết : <?php echo $blogct['tieu_de']?><br>
                 </h3>
 
                 <article class="blog-post">
-                    <h2 class="blog-post-title">1. Kem Chống Nắng Và Lót Trang Điểm Vacosi Natural </h2>
+               <span class=""> Ngày tạo bài viết   <?php echo $blogct['ngay_tao']?></span>
                     <div class="text-center my-3">
-                        <img src="<?= ADMIN_ASSET ?>Image/3.webp" alt="">
+         <img src="<?= ADMIN_ASSET ?>/image/<?php echo $blogct['anh_minh_hoa']?>" alt="ảnh chính" width="50%">
                     </div>
 
                     <p class="blog-post-meta">Link mua hàng : <a href="https://sammishop.com/" class="text-warning">SunFlower.com</a></p>
 
-                    <p>Những cô nàng của chúng mình ngoài yêu thích các style makeup đa dạng độc đáo thì những
-                        sản phẩm hỗ trợ makeup cũng khiến các nàng quan tâm nhiều.
-
-                        Tiện lợi và tích hợp, Sammi giới thiệu đến nàng các siêu phẩm 2 trong 1, cho việc makeup
-                        trở nên dễ dàng hơn.
-
-                        Có thể dễ dàng bỏ túi mang theo bên mình, nhiều công dụng trong 1 sản phẩm makeup, hãy
-                        cùng nhà Sam điểm qua vài item nha.
+                    <p> <?php echo $blogct['noi_dung']?>
 
 
                     </p>
@@ -97,6 +92,10 @@
                     </article>
 
                 </article>
+
+
+
+
                 <div class="title mt-2 mt-xl-5">
                     <h3 class="text-center">Gửi ý kiến góp ý</h3>
                     <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
@@ -127,6 +126,7 @@
 
             </div>
 
+            
             <div class="col-md-3 ">
                 <div class="position-sticky" style="top: 2rem;">
                     <div class="p-4 mb-3 bg-light rounded">
@@ -138,8 +138,10 @@
                     <div class="p-4">
                         <h4 class="fst-italic">Bài viết bạn quan tâm</h4>
                         <ol class="list-unstyled mb-0">
-                            <li><a href="#" class="text-warning"><?= $b['tieu_de']?></a></li>
-             
+                                    <?php foreach ($blog as $b) : ?>
+
+                            <li><a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="text-warning"><?= $b['tieu_de']?></a></li>
+           <?php endforeach ?>
                         </ol>
                     </div>
 
