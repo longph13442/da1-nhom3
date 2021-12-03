@@ -15,11 +15,16 @@
                    </div>
                    <div class="price text-center">
                        <label for="customRange1" class="form-label  pw-bold py-3">Chọn giá</label>
-                       <p class="text-center py-3">Giá 10$-200$</p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden1trieu"> 100,000-1,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden2trieu"> 1,000,000-2,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden3trieu"> 2,000,000-3,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanpham3trieudolen">3,000,000 VNĐ Trở lên</a>
+                       </p>
                    </div>
-
-                   <div class="list-group pt-3 text-center">
-
+                   <!--  <div class="list-group pt-3 text-center">
                        <button type="button" class="list-group-item list-group-item-action border border-0 bg-light" aria-current="true">
                            DUNG TÍCH
                        </button>
@@ -30,13 +35,15 @@
                        <button type="button" class="list-group-item  border border-0 bg-light">50
                            mL</button>
 
-                   </div>
+                   </div> -->
                </div>
                <div class="col-9">
 
                    <h3 class="mx-3 my-3">
                        <?php if (isset($key)) : ?>
                            <?php echo $key; ?>
+                       <?php elseif (isset($keylg)) : ?>
+                           <?php echo $keylg; ?>
                        <?php elseif (isset($tendm['ten_loai'])) : ?>
                            <?php echo $tendm['ten_loai']; ?>
                        <?php else : ?>
@@ -49,10 +56,10 @@
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                            </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
+                               <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                                   <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                               </a>
+                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['giatien'], 0) ?>VNĐ</a> </p>
 
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -65,11 +72,7 @@
                    <div class="pagi d-flex justify-content-center">
                        <nav class="text-center" aria-label="Page navigation example">
                            <ul class="pagination ">
-                               <li class="page-item">
-                                   <a class="page-link text-dark" href="#" aria-label="Previous">
-                                       <span aria-hidden="true">&laquo;</span>
-                                   </a>
-                               </li>
+
                                <?php if (isset($key)) : ?>
                                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                                        <li class="page-item ">
@@ -82,6 +85,8 @@
                                            <a class="page-link" href="danh-muc&ma_loai=<?= $_GET['ma_loai'] ?>?pg=<?= $i ?>"><?= $i ?></a>
                                        </li>
                                    <?php endfor; ?>
+                               <?php elseif (isset($keylg)) : ?>
+                                   <?php echo ''; ?>
                                <?php else : ?>
                                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                                        <li class="page-item ">
@@ -89,10 +94,7 @@
                                        </li>
                                    <?php endfor; ?>
                                <?php endif; ?>
-                               <a class="page-link text-dark" href="#" aria-label="Next">
-                                   <span aria-hidden="true">&raquo;</span>
-                               </a>
-                               </li>
+
                            </ul>
                        </nav>
                    </div>
@@ -116,9 +118,9 @@
            <!-- end row -->
            <h4 class="my-5">NHỮNG SẢN PHẨM ƯU ĐÃI</h4>
 
-                 <div class="row">
-  <?php foreach ($dskm as $p) : ?>
-<!-- 
+           <div class="row">
+               <?php foreach ($dskm as $p) : ?>
+                   <!-- 
                   <div class="row">
                <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/ " alt="" class="img-fluid" height="50"></a>
@@ -136,28 +138,33 @@
 
 
            </div> -->
-         
 
-               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  " >
-             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">      <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
-                   <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                            </a>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                   <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                       <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
+
+                       <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                           <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                       </a>
+                       <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
+                       <div class="star mb-md-4">
+                           <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                       </div>
                    </div>
-               </div>
- <?php endforeach ?>
-         </div>
 
-         
+
+
+
+               <?php endforeach ?>
+           </div>
+
+
            <!-- end row -->
-    
+
            <!-- end row -->
        </div>
 
 
 
-       
+
    </main>
