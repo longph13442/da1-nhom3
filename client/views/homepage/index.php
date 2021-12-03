@@ -86,7 +86,7 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= $p['giatien'] ?> </p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= number_format($p['giatien']) ?> </p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -143,7 +143,7 @@
                                 <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                             </a>
 
-                            <p class=" display-8 text-center fw-bold text-secondary "><?= $item['giatien'] ?></p>
+                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?></p>
 
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>

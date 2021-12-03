@@ -64,3 +64,6 @@ function loadall_sp_timkiem()
     $dmsp = loadall_dm();
     client_render('products/index.php', compact('dmsp', 'dssp', 'key', 'tongpage'));
 }
+function locgia_sp()
+{
+}

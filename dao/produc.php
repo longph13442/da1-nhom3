@@ -48,3 +48,6 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
     $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE ma_sp='$ma_sp'";
     return pdo_query_one($sql);
 }
+function loc_gia_Sp()
+{
+}

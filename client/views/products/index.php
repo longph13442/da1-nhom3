@@ -3,23 +3,18 @@
            <div class="row">
                <div class="col-3 bg-light py-5" style="height: 90%;">
                    <div class="list-group ">
-
                        <h5 class="text-center my-3">Danh mục sản phẩm</h5>
                        <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">Tất cả sản phẩm</a>
                        <?php
-
                         foreach ($dmsp as $d) {
                             extract($d);
                             $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
-                            echo '   
-           <a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
+                            echo '<a href="' . $linkdm . '" class="list-group-item list-group-item-action  border border-0 text-center py-3 bg-light">' . $ten_loai . '</a>';
                         }
                         ?>
                    </div>
-
                    <div class="price text-center">
-                       <label for="customRange1" class="form-label  pw-bold py-3">Giá</label>
-                       <input type="range" class="form-range" id="customRange1">
+                       <label for="customRange1" class="form-label  pw-bold py-3">Chọn giá</label>
                        <p class="text-center py-3">Giá 10$-200$</p>
                    </div>
 
@@ -58,7 +53,7 @@
                                <a class="text-warning text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
+                               <p class=" display-8 text-center fw-bold  mt-4"> <a class="text-secondary text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['giatien'])  ?>VNĐ</a> </p>
 
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
