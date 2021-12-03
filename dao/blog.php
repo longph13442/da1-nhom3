@@ -17,7 +17,7 @@ function topbaiviet_moi()
     $blog = pdo_query($sql);
     return $blog;
 }
-function blog_ct()
+function blog_dm()
 {
 
   $sql = "select * from blog order by ma_blog ";
@@ -25,6 +25,13 @@ function blog_ct()
     return $blogct;
 
 }
+function blog_ct($ma_blog)
+{
+
+    $sql = "SELECT * FROM blog WHERE  ma_blog=?";
+    return pdo_query_one($sql, $ma_blog);
+}
+
 
 
 

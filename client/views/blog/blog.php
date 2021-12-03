@@ -28,7 +28,9 @@
                     <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao']?></div>
                     <p class="card-text mb-auto fw-bold"><?= $b['tieu_de']?>
                     </p>
-                    <a href="#" class="stretched-link text-warning">Xem thêm</a>
+                       <span class="card-text mb-auto fw"><?= $b['noi_dung']?>
+         </span>
+                    <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
                 </div>
                 <div class="col-5 d-none d-lg-block">
                     <img src="<?= ADMIN_ASSET ?>Image/<?= $b['anh_minh_hoa']?>" alt="" width="100%" height="100%">
@@ -198,7 +200,7 @@
                                  <?php foreach ($blogct as $b) : ?>
 
          <ol class="list-unstyled mb-0">
-                            <li><a href="#" class="text-warning"><?= $b['tieu_de']?></a></li>
+                            <li><a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="text-warning"><?= $b['tieu_de']?></a></li>
              
                         </ol>
 

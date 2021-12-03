@@ -100,7 +100,7 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= number_format($p['giatien']) ?> </p>
+  <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -157,7 +157,7 @@
                                 <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                             </a>
 
-                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?></p>
+                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?>đ- <?= number_format($item['giamgia']) ?></p>
 
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -269,9 +269,9 @@
 
                         <div class="col col-md-12 col-lg-4 col-xl-4">
                             <div class="card h-100">
-                                <a href="index?url=ctblog"><img src="<?= ADMIN_ASSET ?>image/<?= $blog['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
+                                <a href="index.php?url=ctblog&ma_blog=<?= $blog['ma_blog'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $blog['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
                                 <div class="card-body">
-                                    <a href="index?url=ctblog" class="nav-link text-success">
+                                    <a href="index.php?url=ctblog&ma_blog=<?= $blog['ma_blog'] ?>" class="nav-link text-success">
                                         <h5 class="card-title"><?= $blog['tieu_de'] ?></h5>
                                     </a>
                                     <p class="card-text"><?= $blog['noi_dung'] ?></p>
