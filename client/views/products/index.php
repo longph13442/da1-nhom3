@@ -15,11 +15,16 @@
                    </div>
                    <div class="price text-center">
                        <label for="customRange1" class="form-label  pw-bold py-3">Chọn giá</label>
-                       <p class="text-center py-3">Giá 10$-200$</p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden1trieu"> 100,000-1,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden2trieu"> 1,000,000-2,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanphamden3trieu"> 2,000,000-3,000,000 VNĐ</a>
+                       </p>
+                       <p class="text-center py-3"><a class="text-dark text-decoration-none" href="<?= ROOT_URL ?>danh-muc/giatien?sanpham3trieudolen">3,000,000 VNĐ Trở lên</a>
+                       </p>
                    </div>
-
-                   <div class="list-group pt-3 text-center">
-
+                   <!--  <div class="list-group pt-3 text-center">
                        <button type="button" class="list-group-item list-group-item-action border border-0 bg-light" aria-current="true">
                            DUNG TÍCH
                        </button>
@@ -30,13 +35,15 @@
                        <button type="button" class="list-group-item  border border-0 bg-light">50
                            mL</button>
 
-                   </div>
+                   </div> -->
                </div>
                <div class="col-9">
 
                    <h3 class="mx-3 my-3">
                        <?php if (isset($key)) : ?>
                            <?php echo $key; ?>
+                       <?php elseif (isset($keylg)) : ?>
+                           <?php echo $keylg; ?>
                        <?php elseif (isset($tendm['ten_loai'])) : ?>
                            <?php echo $tendm['ten_loai']; ?>
                        <?php else : ?>
@@ -66,11 +73,7 @@
                    <div class="pagi d-flex justify-content-center">
                        <nav class="text-center" aria-label="Page navigation example">
                            <ul class="pagination ">
-                               <li class="page-item">
-                                   <a class="page-link text-dark" href="#" aria-label="Previous">
-                                       <span aria-hidden="true">&laquo;</span>
-                                   </a>
-                               </li>
+
                                <?php if (isset($key)) : ?>
                                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                                        <li class="page-item ">
@@ -83,6 +86,8 @@
                                            <a class="page-link" href="danh-muc&ma_loai=<?= $_GET['ma_loai'] ?>?pg=<?= $i ?>"><?= $i ?></a>
                                        </li>
                                    <?php endfor; ?>
+                               <?php elseif (isset($keylg)) : ?>
+                                   <?php echo ''; ?>
                                <?php else : ?>
                                    <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                                        <li class="page-item ">
@@ -90,10 +95,7 @@
                                        </li>
                                    <?php endfor; ?>
                                <?php endif; ?>
-                               <a class="page-link text-dark" href="#" aria-label="Next">
-                                   <span aria-hidden="true">&raquo;</span>
-                               </a>
-                               </li>
+
                            </ul>
                        </nav>
                    </div>

@@ -12,7 +12,6 @@ function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
         $sql .= " and ma_loai ='" . $iddm . "'";
     }
     $sql .= " order by ma_sp DESC LIMIT $offset,$pagesize";
-
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
@@ -48,6 +47,13 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
     $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE ma_sp='$ma_sp'";
     return pdo_query_one($sql);
 }
-function loc_gia_Sp()
+function loc_gia_Sp($start, $end)
 {
+    $sql = "SELECT * FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
+    return pdo_query($sql, $start, $end);
 }
+// function loc_gia_Sp_phantrang($start, $end)
+// {
+//     $sql = "SELECT count(*) FROM sanpham WHERE sanpham.giatien >= ? and sanpham.giatien < ?";
+//     return pdo_query($sql, $start, $end);
+// }
