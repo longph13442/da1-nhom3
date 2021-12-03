@@ -140,7 +140,6 @@
 
                <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  " >
              <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">      <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
-
                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                 <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                             </a>
@@ -149,10 +148,6 @@
                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                    </div>
                </div>
-       
-
-   
-
  <?php endforeach ?>
          </div>
 
