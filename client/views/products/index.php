@@ -54,10 +54,9 @@
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-
-                               <a class="text-warning text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
-                                   <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                               </a>
+     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            </a>
                                <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= $p['giatien'] ?> </p>
 
                                <div class="star mb-md-4">
@@ -121,81 +120,54 @@
            </div>
            <!-- end row -->
            <h4 class="my-5">NHỮNG SẢN PHẨM ƯU ĐÃI</h4>
-           <div class="row">
 
-               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img13.jpg" alt="" class="img-fluid" height="50">
+                 <div class="row">
+  <?php foreach ($dskm as $p) : ?>
+<!-- 
+                  <div class="row">
+               <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/ " alt="" class="img-fluid" height="50"></a>
 
-                   <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img14.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
+                               <a class="text-warning text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                   <p class="text-center"> </p>
+                               </a>
+                               <p class=" display-8 text-center fw-bold text-secondary mt-4">    </p>
 
-               <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img15.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
+                               <div class="star mb-md-4">
+                                   <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                               </div>
+                           </div>
+             
+
+
+           </div> -->
+         
+
+               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  " >
+             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">      <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
+
+                   <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            </a>
+                   <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
                    <div class="star mb-md-4">
                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                    </div>
                </div>
-               <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img12.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-           </div>
+       
+
+   
+
+ <?php endforeach ?>
+         </div>
+
+         
            <!-- end row -->
-           <div class="row">
-
-               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img1.jpg" alt="" class="img-fluid" height="50">
-
-                   <p class="text-center">Nước hoa pháp <br> Mer Accord.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-               <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img2.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-
-               <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img3.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-               <div class="col-6 col-sm-6 col-lg-4 col-xl-3 text-center  ">
-                   <img src="<?= homepase_ASSET ?>image/img4.jpg" alt="" class="img-fluid" height="50">
-                   <p class="text-center">Bộ trang điểm hoàn hảo <br> cho da mặt.</p>
-                   <p class=" display-8 text-center fw-bold text-secondary mt-4">350.000 VND - 400.00 VND</p>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-               </div>
-           </div>
+    
            <!-- end row -->
        </div>
+
+
+
+       
    </main>

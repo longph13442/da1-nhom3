@@ -102,6 +102,11 @@ switch ($url) {
         require_once './client/business/blog.php';
         blog();
         break;
+    case 'ctblog':
+        require_once './client/business/blog.php';
+        blogct();
+        break;
+
     case 'category':
         require_once './admin/business/category.php';
         category_list();
@@ -189,7 +194,7 @@ switch ($url) {
         break;
                 // gop y kien
     case 'gop-y';
-        require_once "./client/business/gopy.php";
+        require_once "./client/business/blog.php";
         gopy();
         break;
         //

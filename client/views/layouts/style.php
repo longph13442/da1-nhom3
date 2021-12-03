@@ -164,4 +164,7 @@
     .cart{
         z-index:2 ;
     }
+    .hover:hover{
+        color:red;
+    }
 </style>

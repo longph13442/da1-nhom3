@@ -17,3 +17,4 @@ function danhmuc_id_count($ma_loai)
     $sql = "SELECT count(*) FROM loaihang where ma_loai = ?";
     return pdo_query($sql, $ma_loai);
 }
+?>

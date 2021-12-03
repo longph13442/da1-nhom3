@@ -283,54 +283,11 @@
                         </div>
 
                     <?php endforeach ?>
-
-
-
-
-
-
-
-
-
-
-
-
-                    <!-- <div class="col col-md-12 col-lg-4 col-xl-4">
-                        <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl2.jpg" class="card-img-top" alt="..." height="350">
-                            <div class="card-body">
-                                <h5 class="card-title ">Làn da của thiên thần</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-md-12 col-lg-4 col-xl-4">
-                        <div class="card h-100">
-                            <img src="<?= ADMIN_ASSET ?>image/bl3.jpg" class="card-img-top" alt="..." height="350">
-                            <div class="card-body">
-                                <h5 class="card-title">Không gì là không thể</h5>
-                                <p class="card-text">Vua Hàng Hiệu tạo cơ hội kinh doanh bán các nhà sản xuất nội địa mở
-                                    rộng
-                                    thị
-                                    trường, có được một môi trường phát triển lành mạnh.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-dark">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
                 <!-- end blog -->
                 <div class="row my-5">
                     <div class="col-12 text-center ">
-                       <a href="<?phpROOT_URL?>danh-muc"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
+                       <a href="<?=ROOT_URL?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
                     </div>
                 </div>
                 <!-- end button -->
