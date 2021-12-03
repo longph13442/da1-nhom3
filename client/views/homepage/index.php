@@ -95,12 +95,13 @@
         <div class="row ">
             <?php foreach ($sanpham as $p) : ?>
                 <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
-                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
+                    <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
-                    <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                        <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                    <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                        <p class="text-center"> <a href=""></a> <?= $p['ten_sp'] ?> </p>
                     </a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <?= number_format($p['giatien']) ?> </p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['giatien']) ?></a> </p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -151,13 +152,15 @@
                 <?php foreach ($sanpham2 as $item) : ?>
                     <li>
                         <div class=" ">
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                 <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                             </a>
 
-                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?></p>
+                            <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
+                            <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
+                            </p>
 
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>

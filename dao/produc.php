@@ -34,12 +34,12 @@ function sanpham_count_seach($kyw)
 }
 function san_pham_select_by_id($ma_sp)
 {
-    $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE  ma_sp=?";
     return pdo_query_one($sql, $ma_sp);
 }
 function san_pham_select_by_loai_chitiet($ma_loai, $ma_sp)
 {
-    $sql = "SELECT * FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
     return pdo_query($sql);
 }
 function hang_hoa_tang_so_luot_xem($ma_sp)
@@ -61,7 +61,7 @@ function loc_gia_Sp($start, $end)
 function loadall_spkm()
 {
 
-    $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
+    $sql = "select *,giatien*(100-giamgia)/100 as gianew from sanpham where 1 order by giamgia desc limit 0,8 ";
     $sanpham22 = pdo_query($sql);
     return $sanpham22;
 }

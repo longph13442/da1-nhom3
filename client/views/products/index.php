@@ -59,7 +59,7 @@
                                <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= number_format($p['gianew']) ?>đ - <?= number_format($p['giatien']) ?>đ </p>
+                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> đ - <a class="text-dark text-decoration-line-through" href=""> <?= number_format($p['giatien']) ?></a>đ </p>
 
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -146,7 +146,7 @@
                        <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                            <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                        </a>
-                       <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
+                       <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['gianew'] ?>đ - <?= $p['giatien'] ?>đ </p>
                        <div class="star mb-md-4">
                            <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                        </div>

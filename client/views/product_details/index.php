@@ -16,7 +16,7 @@
         <span class="material-icons">star_rate</span>
       </div>
       <div class="price mt-2 d-flex">
-        <div class="new_price fw-bold fs-3 text-danger"> <?php echo number_format($info['giamgia'])  ?> đ</div>
+        <div class="new_price fw-bold fs-3 text-danger"> <?php echo number_format($info['gianew'])  ?> đ</div>
         <div class="old_price mx-3">Giá thị trường : <span class=" fs-3 text-decoration-line-through "><?php echo number_format($info['giatien'])  ?> đ</span></div>
       </div>
       <div class="status mt-2"> <span class="fw-bold">Tình trạng :</span>
