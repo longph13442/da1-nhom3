@@ -4,6 +4,7 @@
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="<?= ADMIN_ASSET ?>Image/logo.png" alt="" height="60">
             </a>
+            <!-- end logo -->
             <nav class=" stroke nav col-12 col-lg-auto me-lg-auto justify-content-center">
                 <ul class=" mb-md-0">
                     <li><a href="<?= ROOT_URL ?>" class="nav-link px-2 link-secondary">Trang chủ</a></li>
@@ -12,9 +13,11 @@
                     <li><a href="<?= ROOT_URL ?>blog" class="nav-link px-2 link-dark">Blog</a></li>
                 </ul>
             </nav>
-            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0 me-lg-5 " action="<?= ROOT_URL ?>tim-kiem" method="post">
+            <!-- end menu -->
+            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
+            <!-- end search -->
             <div class=" cart col-auto pt-4 me-2">
                 <ul>
                     <li class="nav-link"><a href="cart"><span class="material-icons-outlined ">
@@ -72,34 +75,37 @@
                 </ul>
 
             </div>
-
-            <?php
-            if (isset($_SESSION['ten_dang_nhap'])) : ?>
-                <div class="dropdown">
-                    <ul class="proflie-dropdown navbar-nav">
-                        <li class="nav-item d-inline">
-                            <a class="text-decoration-none dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php if (avatar() < 0) : ?>
-                                    <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
-                                <?php else : ?>
-                                    <img src="<?= ROOT_URL . IMG  ?><?= avatar(); ?>" alt="mdo" width="32" height="32" class="rounded-circle">
-                                <?php endif; ?>
-                            </a>
-                            <div style="transform: translate3d(-93px, 46px, 0px); right: 150px;" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
-                                <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
-                                    <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
-                                <?php endif; ?>
-                                <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            <?php else : ?>
-                <a href="login" class=" btn btn-outline-warning" data-bs-toggle="modal" data-bs-target=" #exampleModal">
-                    Tài Khoản
-                </a>
-            <?php endif; ?>
+            <!-- end cart -->
+            <div class="col-auto">
+                <?php
+                if (isset($_SESSION['ten_dang_nhap'])) : ?>
+                    <div class="dropdown">
+                        <ul class="proflie-dropdown navbar-nav">
+                            <li class="nav-item d-inline">
+                                <a class="text-decoration-none dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php if (avatar() < 0) : ?>
+                                        <img src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                                    <?php else : ?>
+                                        <img src="<?= ROOT_URL . IMG  ?><?= avatar(); ?>" alt="mdo" width="32" height="32" class="rounded-circle">
+                                    <?php endif; ?>
+                                </a>
+                                <div style="transform: translate3d(-93px, 46px, 0px); right: 150px;" class=" dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="text-decoration-none dropdown-item " href="<?= ROOT_URL ?>profile">Thông tin</a>
+                                    <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
+                                        <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= ROOT_URL ?>admin/user">Quản trị</a>
+                                    <?php endif; ?>
+                                    <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <?php else : ?>
+                    <a href="login" class=" btn btn-outline-warning" data-bs-toggle="modal" data-bs-target=" #exampleModal">
+                        Tài Khoản
+                    </a>
+                <?php endif; ?>
+            </div>
+            <!-- end accout -->
         </div>
     </div>
     <!-- <div class="row viewcart mt-5">
