@@ -98,10 +98,10 @@ switch ($url) {
         require_once './client/business/about.php';
         about();
         break;
-    case 'blog':
-        require_once './client/business/blog.php';
-        blog();
-        break;
+    // case 'blog':
+    //     require_once './client/business/blog.php';
+    //     blog();
+    //     break;
     case 'category':
         require_once './admin/business/category.php';
         category_list();
