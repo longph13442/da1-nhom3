@@ -48,6 +48,14 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
     $sql = "UPDATE sanpham SET luotxem = luotxem + 1 WHERE ma_sp='$ma_sp'";
     return pdo_query_one($sql);
 }
-function loc_gia_Sp()
+
+function loadall_spkm()
 {
-}
+
+        $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
+        $sanpham22 = pdo_query($sql);
+        return $sanpham22;  
+    
+    }
+
+?>

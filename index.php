@@ -98,10 +98,15 @@ switch ($url) {
         require_once './client/business/about.php';
         about();
         break;
-    // case 'blog':
-    //     require_once './client/business/blog.php';
-    //     blog();
-    //     break;
+    case 'blog':
+        require_once './client/business/blog.php';
+        blog();
+        break;
+    case 'ctblog':
+        require_once './client/business/blog.php';
+        blogct();
+        break;
+
     case 'category':
         require_once './admin/business/category.php';
         category_list();
@@ -186,6 +191,11 @@ switch ($url) {
     case 'pay';
         require_once "./client/business/pay_cart.php";
         pay();
+        break;
+                // gop y kien
+    case 'gop-y';
+        require_once "./client/business/blog.php";
+        gopy();
         break;
         //
     case 'slide':

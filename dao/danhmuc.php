@@ -17,3 +17,4 @@ function danhmuc_id_count($ma_loai)
     $sql = "SELECT count(*) FROM loaihang INNER JOIN sanpham ON loaihang.ma_loai = sanpham.ma_loai where sanpham.ma_loai = ?";
     return pdo_query_value($sql, $ma_loai);
 }
+?>
