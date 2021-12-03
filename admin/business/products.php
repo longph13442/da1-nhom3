@@ -2,7 +2,7 @@
 require_once 'dao/system_dao.php';
 function category_select_all()
 {
-    $sql = "SELECT * FROM loaihang ";
+    $sql = "SELECT * FROM loaihang ORDER BY loaihang.ma_loai DESC";
     return pdo_query($sql);
 }
 function category_select_by_id($ma_loai)
@@ -31,17 +31,26 @@ function products_insert($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxe
     luotxem, ngaytao, mota,soluong,mota_dai,dacbiet) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     pdo_execute($sql, $ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet);
 }
-function products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet,$ma_sp)
+function products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp)
 {
     $sql = "UPDATE sanpham SET ten_sp=?,giatien=?, giamgia=?, anh_sp=?, ma_loai=?,  luotxem=?, ngaytao=?, mota=?, soluong=?,mota_dai=?,dacbiet=? WHERE ma_sp=?";
-    pdo_execute($sql, $ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet,$ma_sp);
+    pdo_execute($sql, $ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp);
 }
 function products_list()
 {
+    if (!isset($_GET['pg'])) {
+        $pg = 1;
+    } else {
+        $pg = $_GET['pg'];
+    }
+    $pagesize = 15;
+    $result  = (int)pdo_query_value("SELECT count(*) FROM sanpham");
+    $tongpage = ceil($result / $pagesize);
+    $offset = ($pg - 1) * $pagesize;
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
-    $sql = "SELECT * FROM sanpham WHERE ten_sp like '%$keyword%'";
+    $sql = "SELECT * FROM sanpham WHERE ten_sp like '%$keyword%' ORDER BY sanpham.ma_loai DESC LIMIT $offset,$pagesize";
     $info = pdo_query($sql);
-    admin_render('products/list.php', compact('info', 'keyword'));
+    admin_render('products/list.php', compact('info', 'keyword', 'tongpage'));
 }
 function products_add_form()
 {
@@ -141,13 +150,13 @@ function products_save_upadte()
     if (isset($_POST['submit'])) {
         extract($_POST);
 
-      
+
         $ma_sp = $_POST['ma_sp'];
         $info = product_select_by_id($ma_sp);
         $file = $_FILES['anh_sp'];
         $anh_sp = empty($file['name']) ? $info['anh_sp'] : $file['name'];
         $ngaytao = $_POST['ngaytao'];
-        products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet,$ma_sp);
+        products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp);
         header("location: " . ROOT_URL . 'products');
     }
 }
