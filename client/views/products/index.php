@@ -59,7 +59,7 @@
                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"> <?= number_format($p['giatien'], 0) ?>VNĐ </p>
+                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['giatien'], 0) ?>VNĐ</a> </p>
 
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
