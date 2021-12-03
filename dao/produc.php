@@ -4,7 +4,7 @@ require_once './dao/danhmuc.php';
 
 function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
 {
-    $sql = "select * from sanpham where 1";
+    $sql = "SELECT *, giatien*(100-giamgia)/100 as gianew FROM  sanpham where 1";
     if ($kyw != "") {
         $sql .= " and ten_sp like '%" . $kyw . "%'";
     }
@@ -18,7 +18,7 @@ function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
 function load_ten_dm($iddm)
 {
     if ($iddm > 0) {
-        $sql = "select * from loaihang where ma_loai =" . $iddm;
+        $sql = "select *,giatien*(100-giamgia)/100 as gianew from loaihang where ma_loai =" . $iddm;
         $dm = pdo_query_one($sql);
         extract($dm);
         return $ten_loai;
@@ -49,7 +49,7 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
 }
 function loc_gia_Sp($start, $end)
 {
-    $sql = "SELECT * FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
     return pdo_query($sql, $start, $end);
 }
 // function loc_gia_Sp_phantrang($start, $end)
@@ -61,8 +61,7 @@ function loc_gia_Sp($start, $end)
 function loadall_spkm()
 {
 
-        $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
-        $sanpham22 = pdo_query($sql);
-        return $sanpham22;  
-    
-    }
+    $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
+    $sanpham22 = pdo_query($sql);
+    return $sanpham22;
+}

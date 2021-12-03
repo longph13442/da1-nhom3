@@ -16,30 +16,28 @@
     </div>
 
     <div class="row mb-2">
-         <?php foreach ($blog as $b) : ?>
+        <?php foreach ($blog as $b) : ?>
 
 
 
-        <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden d-flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2 text-warning">Người đăng : <?= $b['ten_dang_nhap']?></strong>
-                    <h3 class="mb-0"></h3>
-                    <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao']?></div>
-                    <p class="card-text mb-auto fw-bold"><?= $b['tieu_de']?>
-                    </p>
-                       <span class="card-text mb-auto fw"><?= $b['noi_dung']?>
-         </span>
-                    <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
-                </div>
-                <div class="col-5 d-none d-lg-block">
-                    <img src="<?= ADMIN_ASSET ?>Image/<?= $b['anh_minh_hoa']?>" alt="" width="100%" height="100%">
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden d-flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-warning">Người đăng : <?= $b['ten_dang_nhap'] ?></strong>
+                        <h3 class="mb-0"></h3>
+                        <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao'] ?></div>
+                        <p class="card-text mb-auto fw-bold"><?= $b['tieu_de'] ?>
+                        </p>
+                        <a href="#" class="stretched-link text-warning">Xem thêm</a>
+                    </div>
+                    <div class="col-5 d-none d-lg-block">
+                        <img src="<?= ADMIN_ASSET ?>Image/<?= $b['anh_minh_hoa'] ?>" alt="" width="100%" height="100%">
 
+                    </div>
                 </div>
             </div>
-        </div>
 
-                    <?php endforeach ?>
+        <?php endforeach ?>
 
 
         <!-- <div class="col-md-6">
@@ -161,7 +159,7 @@
                     <h3 class="text-center">Gửi ý kiến góp ý</h3>
                     <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
                 </div>
-                <form action="index.php?url=gop-y" method="post" enctype="multipart/form-data" >
+                <form action="index.php?url=gop-y" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nội dung</label>
                         <input type="text" class="form-control py-5" id="exampleInputEmail1" name="noidung" required>
@@ -169,14 +167,14 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputPassword1"  class="form-label">Họ tên</label>
+                                <label for="exampleInputPassword1" class="form-label">Họ tên</label>
                                 <input type="text" name="hoten" class="form-control" id="exampleInputPassword1" required>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label" >Email</label>
-                                <input type="email"  name="email" class="form-control" id="exampleInputPassword1" required>
+                                <label for="exampleInputPassword1" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputPassword1" required>
                             </div>
                         </div>
                     </div>
@@ -197,15 +195,15 @@
 
                     <div class="p-4">
                         <h4 class="fst-italic">Bài viết bạn quan tâm</h4>
-                                 <?php foreach ($blogct as $b) : ?>
+                        <?php foreach ($blogct as $b) : ?>
 
-         <ol class="list-unstyled mb-0">
-                            <li><a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="text-warning"><?= $b['tieu_de']?></a></li>
-             
-                        </ol>
+                            <ol class="list-unstyled mb-0">
+                                <li><a href="#" class="text-warning"><?= $b['tieu_de'] ?></a></li>
 
-                    <?php endforeach ?>
-               
+                            </ol>
+
+                        <?php endforeach ?>
+
                     </div>
 
                     <div class="p-4">

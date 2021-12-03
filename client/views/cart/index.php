@@ -24,7 +24,7 @@
                     $sum += $price;
                     ?>
                     <tr class="text-center">
-                        <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>
+                        <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>Image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>
                         <td>
                             <p class="my-4"><?= $key['tensp'] ?></p>
                         </td>
@@ -55,7 +55,7 @@
                 <td class="border-0 " colspan="3">
                     <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : <?= $sum ?> VND</h5>
                     </p>
-                <td class="border-0 text-center" colspan=""><button class="btn btn-success btn-sm mt-4 text-center float-end"><a href="<?=$link?>" class="text-dark nav-link">Thanh Toán</a> </button></th>
+                <td class="border-0 text-center" colspan=""><button class="btn btn-success btn-sm mt-4 text-center float-end"><a href="<?= $link ?>" class="text-dark nav-link">Thanh Toán</a> </button></th>
             </tr>
         </tfoot>
     </table>
