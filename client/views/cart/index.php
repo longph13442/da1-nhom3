@@ -1,6 +1,6 @@
-<div class="cart bg-light ">
+<div class="cart my-5 ">
 
-    <div class="text-center pt-5">
+    <div class="text-center py-4">
         <h1 class="h3 mb-3 fw-bold text-warning">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
     </div>
 
