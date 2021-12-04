@@ -59,11 +59,21 @@
                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
+                               <<<<<<< Updated upstream <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
+                                   =======
+                                   <p class=" display-8 text-center fw-bold text-secondary mt-4">
+                                       <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> đ
 
-                               <div class="star mb-md-4">
-                                   <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                               </div>
+                                       <?php if ($p['gianew'] != $p['giatien']) : ?>
+                                           - <a class="text-dark text-decoration-line-through" href=""> <?= number_format($p['giatien']) ?></a>đ
+                                       <?php endif; ?>
+
+                                   </p>
+                                   >>>>>>> Stashed changes
+
+                                   <div class="star mb-md-4">
+                                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                   </div>
                            </div>
 
                        <?php endforeach ?>
@@ -146,10 +156,15 @@
                        <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                            <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                        </a>
-                       <p class=" display-8 text-center fw-bold text-secondary mt-4"><?= $p['giatien'] ?>đ - <?= $p['giamgia'] ?>đ </p>
-                       <div class="star mb-md-4">
-                           <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                       </div>
+                       <p class=" display-8 text-center fw-bold text-secondary mt-4">
+                           <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['gianew']) ?>đ</a>
+                           <?php if ($p['gianew'] != $p['giatien']) : ?>
+                               - <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['giatien']) ?></a> đ
+                       </p>
+                   <?php endif; ?>
+                   <div class="star mb-md-4">
+                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                   </div>
                    </div>
 
 

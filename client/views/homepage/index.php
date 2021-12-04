@@ -4,23 +4,23 @@
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
 
-  <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
-                       <?php
+            <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
+            <?php
 
-                        foreach ($dmsp as $d) {
-                            extract($d);
-                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
-                            echo '   
+            foreach ($dmsp as $d) {
+                extract($d);
+                $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
+                echo '   
            <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
                   
                 </span>
                 <p class="mx-3 fs-6">' . $ten_loai . '</p>
             </li></a>';
-                        }
-                        ?>
+            }
+            ?>
 
 
-<!-- 
+            <!-- 
             <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
                     spa
                 </span>
@@ -100,10 +100,19 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
-  <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
-                    <div class="star mb-md-2">
-                        <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
+                    <<<<<<< Updated upstream <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
+                        =======
+                        <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
+                        <?php if ($p['gianew'] != $p['giatien']) : ?>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-2">
+                                <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                    <?= number_format($p['giatien']) ?></a>
+                            </p>
+                        <?php endif; ?>
+                        >>>>>>> Stashed changes
+                        <div class="star mb-md-2">
+                            <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
                 </div>
 
             <?php endforeach ?>
@@ -111,7 +120,7 @@
         <!-- end product-center -->
         <div class="row">
             <div class="col-12 text-center ">
-              <a href="index.php?url=danh-muc">  <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
+                <a href="index.php?url=danh-muc"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
             </div>
         </div>
         <!-- end box-bog -->
@@ -151,14 +160,17 @@
                 <?php foreach ($sanpham2 as $item) : ?>
                     <li>
                         <div class=" ">
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success">
+                                <p class="text-center"> <?= $item['ten_sp'] ?> </p>
                             </a>
 
-                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?>đ- <?= number_format($item['giamgia']) ?></p>
-
+                            <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
+                            <?php if ($item['gianew'] != $item['giatien']) : ?>
+                                <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
+                                </p>
+                            <?php endif; ?>
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -287,7 +299,7 @@
                 <!-- end blog -->
                 <div class="row my-5">
                     <div class="col-12 text-center ">
-                       <a href="<?=ROOT_URL?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
+                        <a href="<?= ROOT_URL ?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
                     </div>
                 </div>
                 <!-- end button -->
