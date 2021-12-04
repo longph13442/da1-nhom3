@@ -7,7 +7,9 @@
         </span>
     </div>
     <div class="title">
-        <h5>Xin chào: <?= $_SESSION['ten_dang_nhap'] ?></h5>
+        <h5><?php if (isset($_SESSION['ten_dang_nhap'])) {
+                echo 'Xin chào: ' . $_SESSION['ten_dang_nhap'];
+            }   ?></h5>
     </div>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
