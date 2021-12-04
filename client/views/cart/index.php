@@ -1,10 +1,10 @@
-<div class="cart">
+<div class="cart bg-light ">
 
-    <div class="text-center my-5">
+    <div class="text-center pt-5">
         <h1 class="h3 mb-3 fw-bold text-warning">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
     </div>
 
-    <table class="table mx-auto my-5" style="width: 1000px;">
+    <table class=" table mx-auto pt-5" style="width: 1000px;">
         <thead>
             <tr class="py-5 text-center">
                 <th>Ảnh</th>
