@@ -18,14 +18,12 @@
             </li></a>';
             }
             ?>
-
-
         </ul>
-        <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
-        <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0"> -->
+
     </div>
     <div class="col-12 col-lg-9 mb-3 mb-lg-0">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<<<<<<< Updated upstream
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -50,6 +48,18 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+=======
+            <ul class="sliderimg">
+                <?php foreach ($slide as $item) : ?>
+                    <li>
+                        <div class=" ">
+                            <img src="<?= ADMIN_ASSET ?>Image/<?= $item['img'] ?>  " style="height:400px" alt="" class="d-block w-100 img-fluid">
+                        </div>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+
+>>>>>>> Stashed changes
         </div>
 
     </div>

@@ -54,6 +54,37 @@
     });
 </script>
 <script>
+    $('.sliderimg').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 1008,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    });
+</script>
+
+<script>
     let items = document.querySelectorAll('.carousel .carousel-item')
 
     items.forEach((el) => {
@@ -91,16 +122,18 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function(){
-        $(window).scroll(function(){
-            if($(this).scrollTop()){
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop()) {
                 $('#backtop').fadeIn();
-            }else{
+            } else {
                 $('#backtop').fadeOut();
             }
         });
-        $('#backtop').click(function(){
-            $('html,body').animate({scrollTop:0},500);
+        $('#backtop').click(function() {
+            $('html,body').animate({
+                scrollTop: 0
+            }, 500);
         });
     });
 </script>
