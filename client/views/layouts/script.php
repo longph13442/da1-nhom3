@@ -62,21 +62,21 @@
         responsive: [{
                 breakpoint: 1200,
                 settings: {
-                    slidesToShow: 5,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 1008,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
