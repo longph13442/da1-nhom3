@@ -40,11 +40,12 @@
             </div>
             <div class="col-md-5 col-lg-7">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
-                <form class="needs-validation" novalidate="">
+
+                <form action="pay" class="needs-validation"  novalidate="" method="POST">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                            <input name="name" type="text" class="form-control" id="firstName" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
@@ -52,21 +53,21 @@
 
                         <div class="col-12">
                             <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Số điện thoại<span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="+84">
+                            <input name="phone" type="text" class="form-control" id="email" placeholder="+84">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
                         </div>
                         <div class="col-12">
                             <label for="address" class="form-label">Địa chỉ</label>
-                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                            <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
                             <div class="invalid-feedback">
                                 Please enter your shipping address.
                             </div>
@@ -74,7 +75,8 @@
 
                         <div class="col-12">
                             <label for="address2" class="form-label">Ghi chú </label>
-                            <input type="text" class="form-control py-5" id="address2" placeholder="">
+                            <input name="note" type="text" class="form-control py-5" id="address2" placeholder="">
+                            <input type="hidden" name="status" id="" value="1">
                         </div>
 
 
@@ -95,8 +97,9 @@
                         </div>
 
 
-                        <button class="w-50 btn btn-warning btn-lg mx-auto" type="submit">Đặt hàng</button>
+                        <button class="w-50 btn btn-warning btn-lg mx-auto" type="submit" name="submitt">Đặt hàng</button>
                 </form>
+
             </div>
         </div>
     </main>
