@@ -61,11 +61,14 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
+    /* list */
+    /* .tophead{
+        margin: 0 0 100px 0;
+    } */
     header{
-        position: fixed;
-        z-index: 1;
-        background-color: white;
-        
+        /* position: fixed;
+        z-index: 2; */
+       
         top: 0;
         left: 0;
         right: 0;
@@ -73,7 +76,6 @@
     }
     nav {
         width: 100%;
-        background: #fff;
         font-size: 12pt;
     }
 
@@ -150,7 +152,7 @@
         -moz-animation: fill 1s forwards;
         opacity: 1;
     }
-
+    /* menu */
     .viewcart {
         position: absolute !important;
         display: none;
@@ -173,7 +175,18 @@
     .cart{
         z-index:2 ;
     }
-    .hover:hover{
-        color:red;
+    /* cart */
+    #backtop{
+        width: 50px;
+        height: 50px;
+        background-color: #d3a329;
+        border-radius: 50%;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        bottom: 40px;
+        left: 20px;
+        cursor: pointer;
+
     }
 </style>

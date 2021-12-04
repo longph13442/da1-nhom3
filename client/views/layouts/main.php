@@ -20,6 +20,7 @@
         <?php include_once $view; ?>
     </main>
     <!-- End Main -->
+    <?php include_once "./client/views/layouts/backtop.php" ?>
     <!-- Footer -->
     <?php include_once "./client/views/layouts/footer.php" ?>
     <!-- End Footer -->
