@@ -13,7 +13,7 @@
                 <i class="fal fa-truck"></i>
 
             </div>
-            <a href="<?= ADMIN_URL ?>" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="<?= ROOT_URL ?>products" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -30,7 +30,7 @@
             <div class="icon">
                 <i class="ion ion-bag"></i></i>
             </div>
-            <a href="#" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="<?= ROOT_URL ?>order" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -47,7 +47,7 @@
             <div class="icon">
                 <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="<?= ADMIN_URL ?>user" class="small-box-footer">Xem Thêm <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -169,7 +169,7 @@
                                                                     }
                                                                     ?></span></td>
                             <td>
-                                <div class="sparkbar" data-color="#00a65a" data-height="20"><?= $d['giatien'] ?></div>
+                                <div class="sparkbar" data-color="#00a65a" data-height="20"><?= number_format($d['giatien']) ?></div>
                             </td>
                         </tr>
                     <?php endforeach; ?>
