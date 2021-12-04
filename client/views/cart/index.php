@@ -22,6 +22,8 @@
                 <?php foreach ($cart as $key) : ?>
                     <?php $price = $key['soluong'] * $key['gia'];
                     $sum += $price;
+                    $_SESSION["cart"][ $key['masp']]['price']=$price;
+                    
                     ?>
                     <tr class="text-center">
                         <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>

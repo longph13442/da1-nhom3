@@ -1,4 +1,3 @@
-<?php $pay = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [] ?>
 <div class="container gx-5 ">
     <main>
         <div class="text-center my-5">
@@ -6,49 +5,32 @@
         </div>
 
         <div class="row g-5">
-            <div class="col-md-5 col-lg-4 order-md-last">
+            <div class="col-md-5 col-lg-5 order-md-last">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-danger">Giỏ hàng của bạn</span>
                     <span class="badge bg-warning rounded-pill">3</span>
                 </h4>
                 <ul class="list-group mb-3">
+                    <?php $sum = 0; ?>
+
                     <?php foreach ($pay as $key) : ?>
+                        <?php $sum += $key["price"]; ?>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-3"><?= $key["tensp"] ?></h6>
+                            <div class="d-flex">
+                                <img src="<?= ADMIN_ASSET ?>image/<?= $key["hinh"] ?>" alt="" width="40">
+                                <h6 class="my-3 mx-3"><?= $key["tensp"] ?></h6>
 
                             </div>
-                            <span class="text-danger py-3"><?= $key["gia"] ?> VND</span>
+                            <p class="my-3 mx-2"><?= $key["soluong"] ?></p>
+                            <span class="text-danger py-3"><?= $key["price"] ?> VND</span>
                         </li>
                     <?php endforeach ?>
 
-                    <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-3">SDưỡng ẩm hazelen</h6>
-                                
-                            </div>
-                            <span class="text-muted">$8</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                            <div>
-                                <h6 class="my-3">Dưỡng ẩm hazelen</h6>
-                                
-                            </div>
-                            <span class="text-muted">$5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between bg-light">
-                            <div class="text-success">
-                                <h6 class="my-3">Son môi elip</h6>
-                                <small>sale 40%</small>
-                            </div>
-                            <span class="text-success">−$5</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Tổng tiền</span>
-                            <strong>$20</strong>
-                        </li> -->
                 </ul>
-
+                <div class="d-flex justify-content-between px-3 fw-bold">
+                    <p>Tổng tiền : </p>
+                    <p class="text-danger "><?= $sum ?> VND</p>
+                </div>
                 <form class="card p-2">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="mã giảm giá">
@@ -56,7 +38,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-7 col-lg-8">
+            <div class="col-md-5 col-lg-7">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
                 <form class="needs-validation" novalidate="">
                     <div class="row g-3">

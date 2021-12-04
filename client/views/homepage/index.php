@@ -32,14 +32,14 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item ">
                     <img src="<?= ADMIN_ASSET ?>image/baner1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="<?= ADMIN_ASSET ?>image/baner6.jpg" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>image/baner1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-item active">
+                    <img src="<?= ADMIN_ASSET ?>image/baner6.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
