@@ -28,5 +28,12 @@ function statistica(){
     $bl = thong_ke_bl();
     admin_render('statistical/statistical.php',compact('tk','bl'));
 }
-
+function chart_sanpham(){
+    $info = thong_ke_sp();
+    admin_render('statistical/chart.php', compact('info'));
+}
+function chart_binhluan(){
+    $info = thong_ke_bl();
+    admin_render('statistical/comment.php', compact('info'));
+}
 ?>
