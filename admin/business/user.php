@@ -60,7 +60,7 @@ function adduser()
             $mat_khau = password_hash($mat_khau, PASSWORD_DEFAULT);
             taikhoan_insert($ho_ten, $dia_chi, $sdt, $email, $ngay_sinh, $hinh_anh, $ten_dang_nhap, $gioitinh, $mat_khau, $trang_thai, $vai_tro);
             $msg = "Thêm tài khoản thành công !";
-            header("location: " . ROOT_URL  . "admin/user" . "?msg=" . $msg);
+            header("location: " . ADMIN_URL . "user" . "?msg=" . $msg);
             die;
         }
     }
@@ -69,7 +69,7 @@ function adduser()
 function user_edit()
 {
     if (!isset($_SESSION['admin']) == 1) {
-        header("location: " . ROOT_URL . 'admin/user');
+        header("location: " . ADMIN_URL . 'user');
         die;
     }
     $error = [
@@ -111,7 +111,8 @@ function user_edit()
                 $hinh_anh = $_POST['thumhinh'];
             }
             taikhoan_update($ho_ten, $dia_chi, $sdt, $email, $ngay_sinh, $hinh_anh, $ten_dang_nhap, $gioitinh,  $trang_thai, $vai_tro, $ma_tai_khoan);
-            header("location: " . ROOT_URL  . "admin/user");
+            $msg = "Sửa tài khoản thành công !";
+            header("location: " . ADMIN_URL . "user" . "?msg=" . $msg);
             die;
         }
     }
@@ -144,7 +145,7 @@ function user_lock()
     // }
     if (isset($_GET['ma_tai_khoan'])) {
         taikhoan_lock($_GET['ma_tai_khoan']);
-        header("location: " . ROOT_URL  . "admin/user");
+        header("location: " . ADMIN_URL  . "user");
         die;
     }
     admin_render('User/listuser.php');
@@ -153,7 +154,7 @@ function user_unlock()
 {
     if (isset($_GET['ma_tai_khoan'])) {
         taikhoan_unlock($_GET['ma_tai_khoan']);
-        header("location: " . ROOT_URL  . "admin/user");
+        header("location: " . ADMIN_URL  . "user");
         die;
     }
     admin_render('User/listuser.php');

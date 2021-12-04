@@ -13,7 +13,7 @@
     <body class="bg-light">
         <div class="container">
             <main>
-                <a class="btn btn-warning" href="<?= ROOT_URL ?>admin/user">Danh Sách Tài Khoản</a>
+                <a class="btn btn-warning" href="<?= ADMIN_URL ?>user">Danh Sách Tài Khoản</a>
                 <div class="row g-5">
                     <h3 class="text-center">Thêm Tài Khoản</h3>
                     <div class="col-md-7 col-lg-8 mx-auto">

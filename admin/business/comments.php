@@ -23,4 +23,3 @@ function comments_delete(){
     binh_luan_delete($ma_bl);
     header("location: " . ROOT_URL . 'comments');
 }
-?>
