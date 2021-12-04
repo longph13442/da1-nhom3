@@ -1,4 +1,3 @@
-
 <div class="col-12 grid-margin stretch-card mb-5 mt-3">
     <div class="card">
         <div class="card-body">
@@ -16,15 +15,15 @@
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['giatien']) && ($error['giatien'] != "")) echo $error['giatien'] ?></span>
                 </div>
                 <div class="form-group mb-2">
-                    <label for="exampleInputPassword4">Giảm giá</label>
-                    <input type="number" name="giamgia" class="form-control" id="" placeholder="Nhập giảm giá..." value="<?php echo $info['giamgia'] ?>">
+                    <label for="exampleInputPassword4">Giảm giá(Giảm theo %)</label>
+                    <input type="number" name="giamgia" class="form-control" id="" placeholder="Nhập giảm giá...0-> 100%" value="<?php echo $info['giamgia'] ?>">
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['giamgia']) && ($error['giamgia'] != "")) echo $error['giamgia'] ?></span>
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleSelectGender">Loại hàng</label>
 
                     <select class="form-control" name="ma_loai" id="exampleSelectGender">
-                        <option value="<?php echo $info['ma_loai'] ?>" selected>  </option>
+                        <option value="<?php echo $info['ma_loai'] ?>" selected> </option>
                         <?php foreach ($ct as $item) : ?>
                             <?php extract($item);  ?>
                             <option value="<?php echo $ma_loai ?>"><?php echo $ten_loai ?></option>
@@ -47,7 +46,7 @@
                 <div class="form-group mb-2">
                     <label>Ảnh sản phẩm</label>
                     <input type="file" name="anh_sp" class="form-control" />
-                     <div class=""><img src="<?= IMG.$info['anh_sp'] ?>" alt="" width="100%">   </div>                                                            
+                    <div class=""><img src="<?= IMG . $info['anh_sp'] ?>" alt="" width="100%"> </div>
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['anh_sp']) && ($error['anh_sp'] != "")) echo $error['anh_sp'] ?></span>
                 </div>
                 <div class="form-group mb-2">
@@ -65,9 +64,9 @@
                     <textarea class="form-control" name="mota_dai" id="exampleTextarea1" rows="4" required><?php echo $info['mota_dai'] ?></textarea>
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['mota_dai']) && ($error['mota_dai'] != "")) echo $error['mota_dai'] ?></span>
                 </div>
-                <input type="hidden" name="ma_sp" value="<?php echo $info['ma_sp'] ?>"> 
-                <input type="hidden" name="luotxem" value="<?php echo $info['luotxem'] ?>">  
-                <input type="hidden" name="ngaytao" value="<?php echo $info['ngaytao'] ?>">                                                                      
+                <input type="hidden" name="ma_sp" value="<?php echo $info['ma_sp'] ?>">
+                <input type="hidden" name="luotxem" value="<?php echo $info['luotxem'] ?>">
+                <input type="hidden" name="ngaytao" value="<?php echo $info['ngaytao'] ?>">
                 <button type="submit" name="submit" class="btn btn-primary me-2 my-2">cập nhật mới</button>
                 <button type="cancel" class="btn btn-light my-2">Hủy</button>
             </form>
