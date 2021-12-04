@@ -139,7 +139,7 @@
 
                 <form action="" method="post">
                   <div class="bg-light rounded p-2 mt-4">
-                    <label for="" class="mx-5">Đánh giá sản phẩm : </label>
+                    <label for="" class="mx-3">Đánh giá sản phẩm : </label>
 
                     <div class="ratings m-3 ms-5">
                       <input type="radio" name="danh_gia" value="5" id="start1"><label class="" for="start1">

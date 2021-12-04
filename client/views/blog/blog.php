@@ -17,9 +17,6 @@
 
     <div class="row mb-2">
         <?php foreach ($blog as $b) : ?>
-
-
-
             <div class="col-md-6">
                 <div class="row g-0 border rounded overflow-hidden d-flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
@@ -28,10 +25,10 @@
                         <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao'] ?></div>
                         <p class="card-text mb-auto fw-bold"><?= $b['tieu_de'] ?>
                         </p>
-                        <a href="#" class="stretched-link text-warning">Xem thêm</a>
+                        <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
                     </div>
                     <div class="col-5 d-none d-lg-block">
-                        <img src="<?= ADMIN_ASSET ?>Image/<?= $b['anh_minh_hoa'] ?>" alt="" width="100%" height="100%">
+                 <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $b['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
 
                     </div>
                 </div>
@@ -198,7 +195,7 @@
                         <?php foreach ($blogct as $b) : ?>
 
                             <ol class="list-unstyled mb-0">
-                                <li><a href="#" class="text-warning"><?= $b['tieu_de'] ?></a></li>
+                                <li><a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="text-warning"><?= $b['tieu_de'] ?></a></li>
 
                             </ol>
 

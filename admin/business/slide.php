@@ -46,8 +46,8 @@ function slide_save_add()
 {
     if (isset($_POST['submit'])) {
         extract($_POST);
-        $img = $_FILES['img']['name'];
-        slide_insert($img);
+        $slide = $_FILES['slide']['name'];
+        slide_insert($slide);
         header("location: " . ROOT_URL . 'slide');
     }
 }
@@ -66,7 +66,7 @@ function slide_save_update()
         $img = empty($_FILES['img']['name']) ? $info['img'] : $_FILES['img']['name'];;
         slide_update($img, $id);
 
-        
+
         header("location: " . ROOT_URL . 'slide');
     }
 }

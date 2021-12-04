@@ -8,8 +8,9 @@
     </div>
 </form>
 <hr>
+<a href="<?= ADMIN_URL ?>user/add" class="btn btn-warning text-white"><i class="fal fa-user-plus"></i> Thêm Tài Khoản</a>
+<p></p>
 <div class="table">
-    <a href="user/add" class="btn btn-warning text-white"><i class="fal fa-user-plus"></i> Thêm Tài Khoản</a>
 
     <table class="table text-center table-responsive">
         <thead class="">

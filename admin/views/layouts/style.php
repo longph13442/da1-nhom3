@@ -20,7 +20,8 @@
 
 <!-- https://material.io/resources/icons/?style=baseline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="<?= ADMIN_ASSET ?>dist/css/adminlte.min.css">
 <!-- https://material.io/resources/icons/?style=outline -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
 

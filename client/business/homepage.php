@@ -10,5 +10,7 @@ function sp_trangchu()
     $sanpham2 = loadall_topsp_tt();
     $blog_tt = blog_tt();
     $dmsp = loadall_dm();
-    client_render('homepage/index.php', compact('sanpham', 'sanpham2','blog_tt','dmsp'));
+    $sql = "SELECT * FROM slide LIMIT 0,3";
+    $slide = pdo_query($sql);
+    client_render('homepage/index.php', compact('sanpham', 'sanpham2', 'blog_tt', 'dmsp', 'slide'));
 }
