@@ -212,4 +212,7 @@ body {
     .carousel{
         max-width: 100%;
     }
+    .viewcart{
+        right: 220px;
+    }
 }

@@ -1,6 +1,6 @@
 <footer class="py-5 bg-light px-5">
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-lg-3 ">
             <h5 class="fw-bold mb-4">Về chúng tôi</h5>
             <p>
                 SunFlower ra đời và phát triển dựa trên mục đích mang đến cho khách hàng dựa vào 3 yếu tố tươi trẻ, sắc đẹp và thịnh vượng. Miraso là một thương hiệu phân phối Mỹ phẩm Hàn Quốc chính hãng nhập trực tiếp từ Hàn Quốc, uy tín hàng đầu tại Việt Nam.
@@ -8,7 +8,7 @@
             </p>
         </div>
 
-        <div class="col-3">
+        <div class="col-12 col-lg-3">
             <h5 class=" text-center fw-bold mb-4">TỪ KHÓA</h5>
             <ul class="nav flex-column text-center">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">#mỹ phẩm</a></li>
@@ -21,7 +21,7 @@
 
         
 
-        <div class="col-4 offset-1">
+        <div class="col-12 col-lg-4 offset-1 ">
             <form>
                 <h5 class="fw-bold mb-4">ĐĂNG KÍ THÀNH VIÊN CỦA SUNFLOWER</h5>
                 <p>Nhận ưu đãi chưa từng có trong lần mua hàng đầu tiên !</p>

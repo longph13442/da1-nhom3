@@ -1,12 +1,12 @@
-<header class=" row mx-3">
+<header class=" row bg-white ">
     <div class="container border-bottom ">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <div class="  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                 <img src="<?= ADMIN_ASSET ?>Image/logo.png" alt="" height="60">
             </a>
             <!-- end logo -->
             <nav class=" stroke nav col-12 col-lg-auto me-lg-auto justify-content-center">
-                <ul class=" mb-md-0">
+                <ul class=" mb-md-0 ">
                     <li><a href="<?= ROOT_URL ?>" class="nav-link px-2 link-secondary">Trang chủ</a></li>
                     <li><a href="<?= ROOT_URL ?>danh-muc" class="nav-link px-2 link-dark">Sản Phẩm</a></li>
                     <li><a href="<?= ROOT_URL ?>about" class="nav-link px-2 link-dark">Giới thiệu</a></li>
@@ -14,7 +14,7 @@
                 </ul>
             </nav>
             <!-- end menu -->
-            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
+            <form class="col-sm-12 col-xl-5 col-lg-5 col-md-12 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <!-- end search -->
@@ -108,59 +108,8 @@
             <!-- end accout -->
         </div>
     </div>
-    <!-- <div class="row viewcart mt-5">
-        <div class="col-9">
-        </div>
-
-        <div class=" col-md-4 col-lg-3 order-md-last mx-auto bg-light py-3">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-danger">Giỏ hàng của bạn</span>
-                <span class="badge bg-warning rounded-pill">3</span>
-            </h4>
-            <ul class="list-group mb-3">
-
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div class="d-flex">
-                        <img src="./Image/anh1.jpg" alt="" height="40">
-                        <h6 class="my-3 mx-3">Tên</h6>
-                    </div>
-                    <span class="text-danger py-3">Giá</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                        <h6 class="my-3">Tên</h6>
-
-                    </div>
-                    <span class="text-danger py-3">Giá</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                        <h6 class="my-3">Tên</h6>
-
-                    </div>
-                    <span class="text-danger py-3">Giá</span>
-                </li>
-
-                <div class="d-flex py-3 ">
-                    <h6 class="text-dark ms-3 fw-bold">Tổng tiền : </h6>
-                </div>
-
-            </ul>
-
-            <div class="card p-2">
-                <div class="input-group ">
-                    <button type="submit" class="btn btn-success text-center mx-auto" style="width: 90%;">Xem giỏ
-                        hàng</button>
-                </div>
-            </div>
-            <div class="card p-2">
-                <div class="input-group ">
-                    <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;">Thanh toán</button>
-                </div>
-            </div>
-        </div> -->
-    <!-- cart -->
-    </div>
+    
+    
 </header>
 <?php
 login();
