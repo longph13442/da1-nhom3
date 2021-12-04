@@ -3,21 +3,20 @@
     <div class="col-12 col-lg-3 mb-3 mb-lg-0">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
-
             <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
             <?php
-
             foreach ($dmsp as $d) {
                 extract($d);
                 $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
                 echo '   
-           <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+                       <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
                   
                 </span>
                 <p class="mx-3 fs-6">' . $ten_loai . '</p>
             </li></a>';
             }
             ?>
+
         </ul>
 
     </div>
@@ -51,8 +50,9 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                        <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                        <span class="text-center"> <?= $p['ten_sp'] ?> </span>
                     </a>
+                    <div class="d-flex justify-content-between px-5">
                     <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
                     <?php if ($p['gianew'] != $p['giatien']) : ?>
                         <p class=" display-8 text-center fw-bold text-secondary mt-2">
@@ -60,6 +60,7 @@
                                 <?= number_format($p['giatien']) ?></a>
                         </p>
                     <?php endif; ?>
+                    </div>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -113,14 +114,15 @@
                             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
                             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $item['ten_sp'] ?> </p>
+                                <span class="text-center"> <?= $item['ten_sp'] ?> </span>
                             </a>
-
+                            <div class="d-flex justify-content-between px-5">
                             <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
                             <?php if ($item['gianew'] != $item['giatien']) : ?>
                                 <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
                                 </p>
                             <?php endif; ?>
+                            </div>
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
