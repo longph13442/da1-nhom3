@@ -147,6 +147,14 @@ switch ($url) {
         require_once './admin/business/statistical.php';
         statistica();
         break;
+    case 'chart/sanpham':
+        require_once './admin/business/statistical.php';
+        chart_sanpham();
+        break;
+    case 'chart/binhluan':
+        require_once './admin/business/statistical.php';
+        chart_binhluan();
+        break;
     case 'dathang':
         require_once './client/business/dathang.php';
         dat_hang_tt();
@@ -195,7 +203,7 @@ switch ($url) {
         require_once "./client/business/pay_cart.php";
         pay();
         break;
-                // gop y kien
+        // gop y kien
     case 'gop-y';
         require_once "./client/business/blog.php";
         gopy();
@@ -233,6 +241,9 @@ switch ($url) {
         require_once './admin/business/order.php';
         order_delete();
         break;
+    case 'order/update':
+        require_once './admin/business/order.php';
+        order_update();
     default:
         # code...
         break;

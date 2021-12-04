@@ -28,7 +28,7 @@
                                 } else {
                                     $dau = ",";
                                 };
-                                echo "['" . $item['ten_loai'] . "', " . $item['soluong'] . "]" . $dau;
+                                echo "['" . $item['ten_sp'] . "', " . $item['soluong'] . "]" . $dau;
                                 $i += 1;
                             }
                             ?>

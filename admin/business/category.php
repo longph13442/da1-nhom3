@@ -83,8 +83,10 @@ function category_save_edit()
         extract($_POST);
         $check = category_check($ten_loai);
         if ($check) {
+            $ma_loai = $_GET['ma_loai'];
+            $info = loaihang_select_by_id($ma_loai);
             $error = "Loại hàng đã tồn tại";
-            admin_render('category/edit.php', compact('error'));
+            admin_render('category/edit.php', compact('error','info'));
         } else {
             $ten_loai = $_POST['ten_loai'];
             $ma_loai = $_GET['ma_loai'];
