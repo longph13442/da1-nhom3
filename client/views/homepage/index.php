@@ -20,29 +20,6 @@
             ?>
 
 
-            <!-- 
-            <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
-                    spa
-                </span>
-                <p class="mx-3 fs-6"></p>
-            </li>
-     
-            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
-                    sentiment_very_satisfied
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
-            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
-                    flutter_dash
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
-            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
-                    card_giftcard
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li> -->
-
         </ul>
         <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
         <img src="<?= ADMIN_ASSET ?>image/right2.jpg" alt="" width="100%" class="mt-3 mb-0"> -->
@@ -78,13 +55,6 @@
     </div>
 
 </div>
-<!-- end banner -->
-<!-- <video style="width: 100%; height: 650px; left: 0px; top: 0px;" src="<?= ADMIN_ASSET ?>image/video.mp4" autoplay loop preload></video> -->
-<!-- <div class="display-4  mt-5 mt-lg-5 mt-md-5  ">
-        <h3 class="fw-bold text-center">TOP PRODUCTS SALE</h3>
-    </div> -->
-
-
 
 <div class="box">
 
@@ -330,4 +300,6 @@
         </div>
         <!-- end box-big -->
     </div>
+    <!-- end box -->
+
 </div>
