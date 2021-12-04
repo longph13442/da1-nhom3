@@ -70,7 +70,13 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
-                    <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
+                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
+                    <?php if ($p['gianew'] != $p['giatien']) : ?>
+                        <p class=" display-8 text-center fw-bold text-secondary mt-2">
+                            <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                <?= number_format($p['giatien']) ?></a>
+                        </p>
+                    <?php endif; ?>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -121,14 +127,17 @@
                 <?php foreach ($sanpham2 as $item) : ?>
                     <li>
                         <div class=" ">
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
-                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success">
+                                <p class="text-center"> <?= $item['ten_sp'] ?> </p>
                             </a>
 
-                            <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($item['giatien']) ?>đ- <?= number_format($item['giamgia']) ?></p>
-
+                            <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
+                            <?php if ($item['gianew'] != $item['giatien']) : ?>
+                                <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
+                                </p>
+                            <?php endif; ?>
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>

@@ -16,8 +16,14 @@
         <span class="material-icons">star_rate</span>
       </div>
       <div class="price mt-2 d-flex">
-        <div class="new_price fw-bold fs-3 text-danger"> <?php echo number_format($info['giamgia'])  ?> đ</div>
-        <div class="old_price mx-3">Giá thị trường : <span class=" fs-3 text-decoration-line-through "><?php echo number_format($info['giatien'])  ?> đ</span></div>
+        <div class="new_price fw-bold fs-3 text-danger"> <?php echo number_format($info['gianew'])  ?> đ</div>
+        <?php if ($info['gianew'] != $info['giatien']) : ?>
+          <div class="old_price mx-3">Giá thị trường :
+            <span class=" fs-3 text-decoration-line-through ">
+              <?php echo number_format($info['giatien'])  ?> đ
+            </span>
+          </div>
+        <?php endif; ?>
       </div>
       <div class="status mt-2"> <span class="fw-bold">Tình trạng :</span>
         <span class="text-danger fw-bold"> <?php if ($info['soluong'] > 1) {
@@ -41,7 +47,11 @@
         <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
-        <input type="hidden" name="giatien" value="<?= $info['giatien'] ?>">
+        <?php if ($info['gianew'] != 0) : ?>
+          <input type="hidden" name="gianew" value="<?= $info['gianew'] ?>">
+        <?php else : ?>
+          <input type="hidden" name="giatien" value="<?= $info['giatien'] ?>">
+        <?php endif; ?>
         <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
       </form>
 
@@ -210,8 +220,8 @@
 
                   </div>
                   <div class="price mt-2 ">
-                    <div class="new_price fw-bold "><?php echo number_format($item['giamgia'])  ?> đ</div>
-                    <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($item['giatien'])  ?> đ</div>
+                    <div class="new_price fw-bold "><?php echo number_format($item['giatien'])  ?> đ</div>
+                    <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($item['gianew'])  ?> đ</div>
                   </div>
                 </div>
               </div>

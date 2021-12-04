@@ -8,6 +8,7 @@ function dat_hang_tt()
         $_SESSION['dathang'] = [];
     }
     if (isset($_POST['addcart'])) {
+
         $hinh = $_POST['hinhanh'];
         $tensp = $_POST['tensp'];
         $gia = $_POST['giatien'];
@@ -23,8 +24,6 @@ function dat_hang_tt()
     $hienthi = hienthi_sp($_SESSION['ten_dang_nhap']);
 
     client_render('cart/index.php', compact('hienthi'));
-
-
 }
 function xoa_gio_hang()
 {
@@ -34,7 +33,4 @@ function xoa_gio_hang()
     }
     $hienthi = hienthi_sp($_SESSION['ten_dang_nhap']);
     client_render('cart/index.php', compact('hienthi'));
-
-
-
 }
