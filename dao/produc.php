@@ -4,7 +4,7 @@ require_once './dao/danhmuc.php';
 
 function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
 {
-    $sql = "select * from sanpham where 1";
+    $sql = "SELECT *, giatien*(100-giamgia)/100 as gianew FROM  sanpham where 1";
     if ($kyw != "") {
         $sql .= " and ten_sp like '%" . $kyw . "%'";
     }
@@ -18,7 +18,7 @@ function loadonsp($kyw = "", $iddm = 0, $offset, $pagesize)
 function load_ten_dm($iddm)
 {
     if ($iddm > 0) {
-        $sql = "select * from loaihang where ma_loai =" . $iddm;
+        $sql = "select *,giatien*(100-giamgia)/100 as gianew from loaihang where ma_loai =" . $iddm;
         $dm = pdo_query_one($sql);
         extract($dm);
         return $ten_loai;
@@ -34,12 +34,12 @@ function sanpham_count_seach($kyw)
 }
 function san_pham_select_by_id($ma_sp)
 {
-    $sql = "SELECT * FROM sanpham WHERE  ma_sp=?";
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE  ma_sp=?";
     return pdo_query_one($sql, $ma_sp);
 }
 function san_pham_select_by_loai_chitiet($ma_loai, $ma_sp)
 {
-    $sql = "SELECT * FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE ma_loai=" . $ma_loai . " AND ma_sp <> " . $ma_sp;
     return pdo_query($sql);
 }
 function hang_hoa_tang_so_luot_xem($ma_sp)
@@ -49,7 +49,7 @@ function hang_hoa_tang_so_luot_xem($ma_sp)
 }
 function loc_gia_Sp($start, $end)
 {
-    $sql = "SELECT * FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
     return pdo_query($sql, $start, $end);
 }
 // function loc_gia_Sp_phantrang($start, $end)
@@ -61,8 +61,7 @@ function loc_gia_Sp($start, $end)
 function loadall_spkm()
 {
 
-        $sql = "select * from sanpham where 1 order by giamgia desc limit 0,8 ";
-        $sanpham22 = pdo_query($sql);
-        return $sanpham22;  
-    
-    }
+    $sql = "select *,giatien*(100-giamgia)/100 as gianew from sanpham where 1 order by giamgia desc limit 0,8 ";
+    $sanpham22 = pdo_query($sql);
+    return $sanpham22;
+}
