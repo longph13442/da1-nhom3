@@ -16,7 +16,9 @@ function cart()
             'tensp' => $_POST['tensp'],
             'gia' => $_POST['gianew'],
             'masp' => $id,
-            'soluong' => $soluong
+            'soluong' => $soluong,
+            'price' => '',
+            'sum' =>''
         ];
         if (isset($_SESSION['cart'][$id])) {
             $_SESSION['cart'][$id]['soluong'] += $soluong;
@@ -33,11 +35,17 @@ function cart()
         unset($_SESSION["cart"][$id]);
     }
     $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
+    $link='';
     if (isset($_SESSION["ten_dang_nhap"])) {
-        $link = 'pay';
+        if($cart==[]){
+            $link='danh-muc';
+        }else{
+            $link = 'pay';
+        }
     } else {
         $link = 'account/register';
     }
+
 
     client_Render("cart/index.php", compact('cart', 'link')); // 
 
