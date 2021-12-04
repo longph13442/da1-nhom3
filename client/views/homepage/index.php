@@ -7,14 +7,22 @@
             <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
             <?php
 
+<<<<<<< Updated upstream
             foreach ($dmsp as $d) {
                 extract($d);
                 $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
                 echo '   
            <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
+=======
+                        foreach ($dmsp as $d) {
+                            extract($d);
+                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
+                            echo '   
+           <a href="' . $linkdm . '" class="nav-link " >       <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
+>>>>>>> Stashed changes
                   
                 </span>
-                <p class="mx-3 fs-6">' . $ten_loai . '</p>
+                <p class="mx-3 fs-6  ">' . $ten_loai . '</p>
             </li></a>';
             }
             ?>
