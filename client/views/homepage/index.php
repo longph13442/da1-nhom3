@@ -1,47 +1,24 @@
 <!-- danh-muc -->
-<div class="row mx-3">
+<div class="row mx-3 my-lg-5 my-sm-0">
     <div class="col-12 col-lg-3 mb-3 mb-lg-0">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
 
-  <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
-                       <?php
+            <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
+            <?php
 
-                        foreach ($dmsp as $d) {
-                            extract($d);
-                            $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
-                            echo '   
+            foreach ($dmsp as $d) {
+                extract($d);
+                $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
+                echo '   
            <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
                   
                 </span>
                 <p class="mx-3 fs-6">' . $ten_loai . '</p>
             </li></a>';
-                        }
-                        ?>
+            }
+            ?>
 
-
-<!-- 
-            <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
-                    spa
-                </span>
-                <p class="mx-3 fs-6"></p>
-            </li>
-     
-            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
-                    sentiment_very_satisfied
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
-            <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
-                    flutter_dash
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li>
-            <li class="list-group-item py-3 d-flex "> <span class="material-icons-outlined">
-                    card_giftcard
-                </span>
-                <p class="mx-3 fs-6">Chăm sóc mắt và môi</p>
-            </li> -->
 
         </ul>
         <!-- <img src="<?= ADMIN_ASSET ?>image/right.jpg" alt="" width="100%" class="mb-2">
@@ -100,7 +77,7 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                         <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                     </a>
-  <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
+                    <p class=" display-8 text-center fw-bold text-secondary "><?= number_format($p['giatien']) ?>đ- <?= number_format($p['giamgia']) ?></p>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -111,7 +88,7 @@
         <!-- end product-center -->
         <div class="row">
             <div class="col-12 text-center ">
-              <a href="index.php?url=danh-muc">  <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
+                <a href="index.php?url=danh-muc"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
             </div>
         </div>
         <!-- end box-bog -->
@@ -287,7 +264,7 @@
                 <!-- end blog -->
                 <div class="row my-5">
                     <div class="col-12 text-center ">
-                       <a href="<?=ROOT_URL?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
+                        <a href="<?= ROOT_URL ?>blog"> <button class=" btn btn-outline-warning btn-md mx-auto" type="button">Xem tất cả <i class="fas fa-angle-right"></i></button></a>
                     </div>
                 </div>
                 <!-- end button -->

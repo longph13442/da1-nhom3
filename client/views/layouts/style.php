@@ -61,7 +61,16 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
-
+    header{
+        position: fixed;
+        z-index: 1;
+        background-color: white;
+        
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+    }
     nav {
         width: 100%;
         background: #fff;

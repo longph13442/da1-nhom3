@@ -1,4 +1,4 @@
-<header class=" row mx-3">
+<header class=" row mb-5">
     <div class="container border-bottom ">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -14,7 +14,7 @@
                 </ul>
             </nav>
             <!-- end menu -->
-            <form class="col-12 col-xl-5 col-lg-5 col-md-4 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
+            <form class="col-sm-12 col-xl-5 col-lg-5 col-md-12 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <!-- end search -->
