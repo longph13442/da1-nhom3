@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
@@ -17,7 +17,7 @@
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <!-- small box -->
         <div class="small-box bg-success">
             <div class="inner">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <!-- small box -->
         <div class="small-box bg-warning">
             <div class="inner">
@@ -51,23 +51,7 @@
         </div>
     </div>
     <!-- ./col -->
-    <div class="col-lg-3 col-6">
-        <!-- small box -->
-        <div class="small-box bg-danger">
-            <div class="inner">
-                <h3><?=
-                    date(" H:i:s");
-                    ?></h3>
-                <p></p>
-                <p>Đồng Hồ</p>
-            </div>
-            <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer"><?= date("Y-m-d") ?></a>
-        </div>
-    </div>
-    <!-- ./col -->
+    
 </div>
 
 <div class="d-flex">
@@ -76,8 +60,6 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Thành Viên Quản Lý Website</h3>
-
-
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
@@ -104,7 +86,7 @@
     </div>
     <div class="col-md-6">
         <!-- USERS LIST -->
-        <div class="card">
+        <div class="card" >
             <div class="card-header">
                 <h3 class="card-title">Khách hàng mới</h3>
             </div>
