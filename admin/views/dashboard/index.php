@@ -127,6 +127,7 @@
                 <thead>
                     <tr>
                         <th>Mã Đơn Hàng</th>
+                        <th>Khách Hàng</th>
                         <th>Sản Phẩm</th>
                         <th>Trạng Thái</th>
                         <th>Tổng Tiền</th>
@@ -136,6 +137,7 @@
                     <?php foreach ($dh as $d) : ?>
                         <tr>
                             <td><a href=""><?= $d['id'] ?></a></td>
+                            <td><a href=""><?= $d['name'] ?></a></td>
                             <td><?= $d['ten_sp'] ?></td>
                             <td><span class="badge badge-success"><?php
                                                                     if ($d['status'] == 0) {
