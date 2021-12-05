@@ -5,19 +5,25 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Danh sách đơn hàng</h4>
-
+      <br>
+      <form action="" method="get">
+        <input type="text" class="form-control col-4" name="keysearch" placeholder="Tìm Kiếm theo khách hàng...." id="">
+      </form>
+      <br>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
               <th>
+                Tên Khách Hàng
+              </th>
+              <th>
                 Mã đơn hàng
               </th>
+
+
               <th>
                 Tên sản phẩm
-              </th>
-              <th>
-                Tên Khách Hàng
               </th>
               <th>
                 Số lượng
@@ -43,15 +49,17 @@
             <?php foreach ($od as $key) : ?>
               <?php extract($key) ?>
               <tr>
-                <td class="py-1">
-                  <?php echo $id ?>
-                </td>
-                <td>
-                  <?php echo $ten_sp ?>
-                </td>
                 <td>
                   <?php echo $name ?>
                 </td>
+                <td class="py-1">
+                  <?php echo $id ?>
+                </td>
+
+                <td>
+                  <?php echo $ten_sp ?>
+                </td>
+
                 <td>
                   <?php echo $quantyti ?>
                 </td>
