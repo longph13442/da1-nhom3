@@ -261,6 +261,30 @@ switch ($url) {
         require_once "./client/business/success.php";
         success();
         break;
+    case 'admin-blog':
+        require_once './admin/business/blog.php';
+        blog_list();
+        break;
+    case 'admin-blog/add':
+        require_once './admin/business/blog.php';
+        blog_add_form();
+        break;
+    case 'admin-blog/save-add':
+        require_once './admin/business/blog.php';
+        blog_save_add();
+        break;
+    case 'admin-blog/update':
+        require_once './admin/business/blog.php';
+        blog_update_form();
+        break;
+    case 'admin-blog/save-update':
+        require_once './admin/business/blog.php';
+        blog_save_update();
+        break;
+    case 'admin-blog/delete':
+        require_once './admin/business/blog.php';
+        blog_delete();
+        break;
     default:
         # code...
         break;
