@@ -14,6 +14,7 @@ function pay()
       $quantyti = $key["soluong"];
       $price = $key["price"];
       GetId($hoadon_id, $product_id, $quantyti, $price);
+      soluongsp($quantyti, $product_id);
     }
     unset($_SESSION["cart"]);
     if ($_POST["paymentMethod"] == 1) {
