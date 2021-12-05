@@ -1,9 +1,9 @@
 <?php
 require_once 'dao/system_dao.php';
-function order_get_all()
+function order_get_all($keysearch)
 {
-    $sql = "SELECT * FROM hoadon_chitiet,hoadon,sanpham WHERE hoadon_chitiet.id = hoadon.id and sanpham.ma_sp = hoadon_chitiet.product_id";
-    return pdo_query($sql);
+    $sql = "SELECT * FROM hoadon_chitiet,hoadon,sanpham WHERE hoadon.name like ? and hoadon_chitiet.id = hoadon.id and sanpham.ma_sp = hoadon_chitiet.product_id";
+    return pdo_query($sql, '%' . $keysearch . '%');
 }
 function order_get_by_id($id)
 {
@@ -17,7 +17,9 @@ function order_delete_by_id($id)
 }
 function order_list()
 {
-    $od = order_get_all();
+    $keysearch = isset($_GET['keysearch']) ? $_GET['keysearch'] : '';
+
+    $od = order_get_all($keysearch);
 
     admin_render('order/list.php', compact('od'));
 }

@@ -6,7 +6,7 @@ function pay()
     // thêm thông tin user vào hóa đơn
     extract($_POST);
     $date = date("Y-m-d H:i:s");
-    $sql = "insert into hoadon(name,phone,email,address,note,date) values('$name','$phone','$email','$address','$note',$date)";
+    $sql = "insert into hoadon(name,phone,email,address,note,date) values('$name','$phone','$email','$address','$note','$date')";
     $hoadon_id = InsertDataAndGetId($sql);
     //lặp giỏ hàng thêm vào chi tiết hóa đơn
     foreach ($_SESSION["cart"] as $key) {
