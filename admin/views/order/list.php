@@ -68,7 +68,7 @@
                 </td>
 
                 <td>
-                  <?php echo number_format($giatien) ?>đ
+                  <?php echo number_format($price) ?>đ
                 </td>
                 <td>
                   <?php echo date('Y-m-d') ?>
