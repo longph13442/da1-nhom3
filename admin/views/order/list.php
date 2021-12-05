@@ -5,28 +5,31 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Danh sách đơn hàng</h4>
-
+      <br>
+      <form action="" method="get">
+        <input type="text" class="form-control col-4" name="keysearch" placeholder="Tìm Kiếm theo khách hàng...." id="">
+      </form>
+      <br>
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
               <th>
+                Tên Khách Hàng
+              </th>
+              <th>
                 Mã đơn hàng
               </th>
+
+
               <th>
-                Mã sản phẩm
-              </th>
-              <th>
-                Mã tài khoản
+                Tên sản phẩm
               </th>
               <th>
                 Số lượng
               </th>
               <th>
                 Ảnh sản phẩm
-              </th>
-              <th>
-                Tên sản phẩm
               </th>
               <th>
                 Giá tiền
@@ -46,54 +49,54 @@
             <?php foreach ($od as $key) : ?>
               <?php extract($key) ?>
               <tr>
+                <td>
+                  <?php echo $name ?>
+                </td>
                 <td class="py-1">
-                  <?php echo $ma_don_hang ?>
+                  <?php echo $id ?>
                 </td>
+
                 <td>
-                  <?php echo $ma_sp ?>
+                  <?php echo $ten_sp ?>
                 </td>
+
                 <td>
-                  <?php echo $ma_tai_khoan ?>
-                </td>
-                <td>
-                  <?php echo $so_luong ?>
+                  <?php echo $quantyti ?>
                 </td>
                 <td style="max-width: 100px;">
                   <img src="<?= IMG . $anh_sp ?>" alt="" width="40%">
                 </td>
-                <td>
-                  <?php echo $ten_sp ?>
-                </td>
+
                 <td>
                   <?php echo number_format($giatien) ?>đ
                 </td>
                 <td>
-                  <?php echo $ngay_tao ?>
+                  <?php echo date('Y-m-d') ?>
                 </td>
                 <td>
                   <form action="order/update" method="post">
                     <div class="d-flex justify-content-between">
-                      <select name="tinh_trang" id="" class="form-control mx-2">
+                      <select name="status" id="" class="form-control mx-2">
 
-                        <option value="<?php echo $tinh_trang ?>" selected><?php
-                                                                            if ($tinh_trang == 0) {
-                                                                              echo 'Đang xử lí';
-                                                                              echo '<br>';
-                                                                            }
-                                                                            if ($tinh_trang == 1) {
-                                                                              echo 'Đã xác nhận';
-                                                                              echo '<br>';
-                                                                            }
-                                                                            if ($tinh_trang == 2) {
-                                                                              echo 'Đang giao hàng';
-                                                                              echo '<br>';
-                                                                            }
-                                                                            if ($tinh_trang == 3) {
-                                                                              echo 'Giao hàng thành công';
-                                                                              echo '<br>';
-                                                                            }
+                        <option value="<?php echo $status ?>" selected><?php
+                                                                        if ($status == 0) {
+                                                                          echo 'Đang xử lí';
+                                                                          echo '<br>';
+                                                                        }
+                                                                        if ($status == 1) {
+                                                                          echo 'Đã xác nhận';
+                                                                          echo '<br>';
+                                                                        }
+                                                                        if ($status == 2) {
+                                                                          echo 'Đang giao hàng';
+                                                                          echo '<br>';
+                                                                        }
+                                                                        if ($status == 3) {
+                                                                          echo 'Giao hàng thành công';
+                                                                          echo '<br>';
+                                                                        }
 
-                                                                            ?>
+                                                                        ?>
                         </option>
 
                         <option value="0">Đang xử lí</option>
@@ -101,14 +104,14 @@
                         <option value="2">Đang giao hàng</option>
                         <option value="3">Giao hàng thành công</option>
                       </select>
-                      <input type="hidden" name="ma_don_hang" value="<?php echo $ma_don_hang ?>">
+                      <input type="hidden" name="id" value="<?php echo $id ?>">
                       <input type="submit" value="cập nhật" name="submit" class="btn btn-primary">
                     </div>
                   </form>
                 </td>
                 <td>
-                  <!-- <a href="order/update?ma_don_hang=<?php echo $ma_don_hang ?>" class="btn btn-outline-danger"><i class="fal fa-edit"></i></a> -->
-                  <a href="order/delete?ma_don_hang=<?php echo $ma_don_hang ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger float-end"><i class="fal fa-trash-alt"></i></a>
+                  <!-- <a href="order/update?ma_don_hang=<?php echo $id ?>" class="btn btn-outline-danger"><i class="fal fa-edit"></i></a> -->
+                  <a href="order/delete?id=<?php echo $id ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger float-end"><i class="fal fa-trash-alt"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>

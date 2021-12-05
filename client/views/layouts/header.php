@@ -1,3 +1,15 @@
+<?php
+$cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
+if (isset($_SESSION["ten_dang_nhap"])) {
+    if ($cart == []) {
+        $link = 'danh-muc';
+    } else {
+        $link = 'pay';
+    }
+} else {
+    $link = 'account/register';
+}
+?>
 <header class=" row bg-white ">
     <div class="container border-bottom ">
         <div class="  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -30,31 +42,22 @@
                                 <span class="badge bg-warning rounded-pill">3</span>
                             </li>
                             <ul class="list-group mb-3">
-
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div class="d-flex">
-                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
-                                        <h6 class="my-3 mx-3">Dưỡng da</h6>
-                                    </div>
-                                    <span class="text-danger py-3">350.000 vnd</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div class="d-flex">
-                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
-                                        <h6 class="my-3 mx-3">Dưỡng da</h6>
-                                    </div>
-                                    <span class="text-danger py-3">350.000 vnd</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between lh-sm">
-                                    <div class="d-flex">
-                                        <img src="<?= ADMIN_ASSET ?>Image/img1.jpg" alt="" height="40">
-                                        <h6 class="my-3 mx-3">Dưỡng da</h6>
-                                    </div>
-                                    <span class="text-danger py-3">350.000 vnd</span>
-                                </li>
-
-                                <div class="d-flex py-3 ">
-                                    <h6 class="text-dark ms-3 fw-bold">Tổng tiền : </h6>
+                                <?php $sum = 0; ?>
+                                <?php foreach ($cart as $key) : ?>
+                                    <?php $sum += (int)$key["price"];
+                                    ?>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div class="d-flex">
+                                            <img src="<?= ADMIN_ASSET ?>Image/<?= $key["hinh"] ?>" alt="" height="40">
+                                            <h6 class="my-3 mx-3"><?= $key["tensp"] ?></h6>
+                                        </div>
+                                        <span class="my-3 mx-3"><?= $key["soluong"] ?></span>
+                                        <span class="text-danger py-3"><?= $key["price"] ?></span>
+                                    </li>
+                                <?php endforeach ?>
+                                <div class="d-flex py-3 justify-content-between ">
+                                    <h6 class="text-warning ms-3 fw-bold">Tổng tiền : </h6>
+                                    <span class="text-warning ms-3 fw-bold"><?= $sum ?></span>
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
@@ -63,7 +66,7 @@
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
-                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;"><a href="cart" class="nav-link text-dark">Thanh toán</a></button>
+                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;"><a href="<?= $link ?>" class="nav-link text-dark">Thanh toán</a></button>
                                     </div>
                                 </div>
 
@@ -111,6 +114,7 @@
 
 
 </header>
+
 <?php
 login();
 ?>

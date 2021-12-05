@@ -35,12 +35,12 @@ function loadon_sp()
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-   $dskm = loadall_spkm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm','dskm'));
+    $dskm = loadall_spkm();
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm'));
 }
 function loadall_sp_timkiem()
 {
-    $key = "Kết quả tìm kiếm";
+    $keysear = "Kết quả tìm kiếm";
 
     if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
         $kyw = $_POST['kyw'];
@@ -64,7 +64,7 @@ function loadall_sp_timkiem()
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'key', 'tongpage'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'keysear', 'tongpage'));
 }
 function giatien()
 {
