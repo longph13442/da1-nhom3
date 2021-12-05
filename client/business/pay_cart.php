@@ -5,7 +5,8 @@ function pay()
   if (isset($_POST["submitt"])) {
     // thêm thông tin user vào hóa đơn
     extract($_POST);
-    $sql = "insert into hoadon(name,phone,email,address,note) values('$name','$phone','$email','$address','$note')";
+    $date = date("Y-m-d H:i:s");
+    $sql = "insert into hoadon(name,phone,email,address,note,date) values('$name','$phone','$email','$address','$note','$date')";
     $hoadon_id = InsertDataAndGetId($sql);
     //lặp giỏ hàng thêm vào chi tiết hóa đơn
     foreach ($_SESSION["cart"] as $key) {
@@ -15,8 +16,8 @@ function pay()
       GetId($hoadon_id, $product_id, $quantyti, $price);
     }
     unset($_SESSION["cart"]);
-    if($_POST["paymentMethod"]==1){
-      $pay_link="";
+    if ($_POST["paymentMethod"] == 1) {
+      $pay_link = "";
     }
     header("location: success");
   }
