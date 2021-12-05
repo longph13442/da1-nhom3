@@ -81,19 +81,19 @@
                         <option value="<?php echo $status ?>" selected><?php
                                                                         if ($status == 0) {
                                                                           echo 'Đang xử lí';
-                                                                          echo '<br>';
+                                                                          echo '<hr>';
                                                                         }
                                                                         if ($status == 1) {
                                                                           echo 'Đã xác nhận';
-                                                                          echo '<br>';
+                                                                          echo '<hr>';
                                                                         }
                                                                         if ($status == 2) {
                                                                           echo 'Đang giao hàng';
-                                                                          echo '<br>';
+                                                                          echo '<hr>';
                                                                         }
                                                                         if ($status == 3) {
                                                                           echo 'Giao hàng thành công';
-                                                                          echo '<br>';
+                                                                          echo '<hr>';
                                                                         }
 
                                                                         ?>
