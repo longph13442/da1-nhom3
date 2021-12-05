@@ -153,21 +153,23 @@
                 <tbody>
                     <?php foreach ($dh as $d) : ?>
                         <tr>
-                            <td><a href="pages/examples/invoice.html"><?= $d['ma_don_hang'] ?></a></td>
+                            <td><a href=""><?= $d['id'] ?></a></td>
                             <td><?= $d['ten_sp'] ?></td>
                             <td><span class="badge badge-success"><?php
-                                                                    if ($d['tinh_trang'] == 1) {
+                                                                    if ($d['status'] == 0) {
                                                                         echo "Đang Xử Lý";
-                                                                    } else if ($d['tinh_trang'] == 2) {
+                                                                    } else if ($d['status'] == 1) {
                                                                         echo "Đã Xác Nhận";
-                                                                    } else if ($d['tinh_trang'] == 3) {
+                                                                    } else if ($d['status'] == 2) {
                                                                         echo "Đang Giao Hàng";
-                                                                    } elseif ($d['tinh_trang'] == 4) {
+                                                                    } elseif ($d['status'] == 3) {
                                                                         echo "Giao Hàng Thành Công";
                                                                     } else {
                                                                         echo "Đã Bị Hủy";
                                                                     }
-                                                                    ?></span></td>
+                                                                    ?>
+
+                                </span></td>
                             <td>
                                 <div class="sparkbar" data-color="#00a65a" data-height="20"><?= number_format($d['giatien']) ?></div>
                             </td>

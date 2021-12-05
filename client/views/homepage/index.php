@@ -9,7 +9,7 @@
                 extract($d);
                 $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
                 echo '   
-                       <a href="' . $linkdm . '">       <li class="list-group-item py-3 d-flex"> <span class="material-icons-outlined">
+           <a href="' . $linkdm . '" class="text-decoration-none">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
                   
                 </span>
                 <p class="mx-3 fs-6 ">' . $ten_loai . '</p>

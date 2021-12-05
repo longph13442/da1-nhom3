@@ -14,7 +14,7 @@
                     <?php $sum = 0; ?>
 
                     <?php foreach ($pay as $key) : ?>
-                        <?php $sum += $key["price"]; ?>
+                        <?php $sum += (int)$key["price"]; ?>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div class="d-flex">
                                 <img src="<?= ADMIN_ASSET ?>image/<?= $key["hinh"] ?>" alt="" width="40">
@@ -41,7 +41,7 @@
             <div class="col-md-5 col-lg-7">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
 
-                <form action="pay" class="needs-validation"  novalidate="" method="POST">
+                <form action="pay" class="needs-validation" novalidate="" method="POST">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>
