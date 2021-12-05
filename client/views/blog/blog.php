@@ -25,6 +25,7 @@
                         <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao'] ?></div>
                         <p class="card-text mb-auto fw-bold"><?= $b['tieu_de'] ?>
                         </p>
+                              <span  class="card-text mb-auto fw"><?= $b['noi_dung'] ?></span>
                         <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
                     </div>
                     <div class="col-5 d-none d-lg-block">
