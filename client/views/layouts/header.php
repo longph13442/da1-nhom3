@@ -1,9 +1,9 @@
 <?php
 $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
 if (isset($_SESSION["ten_dang_nhap"])) {
-    if($cart==[]){
-        $link='danh-muc';
-    }else{
+    if ($cart == []) {
+        $link = 'danh-muc';
+    } else {
         $link = 'pay';
     }
 } else {
@@ -42,21 +42,22 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                 <span class="badge bg-warning rounded-pill">3</span>
                             </li>
                             <ul class="list-group mb-3">
-                                <?php $sum=0;?>
+                                <?php $sum = 0; ?>
                                 <?php foreach ($cart as $key) : ?>
-                                    <?php $sum+=$key["price"]?>
+                                    <?php $sum += (int)$key["price"];
+                                    ?>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div class="d-flex">
                                             <img src="<?= ADMIN_ASSET ?>Image/<?= $key["hinh"] ?>" alt="" height="40">
                                             <h6 class="my-3 mx-3"><?= $key["tensp"] ?></h6>
                                         </div>
-                                        <span class="my-3 mx-3"><?=$key["soluong"]?></span>
+                                        <span class="my-3 mx-3"><?= $key["soluong"] ?></span>
                                         <span class="text-danger py-3"><?= $key["price"] ?></span>
                                     </li>
                                 <?php endforeach ?>
                                 <div class="d-flex py-3 justify-content-between ">
                                     <h6 class="text-warning ms-3 fw-bold">Tổng tiền : </h6>
-                                    <span class="text-warning ms-3 fw-bold"><?=$sum?></span>
+                                    <span class="text-warning ms-3 fw-bold"><?= $sum ?></span>
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
@@ -65,7 +66,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
-                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;"><a href="<?=$link?>" class="nav-link text-dark">Thanh toán</a></button>
+                                        <button type="submit" class="btn btn-danger text-center mx-auto" style="width: 90%;"><a href="<?= $link ?>" class="nav-link text-dark">Thanh toán</a></button>
                                     </div>
                                 </div>
 

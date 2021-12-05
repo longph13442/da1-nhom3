@@ -40,8 +40,8 @@
                <div class="col-9">
 
                    <h3 class="mx-3 my-3">
-                       <?php if (isset($key)) : ?>
-                           <?php echo $key; ?>
+                       <?php if (isset($keysear)) : ?>
+                           <?php echo $keysear; ?>
                        <?php elseif (isset($keylg)) : ?>
                            <?php echo $keylg; ?>
                        <?php elseif (isset($tendm['ten_loai'])) : ?>

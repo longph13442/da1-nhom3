@@ -14,7 +14,7 @@
                     <?php $sum = 0; ?>
 
                     <?php foreach ($pay as $key) : ?>
-                        <?php $sum += $key["price"]; ?>
+                        <?php $sum += (int)$key["price"]; ?>
                         <li class="list-group-item d-flex justify-content-between lh-sm">
                             <div class="d-flex">
                                 <img src="<?= ADMIN_ASSET ?>image/<?= $key["hinh"] ?>" alt="" width="40">
@@ -41,7 +41,7 @@
             <div class="col-md-5 col-lg-7">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
 
-                <form action="pay" class="needs-validation"  novalidate="" method="POST">
+                <form action="pay" class="needs-validation" novalidate="" method="POST">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>
@@ -86,12 +86,12 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" value="0" required="">
                                 <label class="form-check-label" for="credit">Thanh toán khi nhận hàng</label>
                             </div>
-                            <div class="form-check">
-                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-                                <label class="form-check-label" for="debit">Chuyển khoản</label>
+                            <div class="form-check mt-3">
+                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" value="1" required="">
+                                <label class="form-check-label" for="debit">Thanh toán bằng VNPAY</label>
                             </div>
 
                         </div>
