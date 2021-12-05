@@ -52,12 +52,6 @@ function loc_gia_Sp($start, $end)
     $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM sanpham WHERE sanpham.giatien >= ?  and sanpham.giatien < ?";
     return pdo_query($sql, $start, $end);
 }
-// function loc_gia_Sp_phantrang($start, $end)
-// {
-//     $sql = "SELECT count(*) FROM sanpham WHERE sanpham.giatien >= ? and sanpham.giatien < ?";
-//     return pdo_query($sql, $start, $end);
-// }
-
 function loadall_spkm()
 {
 

@@ -173,7 +173,7 @@
 
                                 </span></td>
                             <td>
-                                <div class="sparkbar" data-color="#00a65a" data-height="20"><?= number_format($d['giatien']) ?></div>
+                                <div class="sparkbar" data-color="#00a65a" data-height="20"><?= number_format($d['price']) ?></div>
                             </td>
                         </tr>
                     <?php endforeach; ?>

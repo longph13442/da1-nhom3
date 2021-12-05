@@ -61,7 +61,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                 </div>
                                 <div class="card p-2">
                                     <div class="input-group ">
-                                        <button type="submit" class="btn btn-success text-center mx-auto" style="width: 90%;"><a href="cart" class="nav-link text-dark">Xem giỏ hàng</a></button>
+                                        <button type="submit" class="btn btn-success text-center mx-auto" style="width: 90%;"><a href="<?= ROOT_URL ?>cart" class="nav-link text-dark">Xem giỏ hàng</a></button>
                                     </div>
                                 </div>
                                 <div class="card p-2">
