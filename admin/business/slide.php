@@ -46,7 +46,7 @@ function slide_save_add()
 {
     if (isset($_POST['submit'])) {
         extract($_POST);
-        $slide = $_FILES['slide']['name'];
+        $slide = $_FILES['img']['name'];
         slide_insert($slide);
         header("location: " . ROOT_URL . 'slide');
     }
