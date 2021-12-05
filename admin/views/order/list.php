@@ -14,33 +14,33 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>
+              <th class="col-2">
                 Tên Khách Hàng
               </th>
-              <th>
+              <th class="col-1">
                 Mã đơn hàng
               </th>
 
 
-              <th>
+              <th class="col-1">
                 Tên sản phẩm
               </th>
               <th>
                 Số lượng
               </th>
-              <th>
+              <th class="col-1">
                 Ảnh sản phẩm
               </th>
               <th>
                 Giá tiền
               </th>
-              <th>
+              <th class="col-2">
                 Ngày tạo
               </th>
-              <th>
+              <th class="col-3">
                 Trạng thái đơn hàng
               </th>
-              <th>
+              <th class="col-2">
                 Chức năng
               </th>
             </tr>
@@ -68,10 +68,9 @@
                 </td>
 
                 <td>
-                  <?php echo number_format($price) ?>đ
                 </td>
                 <td>
-                  <?php echo date('Y-m-d') ?>
+                  <?php echo $date ?>
                 </td>
                 <td>
                   <form action="order/update" method="post">
@@ -111,7 +110,8 @@
                 </td>
                 <td>
                   <!-- <a href="order/update?ma_don_hang=<?php echo $id ?>" class="btn btn-outline-danger"><i class="fal fa-edit"></i></a> -->
-                  <a href="order/delete?id=<?php echo $id ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger float-end"><i class="fal fa-trash-alt"></i></a>
+                  <a class="btn btn-outline-success" href="<?= ROOT_URL ?>order/updatecart?id=<?= $id ?>"><i class="fad fa-edit"></i></a>
+                  <a href="<?= ROOT_URL ?>order/delete?id=<?php echo $id ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger float-end"><i class="fal fa-trash-alt"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>
