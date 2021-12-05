@@ -86,12 +86,12 @@
 
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" value="0" required="">
                                 <label class="form-check-label" for="credit">Thanh toán khi nhận hàng</label>
                             </div>
-                            <div class="form-check">
-                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-                                <label class="form-check-label" for="debit">Chuyển khoản</label>
+                            <div class="form-check mt-3">
+                                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" value="1" required="">
+                                <label class="form-check-label" for="debit">Thanh toán bằng VNPAY</label>
                             </div>
 
                         </div>

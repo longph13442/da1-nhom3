@@ -3,10 +3,8 @@
     <div class="col-12 col-lg-3 mb-3 mb-lg-0">
         <ul class="list-group">
             <li class="list-group-item py-3  py-xl-3 py-lg-2  bg-success " aria-current="true">Danh mục sản phẩm</li>
-
             <a href="<?= ROOT_URL ?>danh-muc" class="list-group-item py-3 d-flex">Tất cả sản phẩm</a>
             <?php
-
             foreach ($dmsp as $d) {
                 extract($d);
                 $linkdm = ROOT_URL . "danh-muc&ma_loai=" . $ma_loai;
@@ -14,29 +12,44 @@
            <a href="' . $linkdm . '" class="text-decoration-none">       <li class="list-group-item py-3 d-flex  "> <span class="material-icons-outlined">
                   
                 </span>
-                <p class="mx-3 fs-6">' . $ten_loai . '</p>
+                <p class="mx-3 fs-6 ">' . $ten_loai . '</p>
             </li></a>';
             }
             ?>
+
         </ul>
 
     </div>
+    <!-- end list-group -->
     <div class="col-12 col-lg-9 mb-3 mb-lg-0">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <ul class="sliderimg">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
                 <?php foreach ($slide as $item) : ?>
-                    <li>
-                        <div class=" ">
-                            <img src="<?= ADMIN_ASSET ?>Image/<?= $item['img'] ?>  " style="height:400px" alt="" class="d-block w-100 img-fluid">
-                        </div>
-                    </li>
+                    <div class="carousel-item ">
+                        <img src="<?= ADMIN_ASSET ?>Image/<?= $item['img'] ?>  " style="height:400px" alt="" class="d-block w-100 img-fluid">
+                    </div>
                 <?php endforeach ?>
-            </ul>
-
+                <div class="carousel-item active">
+                    <img src="<?= ADMIN_ASSET ?>Image/baner6.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
     </div>
-
+    <!-- end banner -->
 </div>
 
 <div class="box">
@@ -51,15 +64,17 @@
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
 
                     <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                        <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                        <span class="text-center"> <?= $p['ten_sp'] ?> </span>
                     </a>
-                    <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?>đ</a> </p>
-                    <?php if ($p['gianew'] != $p['giatien']) : ?>
-                        <p class=" display-8 text-center fw-bold text-secondary mt-2">
-                            <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
-                                <?= number_format($p['giatien']) ?>đ</a>
-                        </p>
-                    <?php endif; ?>
+                    <div class="d-flex justify-content-between px-5 ">
+                        <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
+                        <?php if ($p['gianew'] != $p['giatien']) : ?>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-2">
+                                <a class="text-secondary text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                    <?= number_format($p['giatien']) ?></a>
+                            </p>
+                        <?php endif; ?>
+                    </div>
                     <div class="star mb-md-2">
                         <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
@@ -98,7 +113,7 @@
     </div>
 
     <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
-        <h4 class="fw-bold mx-5 my-2">SẢN PHẨM ĐANG SALE</h4>
+        <h4 class="fw-bold mx-5 my-2">SẢN PHẨM YÊU THÍCH</h4>
     </div>
 
     <!-- end title -->
@@ -112,15 +127,16 @@
                         <div class=" ">
                             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
-                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success">
-                                <p class="text-center"> <?= $item['ten_sp'] ?> </p>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success text-center">
+                                <span class=""> <?= $item['ten_sp'] ?> </span>
                             </a>
-
-                            <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?>đ</a></p>
-                            <?php if ($item['gianew'] != $item['giatien']) : ?>
-                                <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?>đ</a>
-                                </p>
-                            <?php endif; ?>
+                            <div class="d-flex justify-content-between px-5 ">
+                                <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
+                                <?php if ($item['gianew'] != $item['giatien']) : ?>
+                                    <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
+                                    </p>
+                                <?php endif; ?>
+                            </div>
                             <div class="star">
                                 <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
@@ -135,7 +151,7 @@
         </div>
         <!-- end product-fist -->
         <div class="display-4 bg-light py-2  my-sm-0 my-md-4">
-            <h4 class="fw-bold mx-5 my-2">SẢN PHẨM YÊU THÍCH</h4>
+            <h4 class="fw-bold mx-5 my-2">SẢN PHẨM ĐANG SALE</h4>
         </div>
 
         <!-- end title -->

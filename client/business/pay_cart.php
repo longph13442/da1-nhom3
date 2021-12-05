@@ -15,6 +15,10 @@ function pay()
       GetId($hoadon_id, $product_id, $quantyti, $price);
     }
     unset($_SESSION["cart"]);
+    if($_POST["paymentMethod"]==1){
+      $pay_link="";
+    }
+    header("location: success");
   }
 
   $pay = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];

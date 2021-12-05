@@ -244,6 +244,10 @@ switch ($url) {
     case 'order/update':
         require_once './admin/business/order.php';
         order_update();
+    case 'success':
+        require_once "./client/business/success.php";
+        success();
+        break;
     default:
         # code...
         break;

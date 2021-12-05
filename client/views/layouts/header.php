@@ -44,7 +44,8 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                             <ul class="list-group mb-3">
                                 <?php $sum = 0; ?>
                                 <?php foreach ($cart as $key) : ?>
-                                    <?php $sum += (int)$key["price"] ?>
+                                    <?php $sum += (int)$key["price"];
+                                    ?>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div class="d-flex">
                                             <img src="<?= ADMIN_ASSET ?>Image/<?= $key["hinh"] ?>" alt="" height="40">
