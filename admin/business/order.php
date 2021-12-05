@@ -7,12 +7,12 @@ function order_get_all()
 }
 function order_get_by_id($id)
 {
-    $sql = "SELECT * FROM hoadon,hoadon_chitiet WHERE hoadon_chitiet.id = hoadon.id and id=?";
+    $sql = "SELECT * FROM hoadon,hoadon_chitiet WHERE hoadon_chitiet.id = hoadon.id and hoadon.id=?";
     return pdo_query_one($sql, $id);
 }
 function order_delete_by_id($id)
 {
-    $sql = "DELETE FROM hoadon,hoadon_chitiet WHERE hoadon_chitiet.id = hoadon.id and id=?";
+    $sql = "DELETE FROM hoadon WHERE hoadon.id =?";
     return pdo_execute($sql, $id);
 }
 function order_list()
