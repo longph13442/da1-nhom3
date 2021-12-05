@@ -1,9 +1,9 @@
 <?php 
 require_once './dao/system_dao.php';
-function pay_cart($name,$phone ,$email , $address, $note)
+function pay_cart($name,$phone ,$email , $address, $note,$date)
 {
-        $sql = "insert into hoadon(name,phone,email,address,note) values(?,?,?,?,?)";
-        InsertDataAndGetId($sql, $name,$phone ,$email , $address, $note);
+        $sql = "insert into hoadon(name,phone,email,address,note,date) values(?,?,?,?,?,?)";
+        InsertDataAndGetId($sql, $name,$phone ,$email , $address, $note,$date);
 }
 function GetId($hoadon_id,$product_id,$quantyti,$price){
         $sql="insert into hoadon_chitiet(id,product_id,quantyti,price) values(?,?,?,?)";
