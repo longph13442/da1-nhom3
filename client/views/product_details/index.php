@@ -200,7 +200,7 @@
                   </a>
                 </div>
                 <div class="price mt-2">
-                  <div class="new_price fw-bold "><?php echo number_format($info['giamgia'])  ?> đ</div>
+                  <div class="new_price fw-bold "><?php echo number_format($info['gianew'])  ?> đ</div>
                   <div class="old_price text-secondary text-decoration-line-through"><?php echo number_format($info['giatien'])  ?> đ</div>
                 </div>
               </div>
