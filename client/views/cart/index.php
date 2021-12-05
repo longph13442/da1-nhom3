@@ -1,4 +1,4 @@
-<div class="cart my-5 ">
+<div class="cart my-5 " style="height: 500px;">
 
     <div class="text-center py-4">
         <h1 class="h3 mb-3 fw-bold text-warning">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
