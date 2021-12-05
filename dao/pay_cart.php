@@ -9,4 +9,8 @@ function GetId($hoadon_id,$product_id,$quantyti,$price){
         $sql="insert into hoadon_chitiet(id,product_id,quantyti,price) values(?,?,?,?)";
         pdo_execute($sql,$hoadon_id,$product_id,$quantyti,$price);
 }
-?>
+function soluongsp($quatyti, $ma_sp)
+{
+    $sql = "UPDATE sanpham SET soluong = soluong - ? WHERE ma_sp = ?";
+    return pdo_execute($sql, $quatyti, $ma_sp);
+}

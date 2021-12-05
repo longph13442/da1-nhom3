@@ -67,11 +67,11 @@
                         <span class="text-center"> <?= $p['ten_sp'] ?> </span>
                     </a>
                     <div class="d-flex justify-content-between px-5 ">
-                        <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> </p>
+                        <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?>đ</a> </p>
                         <?php if ($p['gianew'] != $p['giatien']) : ?>
                             <p class=" display-8 text-center fw-bold text-secondary mt-2">
                                 <a class="text-secondary text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
-                                    <?= number_format($p['giatien']) ?></a>
+                                    <?= number_format($p['giatien']) ?>đ</a>
                             </p>
                         <?php endif; ?>
                     </div>
@@ -131,9 +131,9 @@
                                 <span class=""> <?= $item['ten_sp'] ?> </span>
                             </a>
                             <div class="d-flex justify-content-between px-5 ">
-                                <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?></a></p>
+                                <p class=" display-8 text-center fw-bold text-secondary "><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['gianew']) ?>đ </a> </p>
                                 <?php if ($item['gianew'] != $item['giatien']) : ?>
-                                    <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?></a>
+                                    <p class=" display-8 text-center fw-bold text-secondary "> <a class="text-decoration-line-through text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><?= number_format($item['giatien']) ?>đ</a>
                                     </p>
                                 <?php endif; ?>
                             </div>
