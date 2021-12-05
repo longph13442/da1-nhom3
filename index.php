@@ -97,6 +97,23 @@ switch ($url) {
         include "./admin/business/user.php";
         user_logout();
         break;
+    case 'voucher':
+        include_once './admin/business/voucher.php';
+        voucher_list();
+        break;
+    case 'voucher/add':
+        include_once './admin/business/voucher.php';
+        voucher_add();
+        break;
+    case 'voucher/update':
+        include_once './admin/business/voucher.php';
+
+        voucher_update();
+        break;
+    case 'voucher/delete':
+        include_once './admin/business/voucher.php';
+        voucher_delete();
+        break;
     case 'about':
         require_once './client/business/about.php';
         about();
@@ -155,16 +172,6 @@ switch ($url) {
         require_once './admin/business/statistical.php';
         chart_binhluan();
         break;
-    case 'dathang':
-        require_once './client/business/dathang.php';
-        dat_hang_tt();
-        break;
-
-    case 'xoadh':
-        require_once './client/business/dathang.php';
-        xoa_gio_hang();
-        break;
-
     case 'products':
         require_once './admin/business/products.php';
         products_list();
@@ -233,6 +240,7 @@ switch ($url) {
         require_once './admin/business/slide.php';
         slide_save_update();
         break;
+
     case 'order':
         require_once './admin/business/order.php';
         order_list();
@@ -244,6 +252,11 @@ switch ($url) {
     case 'order/update':
         require_once './admin/business/order.php';
         order_update();
+        break;
+    case 'order/updatecart':
+        require_once './admin/business/order.php';
+        order_updatecart();
+        break;
     case 'success':
         require_once "./client/business/success.php";
         success();
