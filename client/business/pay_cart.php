@@ -15,13 +15,13 @@ function pay()
       $quantyti = $key["soluong"];
       $price = $key["price"];
 
-      if ($total > 0) {
+      if (!isset($_SESSION['vouchers'])) {
         $total = 0;
       } else {
-        $total = $_POST['total'];
+        $total = $_SESSION['vouchers'];
       }
-
       GetId($hoadon_id, $product_id, $quantyti, $price, $total);
+      unset($_SESSION['vouchers']);
       soluongsp($quantyti, $product_id);
     }
 

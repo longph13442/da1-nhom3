@@ -10,30 +10,32 @@
                         <th class="col-2 py-3">Đơn Hàng</th>
                         <th class="col-4">Ngày</th>
                         <th class="col-3">Trạng Thái</th>
-                        <th class="col-3">Tổng Cộng</th>
+                        <th class="col-3">Gía tiền</th>
                         <th class="col-2">Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($hoadon as $hd) : ?>
                         <tr>
-                            <td scope="row"><?= $hd['ten_sp'] ?></td>
-                            <td><?= $hd['ngay_tao'] ?></td>
+                            <td scope="row">
+                                <?= $hd['ten_sp'], rtrim(',') ?>
+                            </td>
+                            <td><?= $hd['date'] ?></td>
                             <td><?php
-                                if ($hd['tinhtrang'] == 0) {
+                                if ($hd['status'] == 0) {
                                     echo "Đang Xử lý";
-                                } else if ($hd['tinhtrang'] == 1) {
-                                    echo "Đang chuẩn bị";
-                                } else if ($hd['tinhtrang'] == 2) {
+                                } else if ($hd['status'] == 1) {
+                                    echo "Đã xác nhận";
+                                } else if ($hd['status'] == 2) {
                                     echo "Đang giao hàng";
-                                } else if ($hd['tinhtrang'] == 3) {
+                                } else if ($hd['status'] == 3) {
                                     echo "Giao hàng thành công";
                                 } else {
                                     echo "Đã bị hủy";
                                 }
                                 ?></td>
-                            <td><?= $hd['tongtien'] ?></td>
-                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details?id_hoadon=<?= $hd['id_hoadon']; ?>">Xem</a></td>
+                            <td><?= $sum += $hd['price'] ?></td>
+                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details?id=<?= $hd['id']; ?>">Xem</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -44,7 +46,7 @@
                 <ul class="pagination">
                     <?php for ($i = 1; $i <= $tongpage; $i++) : ?>
                         <li class="page-item">
-                            <a class="page-link" href="user?pg=<?= $i ?>"><?= $i ?></a>
+                            <a class="page-link" href="cart?pg=<?= $i ?>"><?= $i ?></a>
                         </li>
                     <?php endfor; ?>
 

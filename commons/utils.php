@@ -8,6 +8,7 @@ const CLIENT_URL = ROOT_URL . 'client/';
 const Account = ROOT_URL . 'account/';
 const IMG = 'public/admin-asesst/Image/';
 const css = ROOT_URL . 'client/views/layouts/';
+
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 // Đường dẫn thư mục
