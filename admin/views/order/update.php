@@ -33,7 +33,7 @@
                     <div class="form-group mb-2">
                         <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
                         <input type="number" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." disabled value="<?= $in['price'] ?>">
-                        <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['giatien'] ?>">
+                        <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['price'] ?>">
                         <input type="number" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
                     </div>
                 <?php endforeach; ?>

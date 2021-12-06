@@ -59,8 +59,15 @@
                                <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4"><a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['giatien'], 0) ?>VNĐ</a> </p>
-
+                               <div class="d-flex justify-content-between px-5 ">
+                                   <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?>đ</a> </p>
+                                   <?php if ($p['gianew'] != $p['giatien']) : ?>
+                                       <p class=" display-8 text-center fw-bold text-secondary mt-2 mx-lg-3 mx-0">
+                                           <a class="text-secondary text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                               <?= number_format($p['giatien']) ?>đ</a>
+                                       </p>
+                                   <?php endif; ?>
+                               </div>
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                </div>
