@@ -10,32 +10,30 @@
                         <th class="col-2 py-3">Đơn Hàng</th>
                         <th class="col-4">Ngày</th>
                         <th class="col-3">Trạng Thái</th>
-                        <th class="col-3">Gía tiền</th>
                         <th class="col-2">Chức năng</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hoadon as $hd) : ?>
+                    <?php foreach ($hoadon2 as $h) : ?>
                         <tr>
                             <td scope="row">
-                                <?= $hd['ten_sp'], rtrim(',') ?>
+                                <?= $h['id'] ?>
                             </td>
-                            <td><?= $hd['date'] ?></td>
+                            <td><?= $h['date'] ?></td>
                             <td><?php
-                                if ($hd['status'] == 0) {
+                                if ($h['status'] == 0) {
                                     echo "Đang Xử lý";
-                                } else if ($hd['status'] == 1) {
+                                } else if ($h['status'] == 1) {
                                     echo "Đã xác nhận";
-                                } else if ($hd['status'] == 2) {
+                                } else if ($h['status'] == 2) {
                                     echo "Đang giao hàng";
-                                } else if ($hd['status'] == 3) {
+                                } else if ($h['status'] == 3) {
                                     echo "Giao hàng thành công";
                                 } else {
                                     echo "Đã bị hủy";
                                 }
                                 ?></td>
-                            <td><?= $sum += $hd['price'] ?></td>
-                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details?id=<?= $hd['id']; ?>">Xem</a></td>
+                            <td><a class="text-decoration-none btn btn-outline-danger" href="<?= ROOT_URL ?>account/cart/details?id=<?= $h['id']; ?>">Xem</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

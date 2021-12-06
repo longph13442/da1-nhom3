@@ -1,4 +1,4 @@
-<div class="cart my-5 " style="height: 500px;">
+<div class="cart my-5 ">
 
     <div class="text-center py-4">
         <h1 class="h3 mb-3 fw-bold text-warning">SUNFLOWER - gửi lời cảm ơn tới bạn !</h1>
@@ -22,8 +22,8 @@
                 <?php foreach ($cart as $key) : ?>
                     <?php $price = $key['soluong'] * $key['gia'];
                     $sum += $price;
-                    $_SESSION["cart"][ $key['masp']]['price']=$price;
-                    
+                    $_SESSION["cart"][$key['masp']]['price'] = $price;
+
                     ?>
                     <tr class="text-center">
                         <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>
