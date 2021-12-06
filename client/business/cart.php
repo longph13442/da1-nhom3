@@ -18,7 +18,7 @@ function cart()
             'masp' => $id,
             'soluong' => $soluong,
             'price' => '',
-            'sum' =>''
+            'sum' => ''
         ];
         if (isset($_SESSION['cart'][$id])) {
             $_SESSION['cart'][$id]['soluong'] += $soluong;
@@ -35,11 +35,11 @@ function cart()
         unset($_SESSION["cart"][$id]);
     }
     $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
-    $link='';
+    $link = '';
     if (isset($_SESSION["ten_dang_nhap"])) {
-        if($cart==[]){
-            $link='danh-muc';
-        }else{
+        if ($cart == []) {
+            $link = 'danh-muc';
+        } else {
             $link = 'pay';
         }
     } else {
