@@ -9,11 +9,18 @@ function pay()
     $sql = "insert into hoadon(name,phone,email,address,note,date) values('$name','$phone','$email','$address','$note','$date')";
     $hoadon_id = InsertDataAndGetId($sql);
     //lặp giỏ hàng thêm vào chi tiết hóa đơn
+
     foreach ($_SESSION["cart"] as $key) {
       $product_id = $key["masp"];
       $quantyti = $key["soluong"];
       $price = $key["price"];
-      $total = $_POST['total'];
+
+      if ($total > 0) {
+        $total = 0;
+      } else {
+        $total = $_POST['total'];
+      }
+
       GetId($hoadon_id, $product_id, $quantyti, $price, $total);
       soluongsp($quantyti, $product_id);
     }
