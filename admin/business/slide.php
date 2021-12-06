@@ -65,8 +65,6 @@ function slide_save_update()
         $info = slide_select_by_id($id);
         $img = empty($_FILES['img']['name']) ? $info['img'] : $_FILES['img']['name'];;
         slide_update($img, $id);
-
-
         header("location: " . ROOT_URL . 'slide');
     }
 }
