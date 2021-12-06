@@ -33,9 +33,12 @@
                 </div>
                 <?php if (isset($voucher['sotien'])) : ?>
                     <div class="d-flex justify-content-between px-3 fw-bold">
-                        <?php $total = $sum - $voucher['sotien'] ?>
+                        <?php $vouchers = $voucher['sotien'];
+                        $_SESSION['vouchers'] = $vouchers;
+                        ?>
+                        <?php $total = $sum - $vouchers ?>
                         <p>Mã giảm giá: </p>
-                        <p><?= number_format($voucher['sotien']) ?></p>
+                        <p><?= number_format($vouchers) ?></p>
                     </div>
                     <div class="d-flex justify-content-between px-3 fw-bold">
                         <p>Sau khi trừ giảm giá: </p>
@@ -65,7 +68,7 @@
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
 
                 <form action="pay" class="needs-validation" novalidate="" method="POST">
-                    <input type="hidden" name="total" value="<?= $total ?>">
+                    <input type="hidden" name="total" value="<?= isset($_SESSION['vouchers']) ?>">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>

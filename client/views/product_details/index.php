@@ -43,9 +43,9 @@
           <input type="text" name="soluong" value="1" id="number" class="form-control " style="width:40px;" />
           <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;" />
         </div>
-
         <?php if ($info['soluong'] > 1) : ?>
           <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
+
         <?php endif; ?>
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">

@@ -4,7 +4,7 @@
     </div>
     <div class="row ">
         <div class="">
-            <input type="hidden" name="id_hoadon" value="<?= $hddt['id_hoadon'] ?>">
+            <input type="hidden" name="id" value="<?= $hddt['id'] ?>">
             <table class="table border" style="width: 100%">
                 <tr class="">
                     <th>Sản Phẩm</th>
@@ -12,33 +12,64 @@
                 </tr>
                 <tr>
                     <td>
-                        <p class="text-product">
-                            <?= $hddt['ten_sp']; ?> x <span class="text-danger"><?= $hddt['soluong'] ?></span>
-                        </p>
+                        <?php foreach ($hddts as $in) : ?>
+
+                            <p class="text-product">
+                                <?= $in['ten_sp']; ?> x <span class="text-danger"><?= $in['quantyti'] ?></span>
+                            </p>
+                        <?php endforeach; ?>
+
                     </td>
                     <td>
-                        <b><?= $hddt['giatien'] ?></b>
+                        <?php foreach ($hddts as $in) : ?>
+                            <?php $sum += $in['price'] ?>
+                            <b> <?= number_format($in['price']) ?>đ</b>
+                            <p></p>
+                        <?php endforeach; ?>
+
                     </td>
                 </tr>
                 <tr>
                     <td>Tổng Cộng</td>
-                    <td><b><?= $hddt['tongtien'] ?></b></td>
+                    <td><b><?= number_format($sum) ?>đ</b></td>
                 </tr>
+                <?php if ($hddt['total'] > 0) : ?>
+
+                    <tr>
+                        <td>Mã giảm giá:</td>
+                        <td>
+                            <b>-<?php echo number_format($hddt['total']) ?>đ</b>
+                            <?php $after = $sum - $hddt['total'] ?>
+
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+
+                <?php endif; ?>
+
                 <tr>
                     <td>Phí vận chuyển</td>
-                    <td><b><?= $hddt['phivanchuyen'] ?> qua giao hàng</b></td>
+                    <td><b><?= isset($hddt['phivanchuyen']) ?> qua giao hàng</b></td>
                 </tr>
                 <tr>
                     <td>Phương thức thanh toán</td>
-                    <td><b><?php if ($hddt['ppthanhtoan'] == 0) {
+                    <td><b><?php if (isset($hddt['ppthanhtoan']) == 0) {
                                 echo "Thanh toán khi nhận hàng";
                             } else {
                                 echo "Thanh toán online";
                             } ?></b></td>
                 </tr>
+
                 <tr>
-                    <td>Tổng Tiền</td>
-                    <td><b><?= $hddt['tongtien'] ?></b></td>
+                    <?php if ($hddt['total'] > 0) : ?>
+                        <td>Tổng tiền:</td>
+                        <td><b><?= number_format($after) ?></b></td>
+                    <?php else : ?>
+                        <td>Tổng Tiền</td>
+                        <td><b><?= number_format($sum) ?></b></td>
+                    <?php endif; ?>
+
                 </tr>
                 <tr>
                     <th>Chi Tiết Khách Hàng</th>
@@ -50,7 +81,7 @@
                 </tr>
                 <tr>
                     <td>Số điện thoại</td>
-                    <td><?= $hddt['sdt'] ?></td>
+                    <td><?= $hddt['phone'] ?></td>
                 </tr>
             </table>
             <table class="table border">
@@ -60,12 +91,12 @@
                 </tr>
                 <tr>
                     <td>Họ Tên</td>
-                    <td><?= $hddt['ho_ten'] ?></td>
+                    <td><?= $hddt['name'] ?></td>
                 </tr>
                 <tr>
                     <td>Địa chỉ cụ thể</td>
                     <td>
-                        <textarea disabled style="border:none" name="" id="" cols="50" rows="5"> <?= $hddt['dia_chi'] ?></textarea>
+                        <textarea disabled style="border:none" name="" id="" cols="50" rows="5"> <?= $hddt['address'] ?></textarea>
                     </td>
                 </tr>
 

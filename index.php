@@ -49,7 +49,6 @@ switch ($url) {
     case 'profile':
         profile();
         break;
-
     case 'danh-muc':
         require_once './client/business/products.php';
         loadon_sp();
@@ -107,7 +106,6 @@ switch ($url) {
         break;
     case 'voucher/update':
         include_once './admin/business/voucher.php';
-
         voucher_update();
         break;
     case 'voucher/delete':

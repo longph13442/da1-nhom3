@@ -12,5 +12,7 @@ function sp_trangchu()
     $dmsp = loadall_dm();
     $sql = "SELECT * FROM slide LIMIT 0,3";
     $slide = pdo_query($sql);
-    client_render('homepage/index.php', compact('sanpham', 'sanpham2', 'blog_tt', 'dmsp', 'slide'));
+    $title = "Trang chủ";
+
+    client_render('homepage/index.php', compact('sanpham', 'sanpham2', 'blog_tt', 'dmsp', 'slide', 'title'));
 }

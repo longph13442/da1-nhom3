@@ -18,7 +18,7 @@
         color: black;
     }
 </style>
-
+<title><?= $title ?></title>
 </head>
 
 <body>
