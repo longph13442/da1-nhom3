@@ -59,3 +59,15 @@ function loadall_spkm()
     $sanpham22 = pdo_query($sql);
     return $sanpham22;
 }
+function loadall_spyt($ten_dang_nhap)
+{
+
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew FROM favorite_products,khachhang,sanpham WHERE favorite_products.product_id = sanpham.ma_sp and khachhang.ma_tai_khoan = favorite_products.user_id and khachhang.ten_dang_nhap = ?";
+
+    return pdo_query($sql,$ten_dang_nhap);
+}
+function spyt_delete($id)
+{
+    $sql = "DELETE FROM favorite_products WHERE id = ?";
+    return pdo_execute($sql,$id);
+}

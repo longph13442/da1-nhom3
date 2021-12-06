@@ -127,3 +127,19 @@ function giatien()
     $dmsp = loadall_dm();
     client_Render('products/index.php', compact('dmsp', 'dssp', 'keylg', 'title'));
 }
+function load_all_spyt()
+{
+
+    $spyt =loadall_spyt($_SESSION['ten_dang_nhap']);
+    
+    client_render('yeuthich/index.php', compact('spyt'));
+}
+function xoayt()
+{
+  $id = $_GET['id'];
+  spyt_delete($id);
+load_all_spyt();
+    client_render('yeuthich/index.php');
+}
+
+?>
