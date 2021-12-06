@@ -39,7 +39,13 @@
                     </div>
                     <div class="d-flex justify-content-between px-3 fw-bold">
                         <p>Sau khi trừ giảm giá: </p>
-                        <p class="text-danger "><?= number_format($total) ?> VND</p>
+
+                        <?php if ($total < 0) : ?>
+                            <p class="text-danger ">0VND</p>
+                        <?php else : ?>
+                            <p class="text-danger "><?= number_format($total) ?> VND</p>
+
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <?php if (!isset($voucher['sotien'])) : ?>
