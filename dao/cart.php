@@ -6,6 +6,11 @@ function cart_list($ten_dang_nhap, $offset, $pagesize)
      hoadon_chitiet.product_id and khachhang.ten_dang_nhap = ? ORDER BY hoadon.id DESC LIMIT $offset,$pagesize";
     return pdo_query($sql, $ten_dang_nhap);
 }
+function cart_lists($ten_dang_nhap)
+{
+    $sql = "SELECT * FROM hoadon,khachhang WHERE khachhang.sdt = hoadon.phone  and khachhang.ten_dang_nhap = ? ORDER BY hoadon.id DESC ";
+    return pdo_query($sql, $ten_dang_nhap);
+}
 function cart_list2($ten_dang_nhap)
 {
     $sql = "SELECT *,hoadon.id as id_hoadon FROM hoadon,hoadon_chitiet,khachhang,sanpham WHERE 

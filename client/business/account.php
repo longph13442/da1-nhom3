@@ -228,6 +228,7 @@ function send_email()
             $kt =  Account . 'notice';
         }
     }
+
     $title = "Quên mật khẩu";
 
     client_Render('account/get_password.php', compact('title', 'error', 'kt'));
@@ -351,10 +352,12 @@ function listcart()
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $hoadon = cart_list($_SESSION['ten_dang_nhap'], $offset, $pagesize);
-    $hoadon2 = cart_list2($_SESSION['ten_dang_nhap']);
+    $hoadon2 = cart_lists($_SESSION['ten_dang_nhap']);
     $title = "Danh sách đơn hàng";
-
-    info_render('account/list_cart.php', compact('title', 'hoadon', 'tongpage', 'hoadon2'));
+    $ten_dang_nhap = $_SESSION['ten_dang_nhap'];
+    $sql = "SELECT count(*) FROM hoadon,khachhang WHERE hoadon.phone = khachhang.sdt and khachhang.ten_dang_nhap ='$ten_dang_nhap'";
+    $lap = execute_query($sql);
+    info_render('account/list_cart.php', compact('title', 'hoadon', 'tongpage', 'hoadon2', 'result', 'lap'));
 }
 
 function cart_detail()
