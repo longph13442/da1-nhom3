@@ -13,6 +13,7 @@
                             <th>Ảnh minh họa</th>
                             <th>Ngày tạo</th>
                             <th>Mã tài khoản</th>
+                            <th class="col-1"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,7 +22,7 @@
                             <tr>
                                 <td><?php echo $ma_blog ?></td>
                                 <td><?php echo $tieu_de ?></td>
-                                <td><?php echo $noi_dung ?></td>
+                                <td class="chroma" ><?php echo $noi_dung ?></td>
                                 <td><?php echo $anh_minh_hoa ?></td>
                                 <td><?php echo $ngay_tao ?></td>
                                 <td><?php echo $ma_tai_khoan ?></td>
@@ -30,7 +31,6 @@
                                     <a href="admin-blog/delete?ma_blog=<?php echo $ma_blog ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></a>
                                 </td>
                             </tr>
-
                         <?php endforeach; ?>
                     </tbody>
                 </table>

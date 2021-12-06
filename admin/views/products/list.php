@@ -14,6 +14,7 @@
                 <th scope="col">Tên sản phẩm</th>
                 <th class="col-2">Ảnh sản phẩm</th>
                 <th class="col-1">Đơn giá</th>
+                <th class="col-1">Giảm giá</th>
                 <th scope="col">Số lượng</th>
                 <th scope="col">Đặc biệt</th>
                 <th scope="col">Lượt xem</th>
@@ -31,6 +32,7 @@
                     <td style="font-weight: 600;"><?php echo $ten_sp ?></td>
                     <td style="width: 200px;"><img src="<?= IMG ?><?php echo $anh_sp ?>" alt="" width="30%"></td>
                     <td><?php echo number_format($giatien)  ?> đ</td>
+                    <td><?php echo $giamgia ?>% (<?php $giatien -= ($giatien * $giamgia)/100; echo number_format($giatien) ?>đ)</td>
                     <td><?php echo $soluong ?></td>
                     <td><?php echo $dacbiet ?></td>
                     <td><?php echo $luotxem ?></td>
