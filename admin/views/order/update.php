@@ -33,7 +33,7 @@
                     <div class="form-group mb-2">
                         <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
                         <input type="number" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." disabled value="<?= $in['price'] ?>">
-                        <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['giatien'] ?>">
+                        <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['price'] ?>">
                         <input type="number" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
                     </div>
                 <?php endforeach; ?>
@@ -41,8 +41,12 @@
                     <label for="exampleInputEmail3">Tổng tiền</label>
                     <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
                 </div>
-
-
+                <?php if ($info['total'] > 0) : ?>
+                    <div class="form-group mb-2">
+                        <label for="exampleInputEmail3">Áp dụng khuyến mãi</label>
+                        <input type="number" name="" class="form-control" disabled id="" required value="<?php echo $info['total'] ?>">
+                    </div>
+                <?php endif; ?>
                 <button type="submit" name="updatecart" class="btn btn-primary me-2 my-2">cập nhật mới</button>
                 <button type="cancel" class="btn btn-light my-2">Hủy</button>
             </form>

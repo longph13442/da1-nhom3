@@ -2,22 +2,22 @@
 require_once './dao/blog.php';
 // use PHPMailer\PHPMailer\PHPMailer;
 // use PHPMailer\PHPMailer\Exception;
-function blog(){
-   $blog= topbaiviet_moi();
+function blog()
+{
+    $blog = topbaiviet_moi();
     $blogct = blog_dm();
-    
-    client_Render("blog/blog.php",compact('blog','blogct'));
+    $title = "Blog";
+    client_Render("blog/blog.php", compact('blog', 'blogct', 'title'));
 }
-function blogct(){
+function blogct()
+{
     if (isset($_GET['ma_blog']) && ($_GET['ma_blog'] > 0)) {
         $ma_blog = $_GET['ma_blog'];
         $blogct = blog_ct($ma_blog);
         extract($blogct);
-
-
     }
     $blog = blog_dm();
-      client_Render("baiviet/bai1.php",compact('blogct','blog'));
+    client_Render("baiviet/bai1.php", compact('blogct', 'blog'));
 }
 
 function gopy()
@@ -62,17 +62,8 @@ function gopy()
         // catch (Exception $e) {
 
         // }
-}
+    }
     $blog = topbaiviet_moi();
     $blogct = blog_dm();
-    client_render('blog/blog.php',compact('blog', 'blogct'));
-
-
-
-
-
-
+    client_render('blog/blog.php', compact('blog', 'blogct'));
 }
-
-
-?>

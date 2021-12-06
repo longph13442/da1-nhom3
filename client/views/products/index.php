@@ -56,20 +56,18 @@
 
                            <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
                                <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $p['anh_sp'] ?>  " alt="" class="img-fluid" height="50"></a>
-                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                               <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
                                    <p class="text-center"> <?= $p['ten_sp'] ?> </p>
                                </a>
-                               <p class=" display-8 text-center fw-bold text-secondary mt-4">
-                                   <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?></a> đ
-
-
+                               <div class="d-flex justify-content-between px-5 ">
+                                   <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?>đ</a> </p>
                                    <?php if ($p['gianew'] != $p['giatien']) : ?>
-                                       - <a class="text-dark text-decoration-line-through" href=""> <?= number_format($p['giatien']) ?></a>đ
+                                       <p class=" display-8 text-center fw-bold text-secondary mt-2 mx-lg-3 mx-0">
+                                           <a class="text-secondary text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                               <?= number_format($p['giatien']) ?>đ</a>
+                                       </p>
                                    <?php endif; ?>
-
-                               </p>
-
-
+                               </div>
                                <div class="star mb-md-4">
                                    <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                </div>

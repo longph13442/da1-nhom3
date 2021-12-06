@@ -69,7 +69,7 @@
                     <div class="d-flex justify-content-between px-5 ">
                         <p class=" display-8 text-center fw-bold text-secondary mt-2"> <a class="text-decoration-none text-secondary" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><?= number_format($p['gianew']) ?>đ</a> </p>
                         <?php if ($p['gianew'] != $p['giatien']) : ?>
-                            <p class=" display-8 text-center fw-bold text-secondary mt-2">
+                            <p class=" display-8 text-center fw-bold text-secondary mt-2 mx-lg-3 mx-0">
                                 <a class="text-secondary text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
                                     <?= number_format($p['giatien']) ?>đ</a>
                             </p>

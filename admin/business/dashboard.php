@@ -11,7 +11,7 @@ function dashboard_index()
     $slhh = pdo_query_value($sql);
     $sql = "SELECT * FROM khachhang WHERE khachhang.vai_tro = 1 or khachhang.vai_tro = 3 ";
     $member = pdo_query($sql);
-    $sql = "SELECT count(*) FROM hoadon";
+    $sql = "SELECT count(*) FROM hoadon,hoadon_chitiet where hoadon_chitiet.id = hoadon.id";
     $sldh = pdo_query_value($sql);
     $sql = "SELECT * FROM hoadon_chitiet,hoadon,sanpham WHERE hoadon_chitiet.id = hoadon.id
      and sanpham.ma_sp = hoadon_chitiet.product_id ORDER BY hoadon.id DESC LIMIT 0,8";

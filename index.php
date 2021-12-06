@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$session = isset($_SESSION['khachhang']) ? $_SESSION['khachhang'] : "";
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
 require_once './vendor/phpmailer/phpmailer/src/Exception.php';
@@ -34,6 +34,7 @@ switch ($url) {
     case 'account/logout':
         logout();
         break;
+
     case 'account/reset':
         account_reset();
         break;
@@ -49,7 +50,6 @@ switch ($url) {
     case 'profile':
         profile();
         break;
-
     case 'danh-muc':
         require_once './client/business/products.php';
         loadon_sp();
@@ -107,7 +107,6 @@ switch ($url) {
         break;
     case 'voucher/update':
         include_once './admin/business/voucher.php';
-
         voucher_update();
         break;
     case 'voucher/delete':
@@ -122,11 +121,21 @@ switch ($url) {
         require_once './client/business/blog.php';
         blog();
         break;
+    case 'sanpham-yt':
+        require_once './client/business/products.php';
+         load_all_spyt();
+        break;
+    case 'xoayt':
+        require_once './client/business/products.php';
+      xoayt();
+        break;
     case 'ctblog':
         require_once './client/business/blog.php';
         blogct();
         break;
-
+    case 'yeu-thich/':
+        require_once './client/business/product-details.php';
+      favorite_product();
     case 'category':
         require_once './admin/business/category.php';
         category_list();

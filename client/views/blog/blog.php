@@ -25,6 +25,7 @@
                         <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao'] ?></div>
                         <p class="card-text mb-auto fw-bold"><?= $b['tieu_de'] ?>
                         </p>
+                              <span  class="card-text mb-auto fw"><?= $b['noi_dung'] ?></span>
                         <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
                     </div>
                     <div class="col-5 d-none d-lg-block">
@@ -152,7 +153,14 @@
                     </article>
 
                 </article>
-                <div class="title mt-2 mt-xl-5">
+               <?php
+if (isset($_SESSION['ten_dang_nhap'])) {
+   
+
+?>
+       
+
+   <div class="title mt-2 mt-xl-5">
                     <h3 class="text-center">Gửi ý kiến góp ý</h3>
                     <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
                 </div>
@@ -179,6 +187,20 @@
                         <button type="submit" class="btn btn-warning " name="submit">Gửi tới SunFlower</button>
                     </div>
                 </form>
+                <?php
+
+}
+else {
+?>
+              
+                <div class="dangky">
+                    
+               
+              <p>Mời ban đăng nhập để gửi ý kiến</p>
+            
+                </div>
+                <?php
+}?>
 
             </div>
 

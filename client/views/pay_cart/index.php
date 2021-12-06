@@ -22,26 +22,53 @@
 
                             </div>
                             <p class="my-3 mx-2"><?= $key["soluong"] ?></p>
-                            <span class="text-danger py-3"><?= $key["price"] ?> VND</span>
+                            <span class="text-danger py-3"><?= number_format($key["price"]) ?> VND</span>
                         </li>
                     <?php endforeach ?>
 
                 </ul>
                 <div class="d-flex justify-content-between px-3 fw-bold">
-                    <p>Tổng tiền : </p>
-                    <p class="text-danger "><?= $sum ?> VND</p>
+                    <p>Tổng tiền: </p>
+                    <p class="text-danger "><?= number_format($sum) ?> VND</p>
                 </div>
-                <form class="card p-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="mã giảm giá">
-                        <button type="submit" class="btn btn-success">Áp dụng</button>
+                <?php if (isset($voucher['sotien'])) : ?>
+                    <div class="d-flex justify-content-between px-3 fw-bold">
+                        <?php $vouchers = $voucher['sotien'];
+                        $_SESSION['vouchers'] = $vouchers;
+                        ?>
+                        <?php $total = $sum - $vouchers ?>
+                        <p>Mã giảm giá: </p>
+                        <p><?= number_format($vouchers) ?></p>
                     </div>
-                </form>
+                    <div class="d-flex justify-content-between px-3 fw-bold">
+                        <p>Sau khi trừ giảm giá: </p>
+
+                        <?php if ($total < 0) : ?>
+                            <p class="text-danger ">0VND</p>
+                        <?php else : ?>
+                            <p class="text-danger "><?= number_format($total) ?> VND</p>
+
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (!isset($voucher['sotien'])) : ?>
+                    <form method="post" class="card p-2">
+                        <div class="input-group">
+                            <input type="text" name="tenvoucher" class="form-control" placeholder="mã giảm giá">
+                            <button type="submit" name="apvoucher" class="btn btn-success">Áp dụng</button>
+                        </div>
+
+                    </form>
+                <?php endif; ?>
+                <?php if (isset($error['soluong'])) : ?>
+                    <span class="text-danger"> <?php echo $error['soluong']; ?></span>
+                <?php endif; ?>
             </div>
             <div class="col-md-5 col-lg-7">
                 <h4 class="mb-3">Địa chỉ người nhận</h4>
 
                 <form action="pay" class="needs-validation" novalidate="" method="POST">
+                    <input type="hidden" name="total" value="<?= isset($_SESSION['vouchers']) ?>">
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>

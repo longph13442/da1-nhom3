@@ -68,6 +68,7 @@
                 </td>
 
                 <td>
+                  <?php echo $price ?>
                 </td>
                 <td>
                   <?php echo $date ?>

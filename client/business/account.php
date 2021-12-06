@@ -45,8 +45,8 @@ function register()
             die;
         }
     }
-
-    client_Render('account/register.php', compact('error'));
+    $title = "Đăng Kí";
+    client_Render('account/register.php', compact('title', 'error'));
 }
 function login()
 {
@@ -103,7 +103,8 @@ function login()
         $mat_khau =  $_COOKIE['mat_khau'];
         $check = true;
     }
-    login_render('account/formlogin.php', compact('error', 'check', 'ten_dang_nhap', 'mat_khau'));
+    $title = "Đăng nhập";
+    login_render('account/formlogin.php', compact('title', 'error', 'check', 'ten_dang_nhap', 'mat_khau'));
 }
 function profile()
 {
@@ -125,9 +126,7 @@ function profile()
 
         extract($_POST);
         $file = $_FILES['hinh_anh'];
-        if (isset($_GET['ma_tai_khoan'])) {
-            $ma_tai_khoan = $_GET['ma_tai_khoan'];
-        }
+        $ma_tai_khoan = $_POST['ma_tai_khoan'];
         if ($file['size'] > 0 && $file['size'] < 500000) {
             $hinh_anh = $file['name'];
             $ext = pathinfo($hinh_anh, PATHINFO_EXTENSION);
@@ -140,12 +139,12 @@ function profile()
         if ($checkemail) {
             $error['email'] = "<span class = 'text-danger'>Email đã được sử dụng </span>";
         }
-        if ($checksdt) {
+        if (!$checksdt) {
             $error['sdt'] = "<span class= 'text-danger'>Số điện thoại đã được sử dụng</span>";
         }
 
         if (!array_filter($error)) {
-            taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,  isset($hinh_anh), $ma_tai_khoan);
+            taikhoan_update_web($ho_ten, $sdt, $email, $ngay_sinh,   $ma_tai_khoan);
         }
         if (!array_filter($errorimg)) {
             if ($file['size'] > 0) {
@@ -154,6 +153,7 @@ function profile()
             } else {
                 $hinh_anh = $_POST['anhcu'];
             }
+
             taikhoan_update_web_img($hinh_anh, $ma_tai_khoan);
         }
     }
@@ -165,8 +165,9 @@ function profile()
         header("location: " . ROOT_URL);
         die;
     }
+    $title = "Thông tin cá nhân";
 
-    info_render('account/profile.php', compact('khachhang', 'error'));
+    info_render('account/profile.php', compact('title', 'khachhang', 'error'));
 }
 function account_reset()
 {
@@ -206,7 +207,9 @@ function account_reset()
         header("location: " . ROOT_URL);
         die;
     }
-    info_render('account/resetpass.php', compact('khachhang', 'error'));
+    $title = "Đổi mật khẩu";
+
+    info_render('account/resetpass.php', compact('title', 'khachhang', 'error'));
 }
 
 function send_email()
@@ -225,7 +228,9 @@ function send_email()
             $kt =  Account . 'notice';
         }
     }
-    client_Render('account/get_password.php', compact('error', 'kt'));
+    $title = "Quên mật khẩu";
+
+    client_Render('account/get_password.php', compact('title', 'error', 'kt'));
 }
 function notice()
 {
@@ -279,7 +284,9 @@ function notice()
     } catch (Exception $e) {
         $forgot['msg'] = "Không hợp lệ bạn vui lòng quay về trang trước <br>" . "<button class='btn btn-warning' onclick='back()'>Quay lại trang trước</button>";
     }
-    client_Render('account/notice.php', compact('forgot'));
+    $title = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
+
+    client_Render('account/notice.php', compact('title', 'forgot'));
 }
 function verify_mk()
 {
@@ -316,7 +323,9 @@ function verify_mk()
     }
     $sql = "SELECT forgot_pass.email  FROM forgot_pass where code ='" . $token . "'";
     $email = execute_query($sql);
-    client_Render('account/change_pw.php', compact('forgot', 'notice', 'result', 'email'));
+    $title = "Thay đổi mật khẩu đã quên";
+
+    client_Render('account/change_pw.php', compact('title', 'forgot', 'notice', 'result', 'email'));
 }
 function logout()
 {
@@ -338,11 +347,14 @@ function listcart()
     }
     $keyw = isset($_GET['keyw']) ? $_GET['keyw'] : "";
     $pagesize = 10;
-    $result  = (int)pdo_query_value("SELECT count(*) FROM hoadon");
+    $result  = (int)pdo_query_value("SELECT count(*) FROM hoadon,hoadon_chitiet WHERE hoadon.id = hoadon_chitiet.id");
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $hoadon = cart_list($_SESSION['ten_dang_nhap'], $offset, $pagesize);
-    info_render('account/list_cart.php', compact('hoadon', 'tongpage'));
+    $hoadon2 = cart_list2($_SESSION['ten_dang_nhap']);
+    $title = "Danh sách đơn hàng";
+
+    info_render('account/list_cart.php', compact('title', 'hoadon', 'tongpage', 'hoadon2'));
 }
 
 function cart_detail()
@@ -351,9 +363,11 @@ function cart_detail()
         header("location:   " . ROOT_URL);
         die();
     }
-    $id_hoadon = $_GET['id_hoadon'];
-    $hddt = cart_dts($id_hoadon);
-    info_render('account/cart_dt.php', compact('hddt'));
+    $id = $_GET['id'];
+    $hddt = cart_dts($id);
+    $title = "Chi tiết đơn hàng";
+    $hddts = cart_dts2($id);
+    info_render('account/cart_dt.php', compact('title', 'hddt', 'hddts'));
 }
 function account_address()
 {
@@ -388,5 +402,7 @@ function account_address()
         header("location: " . ROOT_URL);
         die;
     }
-    info_render('account/address.php', compact('khachhang', 'error'));
+    $title = "Địa chỉ";
+
+    info_render('account/address.php', compact('title', 'khachhang', 'error'));
 }

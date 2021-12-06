@@ -43,8 +43,10 @@
           <input type="text" name="soluong" value="1" id="number" class="form-control " style="width:40px;" />
           <input type="button" onclick="incrementValue()" value="+" class="btn btn-dark mx-2" style="width:7%;" />
         </div>
+        <?php if ($info['soluong'] > 1) : ?>
+          <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
 
-        <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
+        <?php endif; ?>
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
         <?php if ($info['gianew'] != 0) : ?>
@@ -55,7 +57,12 @@
         <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
       </form>
 
+
+              <?php if(isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null):?>
+                <a href="<?=ROOT_URL.'yeu-thich/?ma_sp='.$info['ma_sp']?>"><button type="button" class="btn btn-outline-danger">Yêu thick</button></a>
+                    <?php endif ?>
     </div>
+
   </div>
 
   <div class="bot mt-5">
