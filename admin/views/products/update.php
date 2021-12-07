@@ -21,12 +21,13 @@
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleSelectGender">Loại hàng</label>
-
                     <select class="form-control" name="ma_loai" id="exampleSelectGender">
-                        <option value="<?php echo $info['ma_loai'] ?>" selected> </option>
                         <?php foreach ($ct as $item) : ?>
-                            <?php extract($item);  ?>
-                            <option value="<?php echo $ma_loai ?>"><?php echo $ten_loai ?></option>
+                            <?php if ($item['ma_loai'] == $info['ma_loai']) : ?>
+                                <option value="<?php echo $item['ma_loai'] ?>" selected><?= $item['ten_loai'] ?> </option>
+                            <?php else : ?>
+                                <option value="<?php echo $item['ma_loai'] ?>"><?= $item['ten_loai'] ?></option>
+                            <?php endif; ?>
                         <?php endforeach ?>
                     </select>
                 </div>

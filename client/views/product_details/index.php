@@ -45,8 +45,10 @@
         </div>
         <?php if ($info['soluong'] > 1) : ?>
           <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
-
         <?php endif; ?>
+        <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
+          <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-danger btn-sm"> yêu thích</button></a>
+        <?php endif ?>
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
         <?php if ($info['gianew'] != 0) : ?>
@@ -57,6 +59,11 @@
         <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
       </form>
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
     </div>
   </div>
 

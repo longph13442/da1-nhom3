@@ -47,3 +47,31 @@ function san_pham_chi_tiet()
         }
     }
 }
+<<<<<<< Updated upstream
+=======
+function favorite_product()
+{
+
+    $id = $_GET['ma_sp'];
+
+    // ktra xem đã được yêu thích sản phẩm này hay chưa 
+    $tendn = $_SESSION['ten_dang_nhap'];
+    $sql = "SELECT * from khachhang where ten_dang_nhap = '$tendn'";
+    $ten = pdo_query_one($sql);
+    $userId = $ten['ma_tai_khoan'];
+
+    $checkFavoriteProduct = "select * from favorite_products where product_id = $id and user_id = $userId";
+    $favorite = pdo_query($checkFavoriteProduct);
+
+    // nếu chưa có thì lưu vào db
+    if (!$favorite) {
+        $currentTime = date("Y-m-d h:i:s");
+        $addFavoriteQuery = "insert into favorite_products 
+                                (user_id, product_id, created_at)
+                            values 
+                                ($userId, $id, '$currentTime')";
+        pdo_execute($addFavoriteQuery);
+    }
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
+>>>>>>> Stashed changes

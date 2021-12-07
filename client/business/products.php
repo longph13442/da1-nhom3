@@ -39,7 +39,8 @@ function loadon_sp()
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
     $dskm = loadall_spkm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm', 'title'));
+    $ratetb = sanpham_rate();
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm', 'title', 'ratetb'));
 }
 function loadall_sp_timkiem()
 {
@@ -127,3 +128,26 @@ function giatien()
     $dmsp = loadall_dm();
     client_Render('products/index.php', compact('dmsp', 'dssp', 'keylg', 'title'));
 }
+<<<<<<< Updated upstream
+=======
+function load_all_spyt()
+{
+
+    $spyt = loadall_spyt($_SESSION['ten_dang_nhap']);
+
+    client_render('yeuthich/index.php', compact('spyt'));
+}
+function xoayt()
+{
+    $id = $_GET['id'];
+    spyt_delete($id);
+    load_all_spyt();
+    client_render('yeuthich/index.php');
+}
+function sanpham_rate()
+{
+    $sql = "SELECT sanpham.ma_sp,AVG(binhluan.danh_gia) as danhgia FROM sanpham,binhluan WHERE sanpham.ma_sp = binhluan.ma_sp
+     GROUP BY sanpham.ma_sp";
+    return pdo_query($sql);
+}
+>>>>>>> Stashed changes
