@@ -39,7 +39,6 @@ if (isset($_SESSION["ten_dang_nhap"])) {
 
                             <li class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-warning fw-bold">Giỏ hàng của bạn</span>
-                                <span class="badge bg-warning rounded-pill">3</span>
                             </li>
                             <ul class="list-group mb-3">
                                 <?php $sum = 0; ?>
@@ -97,7 +96,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                     <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
                                         <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= rtrim(ADMIN_URL, '/')  ?>">Quản trị</a>
                                     <?php endif; ?>
-                                      <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>sanpham-yt">Yêu thích</a>
+                                    <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>sanpham-yt">Yêu thích</a>
                                     <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>
                                 </div>
                             </li>

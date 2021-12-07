@@ -35,6 +35,7 @@ function san_pham_chi_tiet()
         $ten_dang_nhap = isset($_SESSION['ten_dang_nhap']) ? $_SESSION['ten_dang_nhap'] : "";
         $ma_tk = get_ma_tai_khoan($ten_dang_nhap);
         hang_hoa_tang_so_luot_xem($ma_sp);
+
         if (isset($_POST['gui_bl'])) {
             bl_insert();
             header("location: " . $_SERVER['HTTP_REFERER']);
@@ -42,9 +43,10 @@ function san_pham_chi_tiet()
         if (isset($_POST['xoa_bl'])) {
             bl_delete();
             header("location: " . $_SERVER['HTTP_REFERER']);
-        } else {
-            client_Render('product_details/index.php', compact('info', 'info2', 'info3'));
         }
+        $sql = "SELECT * FROM voucher";
+        $voucher = pdo_query($sql);
+        client_Render('product_details/index.php', compact('info', 'info2', 'info3', 'voucher'));
     }
 }
 function favorite_product()

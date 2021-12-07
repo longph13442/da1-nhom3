@@ -33,9 +33,33 @@
                                             } ?></span>
       </div>
       <div class="short_description mt-2 mb-2">
+
         <p><?php echo $info['mota'] ?></p>
       </div>
+      <?php foreach ($voucher as $vou) : ?>
+        <!-- Số tiền nhỏ hơn 400k và lớn hơn 100k -->
+        <?php if ($info['gianew'] <= 400000 || $info['gianew'] >= 100000) : ?>
+          <!-- Voucher nhỏ hơn 50k -->
+          <?php if ($vou['sotien'] <= 50000) : ?>
+            <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
+          <?php endif; ?>
+          <!-- Số tiền lớn hơn 400k và nhỏ hơn 1000k -->
+        <?php elseif ($info['gianew'] >= 400000 || $info['gianew'] <= 1000000) : ?>
+          <!-- Voucher lớn hơn 50k và nhỏ hơn 100k -->
+          <?php if ($vou['sotien'] >= 50000 || $vou['sotien'] <= 100000) : ?>
+            <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
+          <?php endif; ?>
+          <!-- Số tiền lớn hơn 1000k -->
+        <?php elseif ($info['gianew'] >= 1000000) : ?>
+          <!-- voucher lớn hơn 100k và nhỏ hơn 300k -->
+          <?php if ($vou['sotien'] >= 0 || $vou['sotien'] <= 300000) : ?>
+            <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
+          <?php endif; ?>
 
+        <?php endif; ?>
+
+      <?php endforeach; ?>
+      <p></p>
       <form action="cart" method="post">
         <div class="quantity mb-4 d-flex">
           <label for="" class="fw-bold">Số lượng :</label>
@@ -119,19 +143,12 @@
                               <i class="fas fa-star " style="color: red;"></i>
                             <?php endif; ?>
                           <?php endfor; ?>
-
                         </div>
                         <div class=""><?php echo $bl['ngay_tao']; ?></div>
                       </small>
                     </div>
                     <div class="action d-flex justify-content-between mt-2 align-items-center mx-3">
-
                       <div class="reply px-4">
-                        <!-- <form action="" method="post">
-                          <input type="hidden" name="ma_bl" value="<?php echo $bl['ma_binh_luan']; ?>">
-
-                          <button type="submit" name="xoa_bl" onclick="return confirm('bạn có chắc muốn xóa không!')" style="border: none; background: none;"><small>Xóa</small></button>
-                        </form> -->
                       </div>
                       <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                     </div>
