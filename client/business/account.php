@@ -139,7 +139,7 @@ function profile()
         if ($checkemail) {
             $error['email'] = "<span class = 'text-danger'>Email đã được sử dụng </span>";
         }
-        if (!$checksdt) {
+        if ($checksdt) {
             $error['sdt'] = "<span class= 'text-danger'>Số điện thoại đã được sử dụng</span>";
         }
 
