@@ -128,8 +128,6 @@ function giatien()
     $dmsp = loadall_dm();
     client_Render('products/index.php', compact('dmsp', 'dssp', 'keylg', 'title'));
 }
-<<<<<<< Updated upstream
-=======
 function load_all_spyt()
 {
 
@@ -150,4 +148,3 @@ function sanpham_rate()
      GROUP BY sanpham.ma_sp";
     return pdo_query($sql);
 }
->>>>>>> Stashed changes
