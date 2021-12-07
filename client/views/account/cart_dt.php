@@ -21,6 +21,7 @@
 
                     </td>
                     <td>
+                        <?php $sum = 0 ?>
                         <?php foreach ($hddts as $in) : ?>
                             <?php $sum += $in['price'] ?>
                             <b> <?= number_format($in['price']) ?>đ</b>
