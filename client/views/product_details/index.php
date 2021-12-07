@@ -46,14 +46,9 @@
         <?php if ($info['soluong'] > 1) : ?>
           <button class="btn btn-warning btn-sm " name="add"> Mua ngay</button>
         <?php endif; ?>
-<<<<<<< Updated upstream
-        <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
-          <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-danger btn-sm"> yêu thích</button></a>
-=======
 
         <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
           <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-danger btn-sm">Yêu thích</button></a>
->>>>>>> Stashed changes
         <?php endif ?>
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
@@ -66,14 +61,6 @@
       </form>
 
 
-<<<<<<< Updated upstream
-
-      <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
-        <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-outline-danger">Yêu thick</button></a>
-      <?php endif ?>
-
-=======
->>>>>>> Stashed changes
     </div>
 
   </div>
