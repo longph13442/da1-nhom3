@@ -30,6 +30,10 @@ function order_list()
 }
 function order_delete()
 {
+    if (!isset($_SESSION['admin']) == 1) {
+        header("location: " . ROOT_URL . 'cpadmin');
+        die;
+    }
     $id = $_GET['id'];
 
     order_delete_by_id($id);
@@ -53,8 +57,10 @@ function order_updatecart()
         $name = $_POST['name'];
         $price = $_POST['price'];
         $quantyti = $_POST['quantyti'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
         $note = $_POST['note'];
-        $sql = "UPDATE hoadon,hoadon_chitiet SET quantyti = '$quantyti',  price ='$price',name = '$name', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
+        $sql = "UPDATE hoadon,hoadon_chitiet SET quantyti = '$quantyti',  price ='$price',phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
         pdo_execute($sql);
     }
     $id = $_GET['id'];

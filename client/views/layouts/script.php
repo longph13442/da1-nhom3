@@ -11,10 +11,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="<?= CLIENT_ASSET ?>/dist/js/next_tab.js"></script>
 <script src="<?= CLIENT_ASSET ?>dist/js/checklogin.js"></script>
-<script src="<?= CLIENT_ASSET ?>dist/js/back.js"></script>
-<script src="<?= CLIENT_ASSET ?>/dist/js/checkchangepw.js"></script>
-<script src="<?= CLIENT_ASSET ?>dist/js/bootstrap-rating.js"></script>
 
+<script src="<?= CLIENT_ASSET ?>dist/js/back.js"></script>
+<script src="<?= CLIENT_ASSET ?>dist/js/checkchangepw.js"></script>
 <script>
     var myModal = document.getElementById('myModal')
     var myInput = document.getElementById('myInput')
@@ -53,36 +52,7 @@
         ],
     });
 </script>
-<script>
-    $('.sliderimg').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 1008,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 800,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    });
-</script>
+
 
 <script>
     let items = document.querySelectorAll('.carousel .carousel-item')

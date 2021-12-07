@@ -21,15 +21,15 @@ function voucher_add()
         if ($checkvoucher) {
             $error['tenvoucher'] = "Voucher đã tồn tại";
         }
-        if ($sotien == '') {
+        if (empty($sotien)) {
             $error['sotien'] = "Bạn vui lòng nhập số tiền";
         }
-        if ($soluong == '') {
+        if (empty($soluong)) {
             $error['soluong'] = "Bạn vui lòng nhập số lượng";
         }
 
 
-        if (!array_filter($checkvoucher)) {
+        if (!array_filter($error)) {
             $date = date("Y-m-d H:i:s");
             $date = date("Y-m-d H:i:s");
             $sql = "INSERT INTO voucher(tenvoucher,sotien,soluong,date) VALUES('$tenvoucher','$sotien','$soluong','$date')";
@@ -38,7 +38,7 @@ function voucher_add()
             die;
         }
     }
-    admin_render('Voucher/add.php', compact('error'));
+    admin_render('Voucher/add.php', compact('error', 'tenvoucher', 'sotien', 'soluong'));
 }
 function voucher_update()
 {

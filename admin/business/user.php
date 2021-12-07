@@ -127,12 +127,12 @@ function user_edit()
 function user_delete()
 {
     if (!isset($_SESSION['admin']) == 1) {
-        header("location: " . ROOT_URL . 'admin/user');
+        header("location: " . ROOT_URL . 'cpadmin/user');
         die;
     }
     if (isset($_GET['ma_tai_khoan'])) {
         taikhoan_delete($_GET['ma_tai_khoan']);
-        header("location: " . ROOT_URL  . "admin/user");
+        header("location: " . ROOT_URL  . "cpadmin/user");
         die;
     }
     admin_render('User/listuser.php');

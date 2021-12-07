@@ -9,21 +9,21 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">Tên voucher</label>
-                <input type="text" name="tenvoucher" class="form-control" id="">
+                <input type="text" name="tenvoucher" value="<?= isset($tenvoucher) ? $tenvoucher : '' ?>" class="form-control" id="">
             </div>
             <?php if (isset($error['tenvoucher'])) : ?>
                 <span class="text-danger"> <?php echo $error['tenvoucher'] ?></span>
             <?php endif; ?>
             <div class="mb-3">
                 <label for="" class="form-label">Số tiền giảm</label>
-                <input type="number" class="form-control" name="sotien">
+                <input type="number" class="form-control" value="<?= isset($sotien) ? $sotien : '' ?>" name="sotien">
             </div>
             <?php if (isset($error['sotien'])) : ?>
                 <span class="text-danger"> <?php echo $error['sotien'] ?></span>
             <?php endif; ?>
             <div class="mb-3">
                 <label for="" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" name="soluong">
+                <input type="number" class="form-control" value="<?= isset($soluong) ? $soluong : '' ?>" name="soluong">
             </div>
             <?php if (isset($error['soluong'])) : ?>
                 <span class="text-danger"> <?php echo $error['soluong'] ?></span>
