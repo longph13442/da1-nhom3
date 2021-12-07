@@ -47,8 +47,9 @@
           </thead>
           <tbody>
             <?php foreach ($od as $key) : ?>
-              <?php extract($key) ?>
+              <?php  extract($key) ?>
               <tr>
+             
                 <td >
                   <?php echo $name ?>
                 </td>
