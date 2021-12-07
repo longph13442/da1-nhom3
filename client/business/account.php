@@ -41,7 +41,8 @@ function register()
         if (!array_filter($error)) {
             $mat_khau = password_hash($mat_khau, PASSWORD_DEFAULT);
             taikhoan_kh_web($ho_ten, $dia_chi, $sdt, $email,  $ngay_sinh, $ten_dang_nhap, $mat_khau, $gioitinh);
-            header("location: " . ROOT_URL, '');
+            $msg = "Đăng Ký Tài Khoản Thành Công";
+            header("location: " . ROOT_URL . '?msg=' . $msg);
             die;
         }
     }
