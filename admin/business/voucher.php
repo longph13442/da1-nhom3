@@ -6,6 +6,9 @@ function voucher_add()
         'sotien' => '',
         'soluong' => ''
     ];
+    $tenvoucher = '';
+    $sotien = '';
+    $soluong = '';
     if (isset($_POST['voucheradd'])) {
         extract($_POST);
 
@@ -13,9 +16,7 @@ function voucher_add()
             $error['tenvoucher'] = "Bạn vui lòng nhập tên voucher";
         }
 
-        if (!strtoupper($tenvoucher)) {
-            $error['tenvoucher'] = "Bạn vui lòng viết hoa voucher";
-        }
+
         $sql = "SELECT * FROM voucher WHERE tenvoucher = '$tenvoucher'";
         $checkvoucher = pdo_query($sql);
         if ($checkvoucher) {

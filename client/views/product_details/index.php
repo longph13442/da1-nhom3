@@ -38,21 +38,21 @@
       </div>
       <?php foreach ($voucher as $vou) : ?>
         <!-- Số tiền nhỏ hơn 400k và lớn hơn 100k -->
-        <?php if ($info['gianew'] <= 400000 || $info['gianew'] >= 100000) : ?>
+        <?php if ($info['gianew'] >= 100000  && $info['gianew'] <= 400000) : ?>
           <!-- Voucher nhỏ hơn 50k -->
           <?php if ($vou['sotien'] <= 50000) : ?>
             <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
           <?php endif; ?>
           <!-- Số tiền lớn hơn 400k và nhỏ hơn 1000k -->
-        <?php elseif ($info['gianew'] >= 400000 || $info['gianew'] <= 1000000) : ?>
+        <?php elseif ($info['gianew'] >= 400000 && $info['gianew'] <= 1000000) : ?>
           <!-- Voucher lớn hơn 50k và nhỏ hơn 100k -->
-          <?php if ($vou['sotien'] >= 50000 || $vou['sotien'] <= 100000) : ?>
+          <?php if ($vou['sotien'] >= 0 && $vou['sotien'] <= 100000) : ?>
             <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
           <?php endif; ?>
           <!-- Số tiền lớn hơn 1000k -->
-        <?php elseif ($info['gianew'] >= 1000000) : ?>
+        <?php elseif ($info['giatien'] > 1000000) : ?>
           <!-- voucher lớn hơn 100k và nhỏ hơn 300k -->
-          <?php if ($vou['sotien'] >= 0 || $vou['sotien'] <= 300000) : ?>
+          <?php if ($vou['sotien'] >= 0 && $vou['sotien'] <= 350000) : ?>
             <span class="btn-danger btn-sm"><?= $vou['tenvoucher'] ?></span>
           <?php endif; ?>
 
