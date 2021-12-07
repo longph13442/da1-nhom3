@@ -29,6 +29,5 @@
             <?php endforeach ?>
         </div>
         <!-- end product-center -->
-
         <!-- end box-bog -->
     </div>

@@ -39,7 +39,6 @@ function loadon_sp()
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
     $dskm = loadall_spkm();
-    $ratetb = sanpham_rate();
     client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm', 'title', 'ratetb'));
 }
 function loadall_sp_timkiem()
@@ -141,10 +140,4 @@ function xoayt()
     spyt_delete($id);
     load_all_spyt();
     client_render('yeuthich/index.php');
-}
-function sanpham_rate()
-{
-    $sql = "SELECT sanpham.ma_sp,AVG(binhluan.danh_gia) as danhgia FROM sanpham,binhluan WHERE sanpham.ma_sp = binhluan.ma_sp
-     GROUP BY sanpham.ma_sp";
-    return pdo_query($sql);
 }

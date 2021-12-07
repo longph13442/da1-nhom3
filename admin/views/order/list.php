@@ -31,7 +31,7 @@
               <th class="col-1">
                 Ảnh sản phẩm
               </th>
-              <th>
+              <th class="col-1">
                 Giá tiền
               </th>
               <th class="col-2">
@@ -49,7 +49,7 @@
             <?php foreach ($od as $key) : ?>
               <?php extract($key) ?>
               <tr>
-                <td>
+                <td >
                   <?php echo $name ?>
                 </td>
                 <td class="py-1">
@@ -68,7 +68,7 @@
                 </td>
 
                 <td>
-                  <?php echo $price ?>
+                  <?php echo number_format($price) ?> đ
                 </td>
                 <td>
                   <?php echo $date ?>

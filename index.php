@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$session = isset($_SESSION['khachhang']) ? $_SESSION['khachhang'] : "";
 $url = isset($_GET['url']) ? $_GET['url'] : "/";
 require_once './commons/utils.php';
 require_once './vendor/phpmailer/phpmailer/src/Exception.php';
@@ -34,6 +34,7 @@ switch ($url) {
     case 'account/logout':
         logout();
         break;
+
     case 'account/reset':
         account_reset();
         break;
@@ -120,11 +121,21 @@ switch ($url) {
         require_once './client/business/blog.php';
         blog();
         break;
+    case 'sanpham-yt':
+        require_once './client/business/products.php';
+         load_all_spyt();
+        break;
+    case 'xoayt':
+        require_once './client/business/products.php';
+      xoayt();
+        break;
     case 'ctblog':
         require_once './client/business/blog.php';
         blogct();
         break;
-
+    case 'yeu-thich/':
+        require_once './client/business/product-details.php';
+      favorite_product();
     case 'category':
         require_once './admin/business/category.php';
         category_list();
@@ -258,6 +269,30 @@ switch ($url) {
     case 'success':
         require_once "./client/business/success.php";
         success();
+        break;
+    case 'admin-blog':
+        require_once './admin/business/blog.php';
+        blog_list();
+        break;
+    case 'admin-blog/add':
+        require_once './admin/business/blog.php';
+        blog_add_form();
+        break;
+    case 'admin-blog/save-add':
+        require_once './admin/business/blog.php';
+        blog_save_add();
+        break;
+    case 'admin-blog/update':
+        require_once './admin/business/blog.php';
+        blog_update_form();
+        break;
+    case 'admin-blog/save-update':
+        require_once './admin/business/blog.php';
+        blog_save_update();
+        break;
+    case 'admin-blog/delete':
+        require_once './admin/business/blog.php';
+        blog_delete();
         break;
     default:
         # code...

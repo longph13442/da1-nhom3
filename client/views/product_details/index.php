@@ -59,12 +59,14 @@
         <input type="hidden" name="masp" value="<?= $info['ma_sp'] ?>">
       </form>
 
-<<<<<<< Updated upstream
-=======
 
 
->>>>>>> Stashed changes
+      <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
+        <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-outline-danger">Yêu thick</button></a>
+      <?php endif ?>
+
     </div>
+
   </div>
 
   <div class="bot mt-5">

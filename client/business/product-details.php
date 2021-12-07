@@ -47,8 +47,6 @@ function san_pham_chi_tiet()
         }
     }
 }
-<<<<<<< Updated upstream
-=======
 function favorite_product()
 {
 
@@ -62,7 +60,6 @@ function favorite_product()
 
     $checkFavoriteProduct = "select * from favorite_products where product_id = $id and user_id = $userId";
     $favorite = pdo_query($checkFavoriteProduct);
-
     // nếu chưa có thì lưu vào db
     if (!$favorite) {
         $currentTime = date("Y-m-d h:i:s");
@@ -74,4 +71,3 @@ function favorite_product()
     }
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
->>>>>>> Stashed changes

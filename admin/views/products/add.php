@@ -1,8 +1,8 @@
 <div class="col-12 grid-margin stretch-card mb-5 mt-3">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Thêm mới sản phẩm</h4>
-
+            <h4 class="">Thêm mới sản phẩm</h4>
+            <div class=""></div>
             <form class="forms-sample" action="save-add" method="post" enctype="multipart/form-data">
                 <div class="form-group mb-2">
                     <label for="exampleInputName1">Tên sản phẩm</label>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group mb-2">
                     <label for="exampleInputPassword4">Giảm giá(Giảm theo %)</label>
-                    <input type="number" name="giamgia" class="form-control" min="0" max="100" id="" placeholder="Nhập giảm giá (0 - 100)%" value="<?php if (isset($giamgia)) echo $giamgia; ?>">
+                    <input type="number" name="giamgia" class="form-control" min="0" max="100" id="" placeholder="Nhập giảm giá (0 - 100)%" value="0<?php if (isset($giamgia)) echo $giamgia; ?>">
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['giamgia']) && ($error['giamgia'] != "")) echo $error['giamgia'] ?></span>
                 </div>
                 <div class="form-group mb-2">

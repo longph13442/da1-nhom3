@@ -113,12 +113,3 @@ function taikhoan_checkmk($email)
     $sql = "SELECT * FROM khachhang where email = ?";
     return pdo_query_one($sql, $email);
 }
-
-
-function loadall_spyt($ten_dang_nhap)
-{
-
-    $sql = "SELECT FROM favorite_products,khachhang,sanpham WHERE favorite_products.product_id = sanpham.ma_sp and khachhang.ma_tai_khoan = favorite_products.user_id and khachhang.ten_dang_nhap = $ten_dang_nhap";
-    $spyt = pdo_query($sql);
-    return $spyt;
-}

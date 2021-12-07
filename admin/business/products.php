@@ -92,8 +92,8 @@ function products_save_add()
         if (strlen($mota_dai) > 1000) {
             $error['mota_dai'] = 'tối đa 1000 kí tự !';
         }
-        // if ($giamgia != '' ){
-        //     $giatien = ($giatien * $giamgia)/100;
+        // if ($giamgia > 0 ){
+        //     $giatien -= ($giatien * $giamgia)/100;
         // }
         //----------------------------------------------------------------------
         if (isset($_FILES['anh_sp'])) {
@@ -149,13 +149,13 @@ function products_save_upadte()
 {
     if (isset($_POST['submit'])) {
         extract($_POST);
-
-
         $ma_sp = $_POST['ma_sp'];
         $info = product_select_by_id($ma_sp);
         $file = $_FILES['anh_sp'];
         $anh_sp = empty($file['name']) ? $info['anh_sp'] : $file['name'];
         $ngaytao = $_POST['ngaytao'];
+        // $giamgia = empty($giamgia)? $giamgia : '';
+
         products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp);
         header("location: " . ROOT_URL . 'products');
     }

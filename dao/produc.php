@@ -59,8 +59,7 @@ function loadall_spkm()
     $sanpham22 = pdo_query($sql);
     return $sanpham22;
 }
-<<<<<<< Updated upstream
-=======
+
 function loadall_spyt($ten_dang_nhap)
 {
 
@@ -71,6 +70,6 @@ function loadall_spyt($ten_dang_nhap)
 function spyt_delete($id)
 {
     $sql = "DELETE FROM favorite_products WHERE id = ?";
+
     return pdo_execute($sql, $id);
 }
->>>>>>> Stashed changes

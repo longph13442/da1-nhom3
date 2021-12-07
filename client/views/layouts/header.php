@@ -97,6 +97,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                     <?php if (!isset($_SESSION['admin']) != 1 || !isset($_SESSION['nhanvien']) != 1) : ?>
                                         <a class="text-decoration-none dropdown-item " onclick="javascript:openWindow(this.href);return false;" href="<?= rtrim(ADMIN_URL, '/')  ?>">Quản trị</a>
                                     <?php endif; ?>
+                                      <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>sanpham-yt">Yêu thích</a>
                                     <a class="text-decoration-none dropdown-item" href="<?= ROOT_URL ?>account/logout">Đăng Xuất</a>
                                 </div>
                             </li>
