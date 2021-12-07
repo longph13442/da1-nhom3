@@ -31,14 +31,14 @@
                             <p class="my-4"><?= $key['tensp'] ?></p>
                         </td>
                         <td>
-                            <p class="my-4"><?= $key['gia'] ?></p>
+                            <p class="my-4"><?= number_format($key['gia']) ?>VND</p>
                         </td>
 
                         <td>
                             <input type="number" name="soluong" value="<?= $key['soluong'] ?>" maxlength="2" size="1" id="number" class=" my-4  " style="width:70px;" />
                         </td>
                         <td>
-                            <p class="my-4"><?= $price ?></p>
+                            <p class="my-4"><?= number_format($price) ?>VND</p>
                         </td>
 
                         <input type="hidden" name="id" id="" value="<?= $key['masp'] ?>">
@@ -55,7 +55,7 @@
             <tr>
                 <td class="border-0" colspan="2"><a href="danh-muc"><button class="btn btn-warning mt-4"> Quay lại Shop </button></a></th>
                 <td class="border-0 " colspan="3">
-                    <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : <?= $sum ?> VND</h5>
+                    <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : <?= number_format($sum) ?> VND</h5>
                     </p>
                 <td class="border-0 text-center" colspan=""><button class="btn btn-success btn-sm mt-4 text-center float-end"><a href="<?= $link ?>" class="text-dark nav-link">Thanh Toán</a> </button></th>
             </tr>

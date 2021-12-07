@@ -10,9 +10,12 @@ function pay()
     'address' => '',
     'note' => ''
   ];
-  $errorvoucher = [
-    'soluong' => ''
-  ];
+
+  $name = '';
+  $email = '';
+  $phone = '';
+  $address = '';
+  $note = '';
   if (isset($_POST["submitt"])) {
     extract($_POST);
     if ($name == '') {
@@ -64,23 +67,54 @@ function pay()
       header("location: success");
     }
   }
-
+  $errorvoucher = [
+    'soluong' => ''
+  ];
   $tenvoucher = '';
+  $voucher = '';
+
   if (isset($_POST['apvoucher'])) {
     $tenvoucher = $_POST['tenvoucher'];
     $sql = "SELECT voucher.soluong FROM voucher WHERE soluong = 0 and tenvoucher = '$tenvoucher'";
     $soluong = pdo_query($sql);
-    if ($soluong) {
-      $error['soluong'] = "Voucher đã hết lượt sử dụng";
+    $voucher1 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 50000";
+    $checkvoucher = execute_query($voucher, false);
+    $voucher2 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 100000";
+    $checkvoucher2 = execute_query($voucher2, false);
+    $voucher3 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 350000";
+    $checkvoucher3 = execute_query($voucher3, false);
+
+    $sum = 0;
+    foreach ($_SESSION['cart'] as $key) {
+      (float)$sum += (float)$key['price'];
     }
-    if (!array_filter($error)) {
+    if ($soluong) {
+      $errorvoucher['soluong'] = "Voucher đã hết lượt sử dụng";
+    }
+    if ($sum >= 100000  && $sum <= 400000) {
+      if (!$checkvoucher) {
+        $errorvoucher['soluong'] = "Đơn hàng của bạn không đủ điều kiện";
+      }
+    }
+    if ($sum  >= 400000 && $sum  <= 1000000) {
+      if (!$checkvoucher2) {
+        $errorvoucher['soluong'] = "Đơn hàng của bạn không đủ điều kiện";
+      }
+    }
+    if ($sum > 1000000) {
+      if (!$checkvoucher3) {
+        $errorvoucher['soluong'] = "Đơn hàng của bạn không đủ điều kiện";
+      }
+    }
+
+
+    if (!array_filter($errorvoucher)) {
       $sql = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher'";
       $voucher = execute_query($sql, false);
       soluongvoucher($tenvoucher);
     }
   }
-  $sql = "SELECT * FROM voucher WHERE soluong > 0 and tenvoucher = '$tenvoucher'";
-  $voucher = execute_query($sql, false);
+
   $pay = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
   client_Render("pay_cart/index.php", compact('pay', 'voucher', 'error', 'errorvoucher', 'name', 'email', 'phone', 'address', 'note'));
 }
