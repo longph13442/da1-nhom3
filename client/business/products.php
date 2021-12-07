@@ -66,10 +66,11 @@ function loadall_sp_timkiem()
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
+    $dskm = loadall_spkm();
     $dmsp = loadall_dm();
     $title = "Tìm kiếm";
 
-    client_render('products/index.php', compact('dmsp', 'dssp', 'keysear', 'tongpage', 'title'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'keysear', 'tongpage', 'title','dskm'));
 }
 function giatien()
 {

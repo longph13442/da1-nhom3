@@ -158,38 +158,30 @@
         <div class="combo">
             <div class="box-big">
                 <div class="row my-2">
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0  ">
-                        <img src="<?= ADMIN_ASSET ?>image/cm1.jpg" alt="" width="100%">
-                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
-                        <div class="d-flex text-center">
-                            <p class=" mx-2 ">650.000 VND </p>
-                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
-                        <img src="<?= ADMIN_ASSET ?>image/cm2.jpg" alt="" width="100%">
-                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
-                        <div class="d-flex text-center">
-                            <p class=" mx-2 ">650.000 VND </p>
-                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
-                        <img src="<?= ADMIN_ASSET ?>image/cm3.jpg" alt="" width="100%">
-                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
-                        <div class="d-flex text-center">
-                            <p class=" mx-2">650.000 VND </p>
-                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center py-3 py-lg-0 ">
-                        <img src="<?= ADMIN_ASSET ?>image/cm4.jpg" alt="" width="100%">
-                        <p class="  text-center fw-bold text-dark mt-2"> Combo dưỡng ẩm</p>
-                        <div class="d-flex text-center">
-                            <p class=" mx-2 ">650.000 VND </p>
-                            <p class="text-decoration-line-through text-secondary">740.000 VND</p>
-                        </div>
-                    </div>
+                  
+                     <?php foreach ($dskm as $p) : ?>
+               
+                   <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                       <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
+
+                       <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                           <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                       </a>
+                       <p class=" display-8 text-center fw-bold text-secondary mt-4">
+                           <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['gianew']) ?>đ</a>
+                           <?php if ($p['gianew'] != $p['giatien']) : ?>
+                               - <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['giatien']) ?></a> đ
+                       </p>
+                   <?php endif; ?>
+                   <div class="star mb-md-4">
+                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                   </div>
+                   </div>
+
+
+
+
+               <?php endforeach ?>
                 </div>
             </div>
             <!-- end box-big -->
