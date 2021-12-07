@@ -39,7 +39,7 @@ function loadon_sp()
     $dssp = loadonsp($kyw, $iddm, $offset, $pagesize);
     $dmsp = loadall_dm();
     $dskm = loadall_spkm();
-    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm', 'title', 'ratetb'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'tongpage', 'tendm', 'dskm', 'title'));
 }
 function loadall_sp_timkiem()
 {
