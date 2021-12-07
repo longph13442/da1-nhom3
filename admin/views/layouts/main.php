@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION['nhanvien']) == 3 && !isset($_SESSION['admin']) == 1) {
+    header("location: " . ROOT_URL);
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

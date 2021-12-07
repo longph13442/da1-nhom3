@@ -57,11 +57,10 @@
                             <input type="text" name="tenvoucher" class="form-control" placeholder="mã giảm giá">
                             <button type="submit" name="apvoucher" class="btn btn-success">Áp dụng</button>
                         </div>
-
                     </form>
                 <?php endif; ?>
-                <?php if (isset($error['soluong'])) : ?>
-                    <span class="text-danger"> <?php echo $error['soluong']; ?></span>
+                <?php if (isset($errorvoucher['soluong'])) : ?>
+                    <span class="text-danger"> <?php echo $errorvoucher['soluong']; ?></span>
                 <?php endif; ?>
             </div>
             <div class="col-md-5 col-lg-7">
@@ -72,40 +71,41 @@
                     <div class="row g-3">
                         <div class="col-sm-12">
                             <label for="firstName" class="form-label">Họ Và Tên</label>
-                            <input name="name" type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
+                            <input name="name" type="text" class="form-control" id="firstName" placeholder="" value="<?= isset($name) ? $name : '' ?>" required="">
+                            <?php if (isset($error['name'])) : ?>
+                                <span class="text-danger"> <?php echo $error['name']; ?></span>
+                            <?php endif; ?>
                         </div>
-
                         <div class="col-12">
                             <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                            <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
-                            </div>
+                            <input name="email" type="email" value="<?= isset($email) ? $email : '' ?>" class="form-control" id="email" placeholder="you@example.com">
+                            <?php if (isset($error['email'])) : ?>
+                                <span class="text-danger"> <?php echo $error['email']; ?></span>
+                            <?php endif; ?>
                         </div>
                         <div class="col-12">
                             <label for="email" class="form-label">Số điện thoại<span class="text-muted">(Optional)</span></label>
-                            <input name="phone" type="text" class="form-control" id="email" placeholder="+84">
-                            <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
-                            </div>
+                            <input name="phone" type="text" value="<?= isset($phone) ? $phone : '' ?>" class="form-control" id="email" placeholder="+84">
+                            <?php if (isset($error['phone'])) : ?>
+                                <span class="text-danger"> <?php echo $error['phone']; ?></span>
+                            <?php endif; ?>
                         </div>
                         <div class="col-12">
                             <label for="address" class="form-label">Địa chỉ</label>
-                            <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                            <div class="invalid-feedback">
-                                Please enter your shipping address.
-                            </div>
+                            <input name="address" type="text" value="<?= isset($address) ? $address : '' ?>" class="form-control" id="address" placeholder="1234 Main St" required="">
+                            <?php if (isset($error['address'])) : ?>
+                                <span class="text-danger"> <?php echo $error['address']; ?></span>
+                            <?php endif; ?>
                         </div>
 
                         <div class="col-12">
                             <label for="address2" class="form-label">Ghi chú </label>
-                            <input name="note" type="text" class="form-control py-5" id="address2" placeholder="">
+                            <input name="note" type="text" value="<?= isset($note) ? $note : '' ?>" class="form-control py-5" id="address2" placeholder="">
                             <input type="hidden" name="status" id="" value="1">
                         </div>
-
+                        <?php if (isset($error['note'])) : ?>
+                            <span class="text-danger"> <?php echo $error['note']; ?></span>
+                        <?php endif; ?>
 
                         <hr class="my-4">
 
