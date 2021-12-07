@@ -59,8 +59,8 @@ function pay()
         GetId($hoadon_id, $product_id, $quantyti, $price, $total);
         unset($_SESSION['vouchers']);
         soluongsp($quantyti, $product_id);
+        unset($_SESSION["cart"]);
       }
-      unset($_SESSION["cart"]);
       if ($_POST["paymentMethod"] == 1) {
         $pay_link = "";
       }
@@ -90,6 +90,11 @@ function pay()
     }
     if ($soluong) {
       $errorvoucher['soluong'] = "Voucher đã hết lượt sử dụng";
+    }
+    if ($sum < 99999) {
+      if (!$checkvoucher < 1 || !$checkvoucher2  < 1 || !$checkvoucher3 < 1) {
+        $errorvoucher['soluong'] = "Đơn hàng của bạn không đủ điều kiện";
+      }
     }
     if ($sum >= 100000  && $sum <= 400000) {
       if (!$checkvoucher) {

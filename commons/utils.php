@@ -6,7 +6,7 @@ const homepase_ASSET = ROOT_URL . 'public/admin-asesst/';
 const ADMIN_URL = ROOT_URL . 'cpadmin/';
 const CLIENT_URL = ROOT_URL . 'client/';
 const Account = ROOT_URL . 'account/';
-const IMG = 'public/admin-asesst/Image/';
+const IMG = 'public/admin-asesst/image/';
 const css = ROOT_URL . 'client/views/layouts/';
 
 date_default_timezone_set('Asia/Ho_Chi_Minh');

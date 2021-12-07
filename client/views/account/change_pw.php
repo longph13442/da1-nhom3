@@ -13,14 +13,21 @@
         <input type="hidden" name="email" value="<?= $email['email'] ?>">
         <div class="form-label-group">
             <label for="inputPassword ">Mật khẩu mới</label>
-            <input type="password" id="idpass1" name="newpass" class="form-control my-2" placeholder="Nhập mật khẩu...">
+            <input type="password" id="idpass1" name="newpass" value="<?= isset($newpass) ? $newpass : '' ?>" class="form-control my-2" placeholder="Nhập mật khẩu...">
             <div class="text-danger" id="errornewpass"></div>
         </div>
+        <?php if (isset($forgot['newpass'])) : ?>
+            <span class="text-danger"><?= $forgot['newpass'] ?></span>
+        <?php endif; ?>
         <div class="form-label-group">
             <label for="inputPassword ">Xác nhận mật khẩu</label>
-            <input type="password" id="idpass2" name="confirmpass" class="form-control my-2" placeholder="Nhập mật khẩu...">
+            <input type="password" id="idpass2" name="confirmpass" value="<?= isset($confirmpass) ? $confirmpass : '' ?>" class="form-control my-2" placeholder="Nhập mật khẩu...">
             <div class="text-danger" id="errornewpass2"></div>
         </div>
+        <?php if (isset($forgot['confirmpass'])) : ?>
+            <span class="text-danger"><?= $forgot['confirmpass'] ?></span>
+        <?php endif; ?>
+        <br>
         <button class="btn btn-lg btn-warning btn-block" name="verypass" type="submit">Xác nhận</button>
         <p class="mt-5 mb-3 text-muted text-center">© SunFlower - Store</p>
     </form>

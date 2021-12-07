@@ -304,6 +304,8 @@ function verify_mk()
         'confirmpass' => ''
 
     ];
+    $newpass = '';
+    $confirmpass = '';
     $token = isset($_GET['token']) ? $_GET['token'] : '';
     $now = date("Y-m-d H:i:s");
     $sql = "SELECT *  FROM forgot_pass where code ='" . $token . "'and expire_time >= '" . $now . "'";
@@ -315,6 +317,18 @@ function verify_mk()
         $newpass = $_POST['newpass'];
         $confirmpass = $_POST['confirmpass'];
         $email = $_POST['email'];
+        if ($newpass == '') {
+            $forgot['newpass'] = "Bạn vui lòng nhập mật khẩu mới";
+        }
+        if (strlen($newpass) <= 6) {
+            $forgot['newpass'] = "Mật khẩu phải từ 6 chữ số";
+        }
+        if ($confirmpass == '') {
+            $forgot['confirmpass'] = "Bạn vui lòng nhập nhập lại mật khẩu mới";
+        }
+        if ($newpass != $confirmpass) {
+            $forgot['confirmpass'] = "Mật khẩu không khớp";
+        }
         if (!array_filter($forgot)) {
             $newpass = password_hash($newpass, PASSWORD_DEFAULT);
             taikhoan_reset_passcode($newpass, $email);
@@ -326,7 +340,7 @@ function verify_mk()
     $email = execute_query($sql);
     $title = "Thay đổi mật khẩu đã quên";
 
-    client_Render('account/change_pw.php', compact('title', 'forgot', 'notice', 'result', 'email'));
+    client_Render('account/change_pw.php', compact('title', 'forgot', 'notice', 'confirmpass', 'newpass', 'result', 'email'));
 }
 function logout()
 {
