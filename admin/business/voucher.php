@@ -39,7 +39,8 @@ function voucher_add()
             die;
         }
     }
-    admin_render('Voucher/add.php', compact('error', 'tenvoucher', 'sotien', 'soluong'));
+    $title = "Thêm voucher";
+    admin_render('Voucher/add.php', compact('title', 'error', 'tenvoucher', 'sotien', 'soluong'));
 }
 function voucher_update()
 {
@@ -53,14 +54,15 @@ function voucher_update()
     $id = $_GET['id'];
     $sql = "SELECT * FROM voucher WHERE id = '$id'";
     $vc = pdo_query_one($sql);
-    admin_render('Voucher/update.php', compact('vc'));
+    $title = "Cập nhật voucher";
+    admin_render('Voucher/update.php', compact('title', 'vc'));
 }
 function voucher_list()
 {
     $sql = "SELECT * FROM voucher";
     $voucher = pdo_query($sql);
-
-    admin_render('Voucher/list.php', compact('voucher'));
+    $title = "Danh sách voucher";
+    admin_render('Voucher/list.php', compact('title', 'voucher'));
 }
 function voucher_delete()
 {

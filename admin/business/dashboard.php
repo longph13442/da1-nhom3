@@ -16,5 +16,6 @@ function dashboard_index()
     $sql = "SELECT * FROM hoadon_chitiet,hoadon,sanpham WHERE hoadon_chitiet.id = hoadon.id
      and sanpham.ma_sp = hoadon_chitiet.product_id ORDER BY hoadon.id DESC LIMIT 0,8";
     $dh = pdo_query($sql);
-    admin_render('dashboard/index.php', compact('slkh', 'slhh', 'member', 'sldh', 'membernew', 'dh'));
+    $title = "Trang chủ quản trị";
+    admin_render('dashboard/index.php', compact('slkh', 'slhh', 'member', 'sldh', 'membernew', 'dh', 'title'));
 }

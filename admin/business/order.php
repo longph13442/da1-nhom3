@@ -25,8 +25,8 @@ function order_list()
     $keysearch = isset($_GET['keysearch']) ? $_GET['keysearch'] : '';
 
     $od = order_get_all($keysearch);
-
-    admin_render('order/list.php', compact('od'));
+    $title = "Danh sách đơn hàng";
+    admin_render('order/list.php', compact('od', 'title'));
 }
 function order_delete()
 {
@@ -66,5 +66,6 @@ function order_updatecart()
     $id = $_GET['id'];
     $info2 = order_get_by_id($id);
     $info = order_get_by_idkh($id);
-    admin_render('order/update.php', compact('info', 'info2'));
+    $title = "Cập nhật đơn hàng";
+    admin_render('order/update.php', compact('info', 'info2', 'title'));
 }

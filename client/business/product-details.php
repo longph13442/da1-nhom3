@@ -46,7 +46,8 @@ function san_pham_chi_tiet()
         }
         $sql = "SELECT * FROM voucher";
         $voucher = pdo_query($sql);
-        client_Render('product_details/index.php', compact('info', 'info2', 'info3', 'voucher'));
+        $title = $info['ten_sp'];
+        client_Render('product_details/index.php', compact('info', 'info2', 'info3', 'voucher', 'title'));
     }
 }
 function favorite_product()

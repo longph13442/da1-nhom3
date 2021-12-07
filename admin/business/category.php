@@ -1,10 +1,11 @@
 <?php
 require_once 'dao/system_dao.php';
-function category_search(){
+function category_search()
+{
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
     $sql = "select * from loaihang where ten_loai like '%$keyword%'";
     $cate = pdo_query($sql);
-    admin_render('category/list.php', compact('cate','keyword'));
+    admin_render('category/list.php', compact('cate', 'keyword'));
 }
 function category_check($ten_loai)
 {
@@ -31,14 +32,15 @@ function loaihang_delete($ma_loai)
     } else {
         pdo_execute($sql, $ma_loai);
     }
-    
 }
 function category_list()
 {
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
     $sql = "select * from loaihang where ten_loai like '%$keyword%'";
     $cate = pdo_query($sql);
-    admin_render('category/list.php', compact('cate','keyword'));
+    $title = "Quản lý loại hàng";
+
+    admin_render('category/list.php', compact('cate', 'keyword', 'title'));
 
     // $sql = "SELECT * FROM loaihang ";
     // $cate = pdo_query($sql);
@@ -46,7 +48,8 @@ function category_list()
 }
 function category_add_form()
 {
-    admin_render('category/add.php');
+    $title = "Thêm loại hàng";
+    admin_render('category/add.php', compact('title'));
 }
 function category_save_add()
 {
@@ -71,11 +74,11 @@ function category_delete()
     header("location: " . ROOT_URL . 'category');
 }
 function category_edit_form()
-{   
+{
     $ma_loai = $_GET['ma_loai'];
     $info = loaihang_select_by_id($ma_loai);
-    
-    admin_render('category/edit.php',compact('info'));
+    $title = "Cập nhật loại hàng";
+    admin_render('category/edit.php', compact('info', 'title'));
 }
 function category_save_edit()
 {
@@ -86,7 +89,7 @@ function category_save_edit()
             $ma_loai = $_GET['ma_loai'];
             $info = loaihang_select_by_id($ma_loai);
             $error = "Loại hàng đã tồn tại";
-            admin_render('category/edit.php', compact('error','info'));
+            admin_render('category/edit.php', compact('error', 'info'));
         } else {
             $ten_loai = $_POST['ten_loai'];
             $ma_loai = $_GET['ma_loai'];

@@ -46,7 +46,7 @@ function cart()
         $link = 'account/register';
     }
 
-
-    client_Render("cart/index.php", compact('cart', 'link')); // 
+    $title = "Giỏ Hàng";
+    client_Render("cart/index.php", compact('cart', 'link', 'title')); // 
 
 }

@@ -4,7 +4,9 @@ function blog_list()
 {
     $sql = "SELECT * FROM blog ";
     $bl = pdo_query($sql);
-    admin_render('blog/list.php', compact('bl'));
+    $title = "Quản lý blog";
+
+    admin_render('blog/list.php', compact('bl', 'title'));
 }
 function blog_select_by_id($ma_blog)
 {
@@ -13,7 +15,7 @@ function blog_select_by_id($ma_blog)
 }
 function blog_add_form()
 {
-
+    $title = "Thêm bài viết";
     admin_render('blog/add.php');
 }
 function blog_save_add()
@@ -22,10 +24,11 @@ function blog_save_add()
 }
 function blog_update_form()
 {
+    $title = "Cập nhật bài viết";
     $ma_blog = $_GET["ma_blog"];
     $sql = "SELECT * FROM blog WHERE ma_blog = '$ma_blog' ";
     $info = pdo_query_one($sql);
-    admin_render('blog/update.php', compact('info'));
+    admin_render('blog/update.php', compact('info', 'title'));
 }
 function blog_save_update()
 {

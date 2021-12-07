@@ -50,13 +50,16 @@ function products_list()
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
     $sql = "SELECT * FROM sanpham WHERE ten_sp like '%$keyword%' ORDER BY sanpham.ma_loai DESC LIMIT $offset,$pagesize";
     $info = pdo_query($sql);
-    admin_render('products/list.php', compact('info', 'keyword', 'tongpage'));
+    $title = "Danh sách sản phẩm";
+    admin_render('products/list.php', compact('info', 'keyword', 'tongpage', 'title'));
 }
 function products_add_form()
 {
 
     $ct = category_select_all();
-    admin_render('products/add.php', compact('ct'));
+    $title = "Thêm sản phẩm";
+
+    admin_render('products/add.php', compact('ct', 'title'));
 }
 function products_save_add()
 {
@@ -130,7 +133,7 @@ function products_save_add()
         }
     }
     $ct = category_select_all();
-    admin_render('products/add.php', compact('error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai','ct'));
+    admin_render('products/add.php', compact('error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai', 'ct'));
 }
 function products_delete()
 {
@@ -143,7 +146,10 @@ function products_update_form()
     $ct = category_select_all();
     $ma_sp = $_GET['ma_sp'];
     $info = product_select_by_id($ma_sp);
-    admin_render('products/update.php', compact('info', 'ct'));
+
+    $title = "Cập nhật sản phẩm";
+
+    admin_render('products/update.php', compact('info', 'ct', 'title'));
 }
 function products_save_upadte()
 {
@@ -155,7 +161,6 @@ function products_save_upadte()
         $anh_sp = empty($file['name']) ? $info['anh_sp'] : $file['name'];
         $ngaytao = $_POST['ngaytao'];
         // $giamgia = empty($giamgia)? $giamgia : '';
-
         products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp);
         header("location: " . ROOT_URL . 'products');
     }

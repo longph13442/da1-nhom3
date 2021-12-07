@@ -131,8 +131,9 @@ function load_all_spyt()
 {
 
     $spyt = loadall_spyt($_SESSION['ten_dang_nhap']);
+    $title = "Sản phẩm yêu thích";
 
-    client_render('yeuthich/index.php', compact('spyt'));
+    client_render('yeuthich/index.php', compact('spyt', 'title'));
 }
 function xoayt()
 {

@@ -25,7 +25,8 @@ function slide_list()
 {
     $sql = "SELECT * FROM slide";
     $sl = pdo_query($sql);
-    admin_render('slide/list.php', compact('sl'));
+    $title = "Danh sách slide";
+    admin_render('slide/list.php', compact('sl', 'title'));
 }
 function slide_delete()
 {
@@ -35,7 +36,8 @@ function slide_delete()
 }
 function slide_add()
 {
-    admin_render('slide/add.php');
+    $title = "Thêm Slide";
+    admin_render('slide/add.php', compact('title'));
 }
 function slide_insert($img)
 {
@@ -55,7 +57,8 @@ function slide_update_form()
 {
     $id = $_GET['id'];
     $info = slide_select_by_id($id);
-    admin_render('slide/edit.php', compact('info'));
+    $title = "Cập nhật slide";
+    admin_render('slide/edit.php', compact('info', 'title'));
 }
 function slide_save_update()
 {

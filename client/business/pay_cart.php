@@ -116,7 +116,9 @@ function pay()
   }
 
   $pay = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
-  client_Render("pay_cart/index.php", compact('pay', 'voucher', 'error', 'errorvoucher', 'name', 'email', 'phone', 'address', 'note'));
+  $title = "Thanh Toán";
+
+  client_Render("pay_cart/index.php", compact('pay', 'voucher', 'error', 'errorvoucher', 'name', 'email', 'phone', 'address', 'note', 'title'));
 }
 function pay_vnpay()
 {

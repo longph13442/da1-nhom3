@@ -19,7 +19,8 @@ function user_list()
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
     $user = taikhoan_sellectAll($keyw, $offset, $pagesize);
-    admin_render('User/listuser.php', compact('user', 'tongpage', 'keyw'));
+    $title = "Danh sách tài khoản";
+    admin_render('User/listuser.php', compact('title', 'user', 'tongpage', 'keyw'));
 }
 function adduser()
 {
@@ -64,7 +65,9 @@ function adduser()
             die;
         }
     }
-    admin_render('User/adduser.php', compact('error'));
+    $title = "Thêm tài khoản";
+
+    admin_render('User/adduser.php', compact('title', 'error'));
 }
 function user_edit()
 {
@@ -119,9 +122,10 @@ function user_edit()
     if (isset($_GET['ma_tai_khoan'])) {
         $ma_tai_khoan = $_GET['ma_tai_khoan'];
     }
+    $title = "Cập nhật tài khoản";
 
     $user = taikhoan_selectbyid($ma_tai_khoan);
-    admin_render('User/edituser.php', compact('user', 'error'));
+    admin_render('User/edituser.php', compact('title', 'user', 'error'));
 }
 
 function user_delete()
