@@ -78,7 +78,7 @@ function pay()
     $sql = "SELECT voucher.soluong FROM voucher WHERE soluong = 0 and tenvoucher = '$tenvoucher'";
     $soluong = pdo_query($sql);
     $voucher1 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 50000";
-    $checkvoucher = execute_query($voucher, false);
+    $checkvoucher = execute_query($voucher1, false);
     $voucher2 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 100000";
     $checkvoucher2 = execute_query($voucher2, false);
     $voucher3 = "SELECT *FROM voucher WHERE tenvoucher = '$tenvoucher' and voucher.sotien <= 350000";
