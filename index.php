@@ -123,11 +123,11 @@ switch ($url) {
         break;
     case 'sanpham-yt':
         require_once './client/business/products.php';
-         load_all_spyt();
+        load_all_spyt();
         break;
     case 'xoayt':
         require_once './client/business/products.php';
-      xoayt();
+        xoayt();
         break;
     case 'ctblog':
         require_once './client/business/blog.php';
@@ -135,7 +135,7 @@ switch ($url) {
         break;
     case 'yeu-thich/':
         require_once './client/business/product-details.php';
-      favorite_product();
+        favorite_product();
     case 'category':
         require_once './admin/business/category.php';
         category_list();
@@ -266,8 +266,6 @@ switch ($url) {
         require_once './admin/business/order.php';
         order_updatecart();
         break;
-<<<<<<< Updated upstream
-=======
     case 'order/upquantity':
         require_once './admin/business/order.php';
         update_quantity();
@@ -276,7 +274,6 @@ switch ($url) {
         require_once "./admin/business/order.php";
         order_deletesp();
         break;
->>>>>>> Stashed changes
     case 'success':
         require_once "./client/business/success.php";
         success();
