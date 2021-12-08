@@ -49,6 +49,8 @@ function pay()
       $date = date("Y-m-d H:i:s");
       $sql = "insert into hoadon(name,phone,email,address,note,ship,date) values('$name','$phone','$email','$address','$note','$ship','$date')";
       $hoadon_id = InsertDataAndGetId($sql);
+      unset($_SESSION['ship']);
+
       // thêm thông tin user vào hóa đơn
 
       //lặp giỏ hàng thêm vào chi tiết hóa đơn
@@ -62,18 +64,8 @@ function pay()
         } else {
           $total = $_SESSION['vouchers'];
         }
-
         GetId($hoadon_id, $product_id, $quantyti, $price, $total);
-
-        if (!isset($_SESSION['ship'])) {
-          $ship = 0;
-        } else {
-          $ship = $_SESSION['ship'];
-        }
-        GetId($hoadon_id, $product_id, $quantyti, $price, $total, $ship);
-
         unset($_SESSION['vouchers']);
-        unset($_SESSION['ship']);
         soluongsp($quantyti, $product_id);
         unset($_SESSION["cart"]);
       }

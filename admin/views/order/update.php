@@ -53,12 +53,6 @@
                 <form action="<?= ROOT_URL ?>order/upquantity" method="post">
                     <input type="hidden" name="ship" value="<?= $_SESSION['ship'] ?>">
                     <div class="form-group mb-2">
-
-                        <input type="hidden" name="id" value="<?= $info['id'] ?>">
-
-
-                        <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
-
                         <input type="hidden" name="id" value="<?= $info['id'] ?>">
                         <div class="input-group">
                             <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
@@ -73,6 +67,7 @@
                             <button type="submit" class="btn btn-primary" name="upquantity">Cập nhật</button>
                         </div>
                     </div>
+
                 </form>
             <?php endforeach; ?>
             <div class="form-group mb-2">
@@ -86,14 +81,18 @@
                 <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $tong ?>">
             </div>
 
-            <?php if ($info['total'] > 0) : ?>
 
-                <div class="form-group mb-2">
-                    <label for="exampleInputEmail3">Áp dụng khuyến mãi</label>
-                    <input type="number" name="" class="form-control" disabled id="" required value="<?php echo $info['total'] ?>">
-                </div>
-            <?php endif; ?>
-
+            <label for="exampleInputEmail3">Tổng tiền</label>
+            <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
         </div>
+        <?php if ($info['total'] > 0) : ?>
+
+            <div class="form-group mb-2">
+                <label for="exampleInputEmail3">Áp dụng khuyến mãi</label>
+                <input type="number" name="" class="form-control" disabled id="" required value="<?php echo $info['total'] ?>">
+            </div>
+        <?php endif; ?>
+
     </div>
+</div>
 </div>

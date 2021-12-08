@@ -20,8 +20,6 @@
               <th class="col-1">
                 Mã đơn hàng
               </th>
-
-
               <th class="col-1">
                 Tên sản phẩm
               </th>
@@ -115,6 +113,7 @@
                   <a href="<?= ROOT_URL ?>order/delete?id=<?php echo $id ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger "><i class="fal fa-trash-alt"></i></a>
                 </td>
               </tr>
+
             <?php endforeach; ?>
           </tbody>
         </table>
