@@ -133,7 +133,8 @@ function products_save_add()
         }
     }
     $ct = category_select_all();
-    admin_render('products/add.php', compact('error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai', 'ct'));
+    $title = "Thêm Sản Phẩm";
+    admin_render('products/add.php', compact('title', 'error', 'ten_sp', 'giatien', 'giamgia', 'soluong', 'mota', 'mota_dai', 'ct'));
 }
 function products_delete()
 {
@@ -158,8 +159,14 @@ function products_save_upadte()
         $ma_sp = $_POST['ma_sp'];
         $info = product_select_by_id($ma_sp);
         $file = $_FILES['anh_sp'];
-        $anh_sp = empty($file['name']) ? $info['anh_sp'] : $file['name'];
+        $anh_sp = $file['name'];
         $ngaytao = $_POST['ngaytao'];
+        global $PATH_IMG;
+        if ($anh_sp > 0) {
+            $anh_sp = save_file('anh_sp', $PATH_IMG);
+        } else {
+            $anh_sp = $_POST['thumhinh'];
+        }
         // $giamgia = empty($giamgia)? $giamgia : '';
         products_update($ten_sp, $giatien, $giamgia, $anh_sp, $ma_loai, $luotxem, $ngaytao, $mota, $soluong, $mota_dai, $dacbiet, $ma_sp);
         header("location: " . ROOT_URL . 'products');
