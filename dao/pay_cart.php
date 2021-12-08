@@ -2,7 +2,7 @@
 require_once './dao/system_dao.php';
 function pay_cart($name, $phone, $email, $address, $note)
 {
-        $sql = "insert into hoadon(name,phone,email,address,note) values(?,?,?,?,?)";
+        $sql = "insert into hoadon(name,phone,email,address,note,ship) values(?,?,?,?,?)";
         InsertDataAndGetId($sql, $name, $phone, $email, $address, $note);
 }
 function GetId($hoadon_id, $product_id, $quantyti, $price, $total)

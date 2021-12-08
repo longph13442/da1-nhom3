@@ -266,6 +266,17 @@ switch ($url) {
         require_once './admin/business/order.php';
         order_updatecart();
         break;
+<<<<<<< Updated upstream
+=======
+    case 'order/upquantity':
+        require_once './admin/business/order.php';
+        update_quantity();
+        break;
+    case 'order/deletesp':
+        require_once "./admin/business/order.php";
+        order_deletesp();
+        break;
+>>>>>>> Stashed changes
     case 'success':
         require_once "./client/business/success.php";
         success();

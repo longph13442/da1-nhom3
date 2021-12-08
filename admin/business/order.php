@@ -18,7 +18,7 @@ function order_get_by_idkh($id)
 function order_delete_by_id($id)
 {
     $sql = "DELETE FROM hoadon WHERE hoadon.id =?";
-    return pdo_execute($sql, $id);
+    return pdo_query_one($sql, $id);
 }
 function order_list()
 {
@@ -69,3 +69,32 @@ function order_updatecart()
     $title = "Cập nhật đơn hàng";
     admin_render('order/update.php', compact('info', 'info2', 'title'));
 }
+<<<<<<< Updated upstream
+=======
+function update_quantity()
+{
+    if (isset($_POST['upquantity'])) {
+        $price = $_POST['price'];
+        $quantyti = $_POST['quantyti'];
+        $product_id = $_POST['product_id'];
+
+        $id = $_POST['id'];
+        $sql_product = "UPDATE hoadon_chitiet SET quantyti='$quantyti', price='$price' WHERE    hoadon_chitiet.product_id = '$product_id'";
+        pdo_execute($sql_product);
+    }
+    $ship = $_SESSION['ship'];
+    $sqlquantity = "UPDATE hoadon SET ship = '$ship' WHERE  hoadon.id = '$id'";
+    pdo_execute($sqlquantity);
+    header("location: " . ROOT_URL . 'order/updatecart?id=' . $id);
+    unset($_SESSION['ship']);
+}
+function order_deletesp()
+{
+
+
+    $product_id = $_GET['product_id'];
+    $sql = "DELETE FROM hoadon_chitiet WHERE  hoadon_chitiet.product_id = '$product_id'";
+    pdo_query_one($sql);
+    header("location: " . ROOT_URL . 'order');
+}
+>>>>>>> Stashed changes

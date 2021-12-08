@@ -39,9 +39,15 @@ function pay()
     if ($note == '') {
       $error['note'] = "Bạn vui lòng để lại lời nhắn";
     }
+
     if (!array_filter($error)) {
+      if (!isset($_SESSION['ship'])) {
+        $ship = 0;
+      } else {
+        $ship = $_SESSION['ship'];
+      }
       $date = date("Y-m-d H:i:s");
-      $sql = "insert into hoadon(name,phone,email,address,note,date) values('$name','$phone','$email','$address','$note','$date')";
+      $sql = "insert into hoadon(name,phone,email,address,note,ship,date) values('$name','$phone','$email','$address','$note','$ship','$date')";
       $hoadon_id = InsertDataAndGetId($sql);
       // thêm thông tin user vào hóa đơn
 
@@ -56,6 +62,10 @@ function pay()
         } else {
           $total = $_SESSION['vouchers'];
         }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         GetId($hoadon_id, $product_id, $quantyti, $price, $total);
         unset($_SESSION['vouchers']);
         soluongsp($quantyti, $product_id);

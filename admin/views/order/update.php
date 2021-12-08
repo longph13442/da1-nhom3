@@ -31,12 +31,35 @@
                     <?php $price = $in['price'] * $in['quantyti'] ?>
                     <?php $sum += $price; ?>
                     <div class="form-group mb-2">
+<<<<<<< Updated upstream
                         <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
+=======
+                        <input type="hidden" name="id" value="<?= $info['id'] ?>">
+                        <div class="input-group">
+                            <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
+                            <a class="btn btn-primary" href="<?= ROOT_URL ?>order/deletesp?product_id=<?= $in['product_id'] ?>">Xóa</a>
+                        </div>
+>>>>>>> Stashed changes
                         <input type="number" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." disabled value="<?= $in['price'] ?>">
                         <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['price'] ?>">
                         <input type="number" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
                     </div>
+<<<<<<< Updated upstream
                 <?php endforeach; ?>
+=======
+                </form>
+            <?php endforeach; ?>
+            <div class="form-group mb-2">
+                <label for="">Phí Vận chuyển</label>
+                <input type="text" class="form-control" value="<?= $_SESSION['ship'] ?>" id="">
+            </div>
+            <div class="form-group mb-2">
+                <?php $tong = $sum + $_SESSION['ship'] ?>
+                <label for="exampleInputEmail3">Tổng tiền</label>
+                <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $tong ?>">
+            </div>
+            <?php if ($info['total'] > 0) : ?>
+>>>>>>> Stashed changes
                 <div class="form-group mb-2">
                     <label for="exampleInputEmail3">Tổng tiền</label>
                     <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
