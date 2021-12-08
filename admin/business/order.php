@@ -57,20 +57,34 @@ function order_updatecart()
     if (isset($_POST['updatecart'])) {
         $id = $_POST['id'];
         $name = $_POST['name'];
-        $price = $_POST['price'];
-        $quantyti = $_POST['quantyti'];
+
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         $note = $_POST['note'];
-        $product_id = $_POST['product_id'];
+
         $sql = "UPDATE hoadon,hoadon_chitiet SET phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
         pdo_execute($sql);
-        $sql_product = "UPDATE hoadon,hoadon_chitiet SET quantyti='$quantyti', price='$price' WHERE hoadon.id = hoadon_chitiet.id and  hoadon_chitiet.product_id = '$product_id'";
-        pdo_execute($sql_product);
     }
     $id = $_GET['id'];
     $info2 = order_get_by_id($id);
     $info = order_get_by_idkh($id);
     $title = "Cập nhật đơn hàng";
     admin_render('order/update.php', compact('info', 'info2', 'title'));
+}
+function update_quantity()
+{
+    if (isset($_POST['upquantity'])) {
+        $price = $_POST['price'];
+        $quantyti = $_POST['quantyti'];
+        $product_id = $_POST['product_id'];
+
+        $id = $_POST['id'];
+        $sql_product = "UPDATE hoadon_chitiet SET quantyti='$quantyti', price='$price' WHERE    hoadon_chitiet.product_id = '$product_id'";
+        pdo_execute($sql_product);
+    }
+    $ship = $_SESSION['ship'];
+    $sqlquantity = "UPDATE hoadon SET ship = '$ship' WHERE  hoadon.id = '$id'";
+    pdo_execute($sqlquantity);
+    header("location: " . ROOT_URL . 'order/updatecart?id=' . $id);
+    unset($_SESSION['ship']);
 }

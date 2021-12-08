@@ -25,32 +25,62 @@
                     <textarea name="note" class="form-control" id="" cols="30" rows="5"><?= $info['note'] ?></textarea>
                     <span class="text-danger text-uppercase mt-2"><?php if (isset($error['ten_sp']) && ($error['ten_sp'] != "")) echo $error['ten_sp'] ?></span>
                 </div>
-                <label for="exampleInputName1">Tên đơn hàng</label>
-                <?php $sum = 0; ?>
-                <?php $total = 0 ?>
-                <?php foreach ($info2 as $in) : ?>
-                    <?php $sum += $in['price'] * $in['quantyti'] ?>
+                <button type="submit" name="updatecart" class="btn btn-primary me-2 my-2">cập nhật mới</button>
+            </form>
+            <div class="mb-3">
+                <label for="">Thêm Sản Phẩm</label>
+                <select class="form-select col-4" name="" id="">
+                    <option value="">Chọn</option>
+                    <option value="">a</option>
+                    <option value="">b</option>
+                    <option value="">c</option>
+                    <option value="">Chọn</option>
+                </select>
+            </div>
+            <label for="exampleInputName1">Tên đơn hàng</label>
+            <?php $sum = 0; ?>
+            <?php $total = 0 ?>
+            <?php foreach ($info2 as $in) : ?>
+                <?php $sum += $in['price'] * $in['quantyti'] ?>
+                <?php if ($sum < 200000 && $sum > 0) {
+                    $_SESSION['ship'] = 30000;
+                } else if ($sum == 0) {
+                    $_SESSION['ship'] = 0;
+                } else {
+                    $_SESSION['ship'] = 0;
+                }
+                ?>
+                <form action="<?= ROOT_URL ?>order/upquantity" method="post">
+                    <input type="hidden" name="ship" value="<?= $_SESSION['ship'] ?>">
                     <div class="form-group mb-2">
+                        <input type="hidden" name="id" value="<?= $info['id'] ?>">
+
                         <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
                         <input type="number" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." disabled value="<?= $in['price'] ?>">
                         <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['price'] ?>">
                         <input type="hidden" name="product_id" value="<?= $in['product_id'] ?>">
-                        <input type="number" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
+                        <div class="input-group">
+                            <input type="number" min="0" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
+                            <button type="submit" class="btn btn-primary" name="upquantity">Cập nhật</button>
+                        </div>
                     </div>
-                <?php endforeach; ?>
+                </form>
+            <?php endforeach; ?>
+            <div class="form-group mb-2">
+                <label for="">Phí Vận chuyển</label>
+                <input type="text" class="form-control" value="<?= $_SESSION['ship'] ?>" id="">
+            </div>
+            <div class="form-group mb-2">
+                <label for="exampleInputEmail3">Tổng tiền</label>
+                <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
+            </div>
+            <?php if ($info['total'] > 0) : ?>
                 <div class="form-group mb-2">
-                    <label for="exampleInputEmail3">Tổng tiền</label>
-                    <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
+                    <label for="exampleInputEmail3">Áp dụng khuyến mãi</label>
+                    <input type="number" name="" class="form-control" disabled id="" required value="<?php echo $info['total'] ?>">
                 </div>
-                <?php if ($info['total'] > 0) : ?>
-                    <div class="form-group mb-2">
-                        <label for="exampleInputEmail3">Áp dụng khuyến mãi</label>
-                        <input type="number" name="" class="form-control" disabled id="" required value="<?php echo $info['total'] ?>">
-                    </div>
-                <?php endif; ?>
-                <button type="submit" name="updatecart" class="btn btn-primary me-2 my-2">cập nhật mới</button>
-                <button type="cancel" class="btn btn-light my-2">Hủy</button>
-            </form>
+            <?php endif; ?>
+
         </div>
     </div>
 </div>

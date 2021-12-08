@@ -13,7 +13,6 @@
                 <tr>
                     <td>
                         <?php foreach ($hddts as $in) : ?>
-
                             <p class="text-product">
                                 <?= $in['ten_sp']; ?> x <span class="text-danger"><?= $in['quantyti'] ?></span>
                             </p>
@@ -23,8 +22,10 @@
                     <td>
                         <?php $sum = 0 ?>
                         <?php foreach ($hddts as $in) : ?>
-                            <?php $sum += $in['price'] ?>
-                            <b> <?= number_format($in['price']) ?>đ</b>
+                            <?php
+                            $sumpro = $in['price'] * $in['quantyti'] ?>
+                            <?php $sum += $sumpro ?>
+                            <b> <?= number_format($sumpro) ?>đ</b>
                             <p></p>
                         <?php endforeach; ?>
 
@@ -51,7 +52,11 @@
 
                 <tr>
                     <td>Phí vận chuyển</td>
-                    <td><b><?= isset($hddt['phivanchuyen']) ?> qua giao hàng</b></td>
+                    <td><b><?php
+                            echo $hddt['ship'] . ' đ qua giao hàng';
+                            ?>
+
+                        </b></td>
                 </tr>
                 <tr>
                     <td>Phương thức thanh toán</td>
@@ -64,9 +69,11 @@
 
                 <tr>
                     <?php if ($hddt['total'] > 0) : ?>
+                        <?php $after + $hddt['ship'] ?>
                         <td>Tổng tiền:</td>
                         <td><b><?= number_format($after) ?></b></td>
                     <?php else : ?>
+                        <?php $sum += $hddt['ship'] ?>
                         <td>Tổng Tiền</td>
                         <td><b><?= number_format($sum) ?></b></td>
                     <?php endif; ?>

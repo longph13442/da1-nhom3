@@ -5,10 +5,10 @@ function pay_cart($name, $phone, $email, $address, $note)
         $sql = "insert into hoadon(name,phone,email,address,note) values(?,?,?,?,?)";
         InsertDataAndGetId($sql, $name, $phone, $email, $address, $note);
 }
-function GetId($hoadon_id, $product_id, $quantyti, $price, $total)
+function GetId($hoadon_id, $product_id, $quantyti, $price, $total, $ship)
 {
-        $sql = "insert into hoadon_chitiet(id,product_id,quantyti,price,total) values(?,?,?,?,?)";
-        pdo_execute($sql, $hoadon_id, $product_id, $quantyti, $price, $total);
+        $sql = "insert into hoadon_chitiet(id,product_id,quantyti,price,total,ship) values(?,?,?,?,?,?)";
+        pdo_execute($sql, $hoadon_id, $product_id, $quantyti, $price, $total, $ship);
 }
 function soluongsp($quatyti, $ma_sp)
 {
