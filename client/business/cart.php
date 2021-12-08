@@ -18,7 +18,8 @@ function cart()
             'masp' => $id,
             'soluong' => $soluong,
             'price' => '',
-            'sum' => ''
+            'sum' => '',
+            'ship' => ''
         ];
         if (isset($_SESSION['cart'][$id])) {
             $_SESSION['cart'][$id]['soluong'] += $soluong;

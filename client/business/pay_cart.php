@@ -62,12 +62,18 @@ function pay()
         } else {
           $total = $_SESSION['vouchers'];
         }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
         GetId($hoadon_id, $product_id, $quantyti, $price, $total);
+
+        if (!isset($_SESSION['ship'])) {
+          $ship = 0;
+        } else {
+          $ship = $_SESSION['ship'];
+        }
+        GetId($hoadon_id, $product_id, $quantyti, $price, $total, $ship);
+
         unset($_SESSION['vouchers']);
+        unset($_SESSION['ship']);
         soluongsp($quantyti, $product_id);
         unset($_SESSION["cart"]);
       }

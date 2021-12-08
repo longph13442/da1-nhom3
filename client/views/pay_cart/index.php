@@ -31,6 +31,21 @@
                     <p>Tổng tiền: </p>
                     <p class="text-danger "><?= number_format($sum) ?> VND</p>
                 </div>
+                <div class="d-flex justify-content-between px-3 fw-bold">
+                    <?php if ($sum < 200000) : ?>
+                        <?php $_SESSION['ship'] = 30000; ?>
+                    <?php else : ?>
+                        <?php $_SESSION['ship'] = 0; ?>
+                    <?php endif; ?>
+                    <p>Phí Vận Chuyển: </p>
+                    <p><?php if ($_SESSION['ship'] == 30000) {
+                            echo  number_format($_SESSION['ship']) . 'VNĐ';
+                        } else {
+                            echo "Miễn Phí";
+                        }
+
+                        ?></p>
+                </div>
                 <?php if (isset($voucher['sotien'])) : ?>
                     <div class="d-flex justify-content-between px-3 fw-bold">
                         <?php $vouchers = $voucher['sotien'];

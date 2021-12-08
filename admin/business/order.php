@@ -10,6 +10,8 @@ function order_get_by_id($id)
     $sql = "SELECT * FROM hoadon,hoadon_chitiet,sanpham WHERE sanpham.ma_sp = hoadon_chitiet.product_id and hoadon.id = hoadon_chitiet.id and hoadon.id=?";
     return pdo_query($sql, $id);
 }
+
+
 function order_get_by_idkh($id)
 {
     $sql = "SELECT * FROM hoadon,hoadon_chitiet,sanpham WHERE sanpham.ma_sp = hoadon_chitiet.product_id and hoadon.id = hoadon_chitiet.id and hoadon.id=?";
@@ -55,12 +57,12 @@ function order_updatecart()
     if (isset($_POST['updatecart'])) {
         $id = $_POST['id'];
         $name = $_POST['name'];
-        $price = $_POST['price'];
-        $quantyti = $_POST['quantyti'];
+
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         $note = $_POST['note'];
-        $sql = "UPDATE hoadon,hoadon_chitiet SET quantyti = '$quantyti',  price ='$price',phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
+
+        $sql = "UPDATE hoadon,hoadon_chitiet SET phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
         pdo_execute($sql);
     }
     $id = $_GET['id'];
@@ -69,8 +71,7 @@ function order_updatecart()
     $title = "Cập nhật đơn hàng";
     admin_render('order/update.php', compact('info', 'info2', 'title'));
 }
-<<<<<<< Updated upstream
-=======
+
 function update_quantity()
 {
     if (isset($_POST['upquantity'])) {
@@ -88,6 +89,7 @@ function update_quantity()
     header("location: " . ROOT_URL . 'order/updatecart?id=' . $id);
     unset($_SESSION['ship']);
 }
+
 function order_deletesp()
 {
 
@@ -97,4 +99,3 @@ function order_deletesp()
     pdo_query_one($sql);
     header("location: " . ROOT_URL . 'order');
 }
->>>>>>> Stashed changes
