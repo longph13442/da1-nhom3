@@ -62,6 +62,7 @@ function order_updatecart()
         $note = $_POST['note'];
         $sql = "UPDATE hoadon,hoadon_chitiet SET quantyti = '$quantyti',  price ='$price',phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
         pdo_execute($sql);
+        header("location: " . ROOT_URL . 'order');
     }
     $id = $_GET['id'];
     $info2 = order_get_by_id($id);
