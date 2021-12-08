@@ -10,6 +10,8 @@ function order_get_by_id($id)
     $sql = "SELECT * FROM hoadon,hoadon_chitiet,sanpham WHERE sanpham.ma_sp = hoadon_chitiet.product_id and hoadon.id = hoadon_chitiet.id and hoadon.id=?";
     return pdo_query($sql, $id);
 }
+
+
 function order_get_by_idkh($id)
 {
     $sql = "SELECT * FROM hoadon,hoadon_chitiet,sanpham WHERE sanpham.ma_sp = hoadon_chitiet.product_id and hoadon.id = hoadon_chitiet.id and hoadon.id=?";
@@ -60,9 +62,11 @@ function order_updatecart()
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         $note = $_POST['note'];
-        $sql = "UPDATE hoadon,hoadon_chitiet SET quantyti = '$quantyti',  price ='$price',phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
+        $product_id = $_POST['product_id'];
+        $sql = "UPDATE hoadon,hoadon_chitiet SET phone='$phone',name = '$name',address = '$address', note = '$note' WHERE hoadon_chitiet.id =hoadon.id and hoadon.id = '$id'";
         pdo_execute($sql);
-        header("location: " . ROOT_URL . 'order');
+        $sql_product = "UPDATE hoadon,hoadon_chitiet SET quantyti='$quantyti', price='$price' WHERE hoadon.id = hoadon_chitiet.id and  hoadon_chitiet.product_id = '$product_id'";
+        pdo_execute($sql_product);
     }
     $id = $_GET['id'];
     $info2 = order_get_by_id($id);

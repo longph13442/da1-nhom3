@@ -27,13 +27,14 @@
                 </div>
                 <label for="exampleInputName1">Tên đơn hàng</label>
                 <?php $sum = 0; ?>
+                <?php $total = 0 ?>
                 <?php foreach ($info2 as $in) : ?>
-                    <?php $price = $in['price'] * $in['quantyti'] ?>
-                    <?php $sum += $price; ?>
+                    <?php $sum += $in['price'] * $in['quantyti'] ?>
                     <div class="form-group mb-2">
                         <input type="text" name="ten_sp" class="form-control" id="" value="<?= $in['ten_sp'] ?>">
                         <input type="number" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." disabled value="<?= $in['price'] ?>">
                         <input type="hidden" name="price" class="form-control" id="" placeholder="Nhập đơn giá..." value="<?= $in['price'] ?>">
+                        <input type="hidden" name="product_id" value="<?= $in['product_id'] ?>">
                         <input type="number" name="quantyti" class="form-control" id="" placeholder="Nhập số lượng..." required value="<?php echo $in['quantyti'] ?>">
                     </div>
                 <?php endforeach; ?>
