@@ -27,21 +27,29 @@
                 </div>
                 <button type="submit" name="updatecart" class="btn btn-primary me-2 my-2">cập nhật mới</button>
             </form>
-            <div class="mb-3">
-                <label for="">Thêm Sản Phẩm</label>
-                <select class="form-select col-4" name="" id="">
-                    <option value="">Chọn</option>
-                    <option value="">a</option>
-                    <option value="">b</option>
-                    <option value="">c</option>
-                    <option value="">Chọn</option>
-                </select>
-            </div>
+            <form action="<?= ROOT_URL ?>order/add" method="post">
+                <input type="hidden" name="id" value="<?= $info['id'] ?>">
+                <div class="mb-3">
+                    <label for="">Thêm Sản Phẩm(Tùy chọn)</label>
+                    <div class="input-group">
+                        <select class="form-select col-5" name="ma_sp" id="">
+                            <option value="0">Chọn</option>
+                            <?php foreach ($sp as $s) : ?>
+                                <option value="<?= $s['ma_sp'] ?>"><?= $s['ten_sp'] ?> <p> Giá </p><?= number_format($s['gianew']) ?>VNĐ</option>
+                            <?php endforeach; ?>
+                        </select>
+                        <input type="hidden" name="gianew" value="<?= $s['gianew']  ?>">
+
+                        <input class="form-control col-1" min="0" type="number" name="quantyti" id="">
+                        <button name="orderadd" type="submit" class="btn btn-primary">Thêm</button>
+                    </div>
+                </div>
+            </form>
             <label for="exampleInputName1">Tên đơn hàng</label>
             <?php $sum = 0; ?>
             <?php $total = 0 ?>
             <?php foreach ($info2 as $in) : ?>
-                <?php $sum += $in['price'] * $in['quantyti'] ?>
+                <?php $sum += (float)$in['price'] * (int)$in['quantyti'] ?>
                 <?php if ($sum < 200000 && $sum > 0) {
                     $_SESSION['ship'] = 30000;
                 } else if ($sum == 0) {

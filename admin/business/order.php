@@ -30,6 +30,11 @@ function order_list()
     $title = "Danh sách đơn hàng";
     admin_render('order/list.php', compact('od', 'title'));
 }
+function selectsp()
+{
+    $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew  FROM sanpham";
+    return pdo_query($sql);
+}
 function order_delete()
 {
     if (!isset($_SESSION['admin']) == 1) {
@@ -66,12 +71,36 @@ function order_updatecart()
         pdo_execute($sql);
     }
     $id = $_GET['id'];
+    $sp = selectsp();
     $info2 = order_get_by_id($id);
     $info = order_get_by_idkh($id);
     $title = "Cập nhật đơn hàng";
-    admin_render('order/update.php', compact('info', 'info2', 'title'));
+    admin_render('order/update.php', compact('info', 'info2', 'title', 'sp'));
 }
+function  order_add()
+{
+    $error = [
+        'quantyti' => '',
+        'product_id' => '',
+        'checkpd' => ''
+    ];
+    if (isset($_POST['orderadd'])) {
+        $id = $_POST['id'];
+        $ma_sp = $_POST['ma_sp'];
+        $quantyti = $_POST['quantyti'];
+        $gianew = $_POST['gianew'];
 
+        if ($quantyti == '') {
+        }
+        if ($ma_sp == 0) {
+        }
+        if (!array_filter($error)) {
+            $sql = "INSERT INTO hoadon_chitiet(id,product_id,quantyti,price) VALUES('$id', '$ma_sp', '$quantyti','$gianew')";
+            pdo_execute($sql);
+            header("location: " . ROOT_URL . 'order/updatecart?id=' . $id);
+        }
+    }
+}
 function update_quantity()
 {
     if (isset($_POST['upquantity'])) {

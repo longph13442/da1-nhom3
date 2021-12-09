@@ -270,6 +270,10 @@ switch ($url) {
         require_once './admin/business/order.php';
         update_quantity();
         break;
+    case 'order/add':
+        require_once "./admin/business/order.php";
+        order_add();
+        break;
     case 'order/deletesp':
         require_once "./admin/business/order.php";
         order_deletesp();
