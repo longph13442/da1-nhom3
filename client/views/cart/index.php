@@ -35,7 +35,7 @@
                         </td>
 
                         <td>
-                            <input type="number" name="soluong" value="<?= $key['soluong'] ?>" maxlength="2" size="1" id="number" class=" my-4  " style="width:70px;" />
+                            <input type="number" name="soluong" value="<?= $key['soluong']  ?>" maxlength="2" size="1" id="number" class=" my-4  " style="width:70px;" />
                         </td>
                         <td>
                             <p class="my-4"><?= number_format($price) ?>VND</p>

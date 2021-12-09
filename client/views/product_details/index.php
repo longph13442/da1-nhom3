@@ -118,7 +118,7 @@
 
               <div class="col-md-12">
                 <div class="headings d-flex justify-content-between align-items-center mb-3">
-                  <p class="mt-3">Số bình luận (1)</p>
+                  <p class="mt-3">Số bình luận (<?= $soluong ?>)</p>
                 </div>
                 <?php foreach ($info3 as $bl) : ?>
 
@@ -152,7 +152,6 @@
                       </div>
                       <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                     </div>
-                    <div class="icons align-items-center"> <i class="fa fa-check-circle-o check-icon text-primary"></i> </div>
                   </div>
                 <?php endforeach; ?>
               </div>

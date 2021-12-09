@@ -83,7 +83,6 @@
                 <input type="text" class="form-control" value="<?= $_SESSION['ship'] ?>" id="">
             </div>
             <div class="form-group mb-2">
-
                 <?php $tong = $sum + $_SESSION['ship'] ?>
                 <label for="exampleInputEmail3">Tổng tiền</label>
                 <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $tong ?>">
