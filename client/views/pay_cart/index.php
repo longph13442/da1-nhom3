@@ -51,7 +51,7 @@
                         <?php $vouchers = $voucher['sotien'];
                         $_SESSION['vouchers'] = $vouchers;
                         ?>
-                        <?php $total = $sum - $vouchers ?>
+                        <?php $total = $sum + $_SESSION['ship'] - $vouchers ?>
                         <p>Mã giảm giá: </p>
                         <p><?= number_format($vouchers) ?></p>
                     </div>

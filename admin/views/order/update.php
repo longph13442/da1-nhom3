@@ -88,10 +88,6 @@
                 <label for="exampleInputEmail3">Tổng tiền</label>
                 <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $tong ?>">
             </div>
-
-
-            <label for="exampleInputEmail3">Tổng tiền</label>
-            <input type="number" name="" class="form-control" disabled id="" placeholder="Nhập đơn giá..." required value="<?php echo $sum ?>">
         </div>
         <?php if ($info['total'] > 0) : ?>
 
