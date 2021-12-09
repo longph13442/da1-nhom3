@@ -13,6 +13,7 @@ if (!isset($_SESSION['nhanvien']) == 3 && !isset($_SESSION['admin']) == 1) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
+    <link rel="shortcut icon" type="image/png" href="<?= ROOT_URL . IMG ?>logo.png">
     <title><?= $title ?></title>
     <!-- Style-->
     <?php include_once "style.php"; ?>

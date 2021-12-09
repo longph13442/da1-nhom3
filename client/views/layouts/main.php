@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php if (isset($title)) {
+    <link rel="shortcut icon" type="image/png" href="<?= ROOT_URL . IMG ?>logo.png">
+
+    <title> <?php if (isset($title)) {
                 echo $title;
             } ?></title>
     <?php include_once "./client/views/layouts/style.php" ?>

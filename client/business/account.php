@@ -345,7 +345,12 @@ function verify_mk()
 }
 function logout()
 {
+    unset($_SESSION['tendangnhap']);
+    unset($_SESSION['vaitro']);
+    unset($_SESSION['admin']);
+    unset($_SESSION['nhanvien']);
     session_destroy();
+
     header("location: " . ROOT_URL);
     die;
 }
