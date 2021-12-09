@@ -22,6 +22,11 @@ function order_delete_by_id($id)
     $sql = "DELETE FROM hoadon WHERE hoadon.id =?";
     return pdo_query_one($sql, $id);
 }
+function order_details_delete_by_id($id)
+{
+    $sql = "DELETE FROM hoadon_chitiet WHERE hoadon_chitiet.id =?";
+    return pdo_query_one($sql, $id);
+}
 function order_list()
 {
     $keysearch = isset($_GET['keysearch']) ? $_GET['keysearch'] : '';
@@ -42,7 +47,7 @@ function order_delete()
         die;
     }
     $id = $_GET['id'];
-
+    order_details_delete_by_id($id);
     order_delete_by_id($id);
     header("location: " . ROOT_URL . 'order');
 }

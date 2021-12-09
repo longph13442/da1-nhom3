@@ -8,7 +8,11 @@ function cart_list($ten_dang_nhap, $offset, $pagesize)
 }
 function cart_lists($ten_dang_nhap)
 {
-    $sql = "SELECT * FROM hoadon,khachhang WHERE khachhang.sdt = hoadon.phone and khachhang.ten_dang_nhap = ? ORDER BY hoadon.id DESC ";
+    $sql = "SELECT hoadon.id, hoadon.date,hoadon.status
+     FROM hoadon,hoadon_chitiet,khachhang WHERE hoadon.phone = khachhang.sdt
+      and hoadon.id = hoadon_chitiet.id and hoadon.phone = 0338898903 
+      and khachhang.ten_dang_nhap = ? 
+      GROUP BY hoadon.id,hoadon.date,hoadon.status ORDER BY hoadon.id DESC  ";
     return pdo_query($sql, $ten_dang_nhap);
 }
 function cart_list2($ten_dang_nhap)
