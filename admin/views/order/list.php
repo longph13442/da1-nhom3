@@ -54,20 +54,24 @@
                 <td class="py-1">
                   <?php echo $id ?>
                 </td>
-
                 <td>
-                  <?php echo $ten_sp ?>
+                  <?php foreach ($odsp as $sp) : ?>
+                    <?php echo trim(($sp['ten_sp'] . ','), ',') ?>
+                  <?php endforeach; ?>
                 </td>
-
                 <td>
-                  <?php echo $quantyti ?>
+                  <?php foreach ($odsp as $sp) : ?>
+                    <?php
+                    echo $sp['tong'];
+                    ?>
+                  <?php endforeach; ?>
                 </td>
                 <td style="max-width: 100px;">
                   <img src="<?= IMG . $anh_sp ?>" alt="" width="40%">
                 </td>
 
                 <td>
-                  <?php echo number_format($price) ?> đ
+                  <?php echo number_format($tongtien + $ship) ?> đ
                 </td>
                 <td>
                   <?php echo $date ?>
@@ -109,7 +113,7 @@
                   </form>
                 </td>
                 <td>
-                  <a class="btn btn-outline-success" href="<?= ROOT_URL ?>order/updatecart?id=<?= $id ?>"><i class="fad fa-edit"></i></a>
+                  <a class="btn btn-outline-success" href="<?= ROOT_URL ?>order/updatecart?id=<?= $id ?>"><i class="fal fa-info-circle"></i></a>
                   <a href="<?= ROOT_URL ?>order/delete?id=<?php echo $id ?>" onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-outline-danger "><i class="fal fa-trash-alt"></i></a>
                 </td>
               </tr>

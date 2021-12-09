@@ -2,8 +2,17 @@
 require_once 'dao/system_dao.php';
 function order_get_all($keysearch)
 {
-    $sql = "SELECT * FROM hoadon_chitiet,hoadon,sanpham WHERE hoadon.name like ? and hoadon_chitiet.id = hoadon.id and sanpham.ma_sp = hoadon_chitiet.product_id ORDER BY hoadon.date DESC";
+    $sql = "SELECT *,hoadon.id,SUM(hoadon_chitiet.price * hoadon_chitiet.quantyti) as tongtien
+    FROM hoadon,hoadon_chitiet,sanpham WHERE hoadon.name like ?
+     and hoadon.id = hoadon_chitiet.id and sanpham.ma_sp = hoadon_chitiet.product_id GROUP BY hoadon.id ORDER BY hoadon.id DESC  ";
     return pdo_query($sql, '%' . $keysearch . '%');
+}
+function order_get_allsp()
+{
+    $sql = "SELECT *,hoadon.id,SUM(hoadon_chitiet.quantyti) as tong
+    FROM hoadon,hoadon_chitiet,sanpham WHERE
+      hoadon.id = hoadon_chitiet.id and sanpham.ma_sp = hoadon_chitiet.product_id ";
+    return pdo_query($sql);
 }
 function order_get_by_id($id)
 {
@@ -30,10 +39,10 @@ function order_details_delete_by_id($id)
 function order_list()
 {
     $keysearch = isset($_GET['keysearch']) ? $_GET['keysearch'] : '';
-
+    $odsp = order_get_allsp();
     $od = order_get_all($keysearch);
     $title = "Danh sách đơn hàng";
-    admin_render('order/list.php', compact('od', 'title'));
+    admin_render('order/list.php', compact('od', 'title', 'odsp'));
 }
 function selectsp()
 {
