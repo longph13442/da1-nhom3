@@ -127,6 +127,25 @@
 
            <div class="row">
                <?php foreach ($dskm as $p) : ?>
+                   <!-- 
+                  <div class="row">
+               <div class="col-12 col-sm-12 col-lg-4 col-xl-4 text-center  ">
+                               <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/ " alt="" class="img-fluid" height="50"></a>
+
+                               <a class="text-warning text-decoration-none" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>">
+                                   <p class="text-center"> </p>
+                               </a>
+                               <p class=" display-8 text-center fw-bold text-secondary mt-4">    </p>
+
+                               <div class="star mb-md-4">
+                                   <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                               </div>
+                           </div>
+             
+
+
+           </div> -->
+
                    <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
                        <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
 
