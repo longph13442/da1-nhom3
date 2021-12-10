@@ -14,7 +14,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
     <div class="container border-bottom ">
         <div class="  d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="<?= ROOT_URL ?>" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-                <img src="<?= ADMIN_ASSET ?>Image/logo.png" alt="" height="60">
+                <img src="<?= ADMIN_ASSET ?>image/logo.png" alt="" height="60">
             </a>
             <!-- end logo -->
             <nav class=" stroke nav col-12 col-lg-auto me-lg-auto justify-content-center">
@@ -47,7 +47,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                                     ?>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div class="d-flex">
-                                            <img src="<?= ADMIN_ASSET ?>Image/<?= $key["hinh"] ?>" alt="" height="40">
+                                            <img src="<?= ADMIN_ASSET ?>image/<?= $key["hinh"] ?>" alt="" height="40">
                                             <h6 class="my-3 mx-3"><?= $key["tensp"] ?></h6>
                                         </div>
                                         <span class="my-3 mx-3"><?= $key["soluong"] ?></span>

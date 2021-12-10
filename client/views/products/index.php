@@ -112,14 +112,14 @@
            <h4 class="text-center my-5">NHỮNG ƯU ĐÃI DÀNH RIÊNG CHO BẠN</h4>
            <div class="row mx-5">
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>Image/baner7.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner7.jpg" alt="" height="400" width="100%">
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>Image/baner8.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner8.jpg" alt="" height="400" width="100%">
 
                </div>
                <div class="col-4 text-center">
-                   <img src="<?= homepase_ASSET ?>Image/baner9.jpg" alt="" height="400" width="100%">
+                   <img src="<?= homepase_ASSET ?>image/baner9.jpg" alt="" height="400" width="100%">
                </div>
            </div>
            <!-- end row -->
