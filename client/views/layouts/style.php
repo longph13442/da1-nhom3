@@ -198,4 +198,9 @@
         cursor: pointer;
 
     }
+
+    .row {
+        --bs-gutter-x: 0;
+    }
+   
 </style>
