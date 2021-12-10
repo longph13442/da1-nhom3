@@ -53,6 +53,7 @@ function adduser()
                 $error['hinh_anh'] = "Bạn vui lòng nhập file ảnh và nhỏ hơn 5Mb";
             }
         }
+
         if (!array_filter($error)) {
             if ($hinh_anh = '') {
                 global $PATH_IMG;

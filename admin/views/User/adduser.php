@@ -95,11 +95,11 @@
                                     <label for="" class="form-label">Trạng Thái</label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" checked name="trang_thai" id="" value="">
+                                        <input class="form-check-input" type="radio" checked name="trang_thai" id="" value="0">
                                         <label class="form-check-label" for="inlineRadio1">Hoạt Động</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="trang_thai" id="inlineRadio2" value="">
+                                        <input class="form-check-input" type="radio" name="trang_thai" id="inlineRadio2" value="1">
                                         <label class="form-check-label" for="inlineRadio2">Ngưng Hoạt Động</label>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                                     </label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="vai_tro" checked id="inlineRadio1" value="">
+                                        <input class="form-check-input" type="radio" name="vai_tro" checked id="inlineRadio1" value="0">
                                         <label class="form-check-label" for="inlineRadio1">Khách Hàng</label>
                                     </div>
                                     <?php if (isset($_SESSION['admin'])) : ?>
