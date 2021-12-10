@@ -69,7 +69,7 @@
     header {
         /* position: fixed;
         z-index: 2; */
-
+        --bs-gutter-x: 0 !important;
         top: 0;
         left: 0;
         right: 0;
@@ -199,8 +199,6 @@
 
     }
 
-    .row {
-        --bs-gutter-x: 0;
-    }
+   
    
 </style>
