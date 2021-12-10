@@ -218,78 +218,63 @@ function send_email()
     $error = [
         'email' => ''
     ];
-    $kt = '';
+    $forgot = [
+        'msg' => '',
+    ];
+    $title = "Quên mật khẩu";
+
     if (isset($_POST['submail'])) {
         $receiver = $_POST['receiver'];
         $checkemail = taikhoan_checkmail($receiver);
         if (!$checkemail > 0) {
             $error['email'] = "<span class='text-danger'>Email của bạn không có trên hệ thống của chúng tôi</span>";
         }
-        if (array_filter($checkemail)) {
-            $kt =  Account . 'notice';
+        if (!array_filter($error)) {
+            $token = uniqid();
+            $code = Account . 'forgot?token=' . $token;
+            $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
+            $receiver = isset($_POST['receiver']);
+            $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower';
+            $startTime = date("Y-m-d H:i:s");
+            $cenverted = date('Y-m-d H:i:s', strtotime('+5 minute', strtotime($startTime)));
+            $expire_time = $cenverted;
+            $receiver = $_POST['receiver'];
+            taikhoan_forgot($receiver, $token, $expire_time);
+            $mail = new PHPMailer(true);
+            try {
+                //Server settings
+                $mail->SMTPDebug = 0;
+                $mail->CharSet = 'UTF-8';
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.gmail.com';
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'sunflowernhom3@gmail.com';
+                $mail->Password   = '123456bi';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port       = 587;
+                //Recipients
+                $mail->setFrom('sunflowernhom3@gmail.com', 'Sunflower');
+                $arrEmail = explode(',', $receiver);
+                foreach ($arrEmail as $em) {
+                    $mail->addAddress(trim($em));
+                }
+                $mail->addReplyTo('sunflowernhom3@gmail.com', 'Sunflower');
+
+                $mail->isHTML(true);                                  //Set email format to HTML
+                $mail->Subject = $title;
+                $mail->Body    = $content;
+                $mail->AltBody = $content;
+                $mail->send();
+            } catch (Exception $e) {
+            }
+            $forgot['msg'] = " <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            <p>Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email </p>
+            </div>";
         }
     }
-
-    $title = "Quên mật khẩu";
-
-    client_Render('account/get_password.php', compact('title', 'error', 'kt'));
+    client_Render('account/get_password.php', compact('title', 'error', 'forgot'));
 }
-function notice()
-{
-    // if (!isset($_SESSION['receiver'])) {
-    //     header("location:   " . ROOT_URL);
-    //     die();
-    // }
-    $token = uniqid();
 
-    $code = Account . 'forgot?token=' . $token;
-    $content = "<h4>Link liên kết đổi mật khẩu của bạn là : <a href=`$code`>$code</a> tuyệt đối không chia sẻ với bật kì ai</h4>";
-    $receiver = isset($_POST['receiver']);
-    $title = 'Thiết lập lại mật khẩu đăng nhập Sunflower';
-    $startTime = date("Y-m-d H:i:s");
-    $cenverted = date('Y-m-d H:i:s', strtotime('+5 minute', strtotime($startTime)));
-    $expire_time = $cenverted;
-    if (isset($_POST['submail'])) {
-        $receiver = $_POST['receiver'];
-        taikhoan_forgot($receiver, $token, $expire_time);
-    }
-    $forgot = [
-        'msg' => '',
-        'checkmail' => ''
-    ];
-    $mail = new PHPMailer(true);
-    try {
-        //Server settings
-        $mail->SMTPDebug = 0;
-        $mail->CharSet = 'UTF-8';
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'sunflowernhom3@gmail.com';
-        $mail->Password   = '123456bi';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
-        //Recipients
-        $mail->setFrom('sunflowernhom3@gmail.com', 'Sunflower');
-        $arrEmail = explode(',', $receiver);
-        foreach ($arrEmail as $em) {
-            $mail->addAddress(trim($em));
-        }
-        $mail->addReplyTo('sunflowernhom3@gmail.com', 'Sunflower');
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = $title;
-        $mail->Body    = $content;
-        $mail->AltBody = $content;
-        $mail->send();
-        $forgot['msg'] = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
-    } catch (Exception $e) {
-        $forgot['msg'] = "Không hợp lệ bạn vui lòng quay về trang trước <br>" . "<button class='btn btn-warning' onclick='back()'>Quay lại trang trước</button>";
-    }
-    $title = "Chúng tôi đã gửi liên kết về mail của bạn vui lòng kiểm tra email";
-
-    client_Render('account/notice.php', compact('title', 'forgot'));
-}
 function verify_mk()
 {
     // if (!isset($_SESSION['token'])) {
