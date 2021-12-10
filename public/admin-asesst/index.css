@@ -206,6 +206,7 @@ body {
 
 @media (max-width: 1399.98px) {
     body {
+        max-width: 1440px;
         margin: 0 auto;
     }
     .carousel{
