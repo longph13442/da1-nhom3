@@ -31,11 +31,11 @@
             <div class="carousel-inner">
                 <?php foreach ($slide as $item) : ?>
                     <div class="carousel-item ">
-                        <img src="<?= ADMIN_ASSET ?>Image/<?= $item['img'] ?>  " style="height:400px" alt="" class="d-block w-100 img-fluid">
+                        <img src="<?= ADMIN_ASSET ?>image/<?= $item['img'] ?>  " style="height:400px" alt="" class="d-block w-100 img-fluid">
                     </div>
                 <?php endforeach ?>
                 <div class="carousel-item active">
-                    <img src="<?= ADMIN_ASSET ?>Image/baner6.jpg" class="d-block w-100" alt="...">
+                    <img src="<?= ADMIN_ASSET ?>image/baner6.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -125,7 +125,7 @@
                 <?php foreach ($sanpham2 as $item) : ?>
                     <li>
                         <div class=" ">
-                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>Image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $item['anh_sp'] ?>  " alt="" class="img-fluid" height="50" width="95%"></a>
 
                             <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $item['ma_sp'] ?>" class="nav-link text-success text-center">
                                 <span class=""> <?= $item['ten_sp'] ?> </span>
@@ -158,30 +158,30 @@
         <div class="combo">
             <div class="box-big">
                 <div class="row my-2">
-                  
-                     <?php foreach ($dskm as $p) : ?>
-               
-                   <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
-                       <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
 
-                       <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
-                           <p class="text-center"> <?= $p['ten_sp'] ?> </p>
-                       </a>
-                       <p class=" display-8 text-center fw-bold text-secondary mt-4">
-                           <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['gianew']) ?>đ</a>
-                           <?php if ($p['gianew'] != $p['giatien']) : ?>
-                               - <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['giatien']) ?></a> đ
-                       </p>
-                   <?php endif; ?>
-                   <div class="star mb-md-4">
-                       <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                   </div>
-                   </div>
+                    <?php foreach ($dskm as $p) : ?>
 
+                        <div class="col-6 col-sm-6 col-lg-3 col-xl-3 text-center  ">
+                            <a href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <img src="<?= homepase_ASSET ?>image/<?= $p['anh_sp'] ?> " alt="" class="img-fluid" height="50"></a>
 
+                            <a href="index.php?url=sanphamct&ma_sp=<?= $p['ma_sp'] ?>" class="nav-link text-success">
+                                <p class="text-center"> <?= $p['ten_sp'] ?> </p>
+                            </a>
+                            <p class=" display-8 text-center fw-bold text-secondary mt-4">
+                                <a class="text-decoration-none text-dark" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['gianew']) ?>đ</a>
+                                <?php if ($p['gianew'] != $p['giatien']) : ?>
+                                    - <a class="text-dark text-decoration-line-through" href="<?= ROOT_URL ?>sanphamct&ma_sp=<?= $p['ma_sp'] ?>"> <?= number_format($p['giatien']) ?></a> đ
+                            </p>
+                        <?php endif; ?>
+                        <div class="star mb-md-4">
+                            <i class="fas fa-star "></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        </div>
 
 
-               <?php endforeach ?>
+
+
+                    <?php endforeach ?>
                 </div>
             </div>
             <!-- end box-big -->

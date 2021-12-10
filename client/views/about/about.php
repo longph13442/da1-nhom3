@@ -1,7 +1,7 @@
 <div class="blog " style="margin:0 100px;">
     <div class="row my-5">
         <div class="text-center ">
-            <img src="<?= ADMIN_ASSET ?>Image/flower.png" alt="" width="10%">
+            <img src="<?= ADMIN_ASSET ?>image/flower.png" alt="" width="10%">
         </div>
         <!-- img -->
         <h4 class="text-center fw-bold my-3">VỀ SUNFLOWER - SHOP MỸ PHẨM CỦA CHÚNG TÔI </h4>
@@ -15,7 +15,7 @@
     <!-- row -->
     <div class="row my-3">
         <div class="col-5 ">
-            <img src="<?= ADMIN_ASSET ?>Image/ab.jpg" alt="" width="100%">
+            <img src="<?= ADMIN_ASSET ?>image/ab.jpg" alt="" width="100%">
         </div>
         <div class="col-7">
             <p class="fw-bold">Câu chuyện</p>

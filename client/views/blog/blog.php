@@ -3,13 +3,13 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide2.jpg" class="d-block w-100" alt="...">
+                    <img src="<?= ADMIN_ASSET ?>image/slide2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide.jpg" class="d-block w-100" alt="...">
+                    <img src="<?= ADMIN_ASSET ?>image/slide.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= ADMIN_ASSET ?>Image/slide3.jpg" class="d-block w-100" alt="...">
+                    <img src="<?= ADMIN_ASSET ?>image/slide3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
         </div>
@@ -25,11 +25,11 @@
                         <div class="mb-1 text-muted" style="font-size: 12px">Ngày tạo :<?= $b['ngay_tao'] ?></div>
                         <p class="card-text mb-auto fw-bold"><?= $b['tieu_de'] ?>
                         </p>
-                              <span  class="card-text mb-auto fw"><?= $b['noi_dung'] ?></span>
+                        <span class="card-text mb-auto fw"><?= $b['noi_dung'] ?></span>
                         <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>" class="stretched-link text-warning">Xem thêm</a>
                     </div>
                     <div class="col-5 d-none d-lg-block">
-                 <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $b['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
+                        <a href="index.php?url=ctblog&ma_blog=<?= $b['ma_blog'] ?>"><img src="<?= ADMIN_ASSET ?>image/<?= $b['anh_minh_hoa'] ?>" class="card-img-top" alt="..." height="350"></a>
 
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <a href="#" class="stretched-link text-warning">Xem thêm</a>
                 </div>
                 <div class="col-5 d-none d-lg-block">
-                    <img src="<?= ADMIN_ASSET ?>Image/2.webp" alt="" width="100%" height="100%">
+                    <img src="<?= ADMIN_ASSET ?>image/2.webp" alt="" width="100%" height="100%">
 
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <article class="blog-post">
                     <h2 class="blog-post-title">1. Kem Chống Nắng Và Lót Trang Điểm Vacosi Natural </h2>
                     <div class="text-center my-3">
-                        <img src="<?= ADMIN_ASSET ?>Image/3.webp" alt="">
+                        <img src="<?= ADMIN_ASSET ?>image/3.webp" alt="">
                     </div>
 
                     <p class="blog-post-meta">Link mua hàng : <a href="https://sammishop.com/" class="text-warning">SunFlower.com</a></p>
@@ -102,7 +102,7 @@
 
                 <article class="blog-post">
                     <h2 class="blog-post-title">HƯỚNG NỘI </h2>
-                    <img src="<?= ADMIN_ASSET ?>Image/4.webp" alt="">
+                    <img src="<?= ADMIN_ASSET ?>image/4.webp" alt="">
                     <p>Mọi người thường nghĩ rằng chỉ những người thường xuyên tham gia vào các hoạt động xã
                         hội, nói chuyện nhiều và cực kì thân thiện mới là đối tượng có thể thành công trong việc
                         thay đổi thế giới xung quanh. Những nhà tuyển dụng cũng thường chú ý người hướng ngoại
@@ -123,7 +123,7 @@
                     <article class="blog-post">
                         <h2 class="blog-post-title">1. Kem Chống Nắng Và Lót Trang Điểm Vacosi Natural </h2>
                         <div class="text-center my-3">
-                            <img src="<?= ADMIN_ASSET ?>Image/5.webp" alt="">
+                            <img src="<?= ADMIN_ASSET ?>image/5.webp" alt="">
                         </div>
 
                         <p class="blog-post-meta">Link mua hàng : <a href="https://sammishop.com/" class="text-warning">SunFlower.com</a></p>
@@ -153,54 +153,53 @@
                     </article>
 
                 </article>
-               <?php
-if (isset($_SESSION['ten_dang_nhap'])) {
-   
+                <?php
+                if (isset($_SESSION['ten_dang_nhap'])) {
 
-?>
-       
 
-   <div class="title mt-2 mt-xl-5">
-                    <h3 class="text-center">Gửi ý kiến góp ý</h3>
-                    <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
-                </div>
-                <form action="index.php?url=gop-y" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nội dung</label>
-                        <input type="text" class="form-control py-5" id="exampleInputEmail1" name="noidung" required>
+                ?>
+
+
+                    <div class="title mt-2 mt-xl-5">
+                        <h3 class="text-center">Gửi ý kiến góp ý</h3>
+                        <p class="text-center"> Chúng tôi rất mong nhận được những đóng góp từ bạn </p>
                     </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Họ tên</label>
-                                <input type="text" name="hoten" class="form-control" id="exampleInputPassword1" required>
+                    <form action="index.php?url=gop-y" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nội dung</label>
+                            <input type="text" class="form-control py-5" id="exampleInputEmail1" name="noidung" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Họ tên</label>
+                                    <input type="text" name="hoten" class="form-control" id="exampleInputPassword1" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputPassword1" required>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputPassword1" required>
-                            </div>
+                        <div class="text-center my-3">
+                            <button type="submit" class="btn btn-warning " name="submit">Gửi tới SunFlower</button>
                         </div>
-                    </div>
-                    <div class="text-center my-3">
-                        <button type="submit" class="btn btn-warning " name="submit">Gửi tới SunFlower</button>
-                    </div>
-                </form>
+                    </form>
                 <?php
 
-}
-else {
-?>
-              
-                <div class="dangky">
-                    
-               
-              <p>Mời ban đăng nhập để gửi ý kiến</p>
-            
-                </div>
+                } else {
+                ?>
+
+                    <div class="dangky">
+
+
+                        <p>Mời ban đăng nhập để gửi ý kiến</p>
+
+                    </div>
                 <?php
-}?>
+                } ?>
 
             </div>
 
