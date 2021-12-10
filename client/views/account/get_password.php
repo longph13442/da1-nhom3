@@ -6,7 +6,6 @@
     </div>
     <?php if (isset($forgot['msg'])) : ?>
         <?php echo   $forgot['msg']  ?>
-
     <?php endif; ?>
     <div class="form-label-group mt-5">
         <label for="inputEmail mb-5">Nhập email của bạn</label>

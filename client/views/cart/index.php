@@ -23,7 +23,6 @@
                     <?php $price = $key['soluong'] * $key['gia'];
                     $sum += $price;
                     $_SESSION["cart"][$key['masp']]['price'] = $price;
-
                     ?>
                     <tr class="text-center">
                         <td style="width: 100px;"><img src="<?= ADMIN_ASSET ?>image/<?= $key['hinh'] ?>" style="width: 70%;" alt=""></td>
@@ -42,7 +41,11 @@
                         </td>
 
                         <input type="hidden" name="id" id="" value="<?= $key['masp'] ?>">
-                        <td> <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button> <button class="my-4 btn btn-sm btn-danger " name="delete">Xóa</button></td>
+                        <td>
+
+                            <button class="my-4 btn buttonbtn-sm btn-success " name="update" type="submit">Cập nhật</button>
+                            <a class="my-4 btn btn-sm btn-danger " href="<?= ROOT_URL ?>cart?delete=<?= $key['masp'] ?>">Xóa</a>
+                        </td>
 
                     </tr>
 

@@ -28,9 +28,7 @@ switch ($url) {
     case 'account/forgot':
         verify_mk();
         break;
-    case 'account/notice':
-        notice();
-        break;
+
     case 'account/logout':
         logout();
         break;

@@ -31,9 +31,10 @@ function cart()
         $id = $_POST["id"];
         $_SESSION['cart'][$id]['soluong'] = $soluong;
     }
-    if (isset($_POST["delete"])) {
-        $id = $_POST["id"];
+    if (array_key_exists('delete', $_REQUEST)) {
+        $id = $_GET["delete"];
         unset($_SESSION["cart"][$id]);
+        header("location: " . ROOT_URL . 'cart');
     }
     $cart = (isset($_SESSION["cart"])) ? $_SESSION["cart"] : [];
     $link = '';
