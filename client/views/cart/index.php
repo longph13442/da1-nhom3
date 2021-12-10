@@ -39,16 +39,12 @@
                         <td>
                             <p class="my-4"><?= number_format($price) ?>VND</p>
                         </td>
-
                         <input type="hidden" name="id" id="" value="<?= $key['masp'] ?>">
                         <td>
-
                             <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button>
                             <a class="my-4 btn btn-sm btn-danger " href="<?= ROOT_URL ?>cart?delete=<?= $key['masp'] ?>">Xóa</a>
                         </td>
-
                     </tr>
-
                 <?php endforeach ?>
 
             </tbody>

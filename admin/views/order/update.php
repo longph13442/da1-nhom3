@@ -38,8 +38,6 @@
                                 <option value="<?= $s['ma_sp'] ?>"><?= $s['ten_sp'] ?> <p> Giá </p><?= number_format($s['gianew']) ?>VNĐ</option>
                             <?php endforeach; ?>
                         </select>
-                        <input type="hidden" name="gianew" value="<?= $s['gianew']  ?>">
-
                         <input class="form-control col-1" min="0" type="number" name="quantyti" id="">
                         <button name="orderadd" type="submit" class="btn btn-primary">Thêm</button>
                     </div>

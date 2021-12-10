@@ -102,14 +102,15 @@ function  order_add()
         $id = $_POST['id'];
         $ma_sp = $_POST['ma_sp'];
         $quantyti = $_POST['quantyti'];
-        $gianew = $_POST['gianew'];
-
+        $sql = "SELECT *,giatien*(100-giamgia)/100 as gianew  FROM sanpham Where ma_sp = '$ma_sp'";
+        $gianew = pdo_query_one($sql);
+        $price = $gianew['gianew'];
         if ($quantyti == '') {
         }
         if ($ma_sp == 0) {
         }
         if (!array_filter($error)) {
-            $sql = "INSERT INTO hoadon_chitiet(id,product_id,quantyti,price) VALUES('$id', '$ma_sp', '$quantyti','$gianew')";
+            $sql = "INSERT INTO hoadon_chitiet(id,product_id,quantyti,price) VALUES('$id', '$ma_sp', '$quantyti','$price')";
             pdo_execute($sql);
             header("location: " . ROOT_URL . 'order/updatecart?id=' . $id);
         }
@@ -121,7 +122,6 @@ function update_quantity()
         $price = $_POST['price'];
         $quantyti = $_POST['quantyti'];
         $product_id = $_POST['product_id'];
-
         $id = $_POST['id'];
         $sql_product = "UPDATE hoadon_chitiet SET quantyti='$quantyti', price='$price' WHERE    hoadon_chitiet.product_id = '$product_id'";
         pdo_execute($sql_product);

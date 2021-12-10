@@ -23,7 +23,7 @@
                         <?php $sum = 0 ?>
                         <?php foreach ($hddts as $in) : ?>
                             <?php
-                            $sumpro = $in['price'] * $in['quantyti'] ?>
+                            $sumpro = (float)$in['price'] * (int)$in['quantyti'] ?>
                             <?php $sum += $sumpro ?>
                             <b> <?= number_format($sumpro) ?>đ</b>
                             <p></p>
