@@ -305,6 +305,7 @@ switch ($url) {
         blog_delete();
         break;
     default:
-        # code...
+        require_once './client/business/404.php';
+        loi404();
         break;
 }
