@@ -23,7 +23,7 @@
                                 <td><?php echo $ma_blog ?></td>
                                 <td><?php echo $tieu_de ?></td>
                                 <td class="chroma" ><?php echo $noi_dung ?></td>
-                                <td><?php echo $anh_minh_hoa ?></td>
+                                <td><img src="<?= IMG.$anh_minh_hoa ?>" alt="" width="50%"></td>
                                 <td><?php echo $ngay_tao ?></td>
                                 <td><?php echo $ma_tai_khoan ?></td>
                                 <td>
