@@ -6,18 +6,17 @@
             <div class="mb-3">
                 <label for="" class="form-label">Mã </label>
                 <input type="text" name="id" class="form-control" id="" disabled placeholder="Auto" value="<?php echo $info['id'] ?>">
-
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Slide</label>
+                <input type="hidden" name="hinhcu" value="<?= $info['img'] ?>">
                 <input type="file" name="img" id="" class="form-control">
-                
             </div>
             <div class="">
-                <img src="<?= IMG ?><?php echo $info['img'] ?> " alt="" width="50%">
+                <img src="<?= ROOT_URL . IMG ?><?php echo $info['img'] ?> " alt="" width="50%">
             </div>
             <input type="hidden" name="id" value="<?php echo $info['id'] ?>">
-       
+
             <input type="reset" name="" value="Hủy" class="btn btn-danger">
             <input type="submit" name="submit" value="cập nhật" class="btn btn-primary">
 
