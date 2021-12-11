@@ -26,7 +26,7 @@ if (isset($_SESSION["ten_dang_nhap"])) {
                 </ul>
             </nav>
             <!-- end menu -->
-            <form class="col-sm-12 col-xl-5 col-lg-5 col-md-12 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="post">
+            <form class="col-sm-12 col-xl-5 col-lg-5 col-md-12 mb-3 mb-lg-0  " action="<?= ROOT_URL ?>tim-kiem" method="get">
                 <input type="search" class="form-control" placeholder="Search..." aria-label="Search" name="kyw">
             </form>
             <!-- end search -->
