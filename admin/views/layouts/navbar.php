@@ -83,16 +83,20 @@
                     Quản Lý Voucher
                 </a>
             </li>
-        </ul>
-
-        <ul class="nav flex-column mb-2">
             <li class="nav-item">
                 <a class="nav-link text-dark" href="<?= ROOT_URL ?>admin-blog">
                     <i class="fal fa-blog"></i>
                     Blog
                 </a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="<?= ROOT_URL ?>feedback">
+                    <i class="fa fa-comment"></i>
+                    feedback
+                </a>
+            </li>
         </ul>
+
+      
     </div>
 </nav>

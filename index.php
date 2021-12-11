@@ -304,6 +304,14 @@ switch ($url) {
         require_once './admin/business/blog.php';
         blog_delete();
         break;
+    case 'feedback':
+        require_once './admin/business/feedback.php';
+        feedback_get_all();
+        break;
+    case 'feedback/delete':
+        require_once './admin/business/feedback.php';
+        feedback_delete();
+        break;
     default:
         # code...
         break;
