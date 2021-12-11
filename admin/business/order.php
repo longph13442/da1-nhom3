@@ -2,16 +2,16 @@
 require_once 'dao/system_dao.php';
 function order_get_all($keysearch)
 {
-    $sql = "SELECT *,hoadon.id,SUM(hoadon_chitiet.price * hoadon_chitiet.quantyti) as tongtien
+    $sql = "SELECT *,hoadon.id,SUM(hoadon_chitiet.price * hoadon_chitiet.quantyti) as tongtien,SUM(hoadon_chitiet.quantyti) as tongsoluong
     FROM hoadon,hoadon_chitiet,sanpham WHERE hoadon.name like ?
      and hoadon.id = hoadon_chitiet.id and sanpham.ma_sp = hoadon_chitiet.product_id GROUP BY hoadon.id ORDER BY hoadon.id DESC  ";
     return pdo_query($sql, '%' . $keysearch . '%');
 }
 function order_get_allsp()
 {
-    $sql = "SELECT *,hoadon.id,SUM(hoadon_chitiet.quantyti) as tong
+    $sql = "SELECT *,hoadon.id
     FROM hoadon,hoadon_chitiet,sanpham WHERE
-      hoadon.id = hoadon_chitiet.id and sanpham.ma_sp = hoadon_chitiet.product_id ";
+      hoadon.id = hoadon_chitiet.id and sanpham.ma_sp = hoadon_chitiet.product_id GROUP BY hoadon.id";
     return pdo_query($sql);
 }
 function order_get_by_id($id)

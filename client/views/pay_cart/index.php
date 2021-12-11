@@ -19,7 +19,6 @@
                             <div class="d-flex">
                                 <img src="<?= ADMIN_ASSET ?>image/<?= $key["hinh"] ?>" alt="" width="40">
                                 <h6 class="my-3 mx-3"><?= $key["tensp"] ?></h6>
-
                             </div>
                             <p class="my-3 mx-2"><?= $key["soluong"] ?></p>
                             <span class="text-danger py-3"><?= number_format($key["price"]) ?> VND</span>

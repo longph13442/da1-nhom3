@@ -26,11 +26,9 @@
               <th>
                 Số lượng
               </th>
+
               <th class="col-1">
-                Ảnh sản phẩm
-              </th>
-              <th class="col-1">
-                Giá tiền
+                Tổng tiền
               </th>
               <th class="col-1">
                 Ngày tạo
@@ -47,7 +45,6 @@
             <?php foreach ($od as $key) : ?>
               <?php extract($key) ?>
               <tr>
-
                 <td>
                   <?php echo $name ?>
                 </td>
@@ -55,20 +52,14 @@
                   <?php echo $id ?>
                 </td>
                 <td>
-                  <?php foreach ($odsp as $sp) : ?>
-                    <?php echo trim(($sp['ten_sp'] . ','), ',') ?>
-                  <?php endforeach; ?>
+                  <?php echo $ten_sp  ?>
                 </td>
                 <td>
-                  <?php foreach ($odsp as $sp) : ?>
-                    <?php
-                    echo $sp['tong'];
-                    ?>
-                  <?php endforeach; ?>
+                  <?php
+                  echo $tongsoluong;
+                  ?>
                 </td>
-                <td style="max-width: 100px;">
-                  <img src="<?= IMG . $anh_sp ?>" alt="" width="40%">
-                </td>
+
 
                 <td>
                   <?php echo number_format($tongtien + $ship) ?> đ
