@@ -356,13 +356,12 @@ function listcart()
     $result  = (int)pdo_query_value("SELECT count(*) FROM hoadon,hoadon_chitiet WHERE hoadon.id = hoadon_chitiet.id");
     $tongpage = ceil($result / $pagesize);
     $offset = ($pg - 1) * $pagesize;
-    $hoadon = cart_list($_SESSION['ten_dang_nhap'], $offset, $pagesize);
-    $hoadon2 = cart_lists($_SESSION['ten_dang_nhap']);
+    $hoadon2 = cart_lists($_SESSION['ten_dang_nhap'], $offset, $pagesize);
     $title = "Danh sách đơn hàng";
     $ten_dang_nhap = $_SESSION['ten_dang_nhap'];
     $sql = "SELECT count(*) FROM hoadon,khachhang WHERE hoadon.phone = khachhang.sdt and khachhang.ten_dang_nhap ='$ten_dang_nhap'";
     $lap = execute_query($sql);
-    info_render('account/list_cart.php', compact('title', 'hoadon', 'tongpage', 'hoadon2', 'result', 'lap'));
+    info_render('account/list_cart.php', compact('title', 'tongpage', 'hoadon2', 'result', 'lap'));
 }
 
 function cart_detail()
