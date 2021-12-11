@@ -74,6 +74,7 @@
         <?php if (isset($_SESSION['ten_dang_nhap']) && $_SESSION['ten_dang_nhap'] != null) : ?>
           <a href="<?= ROOT_URL . 'yeu-thich/?ma_sp=' . $info['ma_sp'] ?>"><button type="button" class="btn btn-danger btn-sm">Yêu thích</button></a>
         <?php endif ?>
+        <!-- cart -->
         <input type="hidden" name="tensp" value="<?= $info['ten_sp'] ?>">
         <input type="hidden" name="hinhanh" value="<?= $info['anh_sp'] ?>">
         <?php if ($info['gianew'] != 0) : ?>
