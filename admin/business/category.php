@@ -1,5 +1,6 @@
 <?php
 require_once 'dao/system_dao.php';
+require_once 'admin/business/statistical.php';
 function category_search()
 {
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
@@ -36,15 +37,12 @@ function loaihang_delete($ma_loai)
 function category_list()
 {
     $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
-    $sql = "select * from loaihang where ten_loai like '%$keyword%'";
+    $sql = "select * from loaihang  where ten_loai like '%$keyword%'";
     $cate = pdo_query($sql);
     $title = "Quản lý loại hàng";
-
     admin_render('category/list.php', compact('cate', 'keyword', 'title'));
 
-    // $sql = "SELECT * FROM loaihang ";
-    // $cate = pdo_query($sql);
-    // admin_render('category/list.php', compact('cate'));
+ 
 }
 function category_add_form()
 {
@@ -98,3 +96,4 @@ function category_save_edit()
         }
     }
 }
+
