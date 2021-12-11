@@ -10,7 +10,7 @@ function cart_lists($ten_dang_nhap)
 {
     $sql = "SELECT hoadon.id, hoadon.date,hoadon.status
      FROM hoadon,hoadon_chitiet,khachhang WHERE hoadon.phone = khachhang.sdt
-      and hoadon.id = hoadon_chitiet.id and hoadon.phone = 0338898903 
+      and hoadon.id = hoadon_chitiet.id 
       and khachhang.ten_dang_nhap = ? 
       GROUP BY hoadon.id,hoadon.date,hoadon.status ORDER BY hoadon.id DESC  ";
     return pdo_query($sql, $ten_dang_nhap);

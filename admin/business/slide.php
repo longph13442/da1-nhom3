@@ -50,6 +50,8 @@ function slide_save_add()
         extract($_POST);
         $slide = $_FILES['img']['name'];
         slide_insert($slide);
+        global $PATH_IMG;
+        $slide =  save_file('slide', $PATH_IMG);
         header("location: " . ROOT_URL . 'slide');
     }
 }
@@ -66,8 +68,16 @@ function slide_save_update()
         extract($_POST);
         $id = $_POST['id'];
         $info = slide_select_by_id($id);
-        $img = empty($_FILES['img']['name']) ? $info['img'] : $_FILES['img']['name'];;
-        slide_update($img, $id);
+        $img = $_FILES['img'];
+        $slide = $img['name'];
+        if ($img['size'] > 0) {
+            global $PATH_IMG;
+            $slide = save_file('img', $PATH_IMG);
+        } else {
+            $slide = $_POST['hinhcu'];
+        }
+        slide_update($slide, $id);
+
         header("location: " . ROOT_URL . 'slide');
     }
 }

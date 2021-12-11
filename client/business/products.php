@@ -7,11 +7,9 @@ require_once './dao/danhmuc.php';
 
 function loadon_sp()
 {
-    if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
-        $kyw = $_POST['kyw'];
-    } else {
-        $kyw = "";
-    }
+
+    $kyw = isset($_GET['kyw']) ? $_GET['kyw'] : "";
+
     if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
         $iddm = $_GET['ma_loai'];
     } else {
@@ -45,11 +43,8 @@ function loadall_sp_timkiem()
 {
     $keysear = "Kết quả tìm kiếm";
 
-    if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
-        $kyw = $_POST['kyw'];
-    } else {
-        $kyw = "";
-    }
+    $kyw = isset($_GET['kyw']) ? $_GET['kyw'] : "";
+
     if (isset($_GET['ma_sp']) && ($_GET['ma_sp'] > 0)) {
         $iddm = $_GET['ma_sp'];
     } else {
@@ -70,16 +65,13 @@ function loadall_sp_timkiem()
     $dmsp = loadall_dm();
     $title = "Tìm kiếm";
 
-    client_render('products/index.php', compact('dmsp', 'dssp', 'keysear', 'tongpage', 'title','dskm'));
+    client_render('products/index.php', compact('dmsp', 'dssp', 'keysear', 'tongpage', 'title', 'dskm'));
 }
 function giatien()
 {
 
-    if (isset($_POST['kyw']) && ($_POST['kyw'] > 0)) {
-        $kyw = $_POST['kyw'];
-    } else {
-        $kyw = "";
-    }
+    $kyw = isset($_GET['kyw']) ? $_GET['kyw'] : "";
+
     if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
         $iddm = $_GET['ma_loai'];
     } else {

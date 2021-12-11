@@ -371,11 +371,17 @@ function cart_detail()
         header("location:   " . ROOT_URL);
         die();
     }
+    $error = [
+        'msg' => ''
+    ];
     $id = $_GET['id'];
     $hddt = cart_dts($id);
     $title = "Chi tiết đơn hàng";
     $hddts = cart_dts2($id);
-    info_render('account/cart_dt.php', compact('title', 'hddt', 'hddts'));
+    if (!$hddt) {
+        $error['msg'] = "Đơn hàng không tồn tại";
+    }
+    info_render('account/cart_dt.php', compact('title', 'hddt', 'hddts', 'error'));
 }
 function account_address()
 {
