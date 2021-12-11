@@ -1,5 +1,5 @@
 <?php
 function loi404()
 {
-    echo "có lỗi xảy ra";
+    client_Render('layouts/404.php');
 }
